@@ -1,8 +1,15 @@
-# Bomberman-OOP-project
-HCMIU - OOP Project 
+## Bomberman-OOP-project
+# HCMIU - OOP Project 
+# Schedule Plan: [Notion](https://www.notion.so/trivyluong/Project-1f4ee64f8a284f899eb7583df0352fbf).
 Members:
-Le Dinh Anh Huy
-Luong Tri Vy
-Nguyen Phi Khanh
-Nguyen Bao Tran
-test
+| Le Dinh Anh Huy - ITITIU20213
+| Luong Tri Vy - ITITIU20359    
+| Nguyen Phi Khanh - ITDSIU20005
+| Nguyen Bao Tran - ITITWE20001
+
+
+| 
+
+| Reference: 
+- [Using LibGdx](https://github.com/yichen0831/Bomberman_libGdx).
+- [Using only Java](https://github.com/blai30/bomberman-java).
