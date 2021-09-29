@@ -1,4 +1,4 @@
-# Bomberman-OOP-project
+# Bomberman
 ## HCMIU - OOP Project - Semester 1 2021 - 2022
 ### Schedule Plan: [Notion](https://www.notion.so/trivyluong/Project-1f4ee64f8a284f899eb7583df0352fbf)
 **Members:**  
