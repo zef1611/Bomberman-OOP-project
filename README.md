@@ -1,2 +1,7 @@
 # Bomberman-OOP-project
-2021
+HCMIU - OOP Project 
+Members:
+Le Dinh Anh Huy
+Luong Tri Vy
+Nguyen Phi Khanh
+Nguyen Bao Tran
