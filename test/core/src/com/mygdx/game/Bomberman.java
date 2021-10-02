@@ -15,7 +15,7 @@ public class Bomberman extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		background = new Texture(Gdx.files.internal("stage/battle_stage_1.png"));
+		background = new Texture(Gdx.files.internal("stage/stage_01/stage_01.png"));
 		System.out.println("test");
 	}
 
