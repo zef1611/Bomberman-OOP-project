@@ -9,7 +9,7 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.title = "Bomberman";
 		config.width = 1024;
-		config.height = 816;
+		config.height = 916;
 		config.foregroundFPS  = 30;
 		new LwjglApplication(new Bomberman(), config);
 	}
