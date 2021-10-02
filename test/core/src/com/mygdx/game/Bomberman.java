@@ -32,7 +32,7 @@ public class Bomberman extends ApplicationAdapter {
 
 		backgroundSprite = new Sprite(background);
 		backgroundSprite.setPosition(Gdx.graphics.getWidth()/2 - backgroundSprite.getWidth()/2,
-					Gdx.graphics.getHeight()/2 - (backgroundSprite.getHeight() - statusBarSprite.getHeight())/2);
+					Gdx.graphics.getHeight()/2 - (backgroundSprite.getHeight()/2 + statusBarSprite.getHeight()/2));
 
 		playerSprite = new Sprite(player);
 		playerSprite.setPosition(96,64);
@@ -66,5 +66,7 @@ public class Bomberman extends ApplicationAdapter {
 	public void dispose () {
 		batch.dispose();
 		background.dispose();
+//		statusBar.dispose();
+		player.dispose();
 	}
 }
