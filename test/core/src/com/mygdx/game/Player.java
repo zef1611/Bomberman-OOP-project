@@ -11,6 +11,8 @@ import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 
+import java.util.Objects;
+
 import static com.badlogic.gdx.Gdx.input;
 
 
@@ -67,19 +69,19 @@ public class Player extends Actor {
         super.positionChanged();
     }
     private Sprite switchCharacter(String color){
-        if(color == "black"){
+        if(Objects.equals(color, "black")){
             player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_black/still/bomberman_still_1.png")));
         }
-        if(color == "white"){
+        if(Objects.equals(color, "white")){
             player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_white/still/bomberman_still_1.png")));
         }
-        if(color == "red"){
+        if(Objects.equals(color, "red")){
             player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_red/still/bomberman_still_1.png")));
         }
-        if(color == "green"){
+        if(Objects.equals(color, "green")){
             player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_green/still/bomberman_still_1.png")));
         }
-        if(color == "blue"){
+        if(Objects.equals(color, "blue")){
             player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_blue/still/bomberman_still_1.png")));
         }
         return player;

@@ -11,13 +11,12 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class Bomberman extends Game {
 	public SpriteBatch batch;
-//	public Stage mainGame = new Stage();
 
 
 	@Override
 	public void create () {
-		batch = new SpriteBatch();
-		this.setScreen(new MainGameScreen(this));
+		ScreenManager.getInstance().initialize(this);
+		ScreenManager.getInstance().showScreen(ScreenEnum.STARTING_SCREEN);
 	}
 
 	@Override
