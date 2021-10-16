@@ -21,19 +21,24 @@ public class StartingScreen extends AbstractScreen{
 
     @Override
     public void buildStage() {
+//    Background of the starting screen
         Texture txBackground = new Texture(Gdx.files.internal("sprite" +
                 "/starting_screen/starting_screen.png"));
         Image background = new Image(txBackground);
         addActor(background);
 
+//    Start button construction
         Texture txStart = new Texture(Gdx.files.internal("sprite/starting_screen" +
                 "/bomberman_icon.png"));
         ImageButton start =
                 new ImageButton(new TextureRegionDrawable(new TextureRegion(txStart)));
-        start.setPosition(160.f, 500.f, Align.center);
+        start.setPosition(160.f, 300.f, Align.center);
+
+//    Start button implementation
         start.addListener(new ClickListener() {
            @Override
            public void clicked(InputEvent event, float x, float y){
+               ScreenManager.getInstance().showScreen(ScreenEnum.MAIN_GAME);
                System.out.println("hello");
            }
         });
@@ -42,7 +47,7 @@ public class StartingScreen extends AbstractScreen{
     }
 
     @Override
-    public dispose(){
-
+    public void dispose(){
+        super.dispose();
     }
 }

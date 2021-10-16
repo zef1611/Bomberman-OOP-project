@@ -25,7 +25,7 @@ public class ScreenManager {
         return instance;
     }
 
-//    Initialization with the Bomberman class
+//    Initialization with the Game class
     public void initialize(Game game){
         this.game = game;
     }

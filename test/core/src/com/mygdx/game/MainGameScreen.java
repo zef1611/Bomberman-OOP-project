@@ -8,6 +8,9 @@ import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.mygdx.game.Bomberman;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
+
+import java.awt.*;
 
 public class MainGameScreen extends AbstractScreen {
 
@@ -16,33 +19,30 @@ public class MainGameScreen extends AbstractScreen {
 
     @Override
     public void buildStage() {
+//        Add status bar
+        Texture txStatusBar = new Texture(Gdx.files.internal("sprite/stage/status_bar.png"));
+        Image statusBar = new Image(txStatusBar);
+        statusBar.setPosition(0,
+                Gdx.graphics.getHeight()-statusBar.getHeight());
+        addActor(statusBar);
+
+//        Background placeholder
+        Texture txbackground = new Texture(Gdx.files.internal("sprite/stage/stage_02" +
+                "/stage_02.png"));
+        Image background = new Image(txbackground);
+        background.setPosition(Gdx.graphics.getWidth()/2f - background.getWidth()/2f,
+                (Gdx.graphics.getHeight()-statusBar.getHeight())/2f - background.getHeight()/2f );
+        addActor(background);
+
+
         Player black = new Player("black");
         addActor(black);
 
     }
 
-    @Override
-    public void show() {
-
-    }
 
     @Override
-    public void render(float delta) {}
-
-    @Override
-    public void resize(int width, int height) {}
-
-    @Override
-    public void pause() {}
-
-    @Override
-    public void resume() {}
-
-    @Override
-    public void hide() {}
-
-    @Override
-    public void dispose() {}
+    public void dispose() {super.dispose();}
 
 //    public void getBackgroundTexture(int stageNum){
 //        this.stageNum = stageNum;
@@ -70,8 +70,8 @@ public class MainGameScreen extends AbstractScreen {
 //        return background;
 //    }
 
-    public void setPlayer(String color){
-
-    }
+//    public void setPlayer(String color){
+//
+//    }
 
 }

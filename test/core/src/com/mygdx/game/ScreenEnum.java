@@ -7,11 +7,11 @@ public enum ScreenEnum {
         public AbstractScreen getScreen(Object...params){
             return new StartingScreen();
         }
+    },
+    MAIN_GAME{
+        public AbstractScreen getScreen(Object...params){
+            return new MainGameScreen();
+        }
     };
-//    MAIN_GAME{
-//        public AbstractScreen getScreen(Object...params){
-//            return new MainGameScreen();
-//        }
-//    };
     public abstract AbstractScreen getScreen(Object...params);
 }
