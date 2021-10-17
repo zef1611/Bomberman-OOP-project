@@ -14,14 +14,16 @@ import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import java.util.Objects;
 
 import static com.badlogic.gdx.Gdx.input;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
 
 public class Player extends Actor {
     Sprite player;
+    PlayerEnum color;
 
-    public Player(String color){
+    public Player(PlayerEnum color) {
         player = switchCharacter(color);
-        setBounds(player.getX(), player.getY(), player.getWidth(), player.getHeight());
+        player.setBounds(player.getX(), player.getY(), player.getWidth(), player.getHeight());
         setTouchable(Touchable.enabled);
 
         addListener(new InputListener(){
@@ -58,31 +60,43 @@ public class Player extends Actor {
             }
         });
     }
-    public void draw(Batch batch, float parentAlpha){
-        super.draw(batch, parentAlpha);
+
+    @Override
+    public void draw(Batch batch, float parentAlpha) {
+        player.draw(batch);
     }
-    public void act(float delta){
+
+    @Override
+    public void act(float delta) {
         super.act(delta);
     }
+
+    public void setPosition(int x, int y){
+        player.setPosition(x, y);
+    }
+
     protected void positionChange(){
         player.setPosition(getX(),getY());
         super.positionChanged();
     }
-    private Sprite switchCharacter(String color){
-        if(Objects.equals(color, "black")){
-            player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_black/still/bomberman_still_1.png")));
-        }
-        if(Objects.equals(color, "white")){
-            player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_white/still/bomberman_still_1.png")));
-        }
-        if(Objects.equals(color, "red")){
-            player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_red/still/bomberman_still_1.png")));
-        }
-        if(Objects.equals(color, "green")){
-            player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_green/still/bomberman_still_1.png")));
-        }
-        if(Objects.equals(color, "blue")){
-            player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_blue/still/bomberman_still_1.png")));
+
+    protected Sprite switchCharacter(PlayerEnum color) {
+        switch (color){
+            case BLACK:
+                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_black/still/bomberman_still_1.png")));
+                break;
+            case BLUE:
+                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_blue/still/bomberman_still_1.png")));
+                break;
+            case GREEN:
+                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_green/still/bomberman_still_1.png")));
+                break;
+            case RED:
+                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_red/still/bomberman_still_1.png")));
+                break;
+            case WHITE:
+                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_white/still/bomberman_still_1.png")));
+                break;
         }
         return player;
     }

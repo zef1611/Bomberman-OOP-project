@@ -5,6 +5,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.mygdx.game.Bomberman;
@@ -27,15 +28,16 @@ public class MainGameScreen extends AbstractScreen {
         addActor(statusBar);
 
 //        Background placeholder
-        Texture txbackground = new Texture(Gdx.files.internal("sprite/stage/stage_02" +
+        Texture txBackground = new Texture(Gdx.files.internal("sprite/stage/stage_02" +
                 "/stage_02.png"));
-        Image background = new Image(txbackground);
+        Image background = new Image(txBackground);
         background.setPosition(Gdx.graphics.getWidth()/2f - background.getWidth()/2f,
                 (Gdx.graphics.getHeight()-statusBar.getHeight())/2f - background.getHeight()/2f );
         addActor(background);
 
-
-        Player black = new Player("black");
+//      Create player
+        Player black = new Player(PlayerEnum.BLACK);
+        black.setPosition(96,64);
         addActor(black);
 
     }
