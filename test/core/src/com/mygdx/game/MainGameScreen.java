@@ -37,7 +37,9 @@ public class MainGameScreen extends AbstractScreen {
 
 //      Create player
         Player black = new Player(PlayerEnum.BLACK);
-        black.setPosition(96,64);
+        black.position(96,64);
+        black.input();
+        setKeyboardFocus(black);
         addActor(black);
 
     }
