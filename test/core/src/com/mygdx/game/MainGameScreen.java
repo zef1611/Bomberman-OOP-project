@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.mygdx.game.Bomberman;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
@@ -35,13 +36,22 @@ public class MainGameScreen extends AbstractScreen {
                 (Gdx.graphics.getHeight()-statusBar.getHeight())/2f - background.getHeight()/2f );
         addActor(background);
 
-//      Create player
-        Player black = new Player(PlayerEnum.BLACK);
+//        Temporary Texture Atlas
+        TextureAtlas atlasBlack = new TextureAtlas(Gdx.files.internal("sprite_sheet/character/bomberman_black/walk/bomberman_walk.txt"));
+        TextureRegion walk = atlasBlack.findRegion("bomberman_walk",1);
+//        Texture player = new Texture(new Sprite(walk));
+//        Create player
+        Player black = new Player(walk);
         black.position(96,64);
-        black.input();
+//        black.input();
+//        black.addAction(Actions.moveBy(64, 0));
+//        black.addAction(Actions.moveBy(64, 0));
+
+        System.out.println(String.format("%f %f",black.getX(),black.getY()));
         setKeyboardFocus(black);
         addActor(black);
 
+//
     }
 
 

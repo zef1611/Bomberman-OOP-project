@@ -12,13 +12,14 @@ import com.badlogic.gdx.utils.ScreenUtils;
 public class Bomberman extends Game {
 	public SpriteBatch batch;
 
-
+//	The first thing the game will do when activated
 	@Override
 	public void create () {
 		ScreenManager.getInstance().initialize(this);
 		ScreenManager.getInstance().showScreen(ScreenEnum.STARTING_SCREEN);
 	}
 
+//	Call when the game should render itself
 	@Override
 	public void render () {
 		super.render();

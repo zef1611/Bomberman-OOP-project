@@ -3,102 +3,135 @@ package com.mygdx.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.InputListener;
-import com.badlogic.gdx.scenes.scene2d.Touchable;
+import com.badlogic.gdx.graphics.g2d.*;
+import com.badlogic.gdx.scenes.scene2d.*;
+
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
-
-import java.util.Objects;
-
-import static com.badlogic.gdx.Gdx.input;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.badlogic.gdx.utils.Array;
+
+import java.util.Iterator;
 
 
-public class Player extends Actor {
+public class Player extends Image {
+    TextureAtlas atlasBlack;
+    TextureRegion walk;
+    TextureRegion currentFrame;
     Sprite player;
+    Image img;
+    Animation<TextureAtlas.AtlasRegion> ani;
     PlayerEnum color;
+    float elapsedTime = 0;
 
-    public Player(PlayerEnum color) {
-        player = switchCharacter(color);
-        setBounds(player.getX(), player.getY(), player.getWidth(), player.getHeight());
+
+    public Player(TextureRegion texture) {
+//        player = new Sprite(walk);
+        super(texture);
+        setBounds(getX(), getY(), getWidth(), getHeight());
         setTouchable(Touchable.enabled);
+        input();
 //        setPosition(96,64);
+//        Array<TextureAtlas.AtlasRegion> runningFrames = atlasBlack.findRegions("bomberman_walk");
+//        ani = new Animation<>(1f/30f,runningFrames, Animation.PlayMode.NORMAL);
+
 
 
     }
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        player.draw(batch);
+        ((TextureRegionDrawable)getDrawable()).draw(batch, getX(), getY(),
+                getOriginX(),getOriginY(),
+                getWidth(),getHeight(),
+                getScaleX(), getScaleY(),
+                getRotation());
+
     }
 
     @Override
     public void act(float delta) {
         super.act(delta);
+        float STEP = 16f;
+
+//        System.out.println(Gdx.graphics.getFramesPerSecond());
+
+//        if(Gdx.input.isKeyPressed(Input.Keys.W));
+//            this.setPosition(this.getX(), this.getY() + STEP);
+//            player.setPosition(player.getX(), player.getY()+STEP);
+////            System.out.println(this.getX());
+//
+//        if(Gdx.input.isKeyPressed(Input.Keys.S))
+//            this.setPosition(this.getX(), this.getY() - STEP);
+//            player.setPosition(player.getX(), player.getY() - STEP);
+//
+//        if(Gdx.input.isKeyPressed(Input.Keys.A))
+//            this.setPosition(this.getX() - STEP, this.getY());
+//            player.setPosition(player.getX() - STEP, player.getY());
+//
+//        if(Gdx.input.isKeyPressed(Input.Keys.D))
+//            this.setPosition(this.getX() + STEP, this.getY());
+//            player.setPosition(player.getX(), player.getY()+STEP);
 
     }
 
     public void position(int x, int y){
         setPosition(x, y);
-        player.setPosition(x, y);
+//        player.setPosition(x, y);
     }
 
     public void input(){
         addListener(new InputListener(){
             public boolean keyDown(InputEvent event, int keycode){
                 if(keycode == Input.Keys.D){
-//                    MoveByAction right = new MoveByAction();
-//                    right.setAmount(128f, 0f);
-//                    right.setDuration(30f);
-//                    right.setTime(5f);
-                    System.out.println("D");
-                    positionChange(64f, 0f);
+                    MoveByAction right = new MoveByAction();
+                    right.setAmount(64f, 0f);
+                    right.setDuration(1f/2f);
+                    Player.this.addAction(right);
 
-//                    Player.this.addAction(right);
+//                    Debugging
+//                    String text = String.format("%s %f %f","D",Player.this.getX(),Player.this.getY());
+//                    System.out.println(text);
                 }
                 if(keycode ==Input.Keys.W){
-//                    MoveByAction up = new MoveByAction();
-//                    up.setAmount(0f,128f);
-//                    up.setDuration(5f);
-//                    up.setTime(5f);
-                    System.out.println("W %f %f",(float)player.getX(),player.getY());
+                    MoveByAction up = new MoveByAction();
+                    up.setAmount(0f,64f);
+                    up.setDuration(1f/2f);
+                    Player.this.addAction(up);
 
-                    positionChange(0f,64f);
-
-//                    Player.this.addAction(up);
+//                    Debugging
+//                    String text = String.format("%s %f %f","W",Player.this.getX(),Player.this.getY());
+//                    System.out.println(text);
                 }
                 if(keycode == Input.Keys.S){
-//                    MoveByAction down = new MoveByAction();
-//                    down.setAmount(0f,-128f);
-//                    down.setDuration(5f);
-//                    down.setTime(5f);
-                    System.out.println("S");
-                    positionChange(0f,-64f);
+                    MoveByAction down = new MoveByAction();
+                    down.setAmount(0f,-64f);
+                    down.setDuration(1f/2f);
+                    Player.this.addAction(down);
 
-//                    Player.this.addAction(down);
+//                    Debugging
+//                    String text = String.format("%s %f %f","S",Player.this.getX(),Player.this.getY());
+//                    System.out.println(text);
                 }
                 if(keycode == Input.Keys.A){
-//                    MoveByAction left = new MoveByAction();
-//                    left.setAmount(-128f, 0f);
-//                    left.setDuration(5f);
-//                    left.setTime(5f);
-                    System.out.println("A");
-                    positionChange(-64f, 0f);
+                    MoveByAction left = new MoveByAction();
+                    left.setAmount(-64f, 0f);
+                    left.setDuration(1f/2f);
+                    Player.this.addAction(left);
 
-//                    Player.this.addAction(left);
+//                    Debugging
+//                    String text = String.format("%s %f %f","A",Player.this.getX(),Player.this.getY());
+//                    System.out.println(text);
                 }
+
                 return true;
             }
         });
     }
-
-    protected void positionChange(float x, float y){
-        setPosition(getX()+x,getY()+y);
-        player.setPosition(getX()+x,getY()+y);
-//        super.positionChanged();
+    @Override
+    protected void positionChanged(){
+//        player.setPosition(getX(),getY());
+        super.positionChanged();
     }
 
     protected Sprite switchCharacter(PlayerEnum color) {
