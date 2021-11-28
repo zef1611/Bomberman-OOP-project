@@ -15,9 +15,9 @@ import java.util.Iterator;
 
 public class Player extends Image {
     TextureAtlas atlasBlack;
-    TextureRegion walk;
+    TextureRegion player;
     TextureRegion currentFrame;
-    Sprite player;
+//    Sprite player;
     Image img;
     Animation<TextureAtlas.AtlasRegion> ani;
     PlayerEnum color;
@@ -26,14 +26,14 @@ public class Player extends Image {
 
     public Player(PlayerEnum color) {
         atlasBlack = new TextureAtlas(Gdx.files.internal("sprite_sheet/character/bomberman_black/walk/bomberman_walk.txt"));
-        walk = atlasBlack.findRegion("bomberman_walk",1);
+        player = atlasBlack.findRegion("bomberman_walk",1);
 //        player = new Sprite(walk);
-        setBounds(player.getX(), player.getY(), player.getWidth(), player.getHeight());
+        setBounds(player.getRegionX(), player.getRegionY(), player.getRegionWidth(), player.getRegionHeight());
         setTouchable(Touchable.enabled);
         input();
 //        setPosition(96,64);
         Array<TextureAtlas.AtlasRegion> runningFrames = atlasBlack.findRegions("bomberman_walk");
-        ani = new Animation<>(1f/30f,runningFrames, Animation.PlayMode.NORMAL);
+        ani = new Animation<>(0.5f,runningFrames, Animation.PlayMode.NORMAL);
 
 
 
@@ -41,8 +41,8 @@ public class Player extends Image {
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-
-        player.draw(batch);
+        batch.draw(ani.getKeyFrame(Gdx.graphics.getDeltaTime()),96,64);
+//        player.draw(batch);
 //        batch.draw(ani.getKeyFrame(elapsedTime, false),0f,0f);
 //        batch.
     }
@@ -75,7 +75,7 @@ public class Player extends Image {
 
     public void position(int x, int y){
         setPosition(x, y);
-        player.setPosition(x, y);
+//        player.setPosition(x, y);
     }
 
     public void input(){
@@ -128,28 +128,30 @@ public class Player extends Image {
     }
     @Override
     protected void positionChanged(){
-        player.setPosition(getX(),getY());
+//        player.setPosition(getX(),getY());
+        player.setRegionX((int)getX());
+        player.setRegionY((int)getY());
         super.positionChanged();
     }
 
-    protected Sprite switchCharacter(PlayerEnum color) {
-        switch (color){
-            case BLACK:
-                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_black/still/bomberman_still_1.png")));
-                break;
-            case BLUE:
-                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_blue/still/bomberman_still_1.png")));
-                break;
-            case GREEN:
-                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_green/still/bomberman_still_1.png")));
-                break;
-            case RED:
-                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_red/still/bomberman_still_1.png")));
-                break;
-            case WHITE:
-                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_white/still/bomberman_still_1.png")));
-                break;
-        }
-        return player;
-    }
+//    protected Sprite switchCharacter(PlayerEnum color) {
+//        switch (color){
+//            case BLACK:
+//                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_black/still/bomberman_still_1.png")));
+//                break;
+//            case BLUE:
+//                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_blue/still/bomberman_still_1.png")));
+//                break;
+//            case GREEN:
+//                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_green/still/bomberman_still_1.png")));
+//                break;
+//            case RED:
+//                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_red/still/bomberman_still_1.png")));
+//                break;
+//            case WHITE:
+//                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_white/still/bomberman_still_1.png")));
+//                break;
+//        }
+//        return player;
+//    }
 }
