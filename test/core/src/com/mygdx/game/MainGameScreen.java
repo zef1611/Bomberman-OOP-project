@@ -36,12 +36,8 @@ public class MainGameScreen extends AbstractScreen {
                 (Gdx.graphics.getHeight()-statusBar.getHeight())/2f - background.getHeight()/2f );
         addActor(background);
 
-//        Temporary Texture Atlas
-        TextureAtlas atlasBlack = new TextureAtlas(Gdx.files.internal("sprite_sheet/character/bomberman_black/walk/bomberman_walk.txt"));
-        TextureRegion walk = atlasBlack.findRegion("bomberman_walk",1);
-//        Texture player = new Texture(new Sprite(walk));
-//        Create player
-        Player black = new Player(walk);
+//      Create player
+        Player black = new Player(PlayerEnum.BLACK);
         black.position(96,64);
 //        black.input();
 //        black.addAction(Actions.moveBy(64, 0));

@@ -8,7 +8,6 @@ import com.badlogic.gdx.scenes.scene2d.*;
 
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Array;
 
 import java.util.Iterator;
@@ -25,15 +24,16 @@ public class Player extends Image {
     float elapsedTime = 0;
 
 
-    public Player(TextureRegion texture) {
+    public Player(PlayerEnum color) {
+        atlasBlack = new TextureAtlas(Gdx.files.internal("sprite_sheet/character/bomberman_black/walk/bomberman_walk.txt"));
+        walk = atlasBlack.findRegion("bomberman_walk",1);
 //        player = new Sprite(walk);
-        super(texture);
-        setBounds(getX(), getY(), getWidth(), getHeight());
+        setBounds(player.getX(), player.getY(), player.getWidth(), player.getHeight());
         setTouchable(Touchable.enabled);
         input();
 //        setPosition(96,64);
-//        Array<TextureAtlas.AtlasRegion> runningFrames = atlasBlack.findRegions("bomberman_walk");
-//        ani = new Animation<>(1f/30f,runningFrames, Animation.PlayMode.NORMAL);
+        Array<TextureAtlas.AtlasRegion> runningFrames = atlasBlack.findRegions("bomberman_walk");
+        ani = new Animation<>(1f/30f,runningFrames, Animation.PlayMode.NORMAL);
 
 
 
@@ -41,12 +41,10 @@ public class Player extends Image {
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        ((TextureRegionDrawable)getDrawable()).draw(batch, getX(), getY(),
-                getOriginX(),getOriginY(),
-                getWidth(),getHeight(),
-                getScaleX(), getScaleY(),
-                getRotation());
 
+        player.draw(batch);
+//        batch.draw(ani.getKeyFrame(elapsedTime, false),0f,0f);
+//        batch.
     }
 
     @Override
@@ -77,7 +75,7 @@ public class Player extends Image {
 
     public void position(int x, int y){
         setPosition(x, y);
-//        player.setPosition(x, y);
+        player.setPosition(x, y);
     }
 
     public void input(){
@@ -130,7 +128,7 @@ public class Player extends Image {
     }
     @Override
     protected void positionChanged(){
-//        player.setPosition(getX(),getY());
+        player.setPosition(getX(),getY());
         super.positionChanged();
     }
 
