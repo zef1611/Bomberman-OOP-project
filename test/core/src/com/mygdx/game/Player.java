@@ -9,10 +9,12 @@ import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.Null;
 
 import java.util.Iterator;
 //Player state includes still, walking,
 //Player direction include left right up down
+//Combine to get the current sprite state
 
 public class Player extends Image {
     TextureAtlas atlasBlack;
@@ -23,25 +25,30 @@ public class Player extends Image {
     Image img;
     Animation<TextureAtlas.AtlasRegion> walkingAni;
     Animation<TextureAtlas.AtlasRegion> stillAni;
-    Animation currentAni;
+    Animation <TextureAtlas.AtlasRegion> currentAni;
     PlayerEnum color;
     float elapsedTime = 0;
 
+    public enum StateEnum{WALK, STILL, HWALK, HSTILL};
+    public enum DirectionEnum{LEFT, RIGHT, UP, DOWN, NONE};
+
+    DirectionEnum direction = DirectionEnum.NONE;
+    StateEnum state = StateEnum.STILL;
 
     public Player(PlayerEnum color) {
-        atlasWalkBlack = new TextureAtlas(Gdx.files.internal("sprite_sheet/character/bomberman_black/walk/bomberman_walk.txt"));
+        atlasBlack = new TextureAtlas(Gdx.files.internal("sprite_sheet/character/bomberman_black/bomber_black.txt"));
         walk = atlasBlack.findRegion("bomberman_walk",1);
         player = new Sprite(walk);
         setBounds(player.getRegionX(), player.getRegionY(), player.getRegionWidth(), player.getRegionHeight());
         setTouchable(Touchable.enabled);
         input();
 //        setPosition(96,64);
-        Array<TextureAtlas.AtlasRegion> walkingFrames = atlasWalkBlack.findRegions("bomberman_walk");
-        Array<TextureAtlas.AtlasRegion> stillFrames = atlasBlack.findRegions("bomberman_walk");
+        Array<TextureAtlas.AtlasRegion> walkingFrames = atlasBlack.findRegions("bomberman_walk");
+        Array<TextureAtlas.AtlasRegion> stillFrames = atlasBlack.findRegions("bomberman_still");
 
         walkingAni = new Animation<>(1f/15f,walkingFrames);
-
-        currentAni = walkingAni
+        stillAni = new Animation<>(1f/15f,stillFrames);
+        currentAni = walkingAni;
 //        player = new TextureAtlas.AtlasSprite(ani.getKeyFrame(2f/2f));
     }
 
@@ -49,54 +56,22 @@ public class Player extends Image {
     public void draw(Batch batch, float parentAlpha) {
 //        player.draw(batch);
         elapsedTime += Gdx.graphics.getDeltaTime();
-        batch.draw(walkingAni.getKeyFrames()[0],getX(), getY());
-        if(isRight){
+        batch.draw(currentAni.getKeyFrames()[0], getX(), getY());
+        if (direction == DirectionEnum.RIGHT) {
             float startTime = elapsedTime;
             System.out.println(startTime);
-            System.out.println(elapsedTime-startTime);
-            batch.draw(walkingAni.getKeyFrames()[2],getX(), getY(), -getWidth(), getHeight());
-            batch.draw(walkingAni.getKeyFrames()[4],getX(), getY(), -getWidth(), getHeight());
+            System.out.println(elapsedTime - startTime);
+            batch.draw(currentAni.getKeyFrames()[2], getX(), getY(), -getWidth(), getHeight());
+            batch.draw(currentAni.getKeyFrames()[4], getX(), getY(), -getWidth(), getHeight());
 
-            isRight = false;
-//            while(elapsedTime-startTime < 5){
-//                batch.draw(ani.getKeyFrame(elapsedTime-startTime,false),getX(),getY());
-//            }
+            direction = DirectionEnum.NONE;
         }
-//        if(isRight){
-//            for (int i = 8; i < 12; i++){
-//                batch.draw(ani.getKeyFrames()[i],getX(),getY());
-//            }
-//            batch.draw(ani.getKeyFrames()[7],getX(),getY());
-//        }
-
-//        batch.draw(ani.getKeyFrame(elapsedTime, false),0f,0f);
-//        batch.
     }
 
     @Override
     public void act(float delta) {
         super.act(delta);
         float STEP = 16f;
-
-//        System.out.println(Gdx.graphics.getFramesPerSecond());
-
-//        if(Gdx.input.isKeyPressed(Input.Keys.W));
-//            this.setPosition(this.getX(), this.getY() + STEP);
-//            player.setPosition(player.getX(), player.getY()+STEP);
-////            System.out.println(this.getX());
-//
-//        if(Gdx.input.isKeyPressed(Input.Keys.S))
-//            this.setPosition(this.getX(), this.getY() - STEP);
-//            player.setPosition(player.getX(), player.getY() - STEP);
-//
-//        if(Gdx.input.isKeyPressed(Input.Keys.A))
-//            this.setPosition(this.getX() - STEP, this.getY());
-//            player.setPosition(player.getX() - STEP, player.getY());
-//
-//        if(Gdx.input.isKeyPressed(Input.Keys.D))
-//            this.setPosition(this.getX() + STEP, this.getY());
-//            player.setPosition(player.getX(), player.getY()+STEP);
-
     }
 
     public void position(int x, int y){
@@ -111,26 +86,10 @@ public class Player extends Image {
                     MoveByAction right = new MoveByAction();
                     right.setAmount(64f, 0f);
                     right.setDuration(1f/2f);
-//                    right.setTime(5f);
+
                     Player.this.addAction(right);
-                    isRight = true;
-//                    float startTime = Gdx.graphics.getDeltaTime();
-//                    float tick = 0;
-//                    int counter = 7;
+                    direction = DirectionEnum.RIGHT;
 
-//                    while(tick < 1f/2f && counter < 12){
-//                        player = new TextureAtlas.AtlasSprite(ani.getKeyFrames()[counter]);
-//                        tick = Gdx.graphics.getDeltaTime()-startTime;
-//                        counter++;
-//                    }
-//                    player = new TextureAtlas.AtlasSprite(ani.getKeyFrames()[7]);
-
-//                    for (int i = 7; i <= 10; i++){
-//                        player = new TextureAtlas.AtlasSprite(ani.getKeyFrames()[i+1]);
-//                    }
-//                    Debugging
-//                    String text = String.format("%s %f %f","D",Player.this.getX(),Player.this.getY());
-//                    System.out.println(text);
                 }
                 if(keycode ==Input.Keys.W){
                     MoveByAction up = new MoveByAction();
