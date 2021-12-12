@@ -24,7 +24,7 @@ public class Player extends Image {
     public enum StateEnum{WALK, STILL, HWALK, HSTILL};
     public enum DirectionEnum{LEFT, RIGHT, UP, DOWN, NONE};
     public enum ColorEnum {BLACK, BLUE, GREEN, RED, WHITE};
-
+    int stepCount; // For deciding the animation in update method
     DirectionEnum direction = DirectionEnum.NONE;
     StateEnum state = StateEnum.STILL;
     ColorEnum color;
@@ -87,19 +87,31 @@ public class Player extends Image {
             switch (direction){
                 case RIGHT:
                 case LEFT:
-                    Array<TextureAtlas.AtlasRegion> LeftFrames = atlas.findRegions(
-                            "bomberman_walk_right");
-                    currentAni = new Animation<>(1f/16f,LeftFrames);
+                    if(stepCount%2==0){
+                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+                                "bomberman_walk_right_e"));
+                    } else {
+                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+                                "bomberman_walk_right_o"));
+                    }
                     break;
                 case UP:
-                    Array<TextureAtlas.AtlasRegion> UpFrames = atlas.findRegions(
-                            "bomberman_walk_up");
-                    currentAni = new Animation<>(1f/16f,UpFrames);
+                    if(stepCount%2==0){
+                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+                                "bomberman_walk_up_e"));
+                    } else {
+                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+                                "bomberman_walk_up_o"));
+                    }
                     break;
                 case DOWN:
-                    Array<TextureAtlas.AtlasRegion> DownFrames = atlas.findRegions(
-                            "bomberman_walk_down");
-                    currentAni = new Animation<>(1f/16f,DownFrames);
+                    if(stepCount%2==0){
+                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+                                "bomberman_walk_down_e"));
+                    } else {
+                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+                                "bomberman_walk_down_o"));
+                    }
                     break;
                 case NONE:
                     break;
@@ -109,19 +121,31 @@ public class Player extends Image {
             switch (direction){
                 case RIGHT:
                 case LEFT:
-                    Array<TextureAtlas.AtlasRegion> LeftFrames = atlas.findRegions(
-                            "bomberman_hwalk_right");
-                    currentAni = new Animation<>(1f/16f,LeftFrames);
+                    if(stepCount%2==0){
+                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+                                "bomberman_hwalk_right_e"));
+                    } else {
+                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+                                "bomberman_hwalk_right_o"));
+                    }
                     break;
                 case UP:
-                    Array<TextureAtlas.AtlasRegion> UpFrames = atlas.findRegions(
-                            "bomberman_hwalk_up");
-                    currentAni = new Animation<>(1f/16f,UpFrames);
+                    if(stepCount%2==0){
+                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+                                "bomberman_hwalk_up_e"));
+                    } else {
+                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+                                "bomberman_hwalk_up_o"));
+                    }
                     break;
                 case DOWN:
-                    Array<TextureAtlas.AtlasRegion> DownFrames = atlas.findRegions(
-                            "bomberman_hwalk_down");
-                    currentAni = new Animation<>(1f/16f,DownFrames);
+                    if(stepCount%2==0){
+                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+                                "bomberman_hwalk_down_e"));
+                    } else {
+                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+                                "bomberman_hwalk_down_o"));
+                    }
                     break;
                 case NONE:
                     break;
@@ -139,7 +163,13 @@ public class Player extends Image {
                     right.setAmount(64f, 0f);
                     right.setDuration(1f/2f);
                     Player.this.addAction(right);
+
+                    // For animations
+                    if(direction != DirectionEnum.RIGHT){
+                        stepCount = 0;
+                    }
                     direction = DirectionEnum.RIGHT;
+                    stepCount++;
                     state = StateEnum.WALK;
                     updateAni();
                 }
@@ -148,7 +178,13 @@ public class Player extends Image {
                     up.setAmount(0f,64f);
                     up.setDuration(1f/2f);
                     Player.this.addAction(up);
+
+                    // For animations
+                    if(direction != DirectionEnum.UP) {
+                        stepCount = 0;
+                    }
                     direction = DirectionEnum.UP;
+                    stepCount++;
                     state = StateEnum.WALK;
                     updateAni();
 
@@ -161,7 +197,13 @@ public class Player extends Image {
                     down.setAmount(0f,-64f);
                     down.setDuration(1f/2f);
                     Player.this.addAction(down);
+
+                    // For animations
+                    if(direction != DirectionEnum.DOWN) {
+                        stepCount = 0;
+                    }
                     direction = DirectionEnum.DOWN;
+                    stepCount++;
                     state = StateEnum.WALK;
                     updateAni();
 
@@ -174,7 +216,13 @@ public class Player extends Image {
                     left.setAmount(-64f, 0f);
                     left.setDuration(1f/2f);
                     Player.this.addAction(left);
+
+                    // For animations
+                    if(direction != DirectionEnum.LEFT) {
+                        stepCount = 0;
+                    }
                     direction = DirectionEnum.LEFT;
+                    stepCount++;
                     state = StateEnum.WALK;
                     updateAni();
 
