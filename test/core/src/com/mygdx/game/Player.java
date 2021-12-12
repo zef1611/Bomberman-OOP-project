@@ -11,7 +11,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
 
 import java.util.Iterator;
-
+//Player state includes still, walking,
+//Player direction include left right up down
 
 public class Player extends Image {
     TextureAtlas atlasBlack;
@@ -20,35 +21,42 @@ public class Player extends Image {
     Sprite player;
     Boolean isLeft= false, isRight=false, isUp=false, isDown = false;
     Image img;
-    Animation<TextureAtlas.AtlasRegion> ani;
+    Animation<TextureAtlas.AtlasRegion> walkingAni;
+    Animation<TextureAtlas.AtlasRegion> stillAni;
+    Animation currentAni;
     PlayerEnum color;
     float elapsedTime = 0;
 
 
     public Player(PlayerEnum color) {
-        atlasBlack = new TextureAtlas(Gdx.files.internal("sprite_sheet/character/bomberman_black/walk/bomberman_walk.txt"));
+        atlasWalkBlack = new TextureAtlas(Gdx.files.internal("sprite_sheet/character/bomberman_black/walk/bomberman_walk.txt"));
         walk = atlasBlack.findRegion("bomberman_walk",1);
         player = new Sprite(walk);
         setBounds(player.getRegionX(), player.getRegionY(), player.getRegionWidth(), player.getRegionHeight());
         setTouchable(Touchable.enabled);
         input();
 //        setPosition(96,64);
-        Array<TextureAtlas.AtlasRegion> runningFrames = atlasBlack.findRegions("bomberman_walk");
-        ani = new Animation<>(1f/15f,runningFrames);
+        Array<TextureAtlas.AtlasRegion> walkingFrames = atlasWalkBlack.findRegions("bomberman_walk");
+        Array<TextureAtlas.AtlasRegion> stillFrames = atlasBlack.findRegions("bomberman_walk");
 
+        walkingAni = new Animation<>(1f/15f,walkingFrames);
+
+        currentAni = walkingAni
 //        player = new TextureAtlas.AtlasSprite(ani.getKeyFrame(2f/2f));
-
     }
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
 //        player.draw(batch);
         elapsedTime += Gdx.graphics.getDeltaTime();
-        batch.draw(ani.getKeyFrames()[0],getX(), getY());
+        batch.draw(walkingAni.getKeyFrames()[0],getX(), getY());
         if(isRight){
-            float startTime = Gdx.graphics.getDeltaTime();
+            float startTime = elapsedTime;
             System.out.println(startTime);
             System.out.println(elapsedTime-startTime);
+            batch.draw(walkingAni.getKeyFrames()[2],getX(), getY(), -getWidth(), getHeight());
+            batch.draw(walkingAni.getKeyFrames()[4],getX(), getY(), -getWidth(), getHeight());
+
             isRight = false;
 //            while(elapsedTime-startTime < 5){
 //                batch.draw(ani.getKeyFrame(elapsedTime-startTime,false),getX(),getY());
