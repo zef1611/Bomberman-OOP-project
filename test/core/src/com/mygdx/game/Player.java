@@ -15,9 +15,10 @@ import java.util.Iterator;
 
 public class Player extends Image {
     TextureAtlas atlasBlack;
-    TextureRegion player;
+    TextureRegion walk;
     TextureRegion currentFrame;
-//    Sprite player;
+    Sprite player;
+    Boolean isLeft= false, isRight=false, isUp=false, isDown = false;
     Image img;
     Animation<TextureAtlas.AtlasRegion> ani;
     PlayerEnum color;
@@ -26,23 +27,40 @@ public class Player extends Image {
 
     public Player(PlayerEnum color) {
         atlasBlack = new TextureAtlas(Gdx.files.internal("sprite_sheet/character/bomberman_black/walk/bomberman_walk.txt"));
-        player = atlasBlack.findRegion("bomberman_walk",1);
-//        player = new Sprite(walk);
+        walk = atlasBlack.findRegion("bomberman_walk",1);
+        player = new Sprite(walk);
         setBounds(player.getRegionX(), player.getRegionY(), player.getRegionWidth(), player.getRegionHeight());
         setTouchable(Touchable.enabled);
         input();
 //        setPosition(96,64);
         Array<TextureAtlas.AtlasRegion> runningFrames = atlasBlack.findRegions("bomberman_walk");
-        ani = new Animation<>(0.5f,runningFrames, Animation.PlayMode.NORMAL);
+        ani = new Animation<>(1f/15f,runningFrames);
 
-
+//        player = new TextureAtlas.AtlasSprite(ani.getKeyFrame(2f/2f));
 
     }
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        batch.draw(ani.getKeyFrame(Gdx.graphics.getDeltaTime()),96,64);
 //        player.draw(batch);
+        elapsedTime += Gdx.graphics.getDeltaTime();
+        batch.draw(ani.getKeyFrames()[0],getX(), getY());
+        if(isRight){
+            float startTime = Gdx.graphics.getDeltaTime();
+            System.out.println(startTime);
+            System.out.println(elapsedTime-startTime);
+            isRight = false;
+//            while(elapsedTime-startTime < 5){
+//                batch.draw(ani.getKeyFrame(elapsedTime-startTime,false),getX(),getY());
+//            }
+        }
+//        if(isRight){
+//            for (int i = 8; i < 12; i++){
+//                batch.draw(ani.getKeyFrames()[i],getX(),getY());
+//            }
+//            batch.draw(ani.getKeyFrames()[7],getX(),getY());
+//        }
+
 //        batch.draw(ani.getKeyFrame(elapsedTime, false),0f,0f);
 //        batch.
     }
@@ -75,7 +93,7 @@ public class Player extends Image {
 
     public void position(int x, int y){
         setPosition(x, y);
-//        player.setPosition(x, y);
+        player.setPosition(x, y);
     }
 
     public void input(){
@@ -85,8 +103,23 @@ public class Player extends Image {
                     MoveByAction right = new MoveByAction();
                     right.setAmount(64f, 0f);
                     right.setDuration(1f/2f);
+//                    right.setTime(5f);
                     Player.this.addAction(right);
+                    isRight = true;
+//                    float startTime = Gdx.graphics.getDeltaTime();
+//                    float tick = 0;
+//                    int counter = 7;
 
+//                    while(tick < 1f/2f && counter < 12){
+//                        player = new TextureAtlas.AtlasSprite(ani.getKeyFrames()[counter]);
+//                        tick = Gdx.graphics.getDeltaTime()-startTime;
+//                        counter++;
+//                    }
+//                    player = new TextureAtlas.AtlasSprite(ani.getKeyFrames()[7]);
+
+//                    for (int i = 7; i <= 10; i++){
+//                        player = new TextureAtlas.AtlasSprite(ani.getKeyFrames()[i+1]);
+//                    }
 //                    Debugging
 //                    String text = String.format("%s %f %f","D",Player.this.getX(),Player.this.getY());
 //                    System.out.println(text);
@@ -95,8 +128,9 @@ public class Player extends Image {
                     MoveByAction up = new MoveByAction();
                     up.setAmount(0f,64f);
                     up.setDuration(1f/2f);
+//                    up.setTime(5f);
                     Player.this.addAction(up);
-
+                    isUp = true;
 //                    Debugging
 //                    String text = String.format("%s %f %f","W",Player.this.getX(),Player.this.getY());
 //                    System.out.println(text);
@@ -105,8 +139,9 @@ public class Player extends Image {
                     MoveByAction down = new MoveByAction();
                     down.setAmount(0f,-64f);
                     down.setDuration(1f/2f);
+//                    down.setTime(5f);
                     Player.this.addAction(down);
-
+                    isDown = true;
 //                    Debugging
 //                    String text = String.format("%s %f %f","S",Player.this.getX(),Player.this.getY());
 //                    System.out.println(text);
@@ -115,8 +150,9 @@ public class Player extends Image {
                     MoveByAction left = new MoveByAction();
                     left.setAmount(-64f, 0f);
                     left.setDuration(1f/2f);
+//                    left.setTime(5f);
                     Player.this.addAction(left);
-
+                    isLeft = true;
 //                    Debugging
 //                    String text = String.format("%s %f %f","A",Player.this.getX(),Player.this.getY());
 //                    System.out.println(text);
@@ -128,9 +164,9 @@ public class Player extends Image {
     }
     @Override
     protected void positionChanged(){
-//        player.setPosition(getX(),getY());
-        player.setRegionX((int)getX());
-        player.setRegionY((int)getY());
+        player.setPosition(getX(),getY());
+//        player.setRegionX((int)getX());
+//        player.setRegionY((int)getY());
         super.positionChanged();
     }
 
