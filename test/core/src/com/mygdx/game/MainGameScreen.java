@@ -1,18 +1,8 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.*;
-import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.actions.Actions;
-import com.badlogic.gdx.utils.ScreenUtils;
-import com.mygdx.game.Bomberman;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-
-import java.awt.*;
 
 public class MainGameScreen extends AbstractScreen {
 
@@ -37,11 +27,9 @@ public class MainGameScreen extends AbstractScreen {
         addActor(background);
 
 //      Create player
-        Player black = new Player(PlayerEnum.BLACK);
+        Player black = new Player(ColorEnum.BLUE);
         black.position(96,64);
-//        black.input();
-//        black.addAction(Actions.moveBy(64, 0));
-//        black.addAction(Actions.moveBy(64, 0));
+
 
         System.out.println(String.format("%f %f",black.getX(),black.getY()));
         setKeyboardFocus(black);

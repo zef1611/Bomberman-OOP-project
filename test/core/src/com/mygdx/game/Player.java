@@ -2,16 +2,12 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.scenes.scene2d.*;
 
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
-import com.badlogic.gdx.utils.Null;
-
-import java.util.Iterator;
 //Player state includes still, walking,
 //Player direction include left right up down
 //Combine to get the current sprite state
@@ -22,6 +18,7 @@ public class Player extends Image {
     Sprite player;
     Animation <TextureAtlas.AtlasRegion> currentAni;
     float elapsedTime = 0;
+    MoveByAction currentAction = new MoveByAction();
 
     public enum StateEnum{
         WALK("walk"), STILL("still"), HWALK("hwalk"), HSTILL("hstill");
@@ -46,15 +43,14 @@ public class Player extends Image {
         }
     };
 
-    public enum ColorEnum {BLACK, BLUE, GREEN, RED, WHITE};
     int stepCount; // For deciding the animation in update method
     DirectionEnum direction = DirectionEnum.NONE;
     StateEnum state = StateEnum.STILL;
     ColorEnum color;
 
-    public Player(PlayerEnum color) {
+    public Player(com.mygdx.game.ColorEnum color) {
 //        Import the texture
-        atlas = new TextureAtlas(Gdx.files.internal("sprite_sheet/character/bomberman_black/bomber_black.txt"));
+        atlas = switchCharacter(color);
 
 //        Allow animation to be updated
         playerAni = new PlayerAnimation(this, atlas);
@@ -62,12 +58,15 @@ public class Player extends Image {
 //        Set the player avatar and bounds
         Array<TextureAtlas.AtlasRegion> stillFrames = atlas.findRegions("bomberman_still");
         currentAni = new Animation<>(1f/15f,stillFrames);
-        player = new Sprite(new TextureAtlas.AtlasSprite(currentAni.getKeyFrames()[1]));
+        player = new Sprite(new TextureAtlas.AtlasSprite(currentAni.getKeyFrames()[0]));
         setBounds(player.getRegionX(), player.getRegionY(), player.getRegionWidth(), player.getRegionHeight());
         setTouchable(Touchable.enabled);
 
 //        For Character to move
         input();
+//        Work around for character to move 1 step at a time
+        currentAction.setDuration(0f);
+        Player.this.addAction(currentAction);
     }
 
 //    This is to render animations
@@ -75,7 +74,6 @@ public class Player extends Image {
     public void draw(Batch batch, float parentAlpha) {
         boolean flip = (direction == DirectionEnum.LEFT);
         elapsedTime += Gdx.graphics.getDeltaTime();
-//        System.out.println(elapsedTime);
         if(flip){
             batch.draw(currentAni.getKeyFrame(elapsedTime), getX()+getWidth(), getY(),-getWidth(),getHeight());
         }
@@ -87,7 +85,12 @@ public class Player extends Image {
     @Override
     public void act(float delta) {
         super.act(delta);
-        float STEP = 16f;
+    }
+
+    @Override
+    protected void positionChanged(){
+        player.setPosition(getX(),getY());
+        super.positionChanged();
     }
 
     public void position(int x, int y) {
@@ -99,10 +102,12 @@ public class Player extends Image {
     public void input(){
         addListener(new InputListener(){
             public boolean keyDown(InputEvent event, int keycode){
-                if(keycode == Input.Keys.D){
+                if(keycode == Input.Keys.D && currentAction.isComplete()){
                     MoveByAction right = new MoveByAction();
                     right.setAmount(64f, 0f);
                     right.setDuration(1f/2f);
+                    currentAction = right;
+//                    System.out.println(right.isComplete());
                     Player.this.addAction(right);
 
                     // For animations
@@ -114,10 +119,11 @@ public class Player extends Image {
                     state = StateEnum.WALK;
                     playerAni.updateAni();
                 }
-                if(keycode ==Input.Keys.W){
+                if(keycode ==Input.Keys.W && currentAction.isComplete()){
                     MoveByAction up = new MoveByAction();
                     up.setAmount(0f,64f);
                     up.setDuration(1f/2f);
+                    currentAction = up;
                     Player.this.addAction(up);
 
                     // For animations
@@ -133,10 +139,11 @@ public class Player extends Image {
 //                    String text = String.format("%s %f %f","W",Player.this.getX(),Player.this.getY());
 //                    System.out.println(text);
                 }
-                if(keycode == Input.Keys.S){
+                if(keycode == Input.Keys.S && currentAction.isComplete()){
                     MoveByAction down = new MoveByAction();
                     down.setAmount(0f,-64f);
                     down.setDuration(1f/2f);
+                    currentAction = down;
                     Player.this.addAction(down);
 
                     // For animations
@@ -152,10 +159,11 @@ public class Player extends Image {
 //                    String text = String.format("%s %f %f","S",Player.this.getX(),Player.this.getY());
 //                    System.out.println(text);
                 }
-                if(keycode == Input.Keys.A){
+                if(keycode == Input.Keys.A && currentAction.isComplete()){
                     MoveByAction left = new MoveByAction();
                     left.setAmount(-64f, 0f);
                     left.setDuration(1f/2f);
+                    currentAction = left;
                     Player.this.addAction(left);
 
                     // For animations
@@ -177,12 +185,11 @@ public class Player extends Image {
         });
     }
 
-    @Override
-    protected void positionChanged(){
-        player.setPosition(getX(),getY());
-        super.positionChanged();
+    protected TextureAtlas switchCharacter(com.mygdx.game.ColorEnum color) {
+        String colorName = color.toString();
+        String fileName = "sprite_sheet/character/bomberman_" + colorName + "/bomber_" + colorName + ".txt";
+        return new TextureAtlas(Gdx.files.internal(fileName));
     }
-
 //---------------------------GETTER/SETTERS------------------------
     public StateEnum getState(){
         return state;
@@ -219,24 +226,5 @@ public class Player extends Image {
         this.elapsedTime = elapsedTime;
     }
 
-//    protected Sprite switchCharacter(PlayerEnum color) {
-//        switch (color){
-//            case BLACK:
-//                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_black/still/bomberman_still_1.png")));
-//                break;
-//            case BLUE:
-//                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_blue/still/bomberman_still_1.png")));
-//                break;
-//            case GREEN:
-//                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_green/still/bomberman_still_1.png")));
-//                break;
-//            case RED:
-//                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_red/still/bomberman_still_1.png")));
-//                break;
-//            case WHITE:
-//                player = new Sprite(new Texture(Gdx.files.internal("sprite/character/bomberman_white/still/bomberman_still_1.png")));
-//                break;
-//        }
-//        return player;
-//    }
+
 }
