@@ -5,32 +5,28 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.*;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.ScreenUtils;
 
-public class Bomberman extends ApplicationAdapter {
-	SpriteBatch batch;
-	Texture img;
-	private Texture background;
-	
+public class Bomberman extends Game {
+	public SpriteBatch batch;
+
+//	The first thing the game will do when activated
 	@Override
 	public void create () {
-		batch = new SpriteBatch();
-		background = new Texture(Gdx.files.internal("stage/stage_01/stage_01.png"));
-		System.out.println("test");
+		ScreenManager.getInstance().initialize(this);
+		ScreenManager.getInstance().showScreen(ScreenEnum.STARTING_SCREEN);
 	}
 
+//	Call when the game should render itself
 	@Override
 	public void render () {
-		ScreenUtils.clear(1, 0, 0, 1);
-		batch.begin();
-		batch.draw(background, 0, 0);
-		batch.end();
+		super.render();
 	}
 	
 	@Override
 	public void dispose () {
-		batch.dispose();
-		background.dispose();
+
 	}
 }

@@ -1,0 +1,61 @@
+bomberman_stagger.png
+size: 704, 100
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bomberman_stagger
+  rotate: false
+  xy: 0, 0
+  size: 88, 100
+  orig: 88, 100
+  offset: 0, 0
+  index: 1
+bomberman_stagger
+  rotate: false
+  xy: 88, 0
+  size: 88, 100
+  orig: 88, 100
+  offset: 0, 0
+  index: 2
+bomberman_stagger
+  rotate: false
+  xy: 176, 0
+  size: 88, 100
+  orig: 88, 100
+  offset: 0, 0
+  index: 3
+bomberman_stagger
+  rotate: false
+  xy: 264, 0
+  size: 88, 100
+  orig: 88, 100
+  offset: 0, 0
+  index: 4
+bomberman_stagger
+  rotate: false
+  xy: 352, 0
+  size: 88, 100
+  orig: 88, 100
+  offset: 0, 0
+  index: 5
+bomberman_stagger
+  rotate: false
+  xy: 440, 0
+  size: 88, 100
+  orig: 88, 100
+  offset: 0, 0
+  index: 6
+bomberman_stagger
+  rotate: false
+  xy: 528, 0
+  size: 88, 100
+  orig: 88, 100
+  offset: 0, 0
+  index: 7
+bomberman_stagger
+  rotate: false
+  xy: 616, 0
+  size: 88, 100
+  orig: 88, 100
+  offset: 0, 0
+  index: 8
