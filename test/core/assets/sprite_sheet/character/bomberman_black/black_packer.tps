@@ -2,9 +2,9 @@
 <data version="1.0">
     <struct type="Settings">
         <key>fileFormatVersion</key>
-        <int>4</int>
+        <int>5</int>
         <key>texturePackerVersion</key>
-        <string>5.5.0</string>
+        <string>6.0.0</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -37,16 +37,20 @@
         <filename></filename>
         <key>flipPVR</key>
         <false/>
-        <key>pvrCompressionQuality</key>
-        <enum type="SettingsBase::PvrCompressionQuality">PVR_QUALITY_NORMAL</enum>
+        <key>pvrQualityLevel</key>
+        <uint>3</uint>
+        <key>astcQualityLevel</key>
+        <uint>2</uint>
+        <key>basisUniversalQualityLevel</key>
+        <uint>2</uint>
         <key>atfCompressData</key>
         <false/>
         <key>mipMapMinSize</key>
         <uint>32768</uint>
-        <key>etc1CompressionQuality</key>
-        <enum type="SettingsBase::Etc1CompressionQuality">ETC1_QUALITY_LOW_PERCEPTUAL</enum>
-        <key>etc2CompressionQuality</key>
-        <enum type="SettingsBase::Etc2CompressionQuality">ETC2_QUALITY_LOW_PERCEPTUAL</enum>
+        <key>etc1QualityLevel</key>
+        <uint>40</uint>
+        <key>etc2QualityLevel</key>
+        <uint>40</uint>
         <key>dxtCompressionMode</key>
         <enum type="SettingsBase::DxtCompressionMode">DXT_PERCEPTUAL</enum>
         <key>jxrColorFormat</key>
@@ -187,7 +191,7 @@
             <key type="filename">../../../sprite/character/bomberman_black/defeat/bomberman_defeat_3.PNG</key>
             <key type="filename">../../../sprite/character/bomberman_black/defeat/bomberman_defeat_5.PNG</key>
             <key type="filename">../../../sprite/character/bomberman_black/defeat/bomberman_defeat_7.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_5.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_right_2.PNG</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -289,22 +293,22 @@
             <key type="filename">../../../sprite/character/bomberman_black/holding_walk/hwalk_up/bomberman_hwalk_up_o_2.PNG</key>
             <key type="filename">../../../sprite/character/bomberman_black/holding_walk/hwalk_up/bomberman_hwalk_up_o_3.PNG</key>
             <key type="filename">../../../sprite/character/bomberman_black/holding_walk/hwalk_up/bomberman_hwalk_up_o_4.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/lift/bomberman_lift_1.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/lift/bomberman_lift_2.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/lift/bomberman_lift_3.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/lift/bomberman_lift_4.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/lift/bomberman_lift_5.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/lift/bomberman_lift_6.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/lift/bomberman_lift_down_1.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/lift/bomberman_lift_down_2.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/lift/bomberman_lift_right_1.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/lift/bomberman_lift_right_2.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/lift/bomberman_lift_up_1.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/lift/bomberman_lift_up_2.PNG</key>
             <key type="filename">../../../sprite/character/bomberman_black/still/bomberman_still_1.PNG</key>
             <key type="filename">../../../sprite/character/bomberman_black/still/bomberman_still_2.PNG</key>
             <key type="filename">../../../sprite/character/bomberman_black/still/bomberman_still_3.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_1.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_2.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_3.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_4.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_7.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_8.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_9.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_down_1.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_down_2.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_down_3.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_right_1.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_up_1.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_up_2.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_up_3.PNG</key>
             <key type="filename">../../../sprite/character/bomberman_black/walk/walk_down/bomberman_walk_down_e_1.PNG</key>
             <key type="filename">../../../sprite/character/bomberman_black/walk/walk_down/bomberman_walk_down_e_2.PNG</key>
             <key type="filename">../../../sprite/character/bomberman_black/walk/walk_down/bomberman_walk_down_e_3.PNG</key>
@@ -343,14 +347,14 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_1.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_2.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_3.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_4.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_5.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_6.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_7.PNG</key>
-            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_8.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_down_1.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_down_2.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_left_1.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_left_2.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_right_1.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_right_2.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_up_1.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/stagger/bomberman_stagger_up_2.PNG</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -389,7 +393,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_6.PNG</key>
+            <key type="filename">../../../sprite/character/bomberman_black/throw/bomberman_throw_right_3.PNG</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>

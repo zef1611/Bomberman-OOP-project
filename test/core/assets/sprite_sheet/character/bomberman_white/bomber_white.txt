@@ -262,104 +262,104 @@ bomberman_hwalk_up_o
   orig: 64, 96
   offset: 0, 0
   index: 5
-bomberman_lift
+bomberman_lift_down
   rotate: false
   xy: 192, 480
   size: 64, 96
   orig: 64, 96
   offset: 0, 0
   index: 1
-bomberman_lift
+bomberman_lift_down
   rotate: false
   xy: 256, 480
   size: 64, 96
   orig: 64, 96
   offset: 0, 0
   index: 2
-bomberman_lift
+bomberman_lift_right
   rotate: false
   xy: 320, 480
   size: 64, 96
   orig: 64, 96
   offset: 0, 0
-  index: 3
-bomberman_lift
+  index: 1
+bomberman_lift_right
   rotate: false
   xy: 384, 480
   size: 64, 96
   orig: 64, 96
   offset: 0, 0
-  index: 4
-bomberman_lift
+  index: 2
+bomberman_lift_up
   rotate: false
   xy: 448, 480
   size: 64, 96
   orig: 64, 96
   offset: 0, 0
-  index: 5
-bomberman_lift
+  index: 1
+bomberman_lift_up
   rotate: false
   xy: 0, 576
   size: 64, 96
   orig: 64, 96
   offset: 0, 0
-  index: 6
-bomberman_stagger
+  index: 2
+bomberman_stagger_down
   rotate: false
   xy: 128, 1056
   size: 88, 100
   orig: 88, 100
   offset: 0, 0
   index: 1
-bomberman_stagger
+bomberman_stagger_down
   rotate: false
   xy: 216, 1056
   size: 88, 100
   orig: 88, 100
   offset: 0, 0
   index: 2
-bomberman_stagger
+bomberman_stagger_left
   rotate: false
   xy: 304, 1056
   size: 88, 100
   orig: 88, 100
   offset: 0, 0
-  index: 3
-bomberman_stagger
+  index: 1
+bomberman_stagger_left
   rotate: false
   xy: 392, 1056
   size: 88, 100
   orig: 88, 100
   offset: 0, 0
-  index: 4
-bomberman_stagger
+  index: 2
+bomberman_stagger_right
   rotate: false
   xy: 0, 1156
   size: 88, 100
   orig: 88, 100
   offset: 0, 0
-  index: 5
-bomberman_stagger
+  index: 1
+bomberman_stagger_right
   rotate: false
   xy: 88, 1156
   size: 88, 100
   orig: 88, 100
   offset: 0, 0
-  index: 6
-bomberman_stagger
+  index: 2
+bomberman_stagger_up
   rotate: false
   xy: 176, 1156
   size: 88, 100
   orig: 88, 100
   offset: 0, 0
-  index: 7
-bomberman_stagger
+  index: 1
+bomberman_stagger_up
   rotate: false
   xy: 264, 1156
   size: 88, 100
   orig: 88, 100
   offset: 0, 0
-  index: 8
+  index: 2
 bomberman_still
   rotate: false
   xy: 64, 576
@@ -451,69 +451,69 @@ bomberman_stun
   orig: 64, 100
   offset: 0, 0
   index: 10
-bomberman_throw
+bomberman_throw_down
   rotate: false
   xy: 256, 576
   size: 64, 96
   orig: 64, 96
   offset: 0, 0
   index: 1
-bomberman_throw
+bomberman_throw_down
   rotate: false
   xy: 320, 576
   size: 64, 96
   orig: 64, 96
   offset: 0, 0
   index: 2
-bomberman_throw
+bomberman_throw_down
   rotate: false
   xy: 384, 576
   size: 64, 96
   orig: 64, 96
   offset: 0, 0
   index: 3
-bomberman_throw
+bomberman_throw_right
   rotate: false
   xy: 448, 576
   size: 64, 96
   orig: 64, 96
   offset: 0, 0
-  index: 4
-bomberman_throw
+  index: 1
+bomberman_throw_right
   rotate: false
   xy: 0, 672
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
-  index: 5
-bomberman_throw
+  index: 2
+bomberman_throw_right
   rotate: false
   xy: 96, 672
   size: 76, 96
   orig: 76, 96
   offset: 0, 0
-  index: 6
-bomberman_throw
+  index: 3
+bomberman_throw_up
   rotate: false
   xy: 172, 672
   size: 64, 96
   orig: 64, 96
   offset: 0, 0
-  index: 7
-bomberman_throw
+  index: 1
+bomberman_throw_up
   rotate: false
   xy: 236, 672
   size: 64, 96
   orig: 64, 96
   offset: 0, 0
-  index: 8
-bomberman_throw
+  index: 2
+bomberman_throw_up
   rotate: false
   xy: 300, 672
   size: 64, 96
   orig: 64, 96
   offset: 0, 0
-  index: 9
+  index: 3
 bomberman_time_up
   rotate: false
   xy: 364, 672

@@ -17,6 +17,7 @@ import java.util.Iterator;
 //Combine to get the current sprite state
 
 public class Player extends Image {
+    PlayerAnimation playerAni;
     TextureAtlas atlas;
     Sprite player;
     Animation <TextureAtlas.AtlasRegion> currentAni;
@@ -30,23 +31,26 @@ public class Player extends Image {
     ColorEnum color;
 
     public Player(PlayerEnum color) {
+//        Allow animation to be updated
+        playerAni = new PlayerAnimation(this);
+
+//        Import the texture
         atlas = new TextureAtlas(Gdx.files.internal("sprite_sheet/character/bomberman_black/bomber_black.txt"));
         Array<TextureAtlas.AtlasRegion> stillFrames = atlas.findRegions("bomberman_still");
         currentAni = new Animation<>(1f/15f,stillFrames);
 
+//        Set the player avatar and bounds
         player = new Sprite(new TextureAtlas.AtlasSprite(currentAni.getKeyFrames()[1]));
         setBounds(player.getRegionX(), player.getRegionY(), player.getRegionWidth(), player.getRegionHeight());
         setTouchable(Touchable.enabled);
+
+//        For Character to move
         input();
-
-
-//        player = new TextureAtlas.AtlasSprite(ani.getKeyFrame(2f/2f));
     }
 
 //    This is to render animations
     @Override
     public void draw(Batch batch, float parentAlpha) {
-//        player.draw(batch);
         boolean flip = (direction == DirectionEnum.LEFT);
         elapsedTime += Gdx.graphics.getDeltaTime();
         System.out.println(elapsedTime);
@@ -58,15 +62,6 @@ public class Player extends Image {
 
         }
 
-//        if (direction == DirectionEnum.RIGHT) {
-//            float startTime = elapsedTime;
-//            System.out.println(startTime);
-//            System.out.println(elapsedTime - startTime);
-//            batch.draw(currentAni.getKeyFrames()[2], getX()+getHeight(), getY(), -getWidth(), getHeight());
-//            batch.draw(currentAni.getKeyFrames()[4], getX()+getWidth(), getY(), -getWidth(), getHeight());
-//
-//            direction = DirectionEnum.NONE;
-//        }
     }
 
     @Override
@@ -240,6 +235,25 @@ public class Player extends Image {
     protected void positionChanged(){
         player.setPosition(getX(),getY());
         super.positionChanged();
+    }
+
+    public StateEnum getState(){
+        return state;
+    }
+    public DirectionEnum getDirection(){
+        return direction;
+    }
+    public int getStepCount(){
+        return stepCount;
+    }
+    protected  void setState(StateEnum state){
+        this.state = state;
+    }
+    protected  void setDirection(DirectionEnum direction){
+        this.direction = direction;
+    }
+    protected void setStepCount(int stepCount){
+        this.stepCount = stepCount;
     }
 
 //    protected Sprite switchCharacter(PlayerEnum color) {
