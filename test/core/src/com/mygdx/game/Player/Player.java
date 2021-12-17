@@ -19,6 +19,7 @@ public class Player extends Image {
     Animation <TextureAtlas.AtlasRegion> currentAni;
     float elapsedTime = 0;
     MoveByAction currentAction = new MoveByAction();
+    Stage stage;
 
     public enum StateEnum{
         WALK("walk"), STILL("still"), HWALK("hwalk"), HSTILL("hstill");
@@ -48,7 +49,9 @@ public class Player extends Image {
     StateEnum state = StateEnum.STILL;
     ColorEnum color;
 
-    public Player(ColorEnum color) {
+    public Player(ColorEnum color, Stage stage) {
+//        The player needs to be able to modify the stage add bombs, break blocks...
+        this.stage = stage;
 //        Import the texture
         atlas = switchCharacter(color);
 
@@ -180,7 +183,7 @@ public class Player extends Image {
 //                    System.out.println(text);
                 }
                 if(keycode == Input.Keys.E){
-
+                    stage.addActor(new Bomb(Player.this));
                 }
 
                 return true;

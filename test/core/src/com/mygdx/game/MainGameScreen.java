@@ -13,31 +13,30 @@ public class MainGameScreen extends AbstractScreen {
 
     @Override
     public void buildStage() {
-//        Add status bar
-        Texture txStatusBar = new Texture(Gdx.files.internal("sprite/stage/status_bar.png"));
-        Image statusBar = new Image(txStatusBar);
-        statusBar.setPosition(0,
-                Gdx.graphics.getHeight()-statusBar.getHeight());
-        addActor(statusBar);
+////        Add status bar
+//        Texture txStatusBar = new Texture(Gdx.files.internal("sprite/stage/status_bar.png"));
+//        Image statusBar = new Image(txStatusBar);
+//        statusBar.setPosition(0,
+//                Gdx.graphics.getHeight()-statusBar.getHeight());
+//        addActor(statusBar);
+//
+////        Background placeholder
+//        Texture txBackground = new Texture(Gdx.files.internal("sprite/stage/stage_02" +
+//                "/stage_02.png"));
+//        Image background = new Image(txBackground);
+//        background.setPosition(Gdx.graphics.getWidth()/2f - background.getWidth()/2f,
+//                (Gdx.graphics.getHeight()-statusBar.getHeight())/2f - background.getHeight()/2f );
+//        addActor(background);
 
-//        Background placeholder
-        Texture txBackground = new Texture(Gdx.files.internal("sprite/stage/stage_02" +
-                "/stage_02.png"));
-        Image background = new Image(txBackground);
-        background.setPosition(Gdx.graphics.getWidth()/2f - background.getWidth()/2f,
-                (Gdx.graphics.getHeight()-statusBar.getHeight())/2f - background.getHeight()/2f );
-        addActor(background);
+        GameStage gameStage = new GameStage();
+        addActor(gameStage);
 
 //      Create player
-        Player black = new Player(ColorEnum.BLUE);
+        Player black = new Player(ColorEnum.BLUE, this);
         black.position(96,64);
-
-
-        System.out.println(String.format("%f %f",black.getX(),black.getY()));
         setKeyboardFocus(black);
         addActor(black);
 
-//
     }
 
 
