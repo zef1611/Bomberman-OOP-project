@@ -1,0 +1,166 @@
+bomb_explosion.png
+size: 1472, 64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bomb_normal
+  rotate: false
+  xy: 0, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+bomb_normal
+  rotate: false
+  xy: 64, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+bomb_normal
+  rotate: false
+  xy: 128, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 3
+explosion_body_col
+  rotate: false
+  xy: 192, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+explosion_body_col
+  rotate: false
+  xy: 256, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+explosion_body_col
+  rotate: false
+  xy: 320, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 3
+explosion_body_col
+  rotate: false
+  xy: 384, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 4
+explosion_body_row
+  rotate: false
+  xy: 448, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+explosion_body_row
+  rotate: false
+  xy: 512, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+explosion_body_row
+  rotate: false
+  xy: 576, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 3
+explosion_body_row
+  rotate: false
+  xy: 640, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 4
+explosion_core
+  rotate: false
+  xy: 704, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+explosion_core
+  rotate: false
+  xy: 768, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+explosion_core
+  rotate: false
+  xy: 832, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 3
+explosion_core
+  rotate: false
+  xy: 896, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 4
+explosion_edge_col
+  rotate: false
+  xy: 960, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+explosion_edge_col
+  rotate: false
+  xy: 1024, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+explosion_edge_col
+  rotate: false
+  xy: 1088, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 3
+explosion_edge_col
+  rotate: false
+  xy: 1152, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 4
+explosion_edge_row
+  rotate: false
+  xy: 1216, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+explosion_edge_row
+  rotate: false
+  xy: 1280, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+explosion_edge_row
+  rotate: false
+  xy: 1344, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 3
+explosion_edge_row
+  rotate: false
+  xy: 1408, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 4

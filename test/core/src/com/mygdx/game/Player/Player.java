@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.mygdx.game.Player;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -48,7 +48,7 @@ public class Player extends Image {
     StateEnum state = StateEnum.STILL;
     ColorEnum color;
 
-    public Player(com.mygdx.game.ColorEnum color) {
+    public Player(ColorEnum color) {
 //        Import the texture
         atlas = switchCharacter(color);
 
@@ -179,13 +179,16 @@ public class Player extends Image {
 //                    String text = String.format("%s %f %f","A",Player.this.getX(),Player.this.getY());
 //                    System.out.println(text);
                 }
+                if(keycode == Input.Keys.E){
+
+                }
 
                 return true;
             }
         });
     }
 
-    protected TextureAtlas switchCharacter(com.mygdx.game.ColorEnum color) {
+    protected TextureAtlas switchCharacter(ColorEnum color) {
         String colorName = color.toString();
         String fileName = "sprite_sheet/character/bomberman_" + colorName + "/bomber_" + colorName + ".txt";
         return new TextureAtlas(Gdx.files.internal(fileName));

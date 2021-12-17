@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.mygdx.game.Player;
 
 public enum ColorEnum {
     BLACK("black"), BLUE("blue"), GREEN("green"), RED("red"), WHITE("white");
