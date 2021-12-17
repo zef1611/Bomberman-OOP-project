@@ -31,15 +31,15 @@ public class Player extends Image {
     ColorEnum color;
 
     public Player(PlayerEnum color) {
-//        Allow animation to be updated
-        playerAni = new PlayerAnimation(this);
-
 //        Import the texture
         atlas = new TextureAtlas(Gdx.files.internal("sprite_sheet/character/bomberman_black/bomber_black.txt"));
-        Array<TextureAtlas.AtlasRegion> stillFrames = atlas.findRegions("bomberman_still");
-        currentAni = new Animation<>(1f/15f,stillFrames);
+
+//        Allow animation to be updated
+        playerAni = new PlayerAnimation(this, atlas);
 
 //        Set the player avatar and bounds
+        Array<TextureAtlas.AtlasRegion> stillFrames = atlas.findRegions("bomberman_still");
+        currentAni = new Animation<>(1f/15f,stillFrames);
         player = new Sprite(new TextureAtlas.AtlasSprite(currentAni.getKeyFrames()[1]));
         setBounds(player.getRegionX(), player.getRegionY(), player.getRegionWidth(), player.getRegionHeight());
         setTouchable(Touchable.enabled);
@@ -59,9 +59,7 @@ public class Player extends Image {
         }
         else{
             batch.draw(currentAni.getKeyFrame(elapsedTime), getX(), getY(),getWidth(),getHeight());
-
         }
-
     }
 
     @Override
@@ -76,78 +74,78 @@ public class Player extends Image {
     }
 
 //    This is used to update animation in the input method depends on state and direction
-    public void updateAni(){
-        elapsedTime = 0;
-        if(state == StateEnum.WALK){
-            switch (direction){
-                case RIGHT:
-                case LEFT:
-                    if(stepCount%2==0){
-                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
-                                "bomberman_walk_right_e"));
-                    } else {
-                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
-                                "bomberman_walk_right_o"));
-                    }
-                    break;
-                case UP:
-                    if(stepCount%2==0){
-                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
-                                "bomberman_walk_up_e"));
-                    } else {
-                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
-                                "bomberman_walk_up_o"));
-                    }
-                    break;
-                case DOWN:
-                    if(stepCount%2==0){
-                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
-                                "bomberman_walk_down_e"));
-                    } else {
-                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
-                                "bomberman_walk_down_o"));
-                    }
-                    break;
-                case NONE:
-                    break;
-            }
-        }
-        if(state == StateEnum.HWALK){
-            switch (direction){
-                case RIGHT:
-                case LEFT:
-                    if(stepCount%2==0){
-                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
-                                "bomberman_hwalk_right_e"));
-                    } else {
-                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
-                                "bomberman_hwalk_right_o"));
-                    }
-                    break;
-                case UP:
-                    if(stepCount%2==0){
-                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
-                                "bomberman_hwalk_up_e"));
-                    } else {
-                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
-                                "bomberman_hwalk_up_o"));
-                    }
-                    break;
-                case DOWN:
-                    if(stepCount%2==0){
-                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
-                                "bomberman_hwalk_down_e"));
-                    } else {
-                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
-                                "bomberman_hwalk_down_o"));
-                    }
-                    break;
-                case NONE:
-                    break;
-            }
-        }
-
-    }
+//    public void updateAni(){
+//        elapsedTime = 0;
+//        if(state == StateEnum.WALK){
+//            switch (direction){
+//                case RIGHT:
+//                case LEFT:
+//                    if(stepCount%2==0){
+//                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+//                                "bomberman_walk_right_e"));
+//                    } else {
+//                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+//                                "bomberman_walk_right_o"));
+//                    }
+//                    break;
+//                case UP:
+//                    if(stepCount%2==0){
+//                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+//                                "bomberman_walk_up_e"));
+//                    } else {
+//                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+//                                "bomberman_walk_up_o"));
+//                    }
+//                    break;
+//                case DOWN:
+//                    if(stepCount%2==0){
+//                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+//                                "bomberman_walk_down_e"));
+//                    } else {
+//                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+//                                "bomberman_walk_down_o"));
+//                    }
+//                    break;
+//                case NONE:
+//                    break;
+//            }
+//        }
+//        if(state == StateEnum.HWALK){
+//            switch (direction){
+//                case RIGHT:
+//                case LEFT:
+//                    if(stepCount%2==0){
+//                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+//                                "bomberman_hwalk_right_e"));
+//                    } else {
+//                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+//                                "bomberman_hwalk_right_o"));
+//                    }
+//                    break;
+//                case UP:
+//                    if(stepCount%2==0){
+//                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+//                                "bomberman_hwalk_up_e"));
+//                    } else {
+//                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+//                                "bomberman_hwalk_up_o"));
+//                    }
+//                    break;
+//                case DOWN:
+//                    if(stepCount%2==0){
+//                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+//                                "bomberman_hwalk_down_e"));
+//                    } else {
+//                        currentAni = new Animation<>(1f/8f,atlas.findRegions(
+//                                "bomberman_hwalk_down_o"));
+//                    }
+//                    break;
+//                case NONE:
+//                    break;
+//            }
+//        }
+//
+//    }
 
 //    Every input happens here + Update the animation
     public void input(){
@@ -166,7 +164,7 @@ public class Player extends Image {
                     direction = DirectionEnum.RIGHT;
                     stepCount++;
                     state = StateEnum.WALK;
-                    updateAni();
+                    playerAni.updateAni();
                 }
                 if(keycode ==Input.Keys.W){
                     MoveByAction up = new MoveByAction();
@@ -181,7 +179,7 @@ public class Player extends Image {
                     direction = DirectionEnum.UP;
                     stepCount++;
                     state = StateEnum.WALK;
-                    updateAni();
+                    playerAni.updateAni();
 
 //                    Debugging
 //                    String text = String.format("%s %f %f","W",Player.this.getX(),Player.this.getY());
@@ -200,7 +198,7 @@ public class Player extends Image {
                     direction = DirectionEnum.DOWN;
                     stepCount++;
                     state = StateEnum.WALK;
-                    updateAni();
+                    playerAni.updateAni();
 
 //                    Debugging
 //                    String text = String.format("%s %f %f","S",Player.this.getX(),Player.this.getY());
@@ -219,7 +217,7 @@ public class Player extends Image {
                     direction = DirectionEnum.LEFT;
                     stepCount++;
                     state = StateEnum.WALK;
-                    updateAni();
+                    playerAni.updateAni();
 
 //                    Debugging
 //                    String text = String.format("%s %f %f","A",Player.this.getX(),Player.this.getY());
@@ -237,23 +235,40 @@ public class Player extends Image {
         super.positionChanged();
     }
 
+//---------------------------GETTER/SETTERS------------------------
     public StateEnum getState(){
         return state;
-    }
-    public DirectionEnum getDirection(){
-        return direction;
-    }
-    public int getStepCount(){
-        return stepCount;
     }
     protected  void setState(StateEnum state){
         this.state = state;
     }
+
+    public DirectionEnum getDirection(){
+        return direction;
+    }
     protected  void setDirection(DirectionEnum direction){
         this.direction = direction;
     }
+
+    public int getStepCount(){
+        return stepCount;
+    }
     protected void setStepCount(int stepCount){
         this.stepCount = stepCount;
+    }
+
+    public Animation <TextureAtlas.AtlasRegion> getCurrentAni(){
+        return currentAni;
+    }
+    protected void setCurrentAni(Animation <TextureAtlas.AtlasRegion> currentAni){
+        this.currentAni = currentAni;
+    }
+
+    public float getElapsedTime(){
+        return elapsedTime;
+    }
+    protected void setElapsedTime(float elapsedTime){
+        this.elapsedTime = elapsedTime;
     }
 
 //    protected Sprite switchCharacter(PlayerEnum color) {
