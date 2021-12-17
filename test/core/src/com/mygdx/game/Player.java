@@ -57,8 +57,8 @@ public class Player extends Image {
 
 //        Set the player avatar and bounds
         Array<TextureAtlas.AtlasRegion> stillFrames = atlas.findRegions("bomberman_still");
-        currentAni = new Animation<>(1f/15f,stillFrames);
-        player = new Sprite(new TextureAtlas.AtlasSprite(currentAni.getKeyFrames()[0]));
+        currentAni = new Animation<>(1f/15f,stillFrames.get(0));
+        player = new Sprite(new TextureAtlas.AtlasSprite(stillFrames.get(0)));
         setBounds(player.getRegionX(), player.getRegionY(), player.getRegionWidth(), player.getRegionHeight());
         setTouchable(Touchable.enabled);
 
