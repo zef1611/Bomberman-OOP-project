@@ -13,7 +13,7 @@ import com.badlogic.gdx.utils.Array;
 //Combine to get the current sprite state
 
 public class Player extends Image {
-    PlayerAnimation playerAni;
+    PlayerInput playerInput;
     TextureAtlas atlas;
     Sprite player;
     Animation <TextureAtlas.AtlasRegion> currentAni;
@@ -44,7 +44,7 @@ public class Player extends Image {
         }
     };
 
-    int stepCount; // For deciding the animation in update method
+    int stepCount=0; // For deciding the animation in update method
     DirectionEnum direction = DirectionEnum.NONE;
     StateEnum state = StateEnum.STILL;
     ColorEnum color;
@@ -55,9 +55,6 @@ public class Player extends Image {
 //        Import the texture
         atlas = switchCharacter(color);
 
-//        Allow animation to be updated
-        playerAni = new PlayerAnimation(this, atlas);
-
 //        Set the player avatar and bounds
         Array<TextureAtlas.AtlasRegion> stillFrames = atlas.findRegions("bomberman_still");
         currentAni = new Animation<>(1f/15f,stillFrames.get(0));
@@ -66,6 +63,7 @@ public class Player extends Image {
         setTouchable(Touchable.enabled);
 
 //        For Character to move
+        playerInput = new PlayerInput(this);
         input();
 //        Work around for character to move 1 step at a time
         currentAction.setDuration(0f);
@@ -105,87 +103,7 @@ public class Player extends Image {
     public void input(){
         addListener(new InputListener(){
             public boolean keyDown(InputEvent event, int keycode){
-                if(keycode == Input.Keys.D && currentAction.isComplete()){
-                    MoveByAction right = new MoveByAction();
-                    right.setAmount(64f, 0f);
-                    right.setDuration(1f/2f);
-                    currentAction = right;
-//                    System.out.println(right.isComplete());
-                    Player.this.addAction(right);
-
-                    // For animations
-                    if(direction != DirectionEnum.RIGHT){
-                        stepCount = 0;
-                    }
-                    direction = DirectionEnum.RIGHT;
-                    stepCount++;
-                    state = StateEnum.WALK;
-                    playerAni.updateAni();
-                }
-                if(keycode ==Input.Keys.W && currentAction.isComplete()){
-                    MoveByAction up = new MoveByAction();
-                    up.setAmount(0f,64f);
-                    up.setDuration(1f/2f);
-                    currentAction = up;
-                    Player.this.addAction(up);
-
-                    // For animations
-                    if(direction != DirectionEnum.UP) {
-                        stepCount = 0;
-                    }
-                    direction = DirectionEnum.UP;
-                    stepCount++;
-                    state = StateEnum.WALK;
-                    playerAni.updateAni();
-
-//                    Debugging
-//                    String text = String.format("%s %f %f","W",Player.this.getX(),Player.this.getY());
-//                    System.out.println(text);
-                }
-                if(keycode == Input.Keys.S && currentAction.isComplete()){
-                    MoveByAction down = new MoveByAction();
-                    down.setAmount(0f,-64f);
-                    down.setDuration(1f/2f);
-                    currentAction = down;
-                    Player.this.addAction(down);
-
-                    // For animations
-                    if(direction != DirectionEnum.DOWN) {
-                        stepCount = 0;
-                    }
-                    direction = DirectionEnum.DOWN;
-                    stepCount++;
-                    state = StateEnum.WALK;
-                    playerAni.updateAni();
-
-//                    Debugging
-//                    String text = String.format("%s %f %f","S",Player.this.getX(),Player.this.getY());
-//                    System.out.println(text);
-                }
-                if(keycode == Input.Keys.A && currentAction.isComplete()){
-                    MoveByAction left = new MoveByAction();
-                    left.setAmount(-64f, 0f);
-                    left.setDuration(1f/2f);
-                    currentAction = left;
-                    Player.this.addAction(left);
-
-                    // For animations
-                    if(direction != DirectionEnum.LEFT) {
-                        stepCount = 0;
-                    }
-                    direction = DirectionEnum.LEFT;
-                    stepCount++;
-                    state = StateEnum.WALK;
-                    playerAni.updateAni();
-
-//                    Debugging
-//                    String text = String.format("%s %f %f","A",Player.this.getX(),Player.this.getY());
-//                    System.out.println(text);
-                }
-                if(keycode == Input.Keys.E){
-                    stage.addActor(new Bomb(Player.this));
-                }
-
+                playerInput.inputContent(keycode);
                 return true;
             }
         });
@@ -231,6 +149,13 @@ public class Player extends Image {
     protected void setElapsedTime(float elapsedTime){
         this.elapsedTime = elapsedTime;
     }
+
+    public MoveByAction getCurrentAction(){ return currentAction;}
+    public void setCurrentAction(MoveByAction currentAction){this.currentAction = currentAction;}
+
+    public TextureAtlas getAtlas(){ return atlas;}
+
+    public Stage getStage(){ return stage;}
 
 
 }
