@@ -6,8 +6,8 @@ import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
-import com.mygdx.game.BorderObserve;
-import com.mygdx.game.GameStage;
+import com.mygdx.game.Stage.GameStage;
+import com.mygdx.game.Observer.BorderObserve;
 //Player state includes still, walking,
 //Player direction include left right up down
 //Combine to get the current sprite state
@@ -37,19 +37,18 @@ public class Player extends Image implements BorderObserve {
         }
     }
 
-    PlayerInput playerInput;
-    TextureAtlas atlas;
-    Sprite player;
-    Animation <TextureAtlas.AtlasRegion> currentAni;
-    float elapsedTime = 0;
-    MoveByAction currentAction = new MoveByAction();
-    Stage stage;
-    GameStage gameStage;
-    int stepCount=0; // For deciding the animation in update method
-    float borderX, borderY, borderWidth, borderHeight;
-    DirectionEnum direction = DirectionEnum.NONE;
-    StateEnum state = StateEnum.STILL;
-    ColorEnum color;
+    private PlayerInput playerInput;
+    private TextureAtlas atlas;
+    private Sprite player;
+    private Animation <TextureAtlas.AtlasRegion> currentAni;
+    private float elapsedTime = 0;
+    private MoveByAction currentAction = new MoveByAction();
+    private Stage stage;
+    private GameStage gameStage;
+    private int stepCount=0; // For deciding the animation in update method
+    private float borderX, borderY, borderWidth, borderHeight;
+    private DirectionEnum direction = DirectionEnum.NONE;
+    private StateEnum state = StateEnum.STILL;
 
     public Player(ColorEnum color, Stage stage, GameStage gameStage) {
 //        The player needs to be able to modify the stage add bombs, break blocks...

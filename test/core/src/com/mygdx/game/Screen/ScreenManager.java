@@ -1,8 +1,7 @@
-package com.mygdx.game;
+package com.mygdx.game.Screen;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
-import com.mygdx.game.AbstractScreen;
 
 public class ScreenManager {
 //    Singleton: unique instance: to prevent users/ devs to accidentally create many

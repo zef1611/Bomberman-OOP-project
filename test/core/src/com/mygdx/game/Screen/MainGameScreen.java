@@ -1,7 +1,9 @@
-package com.mygdx.game;
+package com.mygdx.game.Screen;
 
 import com.mygdx.game.Player.ColorEnum;
 import com.mygdx.game.Player.Player;
+import com.mygdx.game.Screen.AbstractScreen;
+import com.mygdx.game.Stage.GameStage;
 
 public class MainGameScreen extends AbstractScreen {
 

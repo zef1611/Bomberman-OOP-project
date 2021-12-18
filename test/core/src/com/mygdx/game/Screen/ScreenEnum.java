@@ -1,6 +1,4 @@
-package com.mygdx.game;
-
-import com.badlogic.gdx.Game;
+package com.mygdx.game.Screen;
 
 public enum ScreenEnum {
     STARTING_SCREEN{
