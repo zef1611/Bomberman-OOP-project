@@ -16,7 +16,7 @@ public class GameStage extends Image  {
 
     public GameStage(){
         txStatusBar = new Sprite(new Texture(Gdx.files.internal("sprite/stage/status_bar.png")));
-        txBackground = new Sprite(new Texture(Gdx.files.internal("sprite/stage/stage_02/stage_02.png")));
+        txBackground = new Sprite(new Texture(Gdx.files.internal("sprite/stage/stage_02/stage_blank_02.png")));
         txStatusBar.setPosition(0,
                 Gdx.graphics.getHeight()-txStatusBar.getHeight());
         txBackground.setPosition(Gdx.graphics.getWidth()/2f - txBackground.getWidth()/2f,
