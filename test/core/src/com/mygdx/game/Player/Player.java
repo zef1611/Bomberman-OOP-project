@@ -1,25 +1,18 @@
 package com.mygdx.game.Player;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.scenes.scene2d.*;
-
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
+import com.mygdx.game.BorderObserve;
+import com.mygdx.game.GameStage;
 //Player state includes still, walking,
 //Player direction include left right up down
 //Combine to get the current sprite state
 
-public class Player extends Image {
-    PlayerInput playerInput;
-    TextureAtlas atlas;
-    Sprite player;
-    Animation <TextureAtlas.AtlasRegion> currentAni;
-    float elapsedTime = 0;
-    MoveByAction currentAction = new MoveByAction();
-    Stage stage;
+public class Player extends Image implements BorderObserve {
 
     public enum StateEnum{
         WALK("walk"), STILL("still"), HWALK("hwalk"), HSTILL("hstill");
@@ -31,7 +24,7 @@ public class Player extends Image {
         public String toString(){
             return stateName;
         }
-    };
+    }
     public enum DirectionEnum{
         LEFT("left"), RIGHT("right"), UP("up"), DOWN("down"), NONE("none");
         String directionName;
@@ -42,16 +35,27 @@ public class Player extends Image {
         public String toString(){
             return directionName;
         }
-    };
+    }
 
+    PlayerInput playerInput;
+    TextureAtlas atlas;
+    Sprite player;
+    Animation <TextureAtlas.AtlasRegion> currentAni;
+    float elapsedTime = 0;
+    MoveByAction currentAction = new MoveByAction();
+    Stage stage;
+    GameStage gameStage;
     int stepCount=0; // For deciding the animation in update method
+    float borderX, borderY, borderWidth, borderHeight;
     DirectionEnum direction = DirectionEnum.NONE;
     StateEnum state = StateEnum.STILL;
     ColorEnum color;
 
-    public Player(ColorEnum color, Stage stage) {
+    public Player(ColorEnum color, Stage stage, GameStage gameStage) {
 //        The player needs to be able to modify the stage add bombs, break blocks...
         this.stage = stage;
+//        For getting the borders
+        this.gameStage = gameStage;
 //        Import the texture
         atlas = switchCharacter(color);
 
@@ -97,6 +101,14 @@ public class Player extends Image {
     public void position(int x, int y) {
         setPosition(x, y);
         player.setPosition(x, y);
+    }
+
+    @Override
+    public void update(){
+        this.borderX = gameStage.getBorderX();
+        this.borderY = gameStage.getBorderY();
+        this.borderWidth = gameStage.getBorderWidth();
+        this.borderHeight = gameStage.getBorderHeight();
     }
 
 //    Every input happens here + Update the animation
@@ -156,6 +168,11 @@ public class Player extends Image {
     public TextureAtlas getAtlas(){ return atlas;}
 
     public Stage getStage(){ return stage;}
+
+    public float getBorderX(){return borderX;}
+    public float getBorderY(){ return borderY;}
+    public float getBorderWidth(){return borderWidth;}
+    public float getBorderHeight(){return borderHeight;}
 
 
 }

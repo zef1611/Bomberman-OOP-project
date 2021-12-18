@@ -1,8 +1,5 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.mygdx.game.Player.ColorEnum;
 import com.mygdx.game.Player.Player;
 
@@ -13,29 +10,18 @@ public class MainGameScreen extends AbstractScreen {
 
     @Override
     public void buildStage() {
-////        Add status bar
-//        Texture txStatusBar = new Texture(Gdx.files.internal("sprite/stage/status_bar.png"));
-//        Image statusBar = new Image(txStatusBar);
-//        statusBar.setPosition(0,
-//                Gdx.graphics.getHeight()-statusBar.getHeight());
-//        addActor(statusBar);
-//
-////        Background placeholder
-//        Texture txBackground = new Texture(Gdx.files.internal("sprite/stage/stage_02" +
-//                "/stage_02.png"));
-//        Image background = new Image(txBackground);
-//        background.setPosition(Gdx.graphics.getWidth()/2f - background.getWidth()/2f,
-//                (Gdx.graphics.getHeight()-statusBar.getHeight())/2f - background.getHeight()/2f );
-//        addActor(background);
-
+//      Add the game stage
         GameStage gameStage = new GameStage();
         addActor(gameStage);
 
 //      Create player
-        Player black = new Player(ColorEnum.BLUE, this);
+        Player black = new Player(ColorEnum.BLUE, this, gameStage);
         black.position(96,64);
         setKeyboardFocus(black);
         addActor(black);
+        gameStage.attachObserver(black);
+//      set border
+        gameStage.borderNotify();
 
     }
 

@@ -5,18 +5,18 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 
 public class PlayerInput {
-    Player player;
-    Stage stage;
-    PlayerAnimation playerAni;
+    private Player player;
+    private Stage stage;
+    private PlayerAnimation playerAni;
 
-    public PlayerInput(Player player) {
+    protected PlayerInput(Player player) {
         this.player = player;
         this.stage = player.getStage();
         playerAni = new PlayerAnimation(player, player.getAtlas());
     }
 
-    public void inputContent(int keycode) {
-        if(keycode == Input.Keys.D && player.getCurrentAction().isComplete()){
+    protected void inputContent(int keycode) {
+        if(keycode == Input.Keys.D && player.getCurrentAction().isComplete() && checkBorder(keycode)){
             MoveByAction right = new MoveByAction();
             right.setAmount(64f, 0f);
             right.setDuration(1f/2f);
@@ -32,7 +32,7 @@ public class PlayerInput {
             player.setState(Player.StateEnum.WALK);
             playerAni.updateAni();
         }
-        if(keycode ==Input.Keys.W && player.getCurrentAction().isComplete()){
+        if(keycode ==Input.Keys.W && player.getCurrentAction().isComplete() && checkBorder(keycode)){
             MoveByAction up = new MoveByAction();
             up.setAmount(0f,64f);
             up.setDuration(1f/2f);
@@ -45,12 +45,11 @@ public class PlayerInput {
             }
             player.setStepCount(1+player.getStepCount());
             player.setDirection(Player.DirectionEnum.UP);
-            player.setStepCount(1+ player.getStepCount());
             player.setState(Player.StateEnum.WALK);
             playerAni.updateAni();
 
 }
-        if(keycode == Input.Keys.S && player.getCurrentAction().isComplete()){
+        if(keycode == Input.Keys.S && player.getCurrentAction().isComplete() && checkBorder(keycode)){
             MoveByAction down = new MoveByAction();
             down.setAmount(0f,-64f);
             down.setDuration(1f/2f);
@@ -67,7 +66,7 @@ public class PlayerInput {
             playerAni.updateAni();
 
         }
-        if(keycode == Input.Keys.A && player.getCurrentAction().isComplete()){
+        if(keycode == Input.Keys.A && player.getCurrentAction().isComplete() && checkBorder(keycode)){
 
             MoveByAction left = new MoveByAction();
             left.setAmount(-64f, 0f);
@@ -88,5 +87,31 @@ public class PlayerInput {
         if(keycode == Input.Keys.E){
             stage.addActor(new Bomb(player));
         }
+    }
+
+    private boolean checkBorder(int keycode){
+        switch (keycode){
+            case Input.Keys.W:
+                if(player.getY() + 64 >= player.getBorderY() + player.getBorderHeight()){
+                    return false;
+                }
+                break;
+            case Input.Keys.A:
+                if(player.getX() - 63 < player.getBorderX()){
+                    return false;
+                }
+                break;
+            case Input.Keys.S:
+                if(player.getY() - 63 < player.getBorderY()){
+                    return false;
+                }
+                break;
+            case Input.Keys.D:
+                if(player.getX() + 64 >= player.getBorderX() + player.getBorderWidth()){
+                    return false;
+                }
+                break;
+        }
+        return true;
     }
 }
