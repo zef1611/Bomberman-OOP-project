@@ -6,30 +6,38 @@ import com.mygdx.game.Screen.AbstractScreen;
 import com.mygdx.game.Stage.GameStage;
 
 public class MainGameScreen extends AbstractScreen {
-
+    private int stageNum;
+    private ColorEnum color;
 
     public MainGameScreen(){}
 
     @Override
     public void buildStage() {
+//      Get StageNum, colorEnum
+        stageNum = StartingScreen.stageNum;
+        color = ColorEnum.BLUE;
+//      Get gameStage background
+
 //      Add the game stage
-        GameStage gameStage = new GameStage();
+        GameStage gameStage = new GameStage(stageNum);
         addActor(gameStage);
 
 //      Create player
-        Player black = new Player(ColorEnum.BLUE, this, gameStage);
+        Player black = new Player(color, this, gameStage);
         black.position(96,64);
         setKeyboardFocus(black);
         addActor(black);
         gameStage.attachObserver(black);
 //      set border
-        gameStage.borderNotify();
+
 
     }
 
 
     @Override
-    public void dispose() {super.dispose();}
+    public void dispose() {
+        super.dispose();
+    }
 
 //    public void getBackgroundTexture(int stageNum){
 //        this.stageNum = stageNum;

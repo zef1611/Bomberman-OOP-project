@@ -53,6 +53,7 @@ public class Player extends Image implements BorderObserve {
     public Player(ColorEnum color, Stage stage, GameStage gameStage) {
 //        The player needs to be able to modify the stage add bombs, break blocks...
         this.stage = stage;
+        System.out.println(this.stage);
 //        For getting the borders
         this.gameStage = gameStage;
 //        Import the texture
@@ -71,6 +72,15 @@ public class Player extends Image implements BorderObserve {
 //        Work around for character to move 1 step at a time
         currentAction.setDuration(0f);
         Player.this.addAction(currentAction);
+//        Receive border
+        gameStage.attachObserver(this);
+        gameStage.borderNotify();
+
+//        System.out.println(borderX);
+//        System.out.println(borderY);
+//        System.out.println(borderWidth);
+//        System.out.println(borderHeight);
+
     }
 
 //    This is to render animations
@@ -108,12 +118,17 @@ public class Player extends Image implements BorderObserve {
         this.borderY = gameStage.getBorderY();
         this.borderWidth = gameStage.getBorderWidth();
         this.borderHeight = gameStage.getBorderHeight();
+        System.out.println(borderX);
+        System.out.println(borderY);
+        System.out.println(borderWidth);
+        System.out.println(borderHeight);
     }
 
 //    Every input happens here + Update the animation
     public void input(){
         addListener(new InputListener(){
             public boolean keyDown(InputEvent event, int keycode){
+//                playerInput will deal with movement logic
                 playerInput.inputContent(keycode);
                 return true;
             }

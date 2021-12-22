@@ -4,6 +4,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 
+//This class is in charge of the logic of the player input (including the border)
 public class PlayerInput {
     private Player player;
     private Stage stage;
@@ -15,13 +16,13 @@ public class PlayerInput {
         playerAni = new PlayerAnimation(player, player.getAtlas());
     }
 
+//    Logic of input
     protected void inputContent(int keycode) {
         if(keycode == Input.Keys.D && player.getCurrentAction().isComplete() && checkBorder(keycode)){
             MoveByAction right = new MoveByAction();
             right.setAmount(64f, 0f);
             right.setDuration(1f/2f);
             player.setCurrentAction(right);
-            System.out.println(right.isComplete());
             player.addAction(right);
             // For animations
             if(player.getDirection() != Player.DirectionEnum.RIGHT){
@@ -89,25 +90,26 @@ public class PlayerInput {
         }
     }
 
+//   Border and stuffs
     private boolean checkBorder(int keycode){
         switch (keycode){
             case Input.Keys.W:
-                if(player.getY() + 64 >= player.getBorderY() + player.getBorderHeight()){
+                if(player.getY() + 65 >= player.getBorderY() + player.getBorderHeight()){
                     return false;
                 }
                 break;
             case Input.Keys.A:
-                if(player.getX() - 63 < player.getBorderX()){
+                if(player.getX() - 1 < player.getBorderX()){
                     return false;
                 }
                 break;
             case Input.Keys.S:
-                if(player.getY() - 63 < player.getBorderY()){
+                if(player.getY() - 1 < player.getBorderY()){
                     return false;
                 }
                 break;
             case Input.Keys.D:
-                if(player.getX() + 64 >= player.getBorderX() + player.getBorderWidth()){
+                if(player.getX() + 65 >= player.getBorderX() + player.getBorderWidth()){
                     return false;
                 }
                 break;
