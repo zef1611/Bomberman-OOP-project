@@ -8,13 +8,12 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
 import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.Stage.GameStage;
-import com.mygdx.game.Observer.BorderObserve;
 import com.mygdx.game.StateEnum;
 //Player state includes still, walking,
 //Player direction include left right up down
 //Combine to get the current sprite state
 
-public class Player extends Image implements BorderObserve {
+public class Player extends Image {
 
 //    public enum DirectionEnum{
 //        LEFT("left"), RIGHT("right"), UP("up"), DOWN("down"), NONE("none");
@@ -37,7 +36,7 @@ public class Player extends Image implements BorderObserve {
     private Stage stage;
     private GameStage gameStage;
     private int stepCount=0; // For deciding the animation in update method
-    private float borderX, borderY, borderWidth, borderHeight;
+    private int borderX, borderY, borderWidth, borderHeight;
     private DirectionEnum direction = DirectionEnum.NONE;
     private StateEnum state = StateEnum.STILL;
 
@@ -58,14 +57,14 @@ public class Player extends Image implements BorderObserve {
         setTouchable(Touchable.enabled);
 
 //        For Character to move
-        playerInput = new PlayerInput(this);
+        playerInput = new PlayerInput(this, gameStage);
         input();
 //        Work around for character to move 1 step at a time
         currentAction.setDuration(0f);
         Player.this.addAction(currentAction);
 //        Receive border
-        gameStage.attachObserver(this);
-        gameStage.borderNotify();
+        gameStage.attachPlayer(this);
+
     }
 
 //    This is to render animations
@@ -97,17 +96,6 @@ public class Player extends Image implements BorderObserve {
         player.setPosition(x, y);
     }
 
-    @Override
-    public void update(){
-        this.borderX = gameStage.getBorderX();
-        this.borderY = gameStage.getBorderY();
-        this.borderWidth = gameStage.getBorderWidth();
-        this.borderHeight = gameStage.getBorderHeight();
-        System.out.println(borderX);
-        System.out.println(borderY);
-        System.out.println(borderWidth);
-        System.out.println(borderHeight);
-    }
 
 //    Every input happens here + Update the animation
     public void input(){
@@ -172,6 +160,4 @@ public class Player extends Image implements BorderObserve {
     public float getBorderY(){ return borderY;}
     public float getBorderWidth(){return borderWidth;}
     public float getBorderHeight(){return borderHeight;}
-
-
 }

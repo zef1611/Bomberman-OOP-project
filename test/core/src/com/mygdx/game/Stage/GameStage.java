@@ -7,20 +7,18 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.mygdx.game.Enemies.Enemy;
-import com.mygdx.game.Observer.BorderObserve;
-import com.mygdx.game.Observer.SoftObserve;
-import com.mygdx.game.Observer.SolidObserve;
+import com.mygdx.game.Player.Player;
 
 import java.util.ArrayList;
 
 //This class define the stage background, status bar, border size
 public class GameStage extends Image  {
-    ArrayList <BorderObserve> listPlayer = new ArrayList<BorderObserve>();
-    ArrayList <SoftObserve> listSoft = new ArrayList<SoftObserve>();
-    ArrayList <SolidObserve> listSolid = new ArrayList<SolidObserve>();
+    ArrayList <Player> listPlayer = new ArrayList<Player>();
+    ArrayList <Soft> listSoft = new ArrayList<Soft>();
+    ArrayList <Solid> listSolid = new ArrayList<Solid>();
     ArrayList <Enemy> listEnemy = new ArrayList<>();
     TextureAtlas stageAtlas;
-    float borderX, borderY, borderWidth, borderHeight;
+    int borderX, borderY, borderWidth, borderHeight;
     Sprite txStatusBar, txBackground;
 
     public GameStage(int stageNum){
@@ -51,21 +49,6 @@ public class GameStage extends Image  {
         return txBackground;
     }
 
-    public void attachObserver(BorderObserve observer){
-        listPlayer.add(observer);
-    }
-    public void detachObserver(BorderObserve observer){listPlayer.remove(observer);}
-
-    public void borderNotify(){
-        for (BorderObserve observer: listPlayer){
-            observer.update();
-        }
-    }
-    public void attachSoft(Soft soft) {listSoft.add(soft);}
-    public void detachSoft(Soft soft) {listSoft.remove(soft);}
-    public void attachSolid(Solid solid) {listSolid.add(solid);}
-    public void attachEnemy(Enemy enemy){listEnemy.add(enemy);}
-
     @Override
     public void draw(Batch batch, float parentAlpha){
         txStatusBar.draw(batch);
@@ -76,11 +59,28 @@ public class GameStage extends Image  {
         super.act(delta);
     }
 
+//    --------------------------ATTACH/DETACH--------------------------
+    public void attachPlayer(Player player){
+    listPlayer.add(player);
+}
+    public void detachPlayer(Player player){listPlayer.remove(player);}
+
+    public void attachSoft(Soft soft) {listSoft.add(soft);}
+    public void detachSoft(Soft soft) {listSoft.remove(soft);}
+
+    public void attachSolid(Solid solid) {listSolid.add(solid);}
+
+    public void attachEnemy(Enemy enemy){listEnemy.add(enemy);}
+    public void detachEnemy(Enemy enemy){listEnemy.remove(enemy);}
 
     //---------------------------GETTER/SETTERS------------------------
-    public float getBorderX(){return borderX;}
-    public float getBorderY(){return borderY;}
-    public float getBorderWidth(){return borderWidth;}
-    public float getBorderHeight(){return borderHeight;}
+    public int getBorderX(){return borderX;}
+    public int getBorderY(){return borderY;}
+    public int getBorderWidth(){return borderWidth;}
+    public int getBorderHeight(){return borderHeight;}
+
+    public ArrayList<Soft> getListSoft(){return listSoft;}
+    public ArrayList<Solid> getListSolid(){return listSolid;}
+    public ArrayList<Player> getListPlayer(){return listPlayer;}
 
 }

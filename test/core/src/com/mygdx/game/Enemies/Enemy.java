@@ -4,27 +4,52 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.Player.Player;
+import com.mygdx.game.Stage.GameStage;
+import com.mygdx.game.StateEnum;
 
 //Responsible for position, bounds, animation, movement
 //Spawning the enemies will be taken care of by other class
 public abstract class Enemy extends Image {
-    int stageNum;
     EnemyEnum enemy;
     TextureAtlas enemyAtlas;
     Animation<TextureAtlas.AtlasRegion> currentAni;
+    MoveByAction currentAction = new MoveByAction();
     float elapsedTime = 0;
     DirectionEnum direction;
+    StateEnum state;
+    boolean isAlive;
+    EnemyMove enemyMove;
+    private int borderX, borderY, borderWidth, borderHeight;
 
-    Enemy(){}
+
+    Enemy(GameStage gameStage){
+        enemyMove = new EnemyMove(this, gameStage);
+//        Set the hitbox of enemy
+        borderWidth = 64;
+        borderHeight = 64;
+//        Set enemy state (include: STILL, WALK)
+        state = StateEnum.STILL;
+        direction = DirectionEnum.RIGHT;
+
+//        Preemptively set the current action
+        currentAction.setDuration(0f);
+        Enemy.this.addAction(currentAction);
+    }
     protected void switchAtlas(){
         String enemyName = enemy.toString();
         String fileName = "sprite_sheet/enemies/"+enemyName+"/"+enemyName+".txt";
         this.enemyAtlas = new TextureAtlas(Gdx.files.internal(fileName));
+
     }
 
+    protected void setBorder(int x, int y){
+        setBorderX(x);
+        setBorderY(y);
+    }
     @Override
     public void draw(Batch batch,float parentAlpha){
         elapsedTime += Gdx.graphics.getDeltaTime();
@@ -41,11 +66,42 @@ public abstract class Enemy extends Image {
     public void act(float delta) {
         super.act(delta);
     }
+
+    @Override
+    protected void positionChanged(){
+        super.positionChanged();
+    }
 //    ---------------------SETTERS/GETTERS-------------------
     public void setName(EnemyEnum enemy){
         this.enemy = enemy;
     }
+
     public TextureAtlas getEnemyAtlas() {
         return enemyAtlas;
     }
+
+    public Animation<TextureAtlas.AtlasRegion> getCurrentAni() { return currentAni;}
+
+    public void setCurrentAni(Animation<TextureAtlas.AtlasRegion> currentAni) {this.currentAni = currentAni;}
+
+    public boolean isAlive(){return isAlive;}
+
+    public void setBorderX(int borderX){this.borderX = borderX;}
+    public void setBorderY(int borderY){this.borderY = borderY;}
+    public int getBorderX(){return borderX;}
+    public int getBorderY(){return  borderY;}
+    public int getBorderWidth(){return borderWidth;}
+    public int getBorderHeight(){return borderHeight;}
+
+    public DirectionEnum getDirection() {return direction;}
+    public void setDirection(DirectionEnum direction) {this.direction = direction;}
+
+    public StateEnum getState(){return state;}
+    public void setState(StateEnum state){this.state = state;}
+
+    public void setCurrentAction(MoveByAction currentAction){this.currentAction = currentAction;}
+    public MoveByAction getCurrentAction(){return currentAction;}
+
+    public void setElapsedTime(float elapsedTime){this.elapsedTime = elapsedTime;}
+
 }

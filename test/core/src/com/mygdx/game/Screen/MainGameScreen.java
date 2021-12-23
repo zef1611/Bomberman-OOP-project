@@ -5,6 +5,7 @@ import com.mygdx.game.Player.ColorEnum;
 import com.mygdx.game.Player.Player;
 import com.mygdx.game.Screen.AbstractScreen;
 import com.mygdx.game.Stage.GameStage;
+import com.mygdx.game.Stage.Soft;
 
 public class MainGameScreen extends AbstractScreen {
     private int stageNum;
@@ -30,9 +31,20 @@ public class MainGameScreen extends AbstractScreen {
         black.position(playerX,playerY);
         setKeyboardFocus(black);
         addActor(black);
-        gameStage.attachObserver(black);
-//      set border
-        SpawnEnemies emySpawn = new SpawnEnemies(this, stageNum, playerX, playerY);
+        gameStage.attachPlayer(black);
+//      Spawn soft blocks
+        Soft s1 = new Soft(12*64+playerX, playerY, gameStage);
+        Soft s2 = new Soft(8*64+playerX, playerY, gameStage);
+        addActor(s1);
+        addActor(s2);
+        for (Soft s: gameStage.getListSoft()){
+            System.out.println(s);
+        }
+
+//      Spawn solid blocks
+
+//      Spawn enemies
+        SpawnEnemies emySpawn = new SpawnEnemies(this,gameStage, stageNum, playerX, playerY);
         emySpawn.execute();
 
     }
@@ -44,35 +56,5 @@ public class MainGameScreen extends AbstractScreen {
     }
 //    ----------------SETTERS/GETTERS--------------------------
     public int getStageNum(){return stageNum;}
-
-//    public void getBackgroundTexture(int stageNum){
-//        this.stageNum = stageNum;
-//    }
-//    public Texture setBackgroundTexture(int stageNum){
-//        if(stageNum == 1){
-//            background = new Texture(Gdx.files.internal("sprite/stage/stage_01/stage_01.png"));
-//        }
-//        if(stageNum == 2){
-//            background = new Texture(Gdx.files.internal("sprite/stage/stage_02/stage_02.png"));
-//        }
-//        if(stageNum == 3){
-//            background = new Texture(Gdx.files.internal("sprite/stage/stage_03/stage_03.png"));
-//        }
-//        if(stageNum == 4){
-//            background = new Texture(Gdx.files.internal("sprite/stage/stage_04/stage_04.png"));
-//        }
-//        if(stageNum == 5){
-//            background = new Texture(Gdx.files.internal("sprite/stage/stage_05/stage_05.png"));
-//        }
-//        if(stageNum == 6){
-//            background = new Texture(Gdx.files.internal("sprite/stage/stage_06/stage_06.png"));
-//        }
-//
-//        return background;
-//    }
-
-//    public void setPlayer(String color){
-//
-//    }
 
 }

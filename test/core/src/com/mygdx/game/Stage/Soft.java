@@ -5,21 +5,22 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.mygdx.game.Observer.SoftObserve;
 
-public class Soft extends Image implements SoftObserve {
+public class Soft extends Image {
     Sprite soft;
-    public static GameStage gameStage;
-    float borderX, borderY, borderWidth, borderHeight;
-    float playerX, playerY, playerWidth, playerHeight;
-    public Soft(float x, float y, GameStage gameStage){
-        gameStage = gameStage;
+    public GameStage gameStage;
+    private int borderX, borderY, borderWidth, borderHeight;
+
+    public Soft(int x, int y, GameStage gameStage){
+        this.gameStage = gameStage;
         soft = new Sprite(new Texture(Gdx.files.internal("sprite/stage/stage_01/soft_01.png")));
+        soft.setPosition(x,y);
         setBounds(x, y, soft.getWidth(), soft.getHeight());
         borderX = x;
         borderY = y;
-        borderWidth = soft.getWidth();
-        borderHeight = soft.getHeight();
+        borderWidth = 64;
+        borderHeight = 64;
+        gameStage.attachSoft(this);
     }
 
 
@@ -29,7 +30,17 @@ public class Soft extends Image implements SoftObserve {
         soft.draw(batch);
     }
 
+    @Override
+    public void act(float delta) {
+        super.act(delta);
+    }
 //    public static void placeSoft() {
 //        gameStage.attachSoft(new Soft(96+ 64, 64 ));
 //    }
+
+//    ------------------------------SETTERS/GETTERS---------------------------
+    public int getBorderX(){return borderX;}
+    public int getBorderY(){return borderY;}
+    public int getBorderWidth(){return borderWidth;}
+    public int getBorderHeight(){return borderHeight;}
 }

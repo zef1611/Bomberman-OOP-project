@@ -1,6 +1,7 @@
 package com.mygdx.game.Player;
 
 import com.mygdx.game.DirectionEnum;
+import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.StateEnum;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -8,12 +9,14 @@ import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 
 //This class is in charge of the logic of the player input (including the border)
 public class PlayerInput {
-    private Player player;
-    private Stage stage;
-    private PlayerAnimation playerAni;
+    private final Player player;
+    private final GameStage gameStage;
+    private final Stage stage;
+    private final PlayerAnimation playerAni;
 
-    protected PlayerInput(Player player) {
+    protected PlayerInput(Player player, GameStage gameStage) {
         this.player = player;
+        this.gameStage = gameStage;
         this.stage = player.getStage();
         playerAni = new PlayerAnimation(player, player.getAtlas());
     }
@@ -59,7 +62,7 @@ public class PlayerInput {
             player.setCurrentAction(down);
             player.addAction(down);
 
-//                 For animations
+            //For animations
             if(player.getDirection() != DirectionEnum.DOWN) {
                 player.setStepCount(0);
             }
@@ -96,22 +99,22 @@ public class PlayerInput {
     private boolean checkBorder(int keycode){
         switch (keycode){
             case Input.Keys.W:
-                if(player.getY() + 65 >= player.getBorderY() + player.getBorderHeight()){
+                if(player.getY() + 65 >= gameStage.getBorderY() + gameStage.getBorderHeight()){
                     return false;
                 }
                 break;
             case Input.Keys.A:
-                if(player.getX() - 1 < player.getBorderX()){
+                if(player.getX() - 1 < gameStage.getBorderX()){
                     return false;
                 }
                 break;
             case Input.Keys.S:
-                if(player.getY() - 1 < player.getBorderY()){
+                if(player.getY() - 1 < gameStage.getBorderY()){
                     return false;
                 }
                 break;
             case Input.Keys.D:
-                if(player.getX() + 65 >= player.getBorderX() + player.getBorderWidth()){
+                if(player.getX() + 65 >= gameStage.getBorderX() + gameStage.getBorderWidth()){
                     return false;
                 }
                 break;

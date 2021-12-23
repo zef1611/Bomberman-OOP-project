@@ -5,18 +5,17 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.mygdx.game.Observer.SolidObserve;
 
-public class Solid extends Image implements SolidObserve {
+public class Solid extends Image {
     Sprite solid;
-    float borderX, borderY, borderWidth, borderHeight;
-    public Solid(float x, float y){
+    int borderX, borderY, borderWidth, borderHeight;
+    public Solid(int x, int y){
         solid = new Sprite(new Texture(Gdx.files.internal("sprite/stage/stage_01/solid_01.png")));
         setBounds(x, y, solid.getWidth(), solid.getHeight());
         borderX = x;
         borderY = y;
-        borderWidth = solid.getWidth();
-        borderHeight = solid.getHeight();
+        borderWidth = 64;
+        borderHeight = 64;
     }
 
     @Override
@@ -28,4 +27,10 @@ public class Solid extends Image implements SolidObserve {
     public void update() {
 
     }
+
+//    ----------------------------SETTERS/GETTERS-----------------------------
+    public int getBorderY(){return borderY;}
+    public int getBorderX(){return borderX;}
+    public int getBorderHeight(){return borderHeight;}
+    public int getBorderWidth(){return borderWidth;}
 }
