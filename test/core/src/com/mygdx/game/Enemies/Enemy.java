@@ -15,12 +15,10 @@ public abstract class Enemy extends Image {
     EnemyEnum enemy;
     TextureAtlas enemyAtlas;
     Animation<TextureAtlas.AtlasRegion> currentAni;
-    private float elapsedTime = 0;
+    float elapsedTime = 0;
     DirectionEnum direction;
 
-    Enemy(int stageNum){
-        this.stageNum = stageNum;
-    }
+    Enemy(){}
     protected void switchAtlas(){
         String enemyName = enemy.toString();
         String fileName = "sprite_sheet/enemies/"+enemyName+"/"+enemyName+".txt";
@@ -30,7 +28,7 @@ public abstract class Enemy extends Image {
     @Override
     public void draw(Batch batch,float parentAlpha){
         elapsedTime += Gdx.graphics.getDeltaTime();
-        boolean flip = (direction == DirectionEnum.LEFT);
+        boolean flip = (direction == DirectionEnum.RIGHT);
         elapsedTime += Gdx.graphics.getDeltaTime();
         if(flip){
             batch.draw(currentAni.getKeyFrame(elapsedTime), getX()+getWidth(), getY(),-getWidth(),getHeight());
@@ -38,6 +36,10 @@ public abstract class Enemy extends Image {
         else{
             batch.draw(currentAni.getKeyFrame(elapsedTime), getX(), getY(),getWidth(),getHeight());
         }
+    }
+    @Override
+    public void act(float delta) {
+        super.act(delta);
     }
 //    ---------------------SETTERS/GETTERS-------------------
     public void setName(EnemyEnum enemy){

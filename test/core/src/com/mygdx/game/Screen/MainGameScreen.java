@@ -1,5 +1,6 @@
 package com.mygdx.game.Screen;
 
+import com.mygdx.game.Enemies.SpawnEnemies;
 import com.mygdx.game.Player.ColorEnum;
 import com.mygdx.game.Player.Player;
 import com.mygdx.game.Screen.AbstractScreen;
@@ -8,6 +9,8 @@ import com.mygdx.game.Stage.GameStage;
 public class MainGameScreen extends AbstractScreen {
     private int stageNum;
     private ColorEnum color;
+    int playerX = 96;
+    int playerY = 64;
 
     public MainGameScreen(){}
 
@@ -24,12 +27,13 @@ public class MainGameScreen extends AbstractScreen {
 
 //      Create player
         Player black = new Player(color, this, gameStage);
-        black.position(96,64);
+        black.position(playerX,playerY);
         setKeyboardFocus(black);
         addActor(black);
         gameStage.attachObserver(black);
 //      set border
-
+        SpawnEnemies emySpawn = new SpawnEnemies(this, stageNum, playerX, playerY);
+        emySpawn.execute();
 
     }
 
@@ -38,6 +42,8 @@ public class MainGameScreen extends AbstractScreen {
     public void dispose() {
         super.dispose();
     }
+//    ----------------SETTERS/GETTERS--------------------------
+    public int getStageNum(){return stageNum;}
 
 //    public void getBackgroundTexture(int stageNum){
 //        this.stageNum = stageNum;

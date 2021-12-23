@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.mygdx.game.Enemies.Enemy;
 import com.mygdx.game.Observer.BorderObserve;
 import com.mygdx.game.Observer.SoftObserve;
 import com.mygdx.game.Observer.SolidObserve;
@@ -17,6 +18,7 @@ public class GameStage extends Image  {
     ArrayList <BorderObserve> listPlayer = new ArrayList<BorderObserve>();
     ArrayList <SoftObserve> listSoft = new ArrayList<SoftObserve>();
     ArrayList <SolidObserve> listSolid = new ArrayList<SolidObserve>();
+    ArrayList <Enemy> listEnemy = new ArrayList<>();
     TextureAtlas stageAtlas;
     float borderX, borderY, borderWidth, borderHeight;
     Sprite txStatusBar, txBackground;
@@ -62,6 +64,7 @@ public class GameStage extends Image  {
     public void attachSoft(Soft soft) {listSoft.add(soft);}
     public void detachSoft(Soft soft) {listSoft.remove(soft);}
     public void attachSolid(Solid solid) {listSolid.add(solid);}
+    public void attachEnemy(Enemy enemy){listEnemy.add(enemy);}
 
     @Override
     public void draw(Batch batch, float parentAlpha){
