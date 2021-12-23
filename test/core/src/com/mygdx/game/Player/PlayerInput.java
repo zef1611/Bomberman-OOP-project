@@ -1,5 +1,7 @@
 package com.mygdx.game.Player;
 
+import com.mygdx.game.DirectionEnum;
+import com.mygdx.game.StateEnum;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
@@ -25,12 +27,12 @@ public class PlayerInput {
             player.setCurrentAction(right);
             player.addAction(right);
             // For animations
-            if(player.getDirection() != Player.DirectionEnum.RIGHT){
+            if(player.getDirection() != DirectionEnum.RIGHT){
                 player.setStepCount(0);
             }
             player.setStepCount(1+player.getStepCount());
-            player.setDirection(Player.DirectionEnum.RIGHT);
-            player.setState(Player.StateEnum.WALK);
+            player.setDirection(DirectionEnum.RIGHT);
+            player.setState(StateEnum.WALK);
             playerAni.updateAni();
         }
         if(keycode ==Input.Keys.W && player.getCurrentAction().isComplete() && checkBorder(keycode)){
@@ -41,12 +43,12 @@ public class PlayerInput {
             player.addAction(up);
 
             // For animations
-            if(player.getDirection() != Player.DirectionEnum.UP) {
+            if(player.getDirection() != DirectionEnum.UP) {
                 player.setStepCount(0);
             }
             player.setStepCount(1+player.getStepCount());
-            player.setDirection(Player.DirectionEnum.UP);
-            player.setState(Player.StateEnum.WALK);
+            player.setDirection(DirectionEnum.UP);
+            player.setState(StateEnum.WALK);
             playerAni.updateAni();
 
 }
@@ -58,12 +60,12 @@ public class PlayerInput {
             player.addAction(down);
 
 //                 For animations
-            if(player.getDirection() != Player.DirectionEnum.DOWN) {
+            if(player.getDirection() != DirectionEnum.DOWN) {
                 player.setStepCount(0);
             }
             player.setStepCount(1+player.getStepCount());
-            player.setDirection(Player.DirectionEnum.DOWN);
-            player.setState(Player.StateEnum.WALK);
+            player.setDirection(DirectionEnum.DOWN);
+            player.setState(StateEnum.WALK);
             playerAni.updateAni();
 
         }
@@ -76,12 +78,12 @@ public class PlayerInput {
             player.addAction(left);
 
             // For animations
-            if(player.getDirection() != Player.DirectionEnum.LEFT) {
+            if(player.getDirection() != DirectionEnum.LEFT) {
                 player.setStepCount(0);
             }
             player.setStepCount(1+player.getStepCount());
-            player.setDirection(Player.DirectionEnum.LEFT);
-            player.setState(Player.StateEnum.WALK);
+            player.setDirection(DirectionEnum.LEFT);
+            player.setState(StateEnum.WALK);
             playerAni.updateAni();
 
         }

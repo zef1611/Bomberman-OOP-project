@@ -6,36 +6,27 @@ import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
+import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.Observer.BorderObserve;
+import com.mygdx.game.StateEnum;
 //Player state includes still, walking,
 //Player direction include left right up down
 //Combine to get the current sprite state
 
 public class Player extends Image implements BorderObserve {
 
-    public enum StateEnum{
-        WALK("walk"), STILL("still"), HWALK("hwalk"), HSTILL("hstill");
-        String stateName;
-        StateEnum(String stateName){
-            this.stateName = stateName;
-        }
-        @Override
-        public String toString(){
-            return stateName;
-        }
-    }
-    public enum DirectionEnum{
-        LEFT("left"), RIGHT("right"), UP("up"), DOWN("down"), NONE("none");
-        String directionName;
-        DirectionEnum(String directionName){
-            this.directionName = directionName;
-        }
-        @Override
-        public String toString(){
-            return directionName;
-        }
-    }
+//    public enum DirectionEnum{
+//        LEFT("left"), RIGHT("right"), UP("up"), DOWN("down"), NONE("none");
+//        String directionName;
+//        DirectionEnum(String directionName){
+//            this.directionName = directionName;
+//        }
+//        @Override
+//        public String toString(){
+//            return directionName;
+//        }
+//    }
 
     private PlayerInput playerInput;
     private TextureAtlas atlas;
@@ -75,12 +66,6 @@ public class Player extends Image implements BorderObserve {
 //        Receive border
         gameStage.attachObserver(this);
         gameStage.borderNotify();
-
-//        System.out.println(borderX);
-//        System.out.println(borderY);
-//        System.out.println(borderWidth);
-//        System.out.println(borderHeight);
-
     }
 
 //    This is to render animations

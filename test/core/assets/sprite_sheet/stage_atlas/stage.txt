@@ -1,0 +1,75 @@
+stage.png
+size: 816, 832
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+stage
+  rotate: false
+  xy: 0, 0
+  size: 272, 208
+  orig: 272, 208
+  offset: 0, 0
+  index: 1
+stage
+  rotate: false
+  xy: 272, 0
+  size: 272, 208
+  orig: 272, 208
+  offset: 0, 0
+  index: 2
+stage
+  rotate: false
+  xy: 544, 0
+  size: 272, 208
+  orig: 272, 208
+  offset: 0, 0
+  index: 3
+stage
+  rotate: false
+  xy: 0, 208
+  size: 272, 208
+  orig: 272, 208
+  offset: 0, 0
+  index: 4
+stage
+  rotate: false
+  xy: 272, 208
+  size: 272, 208
+  orig: 272, 208
+  offset: 0, 0
+  index: 5
+stage
+  rotate: false
+  xy: 544, 208
+  size: 272, 208
+  orig: 272, 208
+  offset: 0, 0
+  index: 6
+stage
+  rotate: false
+  xy: 0, 416
+  size: 272, 208
+  orig: 272, 208
+  offset: 0, 0
+  index: 7
+stage
+  rotate: false
+  xy: 272, 416
+  size: 272, 208
+  orig: 272, 208
+  offset: 0, 0
+  index: 8
+stage
+  rotate: false
+  xy: 544, 416
+  size: 272, 208
+  orig: 272, 208
+  offset: 0, 0
+  index: 9
+stage
+  rotate: false
+  xy: 0, 624
+  size: 272, 208
+  orig: 272, 208
+  offset: 0, 0
+  index: 10
