@@ -20,6 +20,9 @@ public class Skunk extends Enemy{
         skunk = new Sprite(new TextureAtlas.AtlasSprite(walkLeft.get(0)));
         setBounds(x, y, skunk.getRegionWidth(), skunk.getRegionHeight());
         super.setBorder(x,y);
+
+//        Movement
+        enemyMove = new EnemyMove(this, enemyAtlas,gameStage);
     }
     @Override
     public void draw(Batch batch, float parentAlpha){

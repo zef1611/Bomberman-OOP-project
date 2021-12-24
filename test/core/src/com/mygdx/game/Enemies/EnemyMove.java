@@ -13,16 +13,16 @@ public class EnemyMove {
     GameStage gameStage;
     EnemyAnimation enemyAnimation;
 
-    public EnemyMove(Enemy enemy, GameStage gameStage){
+    public EnemyMove(Enemy enemy, TextureAtlas enemyAtlas,GameStage gameStage){
         this.enemy = enemy;
         this.gameStage = gameStage;
+        enemyAnimation = new EnemyAnimation(enemy, enemyAtlas);
         movement();
-        enemyAnimation = new EnemyAnimation(enemy);
     }
 
     public void movement(){
-        while(enemy.isAlive()){
-
+        System.out.println(enemy.getCurrentAction().isComplete());
+        while(enemy.isAlive() && enemy.getCurrentAction().isComplete()){
             switch (enemy.getDirection()){
                 case LEFT:
                 case RIGHT:
@@ -49,15 +49,17 @@ public class EnemyMove {
                 }
             }
         }
+//        System.out.println(enemy.currentAction.isComplete());
         if(enemy.currentAction.isComplete()){
             MoveByAction action = new MoveByAction();
+
             if(enemy.getDirection() == DirectionEnum.LEFT){
                 action.setAmount(-64f, 0f);
             }
             if(enemy.getDirection() == DirectionEnum.LEFT){
                 action.setAmount(64f, 0f);
             }
-            action.setAmount(-64f, 0f);
+
             action.setDuration(1f/2f);
             enemy.setCurrentAction(action);
             enemy.addAction(action);

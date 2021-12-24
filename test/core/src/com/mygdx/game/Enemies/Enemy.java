@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.mygdx.game.DirectionEnum;
-import com.mygdx.game.Player.Player;
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.StateEnum;
 
@@ -21,29 +20,33 @@ public abstract class Enemy extends Image {
     float elapsedTime = 0;
     DirectionEnum direction;
     StateEnum state;
-    boolean isAlive;
+    boolean isAlive = true;
     EnemyMove enemyMove;
     private int borderX, borderY, borderWidth, borderHeight;
 
 
     Enemy(GameStage gameStage){
-        enemyMove = new EnemyMove(this, gameStage);
 //        Set the hitbox of enemy
         borderWidth = 64;
         borderHeight = 64;
+
 //        Set enemy state (include: STILL, WALK)
-        state = StateEnum.STILL;
+        state = StateEnum.WALK;
         direction = DirectionEnum.RIGHT;
 
 //        Preemptively set the current action
-        currentAction.setDuration(0f);
+//        currentAction.setDuration(0f);
         Enemy.this.addAction(currentAction);
+        currentAction.act(0.1f);
+        System.out.println(currentAction.isComplete());
+
+
+
     }
     protected void switchAtlas(){
         String enemyName = enemy.toString();
         String fileName = "sprite_sheet/enemies/"+enemyName+"/"+enemyName+".txt";
         this.enemyAtlas = new TextureAtlas(Gdx.files.internal(fileName));
-
     }
 
     protected void setBorder(int x, int y){
@@ -69,6 +72,7 @@ public abstract class Enemy extends Image {
 
     @Override
     protected void positionChanged(){
+
         super.positionChanged();
     }
 //    ---------------------SETTERS/GETTERS-------------------
@@ -102,6 +106,7 @@ public abstract class Enemy extends Image {
     public void setCurrentAction(MoveByAction currentAction){this.currentAction = currentAction;}
     public MoveByAction getCurrentAction(){return currentAction;}
 
+    public float getElapsedTime(){return elapsedTime;}
     public void setElapsedTime(float elapsedTime){this.elapsedTime = elapsedTime;}
 
 }
