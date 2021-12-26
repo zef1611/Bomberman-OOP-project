@@ -25,22 +25,18 @@ public abstract class Enemy extends Image {
     private int borderX, borderY, borderWidth, borderHeight;
 
 
-    Enemy(GameStage gameStage){
+    Enemy(GameStage gameStage, DirectionEnum directionEnum){
 //        Set the hitbox of enemy
         borderWidth = 64;
         borderHeight = 64;
 
 //        Set enemy state (include: STILL, WALK)
         state = StateEnum.WALK;
-        direction = DirectionEnum.RIGHT;
+        direction = directionEnum;
 
 //        Preemptively set the current action
-//        currentAction.setDuration(0f);
         Enemy.this.addAction(currentAction);
         currentAction.act(0.1f);
-        System.out.println(currentAction.isComplete());
-
-
 
     }
     protected void switchAtlas(){
@@ -56,6 +52,7 @@ public abstract class Enemy extends Image {
     @Override
     public void draw(Batch batch,float parentAlpha){
         elapsedTime += Gdx.graphics.getDeltaTime();
+        enemyMove.movement();
         boolean flip = (direction == DirectionEnum.RIGHT);
         elapsedTime += Gdx.graphics.getDeltaTime();
         if(flip){

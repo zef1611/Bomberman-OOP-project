@@ -10,8 +10,8 @@ import com.mygdx.game.Stage.Soft;
 public class MainGameScreen extends AbstractScreen {
     private int stageNum;
     private ColorEnum color;
-    int playerX = 96;
-    int playerY = 64;
+    public static int playerX = 96;
+    public static int playerY = 64;
 
     public MainGameScreen(){}
 
