@@ -76,7 +76,7 @@ public class EnemyMove {
         }
     }
 
-    public void checkSoft(){
+    private void checkSoft(){
         for (Soft s: gameStage.getListSoft()){
             if(enemy.getDirection() == DirectionEnum.DOWN){
                 if(enemy.getY() - 63 < (s.getBorderY() + s.getBorderHeight())
@@ -113,7 +113,7 @@ public class EnemyMove {
         }
     }
 
-    public void checkBorder(){
+    private void checkBorder(){
         if(enemy.getDirection() == DirectionEnum.DOWN){
             if(enemy.getY() - 1 < gameStage.getBorderY()) {
                 enemy.setDirection(DirectionEnum.UP);

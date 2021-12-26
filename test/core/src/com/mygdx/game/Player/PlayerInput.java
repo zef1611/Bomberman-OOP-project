@@ -2,6 +2,7 @@ package com.mygdx.game.Player;
 
 import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.Stage.GameStage;
+import com.mygdx.game.Stage.Soft;
 import com.mygdx.game.StateEnum;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -23,7 +24,10 @@ public class PlayerInput {
 
 //    Logic of input
     protected void inputContent(int keycode) {
-        if(keycode == Input.Keys.D && player.getCurrentAction().isComplete() && checkBorder(keycode)){
+        if(keycode == Input.Keys.D
+                && player.getCurrentAction().isComplete()
+                && checkBorder(keycode)
+                && checkSoft(keycode)){
             MoveByAction right = new MoveByAction();
             right.setAmount(64f, 0f);
             right.setDuration(1f/2f);
@@ -118,6 +122,41 @@ public class PlayerInput {
                     return false;
                 }
                 break;
+        }
+        return true;
+    }
+    private boolean checkSoft(int keycode){
+        for (Soft s: gameStage.getListSoft()){
+            switch (keycode){
+                case Input.Keys.W:
+                    if(player.getY() + 65 < (s.getBorderY() + s.getBorderHeight())
+                            && player.getY() + 65 > s.getBorderX()
+                            && player.getX() == s.getBorderX()){
+                        return false;
+                    }
+                    break;
+                case Input.Keys.A:
+                    if(player.getX() - 63 < (s.getBorderX() + s.getBorderWidth())
+                            && player.getX() - 63 > s.getBorderX()
+                            && player.getY() == s.getBorderY()) {
+                        return false;
+                    }
+                    break;
+                case Input.Keys.S:
+                    if(player.getY() - 63 < (s.getBorderY() + s.getBorderHeight())
+                            && player.getY() - 63 > s.getBorderY()
+                            && player.getX() == s.getBorderX()) {
+                        return false;
+                    }
+                    break;
+                case Input.Keys.D:
+                    if(player.getX() + 65 < (s.getBorderX() + s.getBorderWidth())
+                            && player.getX() + 65 > s.getBorderX()
+                            && player.getY() == s.getBorderY()){
+                        return false;
+                    }
+                    break;
+            }
         }
         return true;
     }
