@@ -43,9 +43,10 @@ public class Player extends Image {
     public Player(ColorEnum color, Stage stage, GameStage gameStage) {
 //        The player needs to be able to modify the stage add bombs, break blocks...
         this.stage = stage;
-        System.out.println(this.stage);
+
 //        For getting the borders
         this.gameStage = gameStage;
+
 //        Import the texture
         atlas = switchCharacter(color);
 
@@ -59,9 +60,11 @@ public class Player extends Image {
 //        For Character to move
         playerInput = new PlayerInput(this, gameStage);
         input();
+
 //        Work around for character to move 1 step at a time
         currentAction.setDuration(0f);
         Player.this.addAction(currentAction);
+
 //        Receive border
         gameStage.attachPlayer(this);
 

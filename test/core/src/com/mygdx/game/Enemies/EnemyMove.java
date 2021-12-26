@@ -20,26 +20,23 @@ public class EnemyMove {
     }
 
     public void movement(){
-        System.out.println(enemy.getCurrentAction().isComplete());
-//        while(enemy.isAlive()){
-            if(enemy.getCurrentAction().isComplete()) {
-                System.out.println("switch");
-                switch (enemy.getDirection()) {
-                    case LEFT:
-                    case RIGHT:
-                        horizontalMove();
-                        break;
-                    case UP:
-                    case DOWN:
-                        verticalMove();
-                        break;
-                }
-//            }
+        if(enemy.getCurrentAction().isComplete()) {
+            switch (enemy.getDirection()) {
+                case LEFT:
+                case RIGHT:
+                    horizontalMove();
+                    break;
+                case UP:
+                case DOWN:
+                    verticalMove();
+                    break;
+            }
         }
     }
 
     public void horizontalMove(){
         checkSoft();
+        checkBorder();
         if(enemy.currentAction.isComplete()){
             MoveByAction action = new MoveByAction();
 

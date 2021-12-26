@@ -3,6 +3,7 @@ package com.mygdx.game.Player;
 import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.Stage.Soft;
+import com.mygdx.game.Stage.Solid;
 import com.mygdx.game.StateEnum;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -27,7 +28,8 @@ public class PlayerInput {
         if(keycode == Input.Keys.D
                 && player.getCurrentAction().isComplete()
                 && checkBorder(keycode)
-                && checkSoft(keycode)){
+                && checkSoft(keycode)
+                && checkSolid(keycode)){
             MoveByAction right = new MoveByAction();
             right.setAmount(64f, 0f);
             right.setDuration(1f/2f);
@@ -42,7 +44,11 @@ public class PlayerInput {
             player.setState(StateEnum.WALK);
             playerAni.updateAni();
         }
-        if(keycode ==Input.Keys.W && player.getCurrentAction().isComplete() && checkBorder(keycode)){
+        if(keycode ==Input.Keys.W
+                && player.getCurrentAction().isComplete()
+                && checkBorder(keycode)
+                && checkSoft(keycode)
+                && checkSolid(keycode)){
             MoveByAction up = new MoveByAction();
             up.setAmount(0f,64f);
             up.setDuration(1f/2f);
@@ -59,7 +65,11 @@ public class PlayerInput {
             playerAni.updateAni();
 
 }
-        if(keycode == Input.Keys.S && player.getCurrentAction().isComplete() && checkBorder(keycode)){
+        if(keycode == Input.Keys.S
+                && player.getCurrentAction().isComplete()
+                && checkBorder(keycode)
+                && checkSoft(keycode)
+                && checkSolid(keycode)){
             MoveByAction down = new MoveByAction();
             down.setAmount(0f,-64f);
             down.setDuration(1f/2f);
@@ -76,7 +86,11 @@ public class PlayerInput {
             playerAni.updateAni();
 
         }
-        if(keycode == Input.Keys.A && player.getCurrentAction().isComplete() && checkBorder(keycode)){
+        if(keycode == Input.Keys.A
+                && player.getCurrentAction().isComplete()
+                && checkBorder(keycode)
+                && checkSoft(keycode)
+                && checkSolid(keycode)){
 
             MoveByAction left = new MoveByAction();
             left.setAmount(-64f, 0f);
@@ -99,7 +113,7 @@ public class PlayerInput {
         }
     }
 
-//   Border and stuffs
+//    Check game stage border
     private boolean checkBorder(int keycode){
         switch (keycode){
             case Input.Keys.W:
@@ -125,38 +139,90 @@ public class PlayerInput {
         }
         return true;
     }
+//    Check soft blocks border
     private boolean checkSoft(int keycode){
         for (Soft s: gameStage.getListSoft()){
             switch (keycode){
                 case Input.Keys.W:
-                    if(player.getY() + 65 < (s.getBorderY() + s.getBorderHeight())
-                            && player.getY() + 65 > s.getBorderX()
-                            && player.getX() == s.getBorderX()){
+                    if(Math.round(player.getY()) + 65 < (s.getBorderY() + s.getBorderHeight())
+                            && Math.round(player.getY()) + 65 > s.getBorderY()
+                            && Math.round(player.getX()) == s.getBorderX()){
                         return false;
                     }
                     break;
                 case Input.Keys.A:
-                    if(player.getX() - 63 < (s.getBorderX() + s.getBorderWidth())
-                            && player.getX() - 63 > s.getBorderX()
-                            && player.getY() == s.getBorderY()) {
+                    if(Math.round(player.getX()) - 63 < (s.getBorderX() + s.getBorderWidth())
+                            && Math.round(player.getX()) - 63 > s.getBorderX()
+                            && Math.round(player.getY()) == s.getBorderY()) {
                         return false;
                     }
                     break;
                 case Input.Keys.S:
-                    if(player.getY() - 63 < (s.getBorderY() + s.getBorderHeight())
-                            && player.getY() - 63 > s.getBorderY()
-                            && player.getX() == s.getBorderX()) {
+                    if(Math.round(player.getY()) - 63 < (s.getBorderY() + s.getBorderHeight())
+                            && Math.round(player.getY()) - 63 > s.getBorderY()
+                            && Math.round(player.getX()) == s.getBorderX()) {
                         return false;
                     }
                     break;
                 case Input.Keys.D:
-                    if(player.getX() + 65 < (s.getBorderX() + s.getBorderWidth())
-                            && player.getX() + 65 > s.getBorderX()
-                            && player.getY() == s.getBorderY()){
+                    if(Math.round(player.getX()) + 65 < (s.getBorderX() + s.getBorderWidth())
+                            && Math.round(player.getX()) + 65 > s.getBorderX()
+                            && Math.round(player.getY()) == s.getBorderY()){
                         return false;
                     }
                     break;
             }
+        }
+        return true;
+    }
+//    Check solid block border
+    private boolean checkSolid(int keycode){
+        for (Solid s: gameStage.getListSolid()){
+            switch (keycode){
+                case Input.Keys.W:
+                    if(Math.round(player.getY()) + 65 < (s.getBorderY() + s.getBorderHeight())
+                            && Math.round(player.getY()) + 65 > s.getBorderY()
+                            && Math.round(player.getX()) == s.getBorderX()){
+                        return false;
+                    }
+                    break;
+                case Input.Keys.A:
+                    if(Math.round(player.getX()) - 63 < (s.getBorderX() + s.getBorderWidth())
+                            && Math.round(player.getX()) - 63 > s.getBorderX()
+                            && Math.round(player.getY()) == s.getBorderY()) {
+                        return false;
+                    }
+                    break;
+                case Input.Keys.S:
+                    if(Math.round(player.getY()) - 63 < (s.getBorderY() + s.getBorderHeight())
+                            && Math.round(player.getY()) - 63 > s.getBorderY()
+                            && Math.round(player.getX()) == s.getBorderX()) {
+                        return false;
+                    }
+                    break;
+                case Input.Keys.D:
+//                    System.out.println("player x");
+//                    System.out.println(Math.round(player.getX()));
+//                    System.out.println("solid x");
+//                    System.out.println(s.getBorderX());
+//                    System.out.println("solid width");
+//                    System.out.println((s.getBorderX()+s.getBorderWidth()));
+//                    System.out.println("solid y");
+//                    System.out.println(s.getBorderY());
+//                    System.out.println("player y");
+//                    System.out.println(Math.round(player.getY()));
+//                    System.out.println("----------------------------------------");
+                    if(Math.round(player.getX()) + 65 < (s.getBorderX() + s.getBorderWidth())
+                            && Math.round(player.getX()) + 65 > s.getBorderX()
+                            && Math.round(player.getY()) == s.getBorderY()){
+//                        System.out.println(player.getX());
+//                        System.out.println(s.getBorderX());
+//                        System.out.println((s.getBorderX()+s.getBorderWidth()));
+                        return false;
+                    }
+                    break;
+            }
+//            System.out.println("new iter solid");
         }
         return true;
     }

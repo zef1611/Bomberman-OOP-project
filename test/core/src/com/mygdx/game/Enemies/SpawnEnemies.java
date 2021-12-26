@@ -13,12 +13,12 @@ public class SpawnEnemies {
     int playerX;
     int playerY;
 
-    public SpawnEnemies(Stage stage, GameStage gameStage, int stageNum, int playerX, int playerY){
+    public SpawnEnemies(Stage stage, GameStage gameStage, int stageNum){
         this.stage = stage;
         this.gameStage = gameStage;
         this.stageNum = stageNum;
-        this.playerX = playerX;
-        this.playerY = playerY;
+        this.playerX = MainGameScreen.playerX;
+        this.playerY = MainGameScreen.playerY;
     }
 
 //    Spawn enemies depending on stage
