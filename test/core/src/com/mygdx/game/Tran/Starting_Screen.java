@@ -1,3 +1,5 @@
+package com.mygdx.game.Tran;
+
 import javax.swing.JFrame;
 /*import java.awt.Color;*/
 import javax.swing.ImageIcon;
