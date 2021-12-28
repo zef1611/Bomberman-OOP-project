@@ -21,8 +21,7 @@ public class StartingScreen extends AbstractScreen {
         addActor(background);
 
 //    Start button construction
-        Texture txStart = new Texture(Gdx.files.internal("sprite/starting_screen" +
-                "/bomberman_icon.png"));
+        Texture txStart = new Texture(Gdx.files.internal("sprite/character_choosing_screen/start.png"));
         ImageButton start =
                 new ImageButton(new TextureRegionDrawable(new TextureRegion(txStart)));
         start.setPosition(160.f, 300.f, Align.center);
@@ -31,7 +30,7 @@ public class StartingScreen extends AbstractScreen {
         start.addListener(new ClickListener() {
            @Override
            public void clicked(InputEvent event, float x, float y){
-               ScreenManager.getInstance().showScreen(ScreenEnum.MAIN_GAME);
+               ScreenManager.getInstance().showScreen(ScreenEnum.CHAR_SELECT_SCREEN);
                System.out.println("hello");
            }
         });
