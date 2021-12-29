@@ -10,7 +10,7 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.title = "Bomberman";
 		config.width = 1024;
-		config.height = 916;
+		config.height = 832+84;
 		config.foregroundFPS  = 30;
 		config.resizable = false;
 		config.addIcon("sprite/starting_screen/bomberman_icon.png", Files.FileType.Internal);

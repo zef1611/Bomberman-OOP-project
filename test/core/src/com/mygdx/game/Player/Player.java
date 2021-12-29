@@ -6,36 +6,26 @@ import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
+import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.Stage.GameStage;
-import com.mygdx.game.Observer.BorderObserve;
+import com.mygdx.game.StateEnum;
 //Player state includes still, walking,
 //Player direction include left right up down
 //Combine to get the current sprite state
 
-public class Player extends Image implements BorderObserve {
+public class Player extends Image {
 
-    public enum StateEnum{
-        WALK("walk"), STILL("still"), HWALK("hwalk"), HSTILL("hstill");
-        String stateName;
-        StateEnum(String stateName){
-            this.stateName = stateName;
-        }
-        @Override
-        public String toString(){
-            return stateName;
-        }
-    }
-    public enum DirectionEnum{
-        LEFT("left"), RIGHT("right"), UP("up"), DOWN("down"), NONE("none");
-        String directionName;
-        DirectionEnum(String directionName){
-            this.directionName = directionName;
-        }
-        @Override
-        public String toString(){
-            return directionName;
-        }
-    }
+//    public enum DirectionEnum{
+//        LEFT("left"), RIGHT("right"), UP("up"), DOWN("down"), NONE("none");
+//        String directionName;
+//        DirectionEnum(String directionName){
+//            this.directionName = directionName;
+//        }
+//        @Override
+//        public String toString(){
+//            return directionName;
+//        }
+//    }
 
     private PlayerInput playerInput;
     private TextureAtlas atlas;
@@ -46,15 +36,17 @@ public class Player extends Image implements BorderObserve {
     private Stage stage;
     private GameStage gameStage;
     private int stepCount=0; // For deciding the animation in update method
-    private float borderX, borderY, borderWidth, borderHeight;
+    private int borderX, borderY, borderWidth, borderHeight;
     private DirectionEnum direction = DirectionEnum.NONE;
     private StateEnum state = StateEnum.STILL;
 
     public Player(ColorEnum color, Stage stage, GameStage gameStage) {
 //        The player needs to be able to modify the stage add bombs, break blocks...
         this.stage = stage;
+
 //        For getting the borders
         this.gameStage = gameStage;
+
 //        Import the texture
         atlas = switchCharacter(color);
 
@@ -66,11 +58,16 @@ public class Player extends Image implements BorderObserve {
         setTouchable(Touchable.enabled);
 
 //        For Character to move
-        playerInput = new PlayerInput(this);
+        playerInput = new PlayerInput(this, gameStage);
         input();
+
 //        Work around for character to move 1 step at a time
         currentAction.setDuration(0f);
         Player.this.addAction(currentAction);
+
+//        Receive border
+        gameStage.attachPlayer(this);
+
     }
 
 //    This is to render animations
@@ -102,18 +99,12 @@ public class Player extends Image implements BorderObserve {
         player.setPosition(x, y);
     }
 
-    @Override
-    public void update(){
-        this.borderX = gameStage.getBorderX();
-        this.borderY = gameStage.getBorderY();
-        this.borderWidth = gameStage.getBorderWidth();
-        this.borderHeight = gameStage.getBorderHeight();
-    }
 
 //    Every input happens here + Update the animation
     public void input(){
         addListener(new InputListener(){
             public boolean keyDown(InputEvent event, int keycode){
+//                playerInput will deal with movement logic
                 playerInput.inputContent(keycode);
                 return true;
             }
@@ -172,6 +163,4 @@ public class Player extends Image implements BorderObserve {
     public float getBorderY(){ return borderY;}
     public float getBorderWidth(){return borderWidth;}
     public float getBorderHeight(){return borderHeight;}
-
-
 }

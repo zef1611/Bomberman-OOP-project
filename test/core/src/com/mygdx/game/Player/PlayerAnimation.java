@@ -2,6 +2,7 @@ package com.mygdx.game.Player;
 
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.mygdx.game.DirectionEnum;
 
 public class PlayerAnimation {
     Player player;
@@ -14,8 +15,8 @@ public class PlayerAnimation {
 
     public void updateAni(){
         player.setElapsedTime(0);
-        String direction = (player.getDirection() == Player.DirectionEnum.LEFT) ?
-                Player.DirectionEnum.RIGHT.toString()
+        String direction = (player.getDirection() == DirectionEnum.LEFT) ?
+                DirectionEnum.RIGHT.toString()
                 :player.getDirection().toString();
         String state = player.getState().toString();
         String step = (player.getStepCount()%2==0)? "e":"o";

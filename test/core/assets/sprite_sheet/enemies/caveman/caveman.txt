@@ -1,0 +1,131 @@
+caveman.png
+size: 1188, 108
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+defeat_down
+  rotate: false
+  xy: 0, 0
+  size: 68, 108
+  orig: 68, 108
+  offset: 0, 0
+  index: 1
+defeat_down
+  rotate: false
+  xy: 68, 0
+  size: 68, 108
+  orig: 68, 108
+  offset: 0, 0
+  index: 2
+defeat_down
+  rotate: false
+  xy: 136, 0
+  size: 68, 108
+  orig: 68, 108
+  offset: 0, 0
+  index: 3
+defeat_left
+  rotate: false
+  xy: 204, 0
+  size: 68, 108
+  orig: 68, 108
+  offset: 0, 0
+  index: 1
+defeat_left
+  rotate: false
+  xy: 272, 0
+  size: 68, 108
+  orig: 68, 108
+  offset: 0, 0
+  index: 2
+defeat_left
+  rotate: false
+  xy: 340, 0
+  size: 68, 108
+  orig: 68, 108
+  offset: 0, 0
+  index: 3
+defeat_up
+  rotate: false
+  xy: 408, 0
+  size: 68, 108
+  orig: 68, 108
+  offset: 0, 0
+  index: 1
+defeat_up
+  rotate: false
+  xy: 476, 0
+  size: 68, 108
+  orig: 68, 108
+  offset: 0, 0
+  index: 2
+defeat_up
+  rotate: false
+  xy: 544, 0
+  size: 68, 108
+  orig: 68, 108
+  offset: 0, 0
+  index: 3
+walk_down
+  rotate: false
+  xy: 612, 0
+  size: 64, 88
+  orig: 64, 88
+  offset: 0, 0
+  index: 1
+walk_down
+  rotate: false
+  xy: 676, 0
+  size: 64, 88
+  orig: 64, 88
+  offset: 0, 0
+  index: 2
+walk_down
+  rotate: false
+  xy: 740, 0
+  size: 64, 88
+  orig: 64, 88
+  offset: 0, 0
+  index: 3
+walk_left
+  rotate: false
+  xy: 804, 0
+  size: 64, 88
+  orig: 64, 88
+  offset: 0, 0
+  index: 1
+walk_left
+  rotate: false
+  xy: 868, 0
+  size: 64, 88
+  orig: 64, 88
+  offset: 0, 0
+  index: 2
+walk_left
+  rotate: false
+  xy: 932, 0
+  size: 64, 88
+  orig: 64, 88
+  offset: 0, 0
+  index: 3
+walk_up
+  rotate: false
+  xy: 996, 0
+  size: 64, 88
+  orig: 64, 88
+  offset: 0, 0
+  index: 1
+walk_up
+  rotate: false
+  xy: 1060, 0
+  size: 64, 88
+  orig: 64, 88
+  offset: 0, 0
+  index: 2
+walk_up
+  rotate: false
+  xy: 1124, 0
+  size: 64, 88
+  orig: 64, 88
+  offset: 0, 0
+  index: 3
