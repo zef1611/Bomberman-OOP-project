@@ -22,7 +22,7 @@ public class EnemyAnimation {
                 ? DirectionEnum.LEFT.toString() : directionEnum.toString();
         String state = stateEnum.toString();
         String region = state+"_"+direction;
-        enemy.setCurrentAni(new Animation<>(1f/6f,
+        enemy.setCurrentAni(new Animation<>(1f/3f,
                 enemyAtlas.findRegions(region)));
     }
 }

@@ -11,7 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 
 public class StartingScreen extends AbstractScreen {
-    static int stageNum = 1;
+    static int stageNum = 4;
     @Override
     public void buildStage() {
 //    Background of the starting screen

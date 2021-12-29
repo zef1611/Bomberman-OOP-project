@@ -1,6 +1,5 @@
 package com.mygdx.game.Enemies;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -11,14 +10,12 @@ import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.Screen.MainGameScreen;
 import com.mygdx.game.Stage.GameStage;
 
-//This enemy is spawned in stage 3
-public class Skunk extends Enemy{
-    Sprite skunk;
+public class Alien extends Enemy{
+    Sprite alien;
 
-//    tileX and tileY are for easier spawning system on a grid of size 13x11
-    Skunk(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage) {
+    Alien(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage) {
         super(directionEnum, gameStage, stage);
-        super.setName(EnemyEnum.SKUNK);
+        super.setName(EnemyEnum.ALIEN);
 
 //        Set coordinate
         int x = MainGameScreen.playerX + 64 * tileX;
@@ -28,20 +25,19 @@ public class Skunk extends Enemy{
         switchAtlas();
         Array<TextureAtlas.AtlasRegion> walkLeft = getEnemyAtlas().findRegions("walk_left");
         currentAni = new Animation<>(1f/15f,walkLeft.get(0));
-        skunk = new Sprite(new TextureAtlas.AtlasSprite(walkLeft.get(0)));
+        alien = new Sprite(new TextureAtlas.AtlasSprite(walkLeft.get(0)));
 
 //        Set enemy's initial position
-        setBounds(x, y, skunk.getRegionWidth(), skunk.getRegionHeight());
+        setBounds(x, y, alien.getRegionWidth(), alien.getRegionHeight());
         super.setBorder(x,y);
 
 //        Movement
         enemyMove = new EnemyMove(this, enemyAtlas,gameStage);
     }
 
-//    Draw the enemy
+    //    Draw the enemy
     @Override
     public void draw(Batch batch, float parentAlpha){
         super.draw(batch,parentAlpha);
     }
-
 }

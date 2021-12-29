@@ -201,28 +201,13 @@ public class PlayerInput {
                     }
                     break;
                 case Input.Keys.D:
-//                    System.out.println("player x");
-//                    System.out.println(Math.round(player.getX()));
-//                    System.out.println("solid x");
-//                    System.out.println(s.getBorderX());
-//                    System.out.println("solid width");
-//                    System.out.println((s.getBorderX()+s.getBorderWidth()));
-//                    System.out.println("solid y");
-//                    System.out.println(s.getBorderY());
-//                    System.out.println("player y");
-//                    System.out.println(Math.round(player.getY()));
-//                    System.out.println("----------------------------------------");
                     if(Math.round(player.getX()) + 65 < (s.getBorderX() + s.getBorderWidth())
                             && Math.round(player.getX()) + 65 > s.getBorderX()
                             && Math.round(player.getY()) == s.getBorderY()){
-//                        System.out.println(player.getX());
-//                        System.out.println(s.getBorderX());
-//                        System.out.println((s.getBorderX()+s.getBorderWidth()));
                         return false;
                     }
                     break;
             }
-//            System.out.println("new iter solid");
         }
         return true;
     }

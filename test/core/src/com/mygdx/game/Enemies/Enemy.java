@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.mygdx.game.DirectionEnum;
@@ -25,7 +26,7 @@ public abstract class Enemy extends Image {
     private int borderX, borderY, borderWidth, borderHeight;
 
 
-    Enemy(GameStage gameStage, DirectionEnum directionEnum){
+    Enemy(DirectionEnum directionEnum, GameStage gameStage, Stage stage){
 //        Set the hitbox of enemy
         borderWidth = 64;
         borderHeight = 64;
@@ -38,6 +39,9 @@ public abstract class Enemy extends Image {
         Enemy.this.addAction(currentAction);
         currentAction.act(0.1f);
 
+//        Add enemy into listEnemy
+        gameStage.attachEnemy(this);
+        stage.addActor(this);
     }
     protected void switchAtlas(){
         String enemyName = enemy.toString();

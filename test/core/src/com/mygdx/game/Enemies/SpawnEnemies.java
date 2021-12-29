@@ -25,18 +25,38 @@ public class SpawnEnemies {
     public void execute(){
         switch (stageNum){
             case 1:
+                spawnCaveman();
+                break;
+            case 2:
+                spawnNinjaBlue();
+                break;
+            case 3:
                 spawnSkunk();
                 break;
+            case 4:
+                spawnAlien();
+                break;
+            default:
+                System.out.println("spawnEnemy - stageNum - MISSING");
         }
     }
 
 //        tileX: from 0 to 12
 //        tileY: from 0 to 10
     private void spawnSkunk(){
-
-        Skunk s1 = new Skunk(gameStage, 11, 0, DirectionEnum.LEFT);
-        Skunk s2 = new Skunk(gameStage, 10, 8, DirectionEnum.DOWN);
-        stage.addActor(s1);
-        stage.addActor(s2);
+        new Skunk(11, 0, DirectionEnum.LEFT, gameStage, stage);
+        new Skunk(10, 8, DirectionEnum.DOWN, gameStage, stage);
+    }
+    private void spawnCaveman(){
+        new Caveman(11, 0, DirectionEnum.LEFT, gameStage, stage);
+        new Caveman(10, 8, DirectionEnum.DOWN, gameStage, stage);
+    }
+    private void spawnNinjaBlue(){
+        new NinjaBlue(11, 0, DirectionEnum.LEFT, gameStage, stage);
+        new NinjaBlue(10, 8, DirectionEnum.DOWN, gameStage, stage);
+    }
+    private void spawnAlien(){
+        new Alien(11, 0, DirectionEnum.LEFT, gameStage, stage);
+        new Alien(10, 8, DirectionEnum.DOWN, gameStage, stage);
     }
 }
