@@ -17,8 +17,8 @@ public class MainGameScreen extends AbstractScreen {
     @Override
     public void buildStage() {
 //      Get StageNum, colorEnum
-        stageNum = StartingScreen.stageNum;
-        color = ColorEnum.BLUE;
+        stageNum = StageSelectScreen.stageNum;
+        color = CharSelectScreen.colorEnum;
 //      Get gameStage background
 
 //      Add the game stage
