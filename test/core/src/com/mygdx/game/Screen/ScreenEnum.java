@@ -15,7 +15,6 @@ public enum ScreenEnum {
         public AbstractScreen getScreen(Object...params){
             return new StageSelectScreen();
         }
-
     },
     MAIN_GAME{
         public AbstractScreen getScreen(Object...params){

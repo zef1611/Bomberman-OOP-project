@@ -1,0 +1,20 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class DesktopLauncher{
+    +void main()
+}
+
+class Bomberman{
+    +SpriteBatch batch
+    +void create()
+    +void render()
+    +void dispose()
+}
+
+class StartingScreen{
+    +void buildStage()
+    +void dispose()
+}
+@enduml
+
