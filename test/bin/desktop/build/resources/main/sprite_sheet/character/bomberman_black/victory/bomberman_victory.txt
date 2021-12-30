@@ -1,0 +1,33 @@
+bomberman_victory.png
+size: 64, 592
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bomberman_victory
+  rotate: false
+  xy: 0, 0
+  size: 64, 148
+  orig: 64, 148
+  offset: 0, 0
+  index: 1
+bomberman_victory
+  rotate: false
+  xy: 0, 148
+  size: 64, 148
+  orig: 64, 148
+  offset: 0, 0
+  index: 2
+bomberman_victory
+  rotate: false
+  xy: 0, 296
+  size: 64, 148
+  orig: 64, 148
+  offset: 0, 0
+  index: 3
+bomberman_victory
+  rotate: false
+  xy: 0, 444
+  size: 64, 148
+  orig: 64, 148
+  offset: 0, 0
+  index: 4

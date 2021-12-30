@@ -1,0 +1,75 @@
+bomberman_defeat.png
+size: 197, 499
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bomberman_defeat
+  rotate: false
+  xy: 0, 0
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: 1
+bomberman_defeat
+  rotate: false
+  xy: 96, 0
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: 2
+bomberman_defeat
+  rotate: false
+  xy: 0, 96
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: 3
+bomberman_defeat
+  rotate: false
+  xy: 96, 96
+  size: 101, 101
+  orig: 101, 101
+  offset: 0, 0
+  index: 4
+bomberman_defeat
+  rotate: false
+  xy: 0, 197
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: 5
+bomberman_defeat
+  rotate: false
+  xy: 96, 197
+  size: 101, 100
+  orig: 101, 100
+  offset: 0, 0
+  index: 6
+bomberman_defeat
+  rotate: false
+  xy: 0, 297
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: 7
+bomberman_defeat
+  rotate: false
+  xy: 96, 297
+  size: 101, 102
+  orig: 101, 102
+  offset: 0, 0
+  index: 9
+bomberman_defeat
+  rotate: false
+  xy: 0, 399
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: 10
+bomberman_defeat
+  rotate: false
+  xy: 100, 399
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: 14

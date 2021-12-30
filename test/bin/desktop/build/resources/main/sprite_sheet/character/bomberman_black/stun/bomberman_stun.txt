@@ -1,0 +1,75 @@
+bomberman_stun.png
+size: 64, 1000
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bomberman_stun
+  rotate: false
+  xy: 0, 0
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: 1
+bomberman_stun
+  rotate: false
+  xy: 0, 100
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: 2
+bomberman_stun
+  rotate: false
+  xy: 0, 200
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: 3
+bomberman_stun
+  rotate: false
+  xy: 0, 300
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: 4
+bomberman_stun
+  rotate: false
+  xy: 0, 400
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: 5
+bomberman_stun
+  rotate: false
+  xy: 0, 500
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: 6
+bomberman_stun
+  rotate: false
+  xy: 0, 600
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: 7
+bomberman_stun
+  rotate: false
+  xy: 0, 700
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: 8
+bomberman_stun
+  rotate: false
+  xy: 0, 800
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: 9
+bomberman_stun
+  rotate: false
+  xy: 0, 900
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: 10

@@ -1,0 +1,89 @@
+skunk.png
+size: 64, 1536
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+defeat_down
+  rotate: false
+  xy: 0, 0
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+defeat_left
+  rotate: false
+  xy: 0, 128
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+defeat_up
+  rotate: false
+  xy: 0, 256
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+walk_down
+  rotate: false
+  xy: 0, 384
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: 1
+walk_down
+  rotate: false
+  xy: 0, 512
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: 2
+walk_down
+  rotate: false
+  xy: 0, 640
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: 3
+walk_left
+  rotate: false
+  xy: 0, 768
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: 1
+walk_left
+  rotate: false
+  xy: 0, 896
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: 2
+walk_left
+  rotate: false
+  xy: 0, 1024
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: 3
+walk_up
+  rotate: false
+  xy: 0, 1152
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: 1
+walk_up
+  rotate: false
+  xy: 0, 1280
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: 2
+walk_up
+  rotate: false
+  xy: 0, 1408
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: 3
