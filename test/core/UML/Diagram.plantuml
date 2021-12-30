@@ -2,19 +2,89 @@
 skinparam classAttributeIconSize 0
 
 class DesktopLauncher{
-    +void main()
+    +main(): void
 }
 
 class Bomberman{
     +SpriteBatch batch
-    +void create()
-    +void render()
-    +void dispose()
+    +create(): void
+    +render(): void
+    +dispose(): void
 }
 
 class StartingScreen{
-    +void buildStage()
-    +void dispose()
+    +buildStage(): void
+    +dispose(): void
 }
+class CharSelectScreen{
+    +{static}colorEnum: ColorEnum
+    +buildStage(): void
+    +setColorEnum(): void
+    +dispose(): void
+}
+class StageSelectScreen{
+    +{static}stageNum: int
+    +buildStage(): void
+    +setStageNum(): void
+}
+-class ScreenManager{
+    -{static}instance: ScreenManager
+    -game: Game
+    -ScreenManager()
+    +{static} getInstance(): ScreenManager
+    + initialize(): void
+    + showScreen(): void
+}
+abstract class AbstractScreen{
+    #AbstractScreen()
+    +{abstract} buildStage(): void
+    + show(): void
+    + render(): void
+    + resize(): void
+    + pause(): void
+    + resume(): void
+    + hide(): void
+}
+
+enum DirectionEnum{
+    LEFT
+    RIGHT
+    UP
+    DOWN
+    NONE
+    String directionName
+    +StateEnum()
+    +toString():String
+}
+enum StateEnum{
+    WALK
+    STILL
+    HWALK
+    HSTILL
+    stateName: String
+    +StateEnum()
+    +toString():String
+}
+class Bomb{
+    player: Player
+    atlas: TextureAtlas
+    currentAni: Animation<TextureAtlas.AtlasRegion>
+    elapsedTime: float
+    bomb: Sprite
+    +Bomb()
+    +draw(): void
+    +act(): void
+}
+enum ColorEnum{
+    BLACK
+    BLUE
+    GREEN
+    RED
+    WHITE
+    colorName: String
+    ColorEnum()
+    +toString(): String
+}
+
 @enduml
 
