@@ -85,6 +85,141 @@ enum ColorEnum{
     ColorEnum()
     +toString(): String
 }
+class player{
+    -playerInput: PlayerInput
+    -atlas: TextureAtlas
+    -player: Sprite
+    -currentAni: Animation <TextureAtlas.AtlasRegion>
+    -elapsedTime: float
+    -currentAction: MoveByAction
+    -stage: Stage
+    -gameStage: GameStage
+    -stepCount: int
+    -borderX: int
+    -borderY: int
+    -borerWidth: int
+    -borderHeight: int
+    -direction: DirectionEnum
+    -state: StateEnum
+    +Player()
+    +draw():void
+    +act(): void
+    #positionChanged(): void
+    +position(): void
+    +input(): void
+    #switchCharacter(): TextureAtlas
+    +getState(): StateEnum
+    #setState():void
+    +getDirection(): DirectionEnum
+    #setDirection(): void
+    + getStepCount(): int
+    #setStepCount(): void
+    +getCurrentAni(): Animation <TextureAtlas.AtlasRegion>
+    #setCurrentAni(): void
+    +getElapsedTime(): float
+    #setElapsedTime(): void
+    +getCurrentAction(): MoveByAction
+    +setCurrentAction(): void
+    +getAtlas(): TextureAtlas
+    +getStage(): Stage
+    +getBorderX(): float
+    +getBorderY(): float
+    +getBorderWidth(): float
+    +getBorderHeight(): float
+}
+class PlayerAnimation{
+    player: Player
+    atlas: TextureAtlas
+    +PlayerAnimation()
+    +updateAni(): void
+}
+class PlayerInput{
+    -player: Player
+    -gameStage: GameStage
+    -stage: Stage
+    -playerAni: PlayerAnimation
+    #PlayerInput():
+    #inputContent(): void
+    #checkBorder(): boolean
+    #checkSoft(): boolean
+    #checkSolid(): boolean
+}
+class Alien{
+    alien: Sprite
+    +Alien()
+    +draw(): void
+}
+class Caveman{
+    caveman: Sprite
+    +Caveman()
+    +draw(): void
+}
+class NinjaBlue{
+    ninjaBlue: Sprite
+    +NinjaBlue()
+    +draw(): void
+}
+class Skunk{
+    skunk: Sprite
+    +Skunk()
+    +draw(): void
+}
+class SpawnEnemies{
+    stage: Stage
+    stageNum: int
+    gameStage: GameStage
+    playerX: int
+    playerY: int
+    +SpawnEnemies()
+    +execute(): void
+    +spawnSkunk(): void 
+    +spawnCaveman(): void 
+    +spawnNinjaBlue(): void 
+    +spawnAlien(): void 
+}
+class EnemyAnimation{
+    enemy: Enemy
+    enemyAtlas: TextureAtlas
+    +EnemyAnimation()
+    +updateAni(): void
+}
+class Enemy{
+    -enemy: EnemyEnum
+    #enemyAtlas: TextureAtlas
+    #currentAni: Animation<TextureAtlas.AtlasRegion>
+    #currentAction: MoveByAction
+    -elapsedTime: float
+    -direction: DirectionEnum
+    -state: StateEnum
+    -isAlive: boolean
+    #enemyMove: EnemyMove
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    #Enemy()
+    #switchAtlas(): void
+    #setBorder(): void
+    +draw(): void
+    +act(): void
+    #positionChanged(): void
+    +setName(): void
+    +getEnemyAtlas(): TextureAtlas
+    +getCurrentAni(): Animation<TextureAtlas.AtlasRegion>
+    +setCurrentAni(): void
+    +setBorderX(): void
+    +setBorderY(): void
+    +getBorderX():int
+    +getBorderY():int
+    +getBorderWidth():int
+    +getBorderHeight():int
+    +getState(): StateEnum
+    +setState(): void
+    +setCurrentAction(): void
+    +getCurrentAction(): MoveByAction
+    +getElapsedTime(): float
+    +setElapsedTime(): void
+}
 
 @enduml
 
