@@ -52,6 +52,9 @@ public class Soft extends Image {
         super.act(delta);
     }
 
+    public void delSoft() {
+        this.gameStage.detachSoft(this);
+    }
 
 //    ------------------------------SETTERS/GETTERS---------------------------
     public int getBorderX(){return borderX;}
