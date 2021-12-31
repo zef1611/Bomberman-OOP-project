@@ -228,6 +228,15 @@ class EnemyMove{
     -checkSoft(): void
     -checkBorder(): void
 }
+class EnemyEnum{
+    NINJA_BLUE
+    ALIEN
+    SKUNK
+    CAVEMAN
+    +name: String
+    +EnemyEnum()
+    +toString: String
+}
 class GameStage{
     -listPlayer: ArrayList<Player>
     -listSoft: ArrayList<Soft>
@@ -345,15 +354,16 @@ Enemy <|-- Skunk
 Enemy <|-- Caveman
 Enemy <|-- NinjaBlue
 
-Image <|-- Enemy
+Image <|- Enemy
 Image <|-- Bomb
-Image <|-- Player
+Image <|- Player
 Image <|-- GameStage
 Image <|-- Soft
 Image <|-- Solid
 
 Stage <|-- AbstractScreen
 Screen <|.. AbstractScreen
+
 
 AbstractScreen <|-- CharSelectScreen
 AbstractScreen <|-- StageSelectScreen
@@ -389,15 +399,15 @@ Player -- MainGameScreen: buildStage
 PlayerInput --* Player
 PlayerAnimation --* PlayerInput
 Bomb ..> PlayerInput
-DirectionEnum --o Player
-StateEnum --o Player
-ColorEnum --o Player
+DirectionEnum -o Player
+StateEnum -o Player
+ColorEnum -o Player
 
 EnemyMove --* Enemy
 EnemyAnimation --* EnemyMove
-DirectionEnum --o Enemy
-StateEnum --o Enemy
-EnemyEnum --o Enemy
+DirectionEnum -o Enemy
+StateEnum -o Enemy
+EnemyEnum -o Enemy
 
 ScreenEnum *--ScreenManager
 ScreenManager *-- Bomberman: create
