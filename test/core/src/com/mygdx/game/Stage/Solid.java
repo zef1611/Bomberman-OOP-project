@@ -33,7 +33,7 @@ public class Solid extends Image {
     }
 
     //    Switch soft block sprite according to stage
-    protected Sprite switchSprite(int stageNum) {
+    private Sprite switchSprite(int stageNum) {
         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("sprite_sheet/soft_solid/soft_solid.txt"));
         return new Sprite(new TextureAtlas.AtlasSprite(atlas.findRegion("solid",stageNum)));
     }
@@ -43,11 +43,10 @@ public class Solid extends Image {
         solid.draw(batch);
     }
 
-
-    public void update() {
-
+    @Override
+    public void act(float delta) {
+        super.act(delta);
     }
-
 //    ----------------------------SETTERS/GETTERS-----------------------------
     public int getBorderY(){return borderY;}
     public int getBorderX(){return borderX;}

@@ -13,10 +13,10 @@ import com.mygdx.game.Stage.GameStage;
 
 //This enemy is spawned in stage 3
 public class Skunk extends Enemy{
-    Sprite skunk;
+    private Sprite skunk;
 
 //    tileX and tileY are for easier spawning system on a grid of size 13x11
-    Skunk(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage) {
+    public Skunk(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage) {
         super(directionEnum, gameStage, stage);
         super.setName(EnemyEnum.SKUNK);
 

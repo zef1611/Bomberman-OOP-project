@@ -11,9 +11,9 @@ import com.mygdx.game.Screen.MainGameScreen;
 import com.mygdx.game.Stage.GameStage;
 
 public class Alien extends Enemy{
-    Sprite alien;
+    private Sprite alien;
 
-    Alien(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage) {
+    public Alien(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage) {
         super(directionEnum, gameStage, stage);
         super.setName(EnemyEnum.ALIEN);
 

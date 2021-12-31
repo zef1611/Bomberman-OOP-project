@@ -9,9 +9,9 @@ import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.Stage.Soft;
 
 public class EnemyMove {
-    Enemy enemy;
-    GameStage gameStage;
-    EnemyAnimation enemyAnimation;
+    private Enemy enemy;
+    private GameStage gameStage;
+    private EnemyAnimation enemyAnimation;
 
     public EnemyMove(Enemy enemy, TextureAtlas enemyAtlas,GameStage gameStage){
         this.enemy = enemy;

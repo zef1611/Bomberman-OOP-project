@@ -7,18 +7,14 @@ import com.mygdx.game.Screen.MainGameScreen;
 import com.mygdx.game.Stage.GameStage;
 
 public class SpawnEnemies {
-    Stage stage;
-    int stageNum;
-    GameStage gameStage;
-    int playerX;
-    int playerY;
+    private Stage stage;
+    private int stageNum;
+    private GameStage gameStage;
 
     public SpawnEnemies(Stage stage, GameStage gameStage, int stageNum){
         this.stage = stage;
         this.gameStage = gameStage;
         this.stageNum = stageNum;
-        this.playerX = MainGameScreen.playerX;
-        this.playerY = MainGameScreen.playerY;
     }
 
 //    Spawn enemies depending on stage

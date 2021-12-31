@@ -4,18 +4,14 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.mygdx.game.Screen.MainGameScreen;
 
 public class SpawnSolid {
-    Stage stage;
-    int stageNum;
-    GameStage gameStage;
-    int playerX;
-    int playerY;
+    private Stage stage;
+    private int stageNum;
+    private GameStage gameStage;
 
     public SpawnSolid(Stage stage, GameStage gameStage, int stageNum){
         this.stage = stage;
         this.gameStage = gameStage;
         this.stageNum = stageNum;
-        this.playerX = MainGameScreen.playerX;
-        this.playerY = MainGameScreen.playerY;
     }
 
 //    Spawn solid blocks on stage

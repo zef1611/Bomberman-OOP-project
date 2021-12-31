@@ -10,11 +10,11 @@ import com.badlogic.gdx.utils.Array;
 //Bomb : 2 3 2 1 2 3 2 1 2
 //Explosion: 1 2 3 4 3 2 1
 public class Bomb extends Image {
-    Player player;
-    TextureAtlas atlas;
-    Animation<TextureAtlas.AtlasRegion> currentAni;
-    float elapsedTime;
-    Sprite bomb;
+    private Player player;
+    private TextureAtlas atlas;
+    private Animation<TextureAtlas.AtlasRegion> currentAni;
+    private float elapsedTime;
+    private Sprite bomb;
     public Bomb (Player player){
         this.player = player;
         atlas = new TextureAtlas(Gdx.files.internal("sprite_sheet/bomb_explosion/bomb_explosion.txt"));

@@ -11,8 +11,7 @@ import com.mygdx.game.Player.ColorEnum;
 import com.mygdx.game.Screen.MainGameScreen;
 
 public class Soft extends Image {
-    Sprite soft;
-    public GameStage gameStage;
+    private final Sprite soft;
     private int borderX, borderY, borderWidth, borderHeight;
 
 //    tileX ~ 0 - 12
@@ -36,7 +35,7 @@ public class Soft extends Image {
     }
 
 //    Switch soft block sprite according to stage
-    protected Sprite switchSprite(int stageNum) {
+    private Sprite switchSprite(int stageNum) {
         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("sprite_sheet/soft_solid/soft_solid.txt"));
         return new Sprite(new TextureAtlas.AtlasSprite(atlas.findRegion("soft",stageNum)));
     }
@@ -51,7 +50,6 @@ public class Soft extends Image {
     public void act(float delta) {
         super.act(delta);
     }
-
 
 //    ------------------------------SETTERS/GETTERS---------------------------
     public int getBorderX(){return borderX;}

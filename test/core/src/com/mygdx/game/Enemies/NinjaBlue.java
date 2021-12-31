@@ -12,9 +12,9 @@ import com.mygdx.game.Stage.GameStage;
 
 //This enemy should appear in stage 2
 public class NinjaBlue extends Enemy{
-    Sprite ninjaBlue;
+    private Sprite ninjaBlue;
 
-    NinjaBlue(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage) {
+    public NinjaBlue(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage) {
         super(directionEnum, gameStage, stage);
         super.setName(EnemyEnum.NINJA_BLUE);
 

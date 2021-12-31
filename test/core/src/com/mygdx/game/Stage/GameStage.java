@@ -13,20 +13,19 @@ import java.util.ArrayList;
 
 //This class define the stage background, status bar, border size
 public class GameStage extends Image  {
-    ArrayList <Player> listPlayer = new ArrayList<Player>();
-    ArrayList <Soft> listSoft = new ArrayList<Soft>();
-    ArrayList <Solid> listSolid = new ArrayList<Solid>();
-    ArrayList <Enemy> listEnemy = new ArrayList<>();
-    TextureAtlas stageAtlas;
-    int borderX, borderY, borderWidth, borderHeight;
-    Sprite txStatusBar, txBackground;
+    private ArrayList <Player> listPlayer = new ArrayList<Player>();
+    private ArrayList <Soft> listSoft = new ArrayList<Soft>();
+    private ArrayList <Solid> listSolid = new ArrayList<Solid>();
+    private ArrayList <Enemy> listEnemy = new ArrayList<>();
+    private int borderX, borderY, borderWidth, borderHeight;
+    private Sprite txStatusBar, txBackground;
 
     public GameStage(int stageNum){
-
+//        Set the background and status sprite
         txStatusBar = new Sprite(new Texture(Gdx.files.internal("sprite/stage/status_bar.png")));
         txBackground = new Sprite(new Texture(Gdx.files.internal("sprite/raw_asset/stage/stage_01/stage_01_sheet.png")));
         txBackground = switchBackground(stageNum);
-//        txBackground = new Sprite(new Texture(Gdx.files.internal("sprite/stage/stage_01/stage_blank_01.png")));
+
         txStatusBar.setPosition(0,
                 Gdx.graphics.getHeight()-txStatusBar.getHeight());
 
@@ -34,17 +33,14 @@ public class GameStage extends Image  {
                 (Gdx.graphics.getHeight()-txStatusBar.getHeight())/2f - txBackground.getHeight()/2f );
         txBackground.setScale(4,4);
 
+//        Set the border coordinate
         borderX = 96;
         borderY = 64;
         borderWidth = 13*64;
         borderHeight = 11*64;
-
-//        Soft.placeSoft();
     }
 
-    public Sprite switchBackground(int stageNum){
-//        stageAtlas = new TextureAtlas(Gdx.files.internal("sprite_sheet/stage/stage.txt"));
-//        txBackground = new TextureAtlas.AtlasSprite(stageAtlas.findRegion("stage", stageNum));
+    private Sprite switchBackground(int stageNum){
         txBackground = new Sprite(new Texture(Gdx.files.internal("sprite_sheet/stage/stage_"+stageNum+".png")));
         return txBackground;
     }

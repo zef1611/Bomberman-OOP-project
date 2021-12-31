@@ -12,9 +12,9 @@ import com.mygdx.game.Stage.GameStage;
 
 //This enemy is for stage 1
 public class Caveman extends Enemy{
-    Sprite caveman;
+    private Sprite caveman;
 
-    Caveman(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage) {
+    public Caveman(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage) {
         super(directionEnum, gameStage, stage);
         super.setName(EnemyEnum.CAVEMAN);
 

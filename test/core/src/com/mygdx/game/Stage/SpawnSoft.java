@@ -1,21 +1,16 @@
 package com.mygdx.game.Stage;
 
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.mygdx.game.Screen.MainGameScreen;
 
 public class SpawnSoft {
-    Stage stage;
-    int stageNum;
-    GameStage gameStage;
-    int playerX;
-    int playerY;
+    private Stage stage;
+    private int stageNum;
+    private GameStage gameStage;
 
     public SpawnSoft(Stage stage, GameStage gameStage, int stageNum){
         this.stage = stage;
         this.gameStage = gameStage;
         this.stageNum = stageNum;
-        this.playerX = MainGameScreen.playerX;
-        this.playerY = MainGameScreen.playerY;
     }
     public void execute(){
         switch (stageNum){
@@ -23,12 +18,16 @@ public class SpawnSoft {
                 stage1();
                 break;
             case 2:
+                stage2();
                 break;
             case 3:
+                stage3();
                 break;
             case 4:
+                stage4();
                 break;
             case 5:
+                stage5();
                 break;
             default:
                 System.out.println("Spawn Soft - stageNum - Missing");
@@ -76,6 +75,17 @@ public class SpawnSoft {
         new Soft(6,9,stageNum,gameStage,stage);
         new Soft(8,9,stageNum,gameStage,stage);
         new Soft(4,10,stageNum,gameStage,stage);
-
+    }
+    private void stage2(){
+        new Soft(2,4,stageNum,gameStage,stage);
+    }
+    private void stage3(){
+        new Soft(2,4,stageNum,gameStage,stage);
+    }
+    private void stage4(){
+        new Soft(2,4,stageNum,gameStage,stage);
+    }
+    private void stage5(){
+        new Soft(2,4,stageNum,gameStage,stage);
     }
 }
