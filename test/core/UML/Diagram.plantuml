@@ -258,7 +258,7 @@ class GameStage{
     +getListSolid(): ArrayList<Solid>
     +getListPlayer(): ArrayList<Player>
 }
-class Soft(){
+class Soft{
     -soft: Sprite
     -borderX: int
     -borderY: int
@@ -324,6 +324,7 @@ class MainGameScreen{
     +dispose(): void
 }
 
+'LibGDX class
 class Game<LibGDX>{}
 hide Game methods
 hide Game members
@@ -336,6 +337,8 @@ hide Stage members
 class Screen<LibGDX>{}
 hide Screen methods
 hide Screen members
+
+'Relationships
 
 Enemy <|-- Alien
 Enemy <|-- Skunk
@@ -350,7 +353,7 @@ Image <|-- Soft
 Image <|-- Solid
 
 Stage <|-- AbstractScreen
-Screen <|-- AbstractScreen
+Screen <|.. AbstractScreen
 
 AbstractScreen <|-- CharSelectScreen
 AbstractScreen <|-- StageSelectScreen
@@ -359,5 +362,48 @@ AbstractScreen <|-- MainGameScreen
 
 Game <|-- Bomberman
 
+DesktopLauncher --> Bomberman
+
+Bomberman --> StartingScreen
+
+StartingScreen --> CharSelectScreen
+
+CharSelectScreen --> StageSelectScreen
+
+StageSelectScreen --> MainGameScreen
+
+Alien "many" --o "1"SpawnEnemies
+Caveman "many" --o "1"SpawnEnemies
+NinjaBlue "many" --o "1"SpawnEnemies
+Skunk "many" --o "1"SpawnEnemies
+
+Soft "many" --o "1" SpawnSoft
+Solid "many" --o "1" SpawnSolid
+
+SpawnEnemies -- MainGameScreen: buildStage
+SpawnSoft -- MainGameScreen: buildStage
+SpawnSolid -- MainGameScreen: buildStage
+GameStage -- MainGameScreen: buildStage
+
+Player -- MainGameScreen: buildStage
+PlayerInput --* Player
+PlayerAnimation --* PlayerInput
+Bomb ..> PlayerInput
+DirectionEnum --o Player
+StateEnum --o Player
+ColorEnum --o Player
+
+EnemyMove --* Enemy
+EnemyAnimation --* EnemyMove
+DirectionEnum --o Enemy
+StateEnum --o Enemy
+EnemyEnum --o Enemy
+
+ScreenEnum *--ScreenManager
+ScreenManager *-- Bomberman: create
+ScreenManager -- StartingScreen: show
+ScreenManager -- CharSelectScreen: show
+ScreenManager -- StageSelectScreen: show
+ScreenManager -- MainGameScreen: show
 @enduml
 
