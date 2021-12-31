@@ -85,7 +85,7 @@ enum ColorEnum{
     ColorEnum()
     +toString(): String
 }
-class player{
+class Player{
     -playerInput: PlayerInput
     -atlas: TextureAtlas
     -player: Sprite
@@ -307,10 +307,57 @@ class SpawnSolid{
     +SpawnSolid()
     +execute(): void
 }
+enum ScreenEnum{
+    STARTING_SCREEN
+    CHAR_SELECT_SCREEN
+    STAGE_SELECT_SCREEN
+    MAIN_GAME
+}
+
+class MainGameScreen{
+    -stageNum: int
+    -color: ColorEnum
+    +{static} playerX: int
+    +{static} playerY: int
+    +MainGameScreen()
+    +buildStage(): void
+    +dispose(): void
+}
+
 class Game<LibGDX>{}
+hide Game methods
+hide Game members
 class Image<LibGDX>{}
+hide Image methods
+hide Image members
 class Stage<LibGDX>{}
+hide Stage methods
+hide Stage members
 class Screen<LibGDX>{}
+hide Screen methods
+hide Screen members
+
+Enemy <|-- Alien
+Enemy <|-- Skunk
+Enemy <|-- Caveman
+Enemy <|-- NinjaBlue
+
+Image <|-- Enemy
+Image <|-- Bomb
+Image <|-- Player
+Image <|-- GameStage
+Image <|-- Soft
+Image <|-- Solid
+
+Stage <|-- AbstractScreen
+Screen <|-- AbstractScreen
+
+AbstractScreen <|-- CharSelectScreen
+AbstractScreen <|-- StageSelectScreen
+AbstractScreen <|-- StartingScreen
+AbstractScreen <|-- MainGameScreen
+
+Game <|-- Bomberman
 
 @enduml
 
