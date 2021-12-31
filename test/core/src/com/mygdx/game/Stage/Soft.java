@@ -30,7 +30,7 @@ public class Soft extends Image {
         borderY = y;
         borderWidth = 64;
         borderHeight = 64;
-
+        this.gameStage = gameStage;
         gameStage.attachSoft(this);
         stage.addActor(this);
     }

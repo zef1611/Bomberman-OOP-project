@@ -12,13 +12,14 @@ import com.mygdx.game.Screen.MainGameScreen;
 public class Solid extends Image {
     Sprite solid;
     int borderX, borderY, borderWidth, borderHeight;
-
+    GameStage gameStage;
+    Stage stage;
 //    tileX ~ 0 - 12
 //    tileY ~ 0 - 10
 //    this is according to the 13x11 grid of the game stage
     public Solid(int tileX, int tileY, int stageNum, GameStage gameStage, Stage stage){
-        int x = MainGameScreen.playerX +64 * tileX;
-        int y = MainGameScreen.playerY +64 * tileY;
+        int x = MainGameScreen.playerX + 64 * tileX;
+        int y = MainGameScreen.playerY + 64 * tileY;
 
         solid = switchSprite(stageNum);
         solid.setPosition(x,y);
@@ -27,7 +28,8 @@ public class Solid extends Image {
         borderY = y;
         borderWidth = 64;
         borderHeight = 64;
-
+        this.gameStage = gameStage;
+        this.stage = stage;
         gameStage.attachSolid(this);
         stage.addActor(this);
     }

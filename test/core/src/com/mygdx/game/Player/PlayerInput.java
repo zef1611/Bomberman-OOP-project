@@ -109,7 +109,9 @@ public class PlayerInput {
 
         }
         if(keycode == Input.Keys.E){
-            stage.addActor(new Bomb(player));
+            Bomb bomb = new Bomb(player, this.gameStage);
+            stage.addActor(bomb);
+//            stage.getActors().re
         }
     }
 
