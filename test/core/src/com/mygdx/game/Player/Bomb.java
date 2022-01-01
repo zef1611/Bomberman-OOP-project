@@ -40,16 +40,13 @@ public class Bomb extends Image {
 //        setPosition(player.getX(), player.getY());
         bomb.setPosition(player.getX(), player.getY());
         System.out.println("ok");
-        currentAni = new Animation<TextureAtlas.AtlasRegion>(1f / 3f,
+        currentAni = new Animation<TextureAtlas.AtlasRegion>(1f / 2f,
                 atlas.findRegion("bomb_normal", 2),
                 atlas.findRegion("bomb_normal", 3),
                 atlas.findRegion("bomb_normal", 2),
                 atlas.findRegion("bomb_normal", 1),
                 atlas.findRegion("bomb_normal", 2),
-                atlas.findRegion("bomb_normal", 3),
-                atlas.findRegion("bomb_normal", 2),
-                atlas.findRegion("bomb_normal", 1),
-                atlas.findRegion("bomb_normal", 2));
+                atlas.findRegion("bomb_normal", 3));
         this.stillAlive = true;
 
         this.gameStage = gameStage;
@@ -59,19 +56,20 @@ public class Bomb extends Image {
     @Override
     public void draw(Batch batch, float parentAlpha) {
         if (this.stillAlive == false) return; // that bomb does not exist
-        elapsedTime += Gdx.graphics.getDeltaTime();
+        elapsedTime += Gdx.graphics.getDeltaTime() * 2;
         this.stage += 1;
-        if (this.stage == 7 && this.stillAlive == true) {
-            batch.draw(currentAni.getKeyFrame(elapsedTime),
-                    bomb.getX(), bomb.getY(), bomb.getWidth(), bomb.getHeight());
-            this.stage = 0;
-        }
+
+        batch.draw(currentAni.getKeyFrame(elapsedTime),
+                bomb.getX(), bomb.getY(), bomb.getWidth(), bomb.getHeight());
+
+
         if (elapsedTime > 3) { // 3: after 3 second the bomb will explore
-//            this.stillAlive = false;
             addExplosion(this.x + 65, this.y, 1);
-//            addExplosion(this.x - 63, this.y, 1);
-//            addExplosion(this.x, this.y + 65, 0);
-//            addExplosion(this.x, this.y - 63, 0);
+            addExplosion(this.x - 65, this.y, 1);
+            addExplosion(x, y, 1);
+            addExplosion(x, y, 0);
+            addExplosion(this.x, this.y + 65, 0);
+            addExplosion(this.x, this.y - 65, 0);
 
             // remove a bomb
             this.addAction(Actions.removeActor());
@@ -91,16 +89,19 @@ public class Bomb extends Image {
     }
 
     private boolean checkValid(int x, int y) {
-        if (x >= gameStage.getBorderX() + gameStage.getBorderHeight())
+//        System.out.println("Debug");
+//        System.out.println( gameStage.getBorderX() + gameStage.getBorderHeight());
+//        System.out.println(x);
+        if (x - this.getHeight() - 3 > (int) (gameStage.getBorderX() + gameStage.getBorderHeight()))
             return false;
 
         if (x < gameStage.getBorderX() - 1)
             return false;
 
-        if (y >= gameStage.getBorderY() + gameStage.getBorderWidth())
+        if (y + 64 * 2 >= gameStage.getBorderY() + gameStage.getBorderWidth())
             return false;
 
-            if (y < gameStage.getBorderY() - 1)
+        if (y < gameStage.getBorderY() - 1)
             return false;
 
         if (!checkSolid(x, y)) return  false;
@@ -109,12 +110,11 @@ public class Bomb extends Image {
     }
 
     private boolean checkSolid(int x, int y) {
-        x += 10;
         System.out.printf("X: %d, Y: %d\n", x, y);
         for (Solid s : gameStage.getListSolid()) {
-            System.out.printf("minX: %d, maxX: %d, minY: %d, maxY: %d\n", s.getBorderX(), s.getBorderX() + s.getBorderWidth(), s.getBorderY(), s.getBorderY() + s.getBorderHeight());
-            if (s.getBorderX()  <= x && x <= s.getBorderX() + s.getBorderWidth()
-                    && s.getBorderY()  <= y && y <= s.getBorderY() + s.getBorderHeight())
+//            System.out.printf("minX: %d, maxX: %d, minY: %d, maxY: %d\n", s.getBorderX(), s.getBorderX() + s.getBorderWidth(), s.getBorderY(), s.getBorderY() + s.getBorderHeight());
+            if (s.getBorderX() - 5 <= x && x <= s.getBorderX() + s.getBorderWidth()  - 5
+                    && s.getBorderY() - 5 <= y && y <= s.getBorderY() + s.getBorderHeight() - 5)
                 return false;
         }
 
