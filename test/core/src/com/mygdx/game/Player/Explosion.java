@@ -1,7 +1,6 @@
 package com.mygdx.game.Player;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -10,6 +9,8 @@ import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
+import com.mygdx.game.Enemies.Enemy;
+import com.mygdx.game.Items;
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.Stage.Soft;
 
@@ -20,7 +21,7 @@ public class Explosion extends Image {
     Animation<TextureAtlas.AtlasRegion> currentAni;
     float elapsedTime;
     Sprite explo;
-    int stage = 0, x, y;
+    int x, y;
     Boolean stillAlive;
     GameStage gameStage;
 
@@ -72,25 +73,40 @@ public class Explosion extends Image {
 
         if (elapsedTime > 1) {
             delSoft();
+            delEnemies();
             this.addAction(Actions.removeActor());
         }
 
     }
     private void delSoft(){
         System.out.printf("%d %d\n", this.x, this.y);
-        ListIterator<Soft> it = gameStage.getListSoft().listIterator();
+        ListIterator<Items> it = gameStage.getListSoft().listIterator();
         while (it.hasNext()) {
-            Soft s = it.next();
+            Items s = it.next();
             int minX = s.getBorderX(), maxX = s.getBorderWidth() + s.getBorderX();
             int minY = s.getBorderY(), maxY =  s.getBorderHeight() + s.getBorderY();
             System.out.printf("minX: %d, maxX: %d ", s.getBorderX(), s.getBorderWidth() + s.getBorderX());
             System.out.printf("minY: %d, maxY: %d ", s.getBorderY(), s.getBorderHeight() + s.getBorderY());
             if (minX <= this.x && this.x <= maxX && minY <= this.y && this.y <= maxY) {
-                s.delSoft();
+                s.del();
                 it.remove();
             }
 
         }
+    }
+    private void delEnemies(){
+        ListIterator<Enemy> it = gameStage.getListEnemy().listIterator();
+        while (it.hasNext()) {
+            Enemy s = it.next();
+            int minX = s.getBorderX(), maxX = s.getBorderWidth() + s.getBorderX();
+            int minY = s.getBorderY(), maxY =  s.getBorderHeight() + s.getBorderY();
+            System.out.printf("minX: %d, maxX: %d ", s.getBorderX(), s.getBorderWidth() + s.getBorderX());
+            System.out.printf("minY: %d, maxY: %d ", s.getBorderY(), s.getBorderHeight() + s.getBorderY());
+            if (minX <= this.x && this.x <= maxX && minY <= this.y && this.y <= maxY) {
+                s.del();
+                it.remove();
+            }
 
+        }
     }
 }

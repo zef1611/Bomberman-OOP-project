@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.mygdx.game.DirectionEnum;
+import com.mygdx.game.Items;
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.Stage.Soft;
 
@@ -74,7 +75,7 @@ public class EnemyMove {
     }
 
     private void checkSoft(){
-        for (Soft s: gameStage.getListSoft()){
+        for (Items s: gameStage.getListSoft()){
             if(enemy.getDirection() == DirectionEnum.DOWN){
                 if(enemy.getY() - 63 < (s.getBorderY() + s.getBorderHeight())
                         && enemy.getY() - 63 > s.getBorderY()

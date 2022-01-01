@@ -7,11 +7,10 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.mygdx.game.Items;
 import com.mygdx.game.Screen.MainGameScreen;
 
-public class Solid extends Image {
-    Sprite solid;
-    int borderX, borderY, borderWidth, borderHeight;
+public class Solid extends Items {
 
 //    tileX ~ 0 - 12
 //    tileY ~ 0 - 10
@@ -20,13 +19,14 @@ public class Solid extends Image {
         int x = MainGameScreen.playerX + 64 * tileX;
         int y = MainGameScreen.playerY + 64 * tileY;
 
-        solid = switchSprite(stageNum);
-        solid.setPosition(x,y);
-        setBounds(x, y, solid.getWidth(), solid.getHeight());
+        item = switchSprite(stageNum);
+        item.setPosition(x,y);
+
+        setBounds(x, y, item.getWidth(), item.getHeight());
         borderX = x;
         borderY = y;
-        borderWidth = (int) solid.getWidth();
-        borderHeight = (int) solid.getHeight() ;
+        borderWidth = (int) item.getWidth();
+        borderHeight = (int) item.getHeight() ;
 //        System.out.printf("Min X: %d, Max X: %d, Min Y: %d, Max Y: %d\n",x, (int) solid.getWidth() + x, y, (int)solid.getHeight() + y);
         gameStage.attachSolid(this);
         stage.addActor(this);
@@ -38,19 +38,11 @@ public class Solid extends Image {
         return new Sprite(new TextureAtlas.AtlasSprite(atlas.findRegion("solid",stageNum)));
     }
 
-    @Override
-    public void draw(Batch batch, float parentAlpha){
-        solid.draw(batch);
-    }
+
 
 
     public void update() {
 
     }
 
-//    ----------------------------SETTERS/GETTERS-----------------------------
-    public int getBorderY(){return borderY;}
-    public int getBorderX(){return borderX;}
-    public int getBorderHeight(){return borderHeight;}
-    public int getBorderWidth(){return borderWidth;}
 }

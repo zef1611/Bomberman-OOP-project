@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.mygdx.game.DirectionEnum;
@@ -75,6 +76,9 @@ public abstract class Enemy extends Image {
     protected void positionChanged(){
 
         super.positionChanged();
+    }
+    public void del() {
+        this.addAction(Actions.removeActor());
     }
 //    ---------------------SETTERS/GETTERS-------------------
     public void setName(EnemyEnum enemy){
