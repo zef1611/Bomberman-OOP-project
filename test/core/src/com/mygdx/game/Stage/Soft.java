@@ -9,8 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.mygdx.game.Items;
-import com.mygdx.game.Player.ColorEnum;
-import com.mygdx.game.Screen.MainGameScreen;
+ import com.mygdx.game.Screen.MainGameScreen;
 
 public class Soft extends Items {
     public GameStage gameStage;

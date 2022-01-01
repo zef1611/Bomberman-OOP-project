@@ -66,12 +66,13 @@ public class Bomb extends Items {
 
 
         if (elapsedTime > 3) { // 3: after 3 second the bomb will explore
-            addExplosion(this.x + 65, this.y, 1);
-            addExplosion(this.x - 65, this.y, 1);
+            System.out.printf("%d %d\n", x, y);
+            addExplosion(this.x + 64, this.y, 1);
+            addExplosion(this.x - 64, this.y, 1);
             addExplosion(x, y, 1);
             addExplosion(x, y, 0);
-            addExplosion(this.x, this.y + 65, 0);
-            addExplosion(this.x, this.y - 65, 0);
+            addExplosion(this.x, this.y + 64, 0);
+            addExplosion(this.x, this.y - 64, 0);
 
             // remove a bomb
             this.gameStage.detachBomb(this);
@@ -88,6 +89,7 @@ public class Bomb extends Items {
 
     private void addExplosion(int x, int y, int direction) {
         if (!checkValid(x, y)) return;
+
         player.getStage().addActor(new Explosion(x, y, direction, gameStage));
     }
 
