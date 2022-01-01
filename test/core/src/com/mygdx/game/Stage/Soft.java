@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.mygdx.game.Player.ColorEnum;
 import com.mygdx.game.Screen.MainGameScreen;
@@ -45,6 +46,7 @@ public class Soft extends Image {
     @Override
     public void draw(Batch batch, float parentAlpha) {
         soft.draw(batch);
+
     }
 
     @Override
@@ -53,7 +55,8 @@ public class Soft extends Image {
     }
 
     public void delSoft() {
-        this.gameStage.detachSoft(this);
+        this.addAction(Actions.removeActor());
+//        this.gameStage.detachSoft(this);
     }
 
     //    ------------------------------SETTERS/GETTERS---------------------------
