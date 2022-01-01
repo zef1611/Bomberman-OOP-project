@@ -25,14 +25,15 @@ public class PlayerInput {
 
 //    Logic of input
     protected void inputContent(int keycode) {
+//        System.out.printf("%d %d\n", (int)player.getX(), (int)player.getY());
         if(keycode == Input.Keys.D
                 && player.getCurrentAction().isComplete()
                 && checkBorder(keycode)
                 && checkSoft(keycode)
                 && checkSolid(keycode)){
             MoveByAction right = new MoveByAction();
-            right.setAmount(64f, 0f);
-            right.setDuration(1f/2f);
+            right.setAmount(64, 0f);
+            right.setDuration(0);
             player.setCurrentAction(right);
             player.addAction(right);
             // For animations
@@ -50,8 +51,8 @@ public class PlayerInput {
                 && checkSoft(keycode)
                 && checkSolid(keycode)){
             MoveByAction up = new MoveByAction();
-            up.setAmount(0f,64f);
-            up.setDuration(1f/2f);
+            up.setAmount(0f,64);
+            up.setDuration(0);
             player.setCurrentAction(up);
             player.addAction(up);
 
@@ -72,7 +73,7 @@ public class PlayerInput {
                 && checkSolid(keycode)){
             MoveByAction down = new MoveByAction();
             down.setAmount(0f,-64f);
-            down.setDuration(1f/2f);
+            down.setDuration(0);
             player.setCurrentAction(down);
             player.addAction(down);
 
@@ -94,7 +95,7 @@ public class PlayerInput {
 
             MoveByAction left = new MoveByAction();
             left.setAmount(-64f, 0f);
-            left.setDuration(1f/2f);
+            left.setDuration(0);
             player.setCurrentAction(left);
             player.addAction(left);
 
@@ -109,7 +110,9 @@ public class PlayerInput {
 
         }
         if(keycode == Input.Keys.E){
-            stage.addActor(new Bomb(player));
+            Bomb bomb = new Bomb(player, this.gameStage);
+            stage.addActor(bomb);
+//            stage.getActors().re
         }
     }
 
