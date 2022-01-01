@@ -27,7 +27,7 @@ public class MainGameScreen extends AbstractScreen {
 
 //      Spawn soft blocks
         SpawnSoft spawnSoft = new SpawnSoft(this, gameStage, stageNum);
-//        spawnSoft.execute();
+        spawnSoft.execute();
 
 //      Spawn solid blocks
         SpawnSolid spawnSolid = new SpawnSolid(this, gameStage,stageNum);
