@@ -88,9 +88,6 @@ public class Explosion extends Image {
             int minX = s.getBorderX(), maxX = s.getBorderWidth() + s.getBorderX();
             int minY = s.getBorderY(), maxY =  s.getBorderHeight() + s.getBorderY();
             if (minX <= this.x && this.x < maxX && minY <= this.y && this.y < maxY) {
-//                System.out.printf("minX: %d, maxX: %d ", s.getBorderX(), s.getBorderWidth() + s.getBorderX());
-//                System.out.printf("minY: %d, maxY: %d\n", s.getBorderY(), s.getBorderHeight() + s.getBorderY());
-
                 s.del();
                 it.remove();
             }
@@ -104,8 +101,7 @@ public class Explosion extends Image {
             Enemy s = it.next();
             int minX = s.getBorderX(), maxX = s.getBorderWidth() + s.getBorderX();
             int minY = s.getBorderY(), maxY =  s.getBorderHeight() + s.getBorderY();
-//            System.out.printf("minX: %d, maxX: %d ", s.getBorderX(), s.getBorderWidth() + s.getBorderX());
-//            System.out.printf("minY: %d, maxY: %d ", s.getBorderY(), s.getBorderHeight() + s.getBorderY());
+
             if (minX <= this.x && this.x <= maxX && minY <= this.y && this.y <= maxY) {
                 s.del();
                 it.remove();
