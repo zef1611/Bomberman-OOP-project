@@ -19,7 +19,8 @@ public class PlayerInput {
     private final GameStage gameStage;
     private final Stage stage;
     private final PlayerAnimation playerAni;
-    private float temp = -0.25F;
+    private float temp = 0.25F;
+
     protected PlayerInput(Player player, GameStage gameStage) {
         this.player = player;
         this.gameStage = gameStage;
@@ -42,7 +43,7 @@ public class PlayerInput {
         if (keycode == Input.Keys.D && player.getCurrentAction().isComplete() && isOk(keycode)) {
             MoveByAction right = new MoveByAction();
             right.setAmount(64, 0f);
-            right.setDuration(temp);
+            right.setDuration(player.getSpeed());
             player.setCurrentAction(right);
             player.addAction(right);
             // For animations
@@ -57,7 +58,7 @@ public class PlayerInput {
         if (keycode == Input.Keys.W && player.getCurrentAction().isComplete() && isOk(keycode)) {
             MoveByAction up = new MoveByAction();
             up.setAmount(0f, 64);
-            up.setDuration(temp);
+            up.setDuration(player.getSpeed());
             player.setCurrentAction(up);
             player.addAction(up);
 
@@ -74,7 +75,7 @@ public class PlayerInput {
         if (keycode == Input.Keys.S && player.getCurrentAction().isComplete() && isOk(keycode)) {
             MoveByAction down = new MoveByAction();
             down.setAmount(0f, -64f);
-            down.setDuration(temp);
+            down.setDuration(player.getSpeed());
             player.setCurrentAction(down);
             player.addAction(down);
 
@@ -91,7 +92,7 @@ public class PlayerInput {
 
             MoveByAction left = new MoveByAction();
             left.setAmount(-64f, 0f);
-            left.setDuration(temp);
+            left.setDuration(player.getSpeed());
             player.setCurrentAction(left);
             player.addAction(left);
 
@@ -147,8 +148,9 @@ public class PlayerInput {
         if (minX < x && x < maxX && minY < y && y < maxY) return true;
         return false;
     }
+
     private boolean checkConflict(int keycode, ArrayList<Items> arr) {
-        boolean  check = false;
+        boolean check = false;
         player.setX(ConstantValue.GetX(player.getX()));
         player.setY(ConstantValue.GetY(player.getY()));
 
@@ -165,7 +167,7 @@ public class PlayerInput {
                     }
                     break;
                 case Input.Keys.A:
-                    check = inRange(player.getX() - 30, player.getY() + 5 , minX, maxX, minY, maxY);
+                    check = inRange(player.getX() - 30, player.getY() + 5, minX, maxX, minY, maxY);
                     break;
                 case Input.Keys.S:
                     check = inRange(player.getX() + 5, player.getY() - 30, minX, maxX, minY, maxY);

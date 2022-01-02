@@ -8,19 +8,19 @@ public class PlayerAnimation {
     private Player player;
     private TextureAtlas atlas;
 
-    public PlayerAnimation(Player player, TextureAtlas atlas){
+    public PlayerAnimation(Player player, TextureAtlas atlas) {
         this.player = player;
         this.atlas = atlas;
     }
 
-    public void updateAni(){
+    public void updateAni() {
         player.setElapsedTime(0);
         String direction = (player.getDirection() == DirectionEnum.LEFT) ?
                 DirectionEnum.RIGHT.toString()
-                :player.getDirection().toString();
+                : player.getDirection().toString();
         String state = player.getState().toString();
-        String step = (player.getStepCount()%2==0)? "e":"o";
-        String region = String.format("bomberman_"+state+"_"+direction+"_"+step);
-        player.setCurrentAni(new Animation<>(1f/8f, atlas.findRegions(region)));
+        String step = (player.getStepCount() % 2 == 0) ? "e" : "o";
+        String region = String.format("bomberman_" + state + "_" + direction + "_" + step);
+        player.setCurrentAni(new Animation<>(1f / 8f, atlas.findRegions(region)));
     }
 }

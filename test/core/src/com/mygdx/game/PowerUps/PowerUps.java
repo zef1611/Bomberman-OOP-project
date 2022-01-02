@@ -10,6 +10,7 @@ import com.mygdx.game.Player.Player;
 import com.mygdx.game.Screen.MainGameScreen;
 import com.mygdx.game.Stage.GameStage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+
 import java.awt.*;
 
 public abstract class PowerUps extends Image {
@@ -19,6 +20,7 @@ public abstract class PowerUps extends Image {
     GameStage gameStage;
     Player player;
     Stage stage;
+
     public PowerUps(int tileX, int tileY, GameStage gameStage, Stage stage) {
         int x = MainGameScreen.playerX + 64 * tileX;
         int y = MainGameScreen.playerY + 64 * tileY;
@@ -35,24 +37,30 @@ public abstract class PowerUps extends Image {
         this.gameStage = gameStage;
         gameStage.attachPowerUps(this);
     }
+
     public abstract void setUpSprite();
 
 
     @Override
-    public void draw(Batch batch, float parentAlpha){
+    public void draw(Batch batch, float parentAlpha) {
         sprite.draw(batch);
     }
+
     public abstract void execute(Player player);
+
     @Override
     public void act(float delta) {
         super.act(delta);
     }
+
     public void del() {
         this.addAction(Actions.removeActor());
     }
+
     public int getBorderX() {
         return borderX;
     }
+
     public int getBorderY() {
         return borderY;
     }

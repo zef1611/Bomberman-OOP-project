@@ -8,12 +8,15 @@ public class Spawn {
     private Stage stage;
     private int stageNum;
     private GameStage gameStage;
+
     public Spawn(Stage stage, GameStage gameStage) {
         this.gameStage = gameStage;
         this.stage = stage;
     }
+
     public void execute() {
-        new IncreaseBombs(1,2,gameStage, stage);
-        new FireUps(1,4,gameStage, stage);
+        new IncreaseBombs(1, 2, gameStage, stage);
+        new FireUps(1, 4, gameStage, stage);
+        new IncreaseSpeed(3, 2, gameStage, stage);
     }
 }

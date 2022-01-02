@@ -10,6 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 public class FireUps extends PowerUps {
     private float elapsedTime;
     boolean vis;
+
     public FireUps(int tileX, int tileY, GameStage gameStage, Stage stage) {
         super(tileX, tileY, gameStage, stage);
         elapsedTime = 0;
@@ -35,7 +36,7 @@ public class FireUps extends PowerUps {
         if (vis == true) sprite.draw(batch);
         else {
             elapsedTime += Gdx.graphics.getDeltaTime();
-            if (elapsedTime > 5) {
+            if (elapsedTime > 15) {
                 player.setBombRange(-1);
                 this.del();
             }

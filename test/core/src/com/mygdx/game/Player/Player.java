@@ -22,17 +22,18 @@ public class Player extends Image {
     private PlayerInput playerInput;
     private TextureAtlas atlas;
     private Sprite player;
-    private Animation <TextureAtlas.AtlasRegion> currentAni;
+    private Animation<TextureAtlas.AtlasRegion> currentAni;
     private float elapsedTime = 0;
-        private MoveByAction currentAction = new MoveByAction();
+    private MoveByAction currentAction = new MoveByAction();
     private Stage stage;
     private GameStage gameStage;
-    private int stepCount=0; // For deciding the animation in update method
+    private int stepCount = 0; // For deciding the animation in update method
     private int borderX, borderY, borderWidth, borderHeight;
     private DirectionEnum direction = DirectionEnum.NONE;
     private StateEnum state = StateEnum.STILL;
     private int remainBomb, health, MaxBomb, bombRange;
-    private double speed;
+    private float speed;
+
     public Player(ColorEnum color, Stage stage, GameStage gameStage) {
 //        The player needs to be able to modify the stage add bombs, break blocks...
         this.stage = stage;
@@ -45,7 +46,7 @@ public class Player extends Image {
 
 //        Set the player avatar and bounds
         Array<TextureAtlas.AtlasRegion> stillFrames = atlas.findRegions("bomberman_still");
-        currentAni = new Animation<>(1f/15f,stillFrames.get(0));
+        currentAni = new Animation<>(1f / 15f, stillFrames.get(0));
         player = new Sprite(new TextureAtlas.AtlasSprite(stillFrames.get(0)));
         setBounds(player.getRegionX(), player.getRegionY(), player.getRegionWidth(), player.getRegionHeight());
         setTouchable(Touchable.enabled);
@@ -60,7 +61,7 @@ public class Player extends Image {
 
 //        Receive border
         gameStage.attachPlayer(this);
-        this.speed = 1;
+        this.speed = 0.5F;
         this.health = 1;
         this.remainBomb = 0;
         this.MaxBomb = 1;
@@ -70,16 +71,15 @@ public class Player extends Image {
         HUD.setBombVal(1);
     }
 
-//    This is to render animations
+    //    This is to render animations
     @Override
     public void draw(Batch batch, float parentAlpha) {
         boolean flip = (direction == DirectionEnum.LEFT);
         elapsedTime += Gdx.graphics.getDeltaTime();
-        if(flip){
-            batch.draw(currentAni.getKeyFrame(elapsedTime), getX()+getWidth(), getY(),-getWidth(),getHeight());
-        }
-        else{
-            batch.draw(currentAni.getKeyFrame(elapsedTime), getX(), getY(),getWidth(),getHeight());
+        if (flip) {
+            batch.draw(currentAni.getKeyFrame(elapsedTime), getX() + getWidth(), getY(), -getWidth(), getHeight());
+        } else {
+            batch.draw(currentAni.getKeyFrame(elapsedTime), getX(), getY(), getWidth(), getHeight());
         }
     }
 
@@ -89,10 +89,10 @@ public class Player extends Image {
     }
 
     @Override
-    protected void positionChanged(){
+    protected void positionChanged() {
 
 
-        player.setPosition(getX(),getY());
+        player.setPosition(getX(), getY());
         findPowerUps((int) getX(), (int) getY());
         super.positionChanged();
     }
@@ -103,10 +103,10 @@ public class Player extends Image {
     }
 
 
-//    Every input happens here + Update the animation
-    public void input(){
-        addListener(new InputListener(){
-            public boolean keyDown(InputEvent event, int keycode){
+    //    Every input happens here + Update the animation
+    public void input() {
+        addListener(new InputListener() {
+            public boolean keyDown(InputEvent event, int keycode) {
 //                playerInput will deal with movement logic
                 playerInput.inputContent(keycode);
                 return true;
@@ -119,70 +119,122 @@ public class Player extends Image {
         String fileName = "sprite_sheet/character/bomberman_" + colorName + "/bomber_" + colorName + ".txt";
         return new TextureAtlas(Gdx.files.internal(fileName));
     }
-//---------------------------GETTER/SETTERS------------------------
-    public StateEnum getState(){
+
+    //---------------------------GETTER/SETTERS------------------------
+    public StateEnum getState() {
         return state;
     }
-    protected  void setState(StateEnum state){
+
+    protected void setState(StateEnum state) {
         this.state = state;
     }
 
-    public DirectionEnum getDirection(){
+    public DirectionEnum getDirection() {
         return direction;
     }
-    protected  void setDirection(DirectionEnum direction){
+
+    protected void setDirection(DirectionEnum direction) {
         this.direction = direction;
     }
 
-    public int getStepCount(){
+    public int getStepCount() {
         return stepCount;
     }
-    protected void setStepCount(int stepCount){
+
+    protected void setStepCount(int stepCount) {
         this.stepCount = stepCount;
     }
 
-    public Animation <TextureAtlas.AtlasRegion> getCurrentAni(){
+    public Animation<TextureAtlas.AtlasRegion> getCurrentAni() {
         return currentAni;
     }
-    protected void setCurrentAni(Animation <TextureAtlas.AtlasRegion> currentAni){
+
+    protected void setCurrentAni(Animation<TextureAtlas.AtlasRegion> currentAni) {
         this.currentAni = currentAni;
     }
 
-    public float getElapsedTime(){
+    public float getElapsedTime() {
         return elapsedTime;
     }
-    protected void setElapsedTime(float elapsedTime){
+
+    protected void setElapsedTime(float elapsedTime) {
         this.elapsedTime = elapsedTime;
     }
 
-    public MoveByAction getCurrentAction(){ return currentAction;}
-    public void setCurrentAction(MoveByAction currentAction){this.currentAction = currentAction;}
+    public MoveByAction getCurrentAction() {
+        return currentAction;
+    }
 
-    public TextureAtlas getAtlas(){ return atlas;}
+    public void setCurrentAction(MoveByAction currentAction) {
+        this.currentAction = currentAction;
+    }
 
-    public Stage getStage(){ return stage;}
+    public TextureAtlas getAtlas() {
+        return atlas;
+    }
 
-    public float getBorderX(){return borderX;}
-    public float getBorderY(){ return borderY;}
-    public float getBorderWidth(){return borderWidth;}
-    public float getBorderHeight(){return borderHeight;}
-    public int getRemainBomb(){return remainBomb;}
-    public int getHealth() {return health;}
-    public double getSpeed(){return speed;}
-    public int getMaxBomb(){return MaxBomb;}
-    public int getBombRange(){return bombRange;}
-    public void setBombRange(int val){this.bombRange += val;}
+    public Stage getStage() {
+        return stage;
+    }
+
+    public float getBorderX() {
+        return borderX;
+    }
+
+    public float getBorderY() {
+        return borderY;
+    }
+
+    public float getBorderWidth() {
+        return borderWidth;
+    }
+
+    public float getBorderHeight() {
+        return borderHeight;
+    }
+
+    public int getRemainBomb() {
+        return remainBomb;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public float getSpeed() {
+        return speed;
+    }
+
+    public int getMaxBomb() {
+        return MaxBomb;
+    }
+
+    public int getBombRange() {
+        return bombRange;
+    }
+
+    public void setBombRange(int val) {
+        this.bombRange += val;
+    }
+
     public void setRemainBomb(int val) {
         remainBomb += val;
     }
-    public void setMaxBomb(int val){
+
+    public void setMaxBomb(int val) {
         this.MaxBomb += val;
     }
 
+    public void setSpeed(float val) {
+        this.speed += val;
+        if (speed > 0.5) speed = 1;
+        if (speed < 0) speed = 0;
+    }
+
     private void findPowerUps(int x, int y) {
-        for (PowerUps s : gameStage.getListPowerUps()){
+        for (PowerUps s : gameStage.getListPowerUps()) {
             int minX = s.getBorderX(), maxX = s.getBorderWidth() + s.getBorderX();
-            int minY = s.getBorderY(), maxY =  s.getBorderHeight() + s.getBorderY();
+            int minY = s.getBorderY(), maxY = s.getBorderHeight() + s.getBorderY();
             if (minX <= x && x < maxX && minY <= y && y < maxY) {
                 gameStage.dettacPowerUps(s);
                 s.execute(this);

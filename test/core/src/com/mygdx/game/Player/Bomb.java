@@ -73,12 +73,12 @@ public class Bomb extends Items {
 
             addExplosion(x, y, 1);
             addExplosion(x, y, 0);
-            boolean checkL = true, checkD  = true, checkU = true, checkR = true;
+            boolean checkL = true, checkD = true, checkU = true, checkR = true;
             for (int i = 1; i <= length; i++) {
                 if (checkU) checkU &= addExplosion(this.x + 64 * i, this.y, 1);
                 if (checkD) checkD &= addExplosion(this.x - 64 * i, this.y, 1);
                 if (checkL) checkL &= addExplosion(this.x, this.y - 64 * i, 0);
-                if (checkR) checkR &=addExplosion(this.x, this.y + 64 * i, 0);
+                if (checkR) checkR &= addExplosion(this.x, this.y + 64 * i, 0);
 
             }
 
@@ -100,8 +100,8 @@ public class Bomb extends Items {
         if (!checkValid(x, y)) return false;
 
         player.getStage().addActor(new Explosion(x, y, direction, gameStage));
-        if (!checkConflict(x, y, gameStage.getListSoft())) return  false;
-        return  true;
+        if (!checkConflict(x, y, gameStage.getListSoft())) return false;
+        return true;
     }
 
     private boolean checkValid(int x, int y) {
@@ -121,7 +121,7 @@ public class Bomb extends Items {
 
         return true;
     }
-    
+
     private boolean checkConflict(int x, int y, ArrayList<Items> arr) {
         for (Items s : arr) {
             if (s.getBorderX() - 5 <= x && x <= s.getBorderX() + s.getBorderWidth() - 5
@@ -129,6 +129,6 @@ public class Bomb extends Items {
                 return false;
         }
 
-        return  true;
+        return true;
     }
 }
