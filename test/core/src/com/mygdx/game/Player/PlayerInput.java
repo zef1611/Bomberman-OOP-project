@@ -105,7 +105,8 @@ public class PlayerInput {
 
         }
         if (keycode == Input.Keys.E) {
-            Bomb bomb = new Bomb(player, this.gameStage, 1);
+            Bomb bomb = new Bomb(player, this.gameStage, 2);
+//            System.out.printf("ok");
             stage.addActor(bomb);
             gameStage.attachBomb(bomb);
         }

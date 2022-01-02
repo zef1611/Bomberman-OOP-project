@@ -10,6 +10,8 @@ import com.mygdx.game.Items;
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.Stage.Solid;
 
+import java.util.ArrayList;
+
 //Animation order
 //Bomb : 2 3 2 1 2 3 2 1 2
 //Explosion: 1 2 3 4 3 2 1
@@ -68,12 +70,17 @@ public class Bomb extends Items {
 
         if (elapsedTime > 3) { // 3: after 3 second the bomb will explore
             System.out.printf("%d %d\n", x, y);
-            addExplosion(this.x + 64, this.y, 1);
-            addExplosion(this.x - 64, this.y, 1);
+
             addExplosion(x, y, 1);
             addExplosion(x, y, 0);
-            addExplosion(this.x, this.y + 64, 0);
-            addExplosion(this.x, this.y - 64, 0);
+            boolean checkL = true, checkD  = true, checkU = true, checkR = true;
+            for (int i = 1; i <= length; i++) {
+                if (checkU) checkU &= addExplosion(this.x + 64 * i, this.y, 1);
+                if (checkD) checkD &= addExplosion(this.x - 64 * i, this.y, 1);
+                if (checkL) checkL &= addExplosion(this.x, this.y - 64 * i, 0);
+                if (checkR) checkR &=addExplosion(this.x, this.y + 64 * i, 0);
+
+            }
 
             // remove a bomb
             this.gameStage.detachBomb(this);
@@ -88,10 +95,12 @@ public class Bomb extends Items {
         super.act(delta);
     }
 
-    private void addExplosion(int x, int y, int direction) {
-        if (!checkValid(x, y)) return;
+    private boolean addExplosion(int x, int y, int direction) {
+        if (!checkValid(x, y)) return false;
 
         player.getStage().addActor(new Explosion(x, y, direction, gameStage));
+        if (!checkConflict(x, y, gameStage.getListSoft())) return  false;
+        return  true;
     }
 
     private boolean checkValid(int x, int y) {
@@ -107,19 +116,26 @@ public class Bomb extends Items {
         if (y < gameStage.getBorderY() - 1)
             return false;
 
-        if (!checkSolid(x, y)) return false;
+        if (!checkConflict(x, y, gameStage.getListSolid())) return false;
 
         return true;
     }
 
-    private boolean checkSolid(int x, int y) {
-        for (Items s : gameStage.getListSolid()) {
-//            System.out.printf("minX: %d, maxX: %d, minY: %d, maxY: %d\n", s.getBorderX(), s.getBorderX() + s.getBorderWidth(), s.getBorderY(), s.getBorderY() + s.getBorderHeight());
+//    private boolean checkSolid(int x, int y) {
+//        for (Items s : gameStage.getListSolid()) {
+//            if (s.getBorderX() - 5 <= x && x <= s.getBorderX() + s.getBorderWidth() - 5
+//                    && s.getBorderY() - 5 <= y && y <= s.getBorderY() + s.getBorderHeight() - 5)
+//                return false;
+//        }
+//        return true;
+//    }
+    private boolean checkConflict(int x, int y, ArrayList<Items> arr) {
+        for (Items s : arr) {
             if (s.getBorderX() - 5 <= x && x <= s.getBorderX() + s.getBorderWidth() - 5
                     && s.getBorderY() - 5 <= y && y <= s.getBorderY() + s.getBorderHeight() - 5)
                 return false;
         }
 
-        return true;
+        return  true;
     }
 }
