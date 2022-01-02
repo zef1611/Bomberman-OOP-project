@@ -21,6 +21,6 @@ public class SpawnSolid {
                 new Solid(i,j,stageNum, gameStage, stage);
             }
         }
-        new Solid(1,1,stageNum,gameStage,stage);
+//        new Solid(1,1,stageNum,gameStage,stage);
     }
 }
