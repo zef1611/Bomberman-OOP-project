@@ -60,7 +60,7 @@ public class Player extends Image {
         gameStage.attachPlayer(this);
         this.speed = 1;
         this.health = 1;
-        this.remainBomb = 1;
+        this.remainBomb = 0;
         this.MaxBomb = 1;
     }
 

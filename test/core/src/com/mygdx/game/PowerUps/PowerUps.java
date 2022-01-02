@@ -18,6 +18,7 @@ public abstract class PowerUps extends Image {
     TextureAtlas atlas;
     GameStage gameStage;
     Player player;
+    Stage stage;
     public PowerUps(int tileX, int tileY, GameStage gameStage, Stage stage) {
         int x = MainGameScreen.playerX + 64 * tileX;
         int y = MainGameScreen.playerY + 64 * tileY;
@@ -29,6 +30,8 @@ public abstract class PowerUps extends Image {
         borderWidth = (int) sprite.getWidth();
         borderHeight = (int) sprite.getHeight();
         stage.addActor(this);
+        this.stage = stage;
+
         this.gameStage = gameStage;
         gameStage.attachPowerUps(this);
     }

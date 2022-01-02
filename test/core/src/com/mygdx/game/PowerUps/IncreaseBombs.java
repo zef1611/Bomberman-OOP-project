@@ -10,6 +10,7 @@ import com.mygdx.game.Items;
 import com.mygdx.game.Player.Player;
 import com.mygdx.game.Screen.MainGameScreen;
 import com.mygdx.game.Stage.GameStage;
+import com.mygdx.game.Stage.HUD;
 
 public class IncreaseBombs extends PowerUps {
 
@@ -24,6 +25,8 @@ public class IncreaseBombs extends PowerUps {
     public void execute(Player player) {
         this.player = player;
         player.setMaxBomb(+1);
+        HUD.setBombVal(player.getMaxBomb());
         this.del();
+
     }
 }
