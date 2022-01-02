@@ -40,7 +40,6 @@ public class MainGameScreen extends AbstractScreen {
 //      Spawn enemies
         SpawnEnemies emySpawn = new SpawnEnemies(this,gameStage, stageNum);
         emySpawn.execute();
-
 //      Spawn bombs here (so that it would not overlap the player animation)
 
 
