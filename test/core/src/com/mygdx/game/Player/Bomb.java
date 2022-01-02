@@ -120,15 +120,7 @@ public class Bomb extends Items {
 
         return true;
     }
-
-//    private boolean checkSolid(int x, int y) {
-//        for (Items s : gameStage.getListSolid()) {
-//            if (s.getBorderX() - 5 <= x && x <= s.getBorderX() + s.getBorderWidth() - 5
-//                    && s.getBorderY() - 5 <= y && y <= s.getBorderY() + s.getBorderHeight() - 5)
-//                return false;
-//        }
-//        return true;
-//    }
+    
     private boolean checkConflict(int x, int y, ArrayList<Items> arr) {
         for (Items s : arr) {
             if (s.getBorderX() - 5 <= x && x <= s.getBorderX() + s.getBorderWidth() - 5
