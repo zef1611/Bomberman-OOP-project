@@ -102,7 +102,7 @@ public class Explosion extends Image {
             int minX = s.getBorderX(), maxX = s.getBorderWidth() + s.getBorderX();
             int minY = s.getBorderY(), maxY =  s.getBorderHeight() + s.getBorderY();
 
-            if (minX <= this.x && this.x <= maxX && minY <= this.y && this.y <= maxY) {
+            if (minX <= this.x && this.x < maxX && minY <= this.y && this.y < maxY) {
                 s.del();
                 it.remove();
             }
