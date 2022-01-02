@@ -15,31 +15,21 @@ import com.mygdx.game.StateEnum;
 
 public class Player extends Image {
 
-//    public enum DirectionEnum{
-//        LEFT("left"), RIGHT("right"), UP("up"), DOWN("down"), NONE("none");
-//        String directionName;
-//        DirectionEnum(String directionName){
-//            this.directionName = directionName;
-//        }
-//        @Override
-//        public String toString(){
-//            return directionName;
-//        }
-//    }
 
     private PlayerInput playerInput;
     private TextureAtlas atlas;
     private Sprite player;
     private Animation <TextureAtlas.AtlasRegion> currentAni;
     private float elapsedTime = 0;
-    private MoveByAction currentAction = new MoveByAction();
+        private MoveByAction currentAction = new MoveByAction();
     private Stage stage;
     private GameStage gameStage;
     private int stepCount=0; // For deciding the animation in update method
     private int borderX, borderY, borderWidth, borderHeight;
     private DirectionEnum direction = DirectionEnum.NONE;
     private StateEnum state = StateEnum.STILL;
-
+    private int remainBomb, health;
+    private double speed;
     public Player(ColorEnum color, Stage stage, GameStage gameStage) {
 //        The player needs to be able to modify the stage add bombs, break blocks...
         this.stage = stage;
@@ -67,7 +57,9 @@ public class Player extends Image {
 
 //        Receive border
         gameStage.attachPlayer(this);
-
+        this.speed = 1;
+        this.health = 1;
+        this.remainBomb = 1;
     }
 
 //    This is to render animations
