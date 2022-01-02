@@ -25,7 +25,7 @@ public abstract class Enemy extends Image {
     private boolean isAlive = true;
     protected EnemyMove enemyMove;
     private int borderX, borderY, borderWidth, borderHeight;
-
+    GameStage gameStage;
 
     protected Enemy(DirectionEnum directionEnum, GameStage gameStage, Stage stage){
 //        Set the hitbox of enemy
@@ -40,6 +40,7 @@ public abstract class Enemy extends Image {
         Enemy.this.addAction(currentAction);
         currentAction.act(0.1f);
 
+        this.gameStage = gameStage;
 //        Add enemy into listEnemy
         gameStage.attachEnemy(this);
         stage.addActor(this);
@@ -56,10 +57,17 @@ public abstract class Enemy extends Image {
     }
     @Override
     public void draw(Batch batch,float parentAlpha){
+
         elapsedTime += Gdx.graphics.getDeltaTime();
         enemyMove.movement();
         boolean flip = (direction == DirectionEnum.RIGHT);
         elapsedTime += Gdx.graphics.getDeltaTime();
+        int x = (int) getX(), y = (int) getY();
+//        Sys
+        if (this.gameStage.getDeath(x / 64, y/64) > 0) {
+            this.gameStage.detachEnemy(this);
+            this.del();
+        }
         if(flip){
             batch.draw(currentAni.getKeyFrame(elapsedTime), getX()+getWidth(), getY(),-getWidth(),getHeight());
         }

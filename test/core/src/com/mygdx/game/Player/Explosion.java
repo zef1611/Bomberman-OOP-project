@@ -61,7 +61,8 @@ public class Explosion extends Image {
                     atlas.findRegion("explosion_body_row",1)
 
                     );
-
+        System.out.printf("%d %d\n", this.x / 64, y / 64);
+        gameStage.setDeath(this.x / 64, this.y / 64, 1);
         this.stillAlive = true;
         this.gameStage = gameStage;
     }
@@ -74,21 +75,19 @@ public class Explosion extends Image {
         if (elapsedTime > 1) {
             delSoft();
             delEnemies();
+            gameStage.setDeath(this.x / 64, this.y / 64, -1);
             this.addAction(Actions.removeActor());
         }
 
     }
     private void delSoft(){
-        System.out.printf("%d %d\nDelete----\n", this.x, this.y);
+//        System.out.printf("%d %d\nDelete----\n", this.x, this.y);
         ListIterator<Items> it = gameStage.getListSoft().listIterator();
         while (it.hasNext()) {
             Items s = it.next();
             int minX = s.getBorderX(), maxX = s.getBorderWidth() + s.getBorderX();
             int minY = s.getBorderY(), maxY =  s.getBorderHeight() + s.getBorderY();
             if (minX <= this.x && this.x < maxX && minY <= this.y && this.y < maxY) {
-                System.out.printf("minX: %d, maxX: %d ", s.getBorderX(), s.getBorderWidth() + s.getBorderX());
-                System.out.printf("minY: %d, maxY: %d\n", s.getBorderY(), s.getBorderHeight() + s.getBorderY());
-
                 s.del();
                 it.remove();
             }
@@ -97,12 +96,12 @@ public class Explosion extends Image {
     }
     private void delEnemies(){
         ListIterator<Enemy> it = gameStage.getListEnemy().listIterator();
+
         while (it.hasNext()) {
             Enemy s = it.next();
             int minX = s.getBorderX(), maxX = s.getBorderWidth() + s.getBorderX();
             int minY = s.getBorderY(), maxY =  s.getBorderHeight() + s.getBorderY();
-//            System.out.printf("minX: %d, maxX: %d ", s.getBorderX(), s.getBorderWidth() + s.getBorderX());
-//            System.out.printf("minY: %d, maxY: %d ", s.getBorderY(), s.getBorderHeight() + s.getBorderY());
+
             if (minX <= this.x && this.x <= maxX && minY <= this.y && this.y <= maxY) {
                 s.del();
                 it.remove();

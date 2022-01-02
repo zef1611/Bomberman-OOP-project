@@ -1,5 +1,6 @@
 package com.mygdx.game.Enemies;
 
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -9,6 +10,8 @@ import com.mygdx.game.Items;
 
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.Stage.Soft;
+
+import java.util.ArrayList;
 
 public class EnemyMove {
     private Enemy enemy;
@@ -20,6 +23,7 @@ public class EnemyMove {
         this.gameStage = gameStage;
         enemyAnimation = new EnemyAnimation(enemy, enemyAtlas);
     }
+
 
     public void movement(){
         if(enemy.getCurrentAction().isComplete()) {
@@ -35,10 +39,14 @@ public class EnemyMove {
             }
         }
     }
-
-    public void horizontalMove(){
-        checkSoft();
+    private void checkStatus() {
         checkBorder();
+        checkConflict(gameStage.getListSoft());
+        checkConflict(gameStage.getListSolid());
+        checkConflict(gameStage.getListBomb());
+    }
+    public void horizontalMove(){
+        checkStatus();
         if(enemy.currentAction.isComplete()){
             MoveByAction action = new MoveByAction();
 
@@ -56,9 +64,7 @@ public class EnemyMove {
     }
 
     public void verticalMove(){
-        checkSoft();
-        checkBorder();
-
+        checkStatus();
         if(enemy.currentAction.isComplete()){
             MoveByAction action = new MoveByAction();
 
@@ -75,8 +81,8 @@ public class EnemyMove {
         }
     }
 
-    private void checkSoft(){
-        for (Items s: gameStage.getListSoft()){
+    private void checkConflict(ArrayList<Items> arr){
+        for (Items s: arr){
             if(enemy.getDirection() == DirectionEnum.DOWN){
                 if(enemy.getY() - 63 < (s.getBorderY() + s.getBorderHeight())
                         && enemy.getY() - 63 > s.getBorderY()
@@ -112,27 +118,26 @@ public class EnemyMove {
         }
     }
 
-    private void checkBorder(){
-        if(enemy.getDirection() == DirectionEnum.DOWN){
-            if(enemy.getY() - 1 < gameStage.getBorderY()) {
+    private void checkBorder() {
+        if (enemy.getDirection() == DirectionEnum.DOWN) {
+            if (enemy.getY() - 1 < gameStage.getBorderY()) {
                 enemy.setDirection(DirectionEnum.UP);
             }
         }
-        if(enemy.getDirection() == DirectionEnum.UP){
-            if(enemy.getY() + 65 >= gameStage.getBorderY() + gameStage.getBorderHeight()){
+        if (enemy.getDirection() == DirectionEnum.UP) {
+            if (enemy.getY() + 65 >= gameStage.getBorderY() + gameStage.getBorderHeight()) {
                 enemy.setDirection(DirectionEnum.DOWN);
             }
         }
-        if(enemy.getDirection() == DirectionEnum.LEFT){
-            if(enemy.getX() - 1 < gameStage.getBorderX()) {
+        if (enemy.getDirection() == DirectionEnum.LEFT) {
+            if (enemy.getX() - 1 < gameStage.getBorderX()) {
                 enemy.setDirection(DirectionEnum.RIGHT);
             }
         }
-        if(enemy.getDirection() == DirectionEnum.RIGHT){
-            if(enemy.getX() + 65 >= gameStage.getBorderX() + gameStage.getBorderWidth()){
+        if (enemy.getDirection() == DirectionEnum.RIGHT) {
+            if (enemy.getX() + 65 >= gameStage.getBorderX() + gameStage.getBorderWidth()) {
                 enemy.setDirection(DirectionEnum.LEFT);
             }
         }
     }
-
 }
