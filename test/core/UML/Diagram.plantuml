@@ -66,14 +66,22 @@ enum StateEnum{
     +toString():String
 }
 class Bomb{
-    -player: Player
-    -atlas: TextureAtlas
-    -currentAni: Animation<TextureAtlas.AtlasRegion>
-    -elapsedTime: float
-    -bomb: Sprite
+    +gameStage: GameStage
+    +player: Player
+    +atlas: TextureAtlas
+    + currentAni: Animation<TextureAtlas.AtlasRegion>
+    +elapsedTime: float
+    + bomb: Sprite
+    +stage: int
+    +x: int
+    +y: int
+    +stillAlive: boolean
     +Bomb()
     +draw(): void
     +act(): void
+    -addExplosion(): void
+    -checkValid(): boolean
+    -checkSolid(): boolean
 }
 enum ColorEnum{
     BLACK
@@ -269,14 +277,16 @@ class GameStage{
 }
 class Soft{
     -soft: Sprite
+    +gameStage: GameStage
     -borderX: int
     -borderY: int
     -borderWidth: int
     -borderHeight: int
     +Soft()
-    -switchSprite(): Sprite
+    #switchSprite(): Sprite
     +draw(): void
     +act(): void
+    +delSoft(): void
     +getBorderX(): int
     +getBorderY(): int
     +getBorderWidth(): int
