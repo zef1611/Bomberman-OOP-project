@@ -13,8 +13,8 @@ import com.mygdx.game.Stage.GameStage;
 public class Alien extends Enemy{
     private Sprite alien;
 
-    public Alien(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage) {
-        super(directionEnum, gameStage, stage);
+    public Alien(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage, int ID) {
+        super(directionEnum, gameStage, stage, ID);
         super.setName(EnemyEnum.ALIEN);
 
 //        Set coordinate

@@ -3,12 +3,15 @@ package com.mygdx.game.Enemies;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.mygdx.game.ConstantValue;
 import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.Items;
 
+import com.mygdx.game.Player.Player;
+import com.mygdx.game.PowerUps.PowerUps;
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.Stage.Soft;
 
@@ -25,7 +28,6 @@ public class EnemyMove {
         enemyAnimation = new EnemyAnimation(enemy, enemyAtlas);
     }
 
-
     public void movement(){
         if(enemy.getCurrentAction().isComplete()) {
             switch (enemy.getDirection()) {
@@ -40,12 +42,18 @@ public class EnemyMove {
             }
         }
     }
+
     private void checkStatus() {
         checkBorder();
         checkConflict(gameStage.getListSoft());
         checkConflict(gameStage.getListSolid());
         checkConflict(gameStage.getListBomb());
+        checkEnemy(gameStage.getListEnemy());
+        checkPowerUps(gameStage.getListPowerUps());
+        checkPlayer(gameStage.getListPlayer());
+
     }
+
     public void horizontalMove(){
         checkStatus();
         if(enemy.currentAction.isComplete()){
@@ -113,6 +121,119 @@ public class EnemyMove {
             }
         }
     }
+
+    private void checkEnemy(ArrayList<Enemy> arr){
+        for (Enemy s: arr){
+            if (enemy.getID() == s.getID()) continue;
+            float minY = s.getY() -5 , maxY = s.getY() + 64;
+            float minX = s.getX() -5, maxX = s.getX() + 64;
+            System.out.printf("MinX: %f maxX: %f, minY: %f maxY: %f\n",minX,maxX,minY,maxY);
+            System.out.printf("X: %f, Y: %f\n",enemy.getX(),enemy.getY());
+
+            if(enemy.getDirection() == DirectionEnum.DOWN){
+                if(inRange(enemy.getX() + 5 , enemy.getY() - 30 , minX, maxX, minY, maxY)) {
+                    enemy.setDirection(DirectionEnum.UP);
+                    System.out.println("yes");
+                    break;
+                }
+            }
+            if(enemy.getDirection() == DirectionEnum.UP){
+                if(inRange(enemy.getX() + 5, enemy.getY() + 70 , minX, maxX, minY, maxY)){
+                    enemy.setDirection(DirectionEnum.DOWN);
+                    System.out.println("yes");
+                    break;
+
+                }
+            }
+            if(enemy.getDirection() == DirectionEnum.LEFT){
+                if(inRange(enemy.getX() - 30, enemy.getY() + 5, minX, maxX, minY, maxY)) {
+                    enemy.setDirection(DirectionEnum.RIGHT);
+                    System.out.println("yes");
+                    break;
+                }
+            }
+            if(enemy.getDirection() == DirectionEnum.RIGHT){
+                if(inRange(enemy.getX() + 70 , enemy.getY() +5 , minX, maxX, minY, maxY)){
+                    enemy.setDirection(DirectionEnum.LEFT);
+                    System.out.println("yes");
+                    break;
+                }
+            }
+        }
+    }
+
+    private void checkPlayer(ArrayList<Player> arr){
+        for (Player s: arr){
+
+            float minY = s.getY() -5 , maxY = s.getY() + 64;
+            float minX = s.getX() -5, maxX = s.getX() + 64;
+//            System.out.printf("MinX: %f maxX: %f, minY: %f maxY: %f\n",minX,maxX,minY,maxY);
+//            System.out.printf("X: %f, Y: %f\n",enemy.getX(),enemy.getY());
+
+            if(enemy.getDirection() == DirectionEnum.DOWN){
+                if(inRange(enemy.getX() + 5 , enemy.getY() - 30 , minX, maxX, minY, maxY)) {
+                    System.out.println("Player is death");
+                    s.position(96,64);
+                    break;
+                }
+            }
+            if(enemy.getDirection() == DirectionEnum.UP){
+                if(inRange(enemy.getX() + 5, enemy.getY() + 70 , minX, maxX, minY, maxY)){
+                    System.out.println("Player is death");
+                    s.position(96,64);
+                    break;
+
+                }
+            }
+            if(enemy.getDirection() == DirectionEnum.LEFT){
+                if(inRange(enemy.getX() - 30, enemy.getY() + 5, minX, maxX, minY, maxY)) {
+                    System.out.println("Player is death");
+                    s.position(96,64);
+                    break;
+                }
+            }
+            if(enemy.getDirection() == DirectionEnum.RIGHT){
+                if(inRange(enemy.getX() + 70 , enemy.getY() +5 , minX, maxX, minY, maxY)){
+                    System.out.println("Player is death");
+                    s.position(96,64);
+                    break;
+                }
+            }
+        }
+    }
+
+    private void checkPowerUps(ArrayList<PowerUps> arr){
+        for (PowerUps s: arr){
+            float minY = s.getBorderY(), maxY = s.getBorderY() + s.getBorderHeight();
+            float minX = s.getBorderX(), maxX = s.getBorderX() + s.getBorderWidth();
+
+            if(enemy.getDirection() == DirectionEnum.DOWN){
+                if(inRange(enemy.getX() + 5, enemy.getY() - 30, minX, maxX, minY, maxY)) {
+                    enemy.setDirection(DirectionEnum.UP);
+                    break;
+                }
+            }
+            if(enemy.getDirection() == DirectionEnum.UP){
+                if(inRange(enemy.getX() + 5, enemy.getY() + 70, minX, maxX, minY, maxY)){
+                    enemy.setDirection(DirectionEnum.DOWN);
+                    break;
+                }
+            }
+            if(enemy.getDirection() == DirectionEnum.LEFT){
+                if(inRange(enemy.getX() - 30, enemy.getY() + 5 , minX, maxX, minY, maxY)) {
+                    enemy.setDirection(DirectionEnum.RIGHT);
+                    break;
+                }
+            }
+            if(enemy.getDirection() == DirectionEnum.RIGHT){
+                if(inRange(enemy.getX() + 70, enemy.getY() + 5, minX, maxX, minY, maxY)){
+                    enemy.setDirection(DirectionEnum.LEFT);
+                    break;
+                }
+            }
+        }
+    }
+
     private boolean inRange(float x, float y, float minX, float maxX, float minY, float maxY) {
         if (minX < x && x < maxX && minY < y && y < maxY) return true;
         return false;

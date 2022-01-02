@@ -24,11 +24,12 @@ public abstract class Enemy extends Image {
     private StateEnum state;
     private boolean isAlive = true;
     protected EnemyMove enemyMove;
-    private int borderX, borderY, borderWidth, borderHeight;
+    private int borderX, borderY, borderWidth, borderHeight,ID;
     GameStage gameStage;
 
-    protected Enemy(DirectionEnum directionEnum, GameStage gameStage, Stage stage){
+    protected Enemy(DirectionEnum directionEnum, GameStage gameStage, Stage stage, int ID){
 //        Set the hitbox of enemy
+        this.ID = ID;
         borderWidth = 64;
         borderHeight = 64;
 
@@ -109,6 +110,7 @@ public abstract class Enemy extends Image {
     public int getBorderY(){return  borderY;}
     public int getBorderWidth(){return borderWidth;}
     public int getBorderHeight(){return borderHeight;}
+    public int getID(){return this.ID;}
 
     public DirectionEnum getDirection() {return direction;}
     public void setDirection(DirectionEnum direction) {this.direction = direction;}

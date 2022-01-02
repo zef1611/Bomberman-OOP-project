@@ -14,8 +14,8 @@ import com.mygdx.game.Stage.GameStage;
 public class NinjaBlue extends Enemy{
     private Sprite ninjaBlue;
 
-    public NinjaBlue(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage) {
-        super(directionEnum, gameStage, stage);
+    public NinjaBlue(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage, int ID) {
+        super(directionEnum, gameStage, stage, ID);
         super.setName(EnemyEnum.NINJA_BLUE);
 
 //        Set coordinate

@@ -14,8 +14,8 @@ import com.mygdx.game.Stage.GameStage;
 public class Caveman extends Enemy{
     private Sprite caveman;
 
-    public Caveman(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage) {
-        super(directionEnum, gameStage, stage);
+    public Caveman(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage, int ID) {
+        super(directionEnum, gameStage, stage, ID);
         super.setName(EnemyEnum.CAVEMAN);
 
 //        Set coordinate

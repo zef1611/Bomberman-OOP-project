@@ -16,8 +16,8 @@ public class Skunk extends Enemy{
     private Sprite skunk;
 
 //    tileX and tileY are for easier spawning system on a grid of size 13x11
-    public Skunk(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage) {
-        super(directionEnum, gameStage, stage);
+    public Skunk(int tileX, int tileY, DirectionEnum directionEnum, GameStage gameStage, Stage stage, int ID) {
+        super(directionEnum, gameStage, stage, ID);
         super.setName(EnemyEnum.SKUNK);
 
 //        Set coordinate

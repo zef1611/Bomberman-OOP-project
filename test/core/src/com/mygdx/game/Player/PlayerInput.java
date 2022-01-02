@@ -2,6 +2,7 @@ package com.mygdx.game.Player;
 
 import com.mygdx.game.ConstantValue;
 import com.mygdx.game.DirectionEnum;
+import com.mygdx.game.Enemies.Enemy;
 import com.mygdx.game.Items;
 import com.mygdx.game.PowerUps.PowerUps;
 import com.mygdx.game.Stage.GameStage;
