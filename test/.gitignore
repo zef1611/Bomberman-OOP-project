@@ -94,8 +94,10 @@ nb-configuration.xml
 
 /local.properties
 .gradle/
+test/.idea/
 gradle-app.setting
-/build/
+core/build/
+desktop/build/
 /android/build/
 /core/build/
 /desktop/build/
