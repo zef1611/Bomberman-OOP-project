@@ -1,6 +1,7 @@
 package com.mygdx.game.Stage;
 
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.mygdx.game.PowerUps.IncreaseBombs;
 
 public class SpawnSoft {
     private Stage stage;
