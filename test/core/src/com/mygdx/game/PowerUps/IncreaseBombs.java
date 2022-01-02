@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.mygdx.game.Items;
+import com.mygdx.game.Player.Player;
 import com.mygdx.game.Screen.MainGameScreen;
 import com.mygdx.game.Stage.GameStage;
 
@@ -20,5 +21,9 @@ public class IncreaseBombs extends PowerUps {
         sprite = new  TextureAtlas.AtlasSprite(atlas.findRegion("bomb_up"));
 
     }
-
+    public void setUp(Player player) {
+        this.player = player;
+        player.setMaxBomb(+1);
+        this.del();
+    }
 }

@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.mygdx.game.Items;
+import com.mygdx.game.Player.Player;
 import com.mygdx.game.Screen.MainGameScreen;
 import com.mygdx.game.Stage.GameStage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
@@ -16,6 +17,7 @@ public abstract class PowerUps extends Image {
     public Sprite sprite;
     TextureAtlas atlas;
     GameStage gameStage;
+    Player player;
     public PowerUps(int tileX, int tileY, GameStage gameStage, Stage stage) {
         int x = MainGameScreen.playerX + 64 * tileX;
         int y = MainGameScreen.playerY + 64 * tileY;
@@ -28,6 +30,7 @@ public abstract class PowerUps extends Image {
         borderHeight = (int) sprite.getHeight();
         stage.addActor(this);
         this.gameStage = gameStage;
+        gameStage.attachPowerUps(this);
     }
     public abstract void setUpSprite();
 

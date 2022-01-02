@@ -28,7 +28,7 @@ public class Player extends Image {
     private int borderX, borderY, borderWidth, borderHeight;
     private DirectionEnum direction = DirectionEnum.NONE;
     private StateEnum state = StateEnum.STILL;
-    private int remainBomb, health;
+    private int remainBomb, health, MaxBomb;
     private double speed;
     public Player(ColorEnum color, Stage stage, GameStage gameStage) {
 //        The player needs to be able to modify the stage add bombs, break blocks...
@@ -60,6 +60,7 @@ public class Player extends Image {
         this.speed = 1;
         this.health = 1;
         this.remainBomb = 1;
+        this.MaxBomb = 1;
     }
 
 //    This is to render animations
@@ -83,6 +84,7 @@ public class Player extends Image {
     @Override
     protected void positionChanged(){
         player.setPosition(getX(),getY());
+        System.out.printf("%.5f", getX());
         super.positionChanged();
     }
 
@@ -156,6 +158,15 @@ public class Player extends Image {
     public float getBorderWidth(){return borderWidth;}
     public float getBorderHeight(){return borderHeight;}
     public int getRemainBomb(){return remainBomb;}
-    private int getHealth() {return health;}
-    private double getSpeed(){return speed;};
+    public int getHealth() {return health;}
+    public double getSpeed(){return speed;}
+    public int getMaxBomb(){return MaxBomb;}
+
+    public void setRemainBomb(int val) {
+        remainBomb += val;
+    }
+    public void setMaxBomb(int val){
+        this.MaxBomb += val;
+    }
+
 }

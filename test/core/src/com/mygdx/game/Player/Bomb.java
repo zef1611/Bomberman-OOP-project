@@ -56,6 +56,7 @@ public class Bomb extends Items {
                 atlas.findRegion("bomb_normal", 3));
 
         this.gameStage = gameStage;
+        player.setRemainBomb(-1);
 //        System.out.printf("%3.5f %3.5f", (float) gameStage.getBorderX(), (float) gameStage.getBorderY());
     }
 
@@ -83,6 +84,7 @@ public class Bomb extends Items {
             }
 
             // remove a bomb
+            player.setRemainBomb(+1);
             this.gameStage.detachBomb(this);
             this.addAction(Actions.removeActor());
 
