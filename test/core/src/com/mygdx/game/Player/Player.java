@@ -155,4 +155,7 @@ public class Player extends Image {
     public float getBorderY(){ return borderY;}
     public float getBorderWidth(){return borderWidth;}
     public float getBorderHeight(){return borderHeight;}
+    public int getRemainBomb(){return remainBomb;}
+    private int getHealth() {return health;}
+    private double getSpeed(){return speed;};
 }
