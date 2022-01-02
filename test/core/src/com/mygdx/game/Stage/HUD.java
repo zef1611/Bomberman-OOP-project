@@ -100,6 +100,7 @@ public class HUD extends Image {
     public void draw(Batch batch, float parentAlpha){
         if(isUpdated){
             updateCurrentVal();
+            isUpdated = false;
         }
 
         bomb.draw(batch);

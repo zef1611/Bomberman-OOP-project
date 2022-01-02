@@ -342,7 +342,13 @@ class MainGameScreen{
     +buildStage(): void
     +dispose(): void
 }
-
+class HUD{
+    -hudX: int
+    -hudY: int
+    -bomb: Sprite
+    -currentBomb: Sprite
+    -{static} bombVal
+}
 'LibGDX class
 class Game<LibGDX>{}
 hide Game methods
