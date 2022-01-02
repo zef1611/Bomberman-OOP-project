@@ -3,8 +3,11 @@ package com.mygdx.game.Screen;
 import com.mygdx.game.Enemies.SpawnEnemies;
 import com.mygdx.game.Player.ColorEnum;
 import com.mygdx.game.Player.Player;
+import com.mygdx.game.PowerUps.Spawn;
 import com.mygdx.game.Screen.AbstractScreen;
 import com.mygdx.game.Stage.*;
+
+import java.util.ArrayList;
 
 public class MainGameScreen extends AbstractScreen {
     private int stageNum;
@@ -13,7 +16,7 @@ public class MainGameScreen extends AbstractScreen {
     public static int playerY = 64;
 
     public MainGameScreen(){}
-
+    public HUD hud;
     @Override
     public void buildStage() {
 //      Get StageNum, colorEnum
@@ -26,7 +29,7 @@ public class MainGameScreen extends AbstractScreen {
         addActor(gameStage);
 
 //      HUD
-        HUD hud = new HUD();
+        hud = new HUD();
         addActor(hud);
 
 //      Spawn soft blocks
@@ -43,12 +46,14 @@ public class MainGameScreen extends AbstractScreen {
 
 //      Spawn bombs here (so that it would not overlap the player animation)
 
-
+        Spawn spawn = new Spawn(this, gameStage);
+        spawn.execute();
 //      Create player
         Player black = new Player(color, this, gameStage);
         black.position(playerX,playerY);
         setKeyboardFocus(black);
         addActor(black);
+//        ArrayList<Actor>
         gameStage.attachPlayer(black);
 
     }

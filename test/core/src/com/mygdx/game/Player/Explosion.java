@@ -74,7 +74,7 @@ public class Explosion extends Image {
 
         if (elapsedTime > 1) {
             delSoft();
-            delEnemies();
+//            delEnemies();
             gameStage.setDeath(this.x / 64, this.y / 64, -1);
             this.addAction(Actions.removeActor());
         }

@@ -10,6 +10,7 @@ import com.mygdx.game.Enemies.Enemy;
 import com.mygdx.game.Items;
 import com.mygdx.game.Player.Bomb;
 import com.mygdx.game.Player.Player;
+import com.mygdx.game.PowerUps.PowerUps;
 
 import java.util.ArrayList;
 
@@ -22,6 +23,7 @@ public class GameStage extends Image {
     ArrayList<Items> listSolid = new ArrayList<>();
     ArrayList<Items> listBomb = new ArrayList<>();
     ArrayList<Enemy> listEnemy = new ArrayList<>();
+    ArrayList<PowerUps> listPowerUps = new ArrayList<>();
     TextureAtlas stageAtlas;
     int borderX, borderY, borderWidth, borderHeight;
     Sprite txStatusBar, txBackground;
@@ -78,7 +80,6 @@ public class GameStage extends Image {
     public void attachSoft(Soft soft) {
         listSoft.add(soft);
     }
-
     public void detachSoft(Soft soft) {
         listSoft.remove(soft);
     }
@@ -86,20 +87,23 @@ public class GameStage extends Image {
     public void attachSolid(Solid solid) {
         listSolid.add(solid);
     }
+
     public void attachBomb(Bomb bomb) {
         listBomb.add(bomb);
     }
     public void  detachBomb(Bomb bomb) {
         listBomb.remove(bomb);
     }
+
     public void attachEnemy(Enemy enemy) {
         listEnemy.add(enemy);
     }
-
     public void detachEnemy(Enemy enemy) {
         listEnemy.remove(enemy);
     }
 
+    public void attachPowerUps(PowerUps item) {listPowerUps.add(item);}
+    public void dettacPowerUps(PowerUps item) {listPowerUps.remove(item);}
     //---------------------------GETTER/SETTERS------------------------
     public int getBorderX() {
         return borderX;
@@ -130,7 +134,7 @@ public class GameStage extends Image {
     public ArrayList<Player> getListPlayer() {
         return listPlayer;
     }
-
+    public ArrayList<PowerUps> getListPowerUps(){return listPowerUps;}
     public ArrayList<Enemy> getListEnemy() {
         return this.listEnemy;
     }

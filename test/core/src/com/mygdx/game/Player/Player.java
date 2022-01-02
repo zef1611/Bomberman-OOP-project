@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
 import com.mygdx.game.DirectionEnum;
+import com.mygdx.game.PowerUps.PowerUps;
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.StateEnum;
 //Player state includes still, walking,
@@ -28,7 +29,7 @@ public class Player extends Image {
     private int borderX, borderY, borderWidth, borderHeight;
     private DirectionEnum direction = DirectionEnum.NONE;
     private StateEnum state = StateEnum.STILL;
-    private int remainBomb, health;
+    private int remainBomb, health, MaxBomb;
     private double speed;
     public Player(ColorEnum color, Stage stage, GameStage gameStage) {
 //        The player needs to be able to modify the stage add bombs, break blocks...
@@ -59,7 +60,8 @@ public class Player extends Image {
         gameStage.attachPlayer(this);
         this.speed = 1;
         this.health = 1;
-        this.remainBomb = 1;
+        this.remainBomb = 0;
+        this.MaxBomb = 1;
     }
 
 //    This is to render animations
@@ -83,6 +85,8 @@ public class Player extends Image {
     @Override
     protected void positionChanged(){
         player.setPosition(getX(),getY());
+        findPowerUps((int) getX(), (int) getY());
+        System.out.printf("Max bomb is: %d: \n", MaxBomb);
         super.positionChanged();
     }
 
@@ -156,6 +160,26 @@ public class Player extends Image {
     public float getBorderWidth(){return borderWidth;}
     public float getBorderHeight(){return borderHeight;}
     public int getRemainBomb(){return remainBomb;}
-    private int getHealth() {return health;}
-    private double getSpeed(){return speed;};
+    public int getHealth() {return health;}
+    public double getSpeed(){return speed;}
+    public int getMaxBomb(){return MaxBomb;}
+
+    public void setRemainBomb(int val) {
+        remainBomb += val;
+    }
+    public void setMaxBomb(int val){
+        this.MaxBomb += val;
+    }
+
+    private void findPowerUps(int x, int y) {
+        for (PowerUps s : gameStage.getListPowerUps()){
+            int minX = s.getBorderX(), maxX = s.getBorderWidth() + s.getBorderX();
+            int minY = s.getBorderY(), maxY =  s.getBorderHeight() + s.getBorderY();
+            if (minX <= x && x <= maxX && minY <= y && y <= maxY) {
+                gameStage.dettacPowerUps(s);
+                s.execute(this);
+                return;
+            }
+        }
+    }
 }
