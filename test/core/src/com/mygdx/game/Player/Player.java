@@ -29,7 +29,7 @@ public class Player extends Image {
     private int borderX, borderY, borderWidth, borderHeight;
     private DirectionEnum direction = DirectionEnum.NONE;
     private StateEnum state = StateEnum.STILL;
-    private int remainBomb, health, MaxBomb;
+    private int remainBomb, health, MaxBomb, bombRange;
     private double speed;
     public Player(ColorEnum color, Stage stage, GameStage gameStage) {
 //        The player needs to be able to modify the stage add bombs, break blocks...
@@ -62,6 +62,7 @@ public class Player extends Image {
         this.health = 1;
         this.remainBomb = 0;
         this.MaxBomb = 1;
+        this.bombRange = 1;
     }
 
 //    This is to render animations
@@ -163,7 +164,8 @@ public class Player extends Image {
     public int getHealth() {return health;}
     public double getSpeed(){return speed;}
     public int getMaxBomb(){return MaxBomb;}
-
+    public int getBombRange(){return bombRange;}
+    public void setBombRange(int val){this.bombRange += val;}
     public void setRemainBomb(int val) {
         remainBomb += val;
     }
@@ -175,7 +177,7 @@ public class Player extends Image {
         for (PowerUps s : gameStage.getListPowerUps()){
             int minX = s.getBorderX(), maxX = s.getBorderWidth() + s.getBorderX();
             int minY = s.getBorderY(), maxY =  s.getBorderHeight() + s.getBorderY();
-            if (minX <= x && x <= maxX && minY <= y && y <= maxY) {
+            if (minX <= x && x < maxX && minY <= y && y < maxY) {
                 gameStage.dettacPowerUps(s);
                 s.execute(this);
                 return;
