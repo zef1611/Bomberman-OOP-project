@@ -91,7 +91,6 @@ public class EnemyMove {
                     enemy.setDirection(DirectionEnum.DOWN);
                     break;
                 }
-                System.out.println("************************");
             }
             if(enemy.getDirection() == DirectionEnum.LEFT){
                 if(enemy.getX() - 63 < (s.getBorderX() + s.getBorderWidth())
