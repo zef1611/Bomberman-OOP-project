@@ -65,6 +65,7 @@ public abstract class Enemy extends Image {
         int x = (int) getX(), y = (int) getY();
 //        Sys
         if (this.gameStage.getDeath(x / 64, y/64) > 0) {
+            this.gameStage.detachEnemy(this);
             this.del();
         }
         if(flip){

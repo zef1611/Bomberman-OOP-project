@@ -96,7 +96,6 @@ public class Player extends Image {
 
     public void position(int x, int y) {
         setPosition(x, y);
-
         player.setPosition(x, y);
     }
 
