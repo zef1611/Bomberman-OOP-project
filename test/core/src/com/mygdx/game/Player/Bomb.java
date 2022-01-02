@@ -6,6 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
+import com.mygdx.game.ConstantValue;
 import com.mygdx.game.Items;
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.Stage.Solid;
@@ -38,8 +39,10 @@ public class Bomb extends Items {
         this.length = player.getBombRange();
         setTouchable(Touchable.enabled);
 //        System.out.printf("%.5f %.5f", player.getX(), player.getY());
-        this.x = (int) player.getX();
-        this.y = (int) player.getY();
+        this.x = (int) (ConstantValue.GetX(player.getX()));
+        this.y = (int) (ConstantValue.GetY(player.getY()));
+
+        System.out.println(y);
         borderX = this.x;
         borderY = this.y;
         borderWidth = 64;
@@ -70,7 +73,6 @@ public class Bomb extends Items {
 
 
         if (elapsedTime > 3) { // 3: after 3 second the bomb will explore
-            System.out.printf("%d %d\n", x, y);
 
             addExplosion(x, y, 1);
             addExplosion(x, y, 0);

@@ -61,7 +61,7 @@ public class Explosion extends Image {
                     atlas.findRegion("explosion_body_row",1)
 
                     );
-        System.out.printf("%d %d\n", this.x / 64, y / 64);
+//        System.out.printf("%d %d\n", this.x / 64, y / 64);
         gameStage.setDeath(this.x / 64, this.y / 64, 1);
         this.stillAlive = true;
         this.gameStage = gameStage;

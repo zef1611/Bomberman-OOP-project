@@ -102,7 +102,6 @@ public class HUD extends Image {
 
     @Override
     public void draw(Batch batch, float parentAlpha){
-        System.out.printf("1");
         if(isUpdated){
             updateCurrentVal();
             isUpdated = false;

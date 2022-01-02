@@ -6,6 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
+import com.mygdx.game.ConstantValue;
 import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.PowerUps.PowerUps;
 import com.mygdx.game.Stage.GameStage;
@@ -85,9 +86,10 @@ public class Player extends Image {
 
     @Override
     protected void positionChanged(){
+
+
         player.setPosition(getX(),getY());
         findPowerUps((int) getX(), (int) getY());
-        System.out.printf("Max bomb is: %d: \n", MaxBomb);
         super.positionChanged();
     }
 

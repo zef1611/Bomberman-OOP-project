@@ -13,7 +13,7 @@ public class Spawn {
         this.stage = stage;
     }
     public void execute() {
-//        new IncreaseBombs(1,2,gameStage, stage);
-        new FireUps(1,2,gameStage, stage);
+        new IncreaseBombs(1,2,gameStage, stage);
+//        new FireUps(1,2,gameStage, stage);
     }
 }

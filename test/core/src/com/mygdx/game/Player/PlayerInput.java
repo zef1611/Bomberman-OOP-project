@@ -1,5 +1,6 @@
 package com.mygdx.game.Player;
 
+import com.mygdx.game.ConstantValue;
 import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.Items;
 import com.mygdx.game.PowerUps.PowerUps;
@@ -18,7 +19,7 @@ public class PlayerInput {
     private final GameStage gameStage;
     private final Stage stage;
     private final PlayerAnimation playerAni;
-
+    private float temp = 0.5F;
     protected PlayerInput(Player player, GameStage gameStage) {
         this.player = player;
         this.gameStage = gameStage;
@@ -41,7 +42,7 @@ public class PlayerInput {
         if (keycode == Input.Keys.D && player.getCurrentAction().isComplete() && isOk(keycode)) {
             MoveByAction right = new MoveByAction();
             right.setAmount(64, 0f);
-            right.setDuration(0);
+            right.setDuration(temp);
             player.setCurrentAction(right);
             player.addAction(right);
             // For animations
@@ -56,7 +57,7 @@ public class PlayerInput {
         if (keycode == Input.Keys.W && player.getCurrentAction().isComplete() && isOk(keycode)) {
             MoveByAction up = new MoveByAction();
             up.setAmount(0f, 64);
-            up.setDuration(0);
+            up.setDuration(temp);
             player.setCurrentAction(up);
             player.addAction(up);
 
@@ -73,7 +74,7 @@ public class PlayerInput {
         if (keycode == Input.Keys.S && player.getCurrentAction().isComplete() && isOk(keycode)) {
             MoveByAction down = new MoveByAction();
             down.setAmount(0f, -64f);
-            down.setDuration(0);
+            down.setDuration(temp);
             player.setCurrentAction(down);
             player.addAction(down);
 
@@ -91,7 +92,7 @@ public class PlayerInput {
 
             MoveByAction left = new MoveByAction();
             left.setAmount(-64f, 0f);
-            left.setDuration(0);
+            left.setDuration(temp);
             player.setCurrentAction(left);
             player.addAction(left);
 
@@ -112,6 +113,8 @@ public class PlayerInput {
             stage.addActor(bomb);
             gameStage.attachBomb(bomb);
         }
+//        player.setX(ConstantValue.GetX(player.getX()));
+//        player.setY(ConstantValue.GetY(player.getY()));
     }
 
     //    Check game stage border
@@ -141,39 +144,38 @@ public class PlayerInput {
         return true;
     }
 
-
+    private boolean inRange(float x, float y, float minX, float maxX, float minY, float maxY) {
+        if (minX < x && x < maxX && minY < y && y < maxY) return true;
+        return false;
+    }
     private boolean checkConflict(int keycode, ArrayList<Items> arr) {
+        boolean  check = false;
+        player.setX(ConstantValue.GetX(player.getX()));
+        player.setY(ConstantValue.GetY(player.getY()));
+
+        System.out.printf("%.5f %.5f\n", player.getX(), player.getY() );
         for (Items s : arr) {
+            float minY = s.getBorderY(), maxY = s.getBorderY() + s.getBorderHeight();
+            float minX = s.getBorderX(), maxX = s.getBorderX() + s.getBorderWidth();
+            System.out.printf("MinX: %.5f,MaxX: %.5f,MinY: %.5f, MaxY: %.5f\n",minX,maxX, minY, maxY);
             switch (keycode) {
                 case Input.Keys.W:
-                    if (Math.round(player.getY()) + 65 < (s.getBorderY() + s.getBorderHeight())
-                            && Math.round(player.getY()) + 65 > s.getBorderY()
-                            && Math.round(player.getX()) == s.getBorderX()) {
-                        return false;
+                    check = inRange(player.getX() + 5, player.getY() + 70, minX, maxX, minY, maxY);
+                    if (check == true) {
+                        int i = 1;
                     }
                     break;
                 case Input.Keys.A:
-                    if (Math.round(player.getX()) - 63 < (s.getBorderX() + s.getBorderWidth())
-                            && Math.round(player.getX()) - 63 > s.getBorderX()
-                            && Math.round(player.getY()) == s.getBorderY()) {
-                        return false;
-                    }
+                    check = inRange(player.getX() - 30, player.getY() + 5 , minX, maxX, minY, maxY);
                     break;
                 case Input.Keys.S:
-                    if (Math.round(player.getY()) - 63 < (s.getBorderY() + s.getBorderHeight())
-                            && Math.round(player.getY()) - 63 > s.getBorderY()
-                            && Math.round(player.getX()) == s.getBorderX()) {
-                        return false;
-                    }
+                    check = inRange(player.getX() + 5, player.getY() - 30, minX, maxX, minY, maxY);
                     break;
                 case Input.Keys.D:
-                    if (Math.round(player.getX()) + 65 < (s.getBorderX() + s.getBorderWidth())
-                            && Math.round(player.getX()) + 65 > s.getBorderX()
-                            && Math.round(player.getY()) == s.getBorderY()) {
-                        return false;
-                    }
+                    check = inRange(player.getX() + 70, player.getY() + 5, minX, maxX, minY, maxY);
                     break;
             }
+            if (check == true) return false;
         }
         return true;
     }
