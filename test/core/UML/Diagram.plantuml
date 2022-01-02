@@ -347,7 +347,29 @@ class HUD{
     -hudY: int
     -bomb: Sprite
     -currentBomb: Sprite
-    -{static} bombVal
+    -{static} bombVal: int
+    -life: Sprite
+    -currentLife: Sprite
+    -{static} lifeVal: int
+    -range: Sprite
+    -currentRange: Sprite
+    -{static} rangeVal: int
+    -speed: Sprite
+    -currentSpeed: Sprite
+    -{static} speedVal: int
+    -hudAtlas: TextureAtlas
+    -{static}isUpdated: boolean
+    +HUD()
+    -setPosition(): void
+    -initializeSprite():void
+    -updateCurrentVal(): void
+    +draw(): void
+    +act(): void
+    +{static}setBombVal(): void
+    +{static}setLifeVal(): void
+    +{static}setRangeVal(): void
+    +{static}setSpeedVal(): void
+
 }
 'LibGDX class
 class Game<LibGDX>{}
@@ -406,10 +428,12 @@ Skunk "many" --o "1"SpawnEnemies
 Soft "many" --o "1" SpawnSoft
 Solid "many" --o "1" SpawnSolid
 
+'Used to build stage in MainGameScreen
 SpawnEnemies -- MainGameScreen: buildStage
 SpawnSoft -- MainGameScreen: buildStage
 SpawnSolid -- MainGameScreen: buildStage
 GameStage -- MainGameScreen: buildStage
+HUD -- MainGameScreen: buildStage
 
 Player -- MainGameScreen: buildStage
 PlayerInput --* Player

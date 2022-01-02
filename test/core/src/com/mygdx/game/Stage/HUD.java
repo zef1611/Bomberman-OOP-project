@@ -34,10 +34,11 @@ public class HUD extends Image {
         hudX = 0;
         hudY = 833;
         initializeSprite();
-        setPosition();
+        setPositionSprite();
+        setScaleSprite();
     }
 
-    private void setPosition(){
+    private void setPositionSprite(){
         bomb.setPosition(hudX + 214,hudY + 19);
         currentBomb.setPosition(hudX + 262,hudY + 19);
 
@@ -54,47 +55,50 @@ public class HUD extends Image {
     private void initializeSprite(){
         //      Number of Bombs
         bomb = new TextureAtlas.AtlasSprite(hudAtlas.findRegion("bomb_up"));
-        bomb.setOrigin(0,0);
-        bomb.setScale(48f/64, 48f/64);
-
         currentBomb = new TextureAtlas.AtlasSprite(hudAtlas.findRegion("number",bombVal));
-        currentBomb.setOrigin(0,0);
-        currentBomb.setScale(3,3);
 
 //      Number of Lives
         life = new TextureAtlas.AtlasSprite(hudAtlas.findRegion("bomberman_icon"));
-        life.setOrigin(0,0);
-        life.setScale(48f/512,48f/512);
-
         currentLife = new TextureAtlas.AtlasSprite(hudAtlas.findRegion("number",lifeVal));
-        currentLife.setOrigin(0,0);
-        currentLife.setScale(3,3);
 
 //      Number of range increase
         range = new TextureAtlas.AtlasSprite(hudAtlas.findRegion("fire_up"));
-        range.setOrigin(0,0);
-        range.setScale(48f/64, 48f/64);
-
         currentRange = new TextureAtlas.AtlasSprite(hudAtlas.findRegion("number",rangeVal));
-        currentRange.setOrigin(0,0);
-        currentRange.setScale(3,3);
 
 //      Number of speed increase
         speed = new TextureAtlas.AtlasSprite(hudAtlas.findRegion("accelerator"));
+        currentSpeed = new TextureAtlas.AtlasSprite(hudAtlas.findRegion("number",speedVal));
+    }
+
+    private void setScaleSprite(){
+        bomb.setOrigin(0,0);
+        bomb.setScale(48f/64, 48f/64);
+        life.setOrigin(0,0);
+        life.setScale(48f/512,48f/512);
+        range.setOrigin(0,0);
+        range.setScale(48f/64, 48f/64);
         speed.setOrigin(0,0);
         speed.setScale(48f/64, 48f/64);
 
-        currentSpeed = new TextureAtlas.AtlasSprite(hudAtlas.findRegion("number",speedVal));
+        currentBomb.setOrigin(0,0);
+        currentBomb.setScale(3,3);
+        currentLife.setOrigin(0,0);
+        currentLife.setScale(3,3);
+        currentRange.setOrigin(0,0);
+        currentRange.setScale(3,3);
         currentSpeed.setOrigin(0,0);
         currentSpeed.setScale(3,3);
     }
 
     private void updateCurrentVal(){
-        currentBomb = new TextureAtlas.AtlasSprite(hudAtlas.findRegion("number", bombVal));
-        currentLife = new TextureAtlas.AtlasSprite(hudAtlas.findRegion("number", lifeVal));
-        currentRange = new TextureAtlas.AtlasSprite(hudAtlas.findRegion("number", rangeVal));
-        currentSpeed = new TextureAtlas.AtlasSprite(hudAtlas.findRegion("number", speedVal));
+        currentBomb = hudAtlas.createSprite("number", bombVal);
+        currentLife = hudAtlas.createSprite("number", lifeVal);
+        currentRange = hudAtlas.createSprite("number", rangeVal);
+        currentSpeed = hudAtlas.createSprite("number", speedVal);
+        setScaleSprite();
+        setPositionSprite();
     }
+
 
     @Override
     public void draw(Batch batch, float parentAlpha){
@@ -103,7 +107,6 @@ public class HUD extends Image {
             updateCurrentVal();
             isUpdated = false;
         }
-
         bomb.draw(batch);
         currentBomb.draw(batch);
 
