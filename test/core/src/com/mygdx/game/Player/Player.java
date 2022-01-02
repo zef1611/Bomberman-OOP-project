@@ -75,11 +75,6 @@ public class Player extends Image {
     public void draw(Batch batch, float parentAlpha) {
         boolean flip = (direction == DirectionEnum.LEFT);
         elapsedTime += Gdx.graphics.getDeltaTime();
-        int x = (int)(getX() + 0.6), y = (int)(getY()+0.6);
-        if (x == getX()) setX(x);
-        if (y == getY()) setY(y);
-
-        System.out.printf("%.5f %.5f \n ",  getX(), getY());
         if(flip){
             batch.draw(currentAni.getKeyFrame(elapsedTime), getX()+getWidth(), getY(),-getWidth(),getHeight());
         }
@@ -95,8 +90,6 @@ public class Player extends Image {
 
     @Override
     protected void positionChanged(){
-        System.out.printf("%d %d\n", (int)getX(), (int)getY());
-
         player.setPosition(getX(),getY());
         super.positionChanged();
     }

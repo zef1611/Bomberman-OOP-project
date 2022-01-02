@@ -1,0 +1,429 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class DesktopLauncher{
+    +main(): void
+}
+
+class Bomberman{
+    +SpriteBatch batch
+    +create(): void
+    +render(): void
+    +dispose(): void
+}
+
+class StartingScreen{
+    +buildStage(): void
+    +dispose(): void
+}
+class CharSelectScreen{
+    +{static}colorEnum: ColorEnum
+    +buildStage(): void
+    +setColorEnum(): void
+    +dispose(): void
+}
+class StageSelectScreen{
+    +{static}stageNum: int
+    +buildStage(): void
+    +setStageNum(): void
+}
+-class ScreenManager{
+    -{static}instance: ScreenManager
+    -game: Game
+    -ScreenManager()
+    +{static} getInstance(): ScreenManager
+    + initialize(): void
+    + showScreen(): void
+}
+abstract class AbstractScreen{
+    #AbstractScreen()
+    +{abstract} buildStage(): void
+    + show(): void
+    + render(): void
+    + resize(): void
+    + pause(): void
+    + resume(): void
+    + hide(): void
+}
+
+enum DirectionEnum{
+    LEFT
+    RIGHT
+    UP
+    DOWN
+    NONE
+    String directionName
+    +StateEnum()
+    +toString():String
+}
+enum StateEnum{
+    WALK
+    STILL
+    HWALK
+    HSTILL
+    stateName: String
+    +StateEnum()
+    +toString():String
+}
+class Bomb{
+    +gameStage: GameStage
+    +player: Player
+    +atlas: TextureAtlas
+    + currentAni: Animation<TextureAtlas.AtlasRegion>
+    +elapsedTime: float
+    + bomb: Sprite
+    +stage: int
+    +x: int
+    +y: int
+    +stillAlive: boolean
+    +Bomb()
+    +draw(): void
+    +act(): void
+    -addExplosion(): void
+    -checkValid(): boolean
+    -checkSolid(): boolean
+}
+enum ColorEnum{
+    BLACK
+    BLUE
+    GREEN
+    RED
+    WHITE
+    colorName: String
+    ColorEnum()
+    +toString(): String
+}
+class Player{
+    -playerInput: PlayerInput
+    -atlas: TextureAtlas
+    -player: Sprite
+    -currentAni: Animation <TextureAtlas.AtlasRegion>
+    -elapsedTime: float
+    -currentAction: MoveByAction
+    -stage: Stage
+    -gameStage: GameStage
+    -stepCount: int
+    -borderX: int
+    -borderY: int
+    -borerWidth: int
+    -borderHeight: int
+    -direction: DirectionEnum
+    -state: StateEnum
+    +Player()
+    +draw():void
+    +act(): void
+    #positionChanged(): void
+    +position(): void
+    +input(): void
+    #switchCharacter(): TextureAtlas
+    +getState(): StateEnum
+    #setState():void
+    +getDirection(): DirectionEnum
+    #setDirection(): void
+    + getStepCount(): int
+    #setStepCount(): void
+    +getCurrentAni(): Animation <TextureAtlas.AtlasRegion>
+    #setCurrentAni(): void
+    +getElapsedTime(): float
+    #setElapsedTime(): void
+    +getCurrentAction(): MoveByAction
+    +setCurrentAction(): void
+    +getAtlas(): TextureAtlas
+    +getStage(): Stage
+    +getBorderX(): float
+    +getBorderY(): float
+    +getBorderWidth(): float
+    +getBorderHeight(): float
+}
+class PlayerAnimation{
+    -player: Player
+    -atlas: TextureAtlas
+    +PlayerAnimation()
+    +updateAni(): void
+}
+class PlayerInput{
+    -player: Player
+    -gameStage: GameStage
+    -stage: Stage
+    -playerAni: PlayerAnimation
+    #PlayerInput():
+    #inputContent(): void
+    #checkBorder(): boolean
+    #checkSoft(): boolean
+    #checkSolid(): boolean
+}
+class Alien{
+    -alien: Sprite
+    +Alien()
+    +draw(): void
+}
+class Caveman{
+    -caveman: Sprite
+    +Caveman()
+    +draw(): void
+}
+class NinjaBlue{
+    -ninjaBlue: Sprite
+    +NinjaBlue()
+    +draw(): void
+}
+class Skunk{
+    -skunk: Sprite
+    +Skunk()
+    +draw(): void
+}
+class SpawnEnemies{
+    -stage: Stage
+    -stageNum: int
+    -gameStage: GameStage
+    +SpawnEnemies()
+    +execute(): void
+    +spawnSkunk(): void 
+    +spawnCaveman(): void 
+    +spawnNinjaBlue(): void 
+    +spawnAlien(): void 
+}
+class EnemyAnimation{
+    -enemy: Enemy
+    -enemyAtlas: TextureAtlas
+    +EnemyAnimation()
+    +updateAni(): void
+}
+class Enemy{
+    -enemy: EnemyEnum
+    #enemyAtlas: TextureAtlas
+    #currentAni: Animation<TextureAtlas.AtlasRegion>
+    #currentAction: MoveByAction
+    -elapsedTime: float
+    -direction: DirectionEnum
+    -state: StateEnum
+    -isAlive: boolean
+    #enemyMove: EnemyMove
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    #Enemy()
+    #switchAtlas(): void
+    #setBorder(): void
+    +draw(): void
+    +act(): void
+    #positionChanged(): void
+    +setName(): void
+    +getEnemyAtlas(): TextureAtlas
+    +getCurrentAni(): Animation<TextureAtlas.AtlasRegion>
+    +setCurrentAni(): void
+    +setBorderX(): void
+    +setBorderY(): void
+    +getBorderX():int
+    +getBorderY():int
+    +getBorderWidth():int
+    +getBorderHeight():int
+    +getState(): StateEnum
+    +setState(): void
+    +setCurrentAction(): void
+    +getCurrentAction(): MoveByAction
+    +getElapsedTime(): float
+    +setElapsedTime(): void
+}
+class EnemyMove{
+    -enemy: Enemy
+    -gameStage: GameStage
+    -enemyAnimation: EnemyAnimation
+    +EnemyMove()
+    -horizontalMove(): void
+    -verticalMove(): void
+    -checkSoft(): void
+    -checkBorder(): void
+}
+class EnemyEnum{
+    NINJA_BLUE
+    ALIEN
+    SKUNK
+    CAVEMAN
+    +name: String
+    +EnemyEnum()
+    +toString: String
+}
+class GameStage{
+    -listPlayer: ArrayList<Player>
+    -listSoft: ArrayList<Soft>
+    -listSolid: ArrayList<Solid>
+    -listEnemy: ArrayList<Enemy>
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    -txStatusBar: Sprite
+    -txBackground: Sprite
+    +GameStage()
+    -switchBackground(): Sprite
+    +draw(): void
+    +act(): void
+    +attachPlayer(): void
+    +detachPlayer(): void
+    +attachSoft(): void
+    +detachSoft(): void
+    +attachSolid(): void
+    +attachEnemy(): void
+    +detachVoid(): void
+    +getBorderX(): int
+    +getBorderY(): int
+    +getBorderWidth(): int
+    +getBorderHeight(): int
+    +getListSoft(): ArrayList<Soft>
+    +getListSolid(): ArrayList<Solid>
+    +getListPlayer(): ArrayList<Player>
+}
+class Soft{
+    -soft: Sprite
+    +gameStage: GameStage
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    +Soft()
+    #switchSprite(): Sprite
+    +draw(): void
+    +act(): void
+    +delSoft(): void
+    +getBorderX(): int
+    +getBorderY(): int
+    +getBorderWidth(): int
+    +getBorderHeight(): int
+}
+class Solid{
+    -solid: Sprite
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    +Soft()
+    -switchSprite(): Sprite
+    +draw(): void
+    +act(): void
+    +getBorderX(): int
+    +getBorderY(): int
+    +getBorderWidth(): int
+    +getBorderHeight(): int
+}
+class SpawnSoft{
+    -stage: Stage
+    -stageNum: int
+    -gameStage: GameStage
+    +SpawnSoft()
+    +execute(): void
+    -stage1(): void
+    -stage2(): void
+    -stage3(): void
+    -stage4(): void
+    -stage5(): void
+}
+class SpawnSolid{
+    -stage: Stage
+    -stageNum: int
+    -gameStage: GameStage
+    +SpawnSolid()
+    +execute(): void
+}
+enum ScreenEnum{
+    STARTING_SCREEN
+    CHAR_SELECT_SCREEN
+    STAGE_SELECT_SCREEN
+    MAIN_GAME
+}
+
+class MainGameScreen{
+    -stageNum: int
+    -color: ColorEnum
+    +{static} playerX: int
+    +{static} playerY: int
+    +MainGameScreen()
+    +buildStage(): void
+    +dispose(): void
+}
+
+'LibGDX class
+class Game<LibGDX>{}
+hide Game methods
+hide Game members
+class Image<LibGDX>{}
+hide Image methods
+hide Image members
+class Stage<LibGDX>{}
+hide Stage methods
+hide Stage members
+class Screen<LibGDX>{}
+hide Screen methods
+hide Screen members
+
+'Relationships
+
+Enemy <|-- Alien
+Enemy <|-- Skunk
+Enemy <|-- Caveman
+Enemy <|-- NinjaBlue
+
+Image <|- Enemy
+Image <|-- Bomb
+Image <|- Player
+Image <|-- GameStage
+Image <|-- Soft
+Image <|-- Solid
+
+Stage <|-- AbstractScreen
+Screen <|.. AbstractScreen
+
+
+AbstractScreen <|-- CharSelectScreen
+AbstractScreen <|-- StageSelectScreen
+AbstractScreen <|-- StartingScreen
+AbstractScreen <|-- MainGameScreen
+
+Game <|-- Bomberman
+
+DesktopLauncher --> Bomberman
+
+Bomberman --> StartingScreen
+
+StartingScreen --> CharSelectScreen
+
+CharSelectScreen --> StageSelectScreen
+
+StageSelectScreen --> MainGameScreen
+
+Alien "many" --o "1"SpawnEnemies
+Caveman "many" --o "1"SpawnEnemies
+NinjaBlue "many" --o "1"SpawnEnemies
+Skunk "many" --o "1"SpawnEnemies
+
+Soft "many" --o "1" SpawnSoft
+Solid "many" --o "1" SpawnSolid
+
+SpawnEnemies -- MainGameScreen: buildStage
+SpawnSoft -- MainGameScreen: buildStage
+SpawnSolid -- MainGameScreen: buildStage
+GameStage -- MainGameScreen: buildStage
+
+Player -- MainGameScreen: buildStage
+PlayerInput --* Player
+PlayerAnimation --* PlayerInput
+Bomb ..> PlayerInput
+DirectionEnum -o Player
+StateEnum -o Player
+ColorEnum -o Player
+
+EnemyMove --* Enemy
+EnemyAnimation --* EnemyMove
+DirectionEnum -o Enemy
+StateEnum -o Enemy
+EnemyEnum -o Enemy
+
+ScreenEnum *--ScreenManager
+ScreenManager *-- Bomberman: create
+ScreenManager -- StartingScreen: show
+ScreenManager -- CharSelectScreen: show
+ScreenManager -- StageSelectScreen: show
+ScreenManager -- MainGameScreen: show
+@enduml
+

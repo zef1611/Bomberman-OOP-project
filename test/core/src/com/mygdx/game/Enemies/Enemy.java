@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.mygdx.game.DirectionEnum;
@@ -14,19 +15,19 @@ import com.mygdx.game.StateEnum;
 //Responsible for position, bounds, animation, movement
 //Spawning the enemies will be taken care of by other class
 public abstract class Enemy extends Image {
-    EnemyEnum enemy;
-    TextureAtlas enemyAtlas;
-    Animation<TextureAtlas.AtlasRegion> currentAni;
-    MoveByAction currentAction = new MoveByAction();
-    float elapsedTime = 0;
-    DirectionEnum direction;
-    StateEnum state;
-    boolean isAlive = true;
-    EnemyMove enemyMove;
+    private EnemyEnum enemy;
+    protected TextureAtlas enemyAtlas;
+    protected Animation<TextureAtlas.AtlasRegion> currentAni;
+    protected MoveByAction currentAction = new MoveByAction();
+    private float elapsedTime = 0;
+    private DirectionEnum direction;
+    private StateEnum state;
+    private boolean isAlive = true;
+    protected EnemyMove enemyMove;
     private int borderX, borderY, borderWidth, borderHeight;
 
 
-    Enemy(DirectionEnum directionEnum, GameStage gameStage, Stage stage){
+    protected Enemy(DirectionEnum directionEnum, GameStage gameStage, Stage stage){
 //        Set the hitbox of enemy
         borderWidth = 64;
         borderHeight = 64;
@@ -75,6 +76,9 @@ public abstract class Enemy extends Image {
     protected void positionChanged(){
 
         super.positionChanged();
+    }
+    public void del() {
+        this.addAction(Actions.removeActor());
     }
 //    ---------------------SETTERS/GETTERS-------------------
     public void setName(EnemyEnum enemy){

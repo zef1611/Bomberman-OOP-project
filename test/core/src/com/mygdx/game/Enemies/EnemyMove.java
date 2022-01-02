@@ -5,13 +5,15 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.mygdx.game.DirectionEnum;
+import com.mygdx.game.Items;
+
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.Stage.Soft;
 
 public class EnemyMove {
-    Enemy enemy;
-    GameStage gameStage;
-    EnemyAnimation enemyAnimation;
+    private Enemy enemy;
+    private GameStage gameStage;
+    private EnemyAnimation enemyAnimation;
 
     public EnemyMove(Enemy enemy, TextureAtlas enemyAtlas,GameStage gameStage){
         this.enemy = enemy;
@@ -74,19 +76,19 @@ public class EnemyMove {
     }
 
     private void checkSoft(){
-        for (Soft s: gameStage.getListSoft()){
+        for (Items s: gameStage.getListSoft()){
             if(enemy.getDirection() == DirectionEnum.DOWN){
                 if(enemy.getY() - 63 < (s.getBorderY() + s.getBorderHeight())
                         && enemy.getY() - 63 > s.getBorderY()
-                        && enemy.getX() == s.getBorderX()) {
+                        && Math.round(enemy.getX()) == s.getBorderX()) {
                     enemy.setDirection(DirectionEnum.UP);
                     break;
                 }
             }
             if(enemy.getDirection() == DirectionEnum.UP){
                 if(enemy.getY() + 65 < (s.getBorderY() + s.getBorderHeight())
-                        && enemy.getY() + 65 > s.getBorderX()
-                        && enemy.getX() == s.getBorderX()){
+                        && enemy.getY() + 65 > s.getBorderY()
+                        && Math.round(enemy.getX()) == s.getBorderX()){
                     enemy.setDirection(DirectionEnum.DOWN);
                     break;
                 }
@@ -94,7 +96,7 @@ public class EnemyMove {
             if(enemy.getDirection() == DirectionEnum.LEFT){
                 if(enemy.getX() - 63 < (s.getBorderX() + s.getBorderWidth())
                         && enemy.getX() - 63 > s.getBorderX()
-                        && enemy.getY() == s.getBorderY()) {
+                        && Math.round(enemy.getY()) == s.getBorderY()) {
                     enemy.setDirection(DirectionEnum.RIGHT);
                     break;
                 }
@@ -102,7 +104,7 @@ public class EnemyMove {
             if(enemy.getDirection() == DirectionEnum.RIGHT){
                 if(enemy.getX() + 65 < (s.getBorderX() + s.getBorderWidth())
                         && enemy.getX() + 65 > s.getBorderX()
-                        && enemy.getY() == s.getBorderY()){
+                        && Math.round(enemy.getY()) == s.getBorderY()){
                     enemy.setDirection(DirectionEnum.LEFT);
                     break;
                 }

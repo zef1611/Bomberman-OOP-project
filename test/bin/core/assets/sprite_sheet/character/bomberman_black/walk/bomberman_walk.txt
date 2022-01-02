@@ -1,0 +1,131 @@
+bomberman_walk.png
+size: 64, 1728
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bomberman_walk
+  rotate: false
+  xy: 0, 0
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 1
+bomberman_walk
+  rotate: false
+  xy: 0, 96
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 2
+bomberman_walk
+  rotate: false
+  xy: 0, 192
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 3
+bomberman_walk
+  rotate: false
+  xy: 0, 288
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 4
+bomberman_walk
+  rotate: false
+  xy: 0, 384
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 5
+bomberman_walk
+  rotate: false
+  xy: 0, 480
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 6
+bomberman_walk
+  rotate: false
+  xy: 0, 576
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 7
+bomberman_walk
+  rotate: false
+  xy: 0, 672
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 8
+bomberman_walk
+  rotate: false
+  xy: 0, 768
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 9
+bomberman_walk
+  rotate: false
+  xy: 0, 864
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 10
+bomberman_walk
+  rotate: false
+  xy: 0, 960
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 11
+bomberman_walk
+  rotate: false
+  xy: 0, 1056
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 12
+bomberman_walk
+  rotate: false
+  xy: 0, 1152
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 13
+bomberman_walk
+  rotate: false
+  xy: 0, 1248
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 14
+bomberman_walk
+  rotate: false
+  xy: 0, 1344
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 15
+bomberman_walk
+  rotate: false
+  xy: 0, 1440
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 16
+bomberman_walk
+  rotate: false
+  xy: 0, 1536
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 17
+bomberman_walk
+  rotate: false
+  xy: 0, 1632
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: 18

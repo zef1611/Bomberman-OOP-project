@@ -5,8 +5,8 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.mygdx.game.DirectionEnum;
 
 public class PlayerAnimation {
-    Player player;
-    TextureAtlas atlas;
+    private Player player;
+    private TextureAtlas atlas;
 
     public PlayerAnimation(Player player, TextureAtlas atlas){
         this.player = player;

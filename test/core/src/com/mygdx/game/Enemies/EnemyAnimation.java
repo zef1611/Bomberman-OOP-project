@@ -6,10 +6,10 @@ import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.StateEnum;
 
 public class EnemyAnimation {
-    Enemy enemy;
-    TextureAtlas enemyAtlas;
+    private Enemy enemy;
+    private TextureAtlas enemyAtlas;
 
-    EnemyAnimation(Enemy enemy, TextureAtlas enemyAtlas){
+    public EnemyAnimation(Enemy enemy, TextureAtlas enemyAtlas){
         this.enemy = enemy;
         this.enemyAtlas = enemyAtlas;
     }
