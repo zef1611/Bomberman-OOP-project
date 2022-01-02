@@ -113,7 +113,6 @@ public class Bomb extends Items {
     }
 
     private boolean checkSolid(int x, int y) {
-//        System.out.printf("X: %d, Y: %d\n", x, y);
         for (Items s : gameStage.getListSolid()) {
 //            System.out.printf("minX: %d, maxX: %d, minY: %d, maxY: %d\n", s.getBorderX(), s.getBorderX() + s.getBorderWidth(), s.getBorderY(), s.getBorderY() + s.getBorderHeight());
             if (s.getBorderX() - 5 <= x && x <= s.getBorderX() + s.getBorderWidth() - 5

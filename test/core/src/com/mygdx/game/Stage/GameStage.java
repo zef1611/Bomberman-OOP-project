@@ -25,7 +25,7 @@ public class GameStage extends Image {
     TextureAtlas stageAtlas;
     int borderX, borderY, borderWidth, borderHeight;
     Sprite txStatusBar, txBackground;
-
+    int[][] death = new int[100][100];
     public GameStage(int stageNum) {
 
         txStatusBar = new Sprite(new Texture(Gdx.files.internal("sprite/stage/status_bar.png")));
@@ -134,5 +134,14 @@ public class GameStage extends Image {
     public ArrayList<Enemy> getListEnemy() {
         return this.listEnemy;
     }
+
+    public void setDeath(int x, int y, int val) {
+        death[x][y] += val;
+        death[x][y] =  (death[x][y] <0) ? 0 : death[x][y];
+    }
+    public int getDeath(int x, int y) {
+        return death[x][y];
+    }
+
 
 }
