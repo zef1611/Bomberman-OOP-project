@@ -10,6 +10,7 @@ import com.mygdx.game.ConstantValue;
 import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.PowerUps.PowerUps;
 import com.mygdx.game.Stage.GameStage;
+import com.mygdx.game.Stage.HUD;
 import com.mygdx.game.StateEnum;
 //Player state includes still, walking,
 //Player direction include left right up down
@@ -64,6 +65,9 @@ public class Player extends Image {
         this.remainBomb = 0;
         this.MaxBomb = 1;
         this.bombRange = 1;
+        HUD.setRangeVal(1);
+        HUD.setSpeedVal(1);
+        HUD.setBombVal(1);
     }
 
 //    This is to render animations

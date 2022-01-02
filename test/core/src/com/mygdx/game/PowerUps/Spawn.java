@@ -14,6 +14,6 @@ public class Spawn {
     }
     public void execute() {
         new IncreaseBombs(1,2,gameStage, stage);
-//        new FireUps(1,2,gameStage, stage);
+        new FireUps(1,4,gameStage, stage);
     }
 }

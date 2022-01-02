@@ -8,7 +8,6 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.mygdx.game.Items;
 import com.mygdx.game.Player.Player;
-import com.mygdx.game.Screen.MainGameScreen;
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.Stage.HUD;
 

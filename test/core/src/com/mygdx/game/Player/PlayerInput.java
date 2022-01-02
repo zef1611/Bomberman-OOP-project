@@ -19,7 +19,7 @@ public class PlayerInput {
     private final GameStage gameStage;
     private final Stage stage;
     private final PlayerAnimation playerAni;
-    private float temp = 0.5F;
+    private float temp = -0.25F;
     protected PlayerInput(Player player, GameStage gameStage) {
         this.player = player;
         this.gameStage = gameStage;
@@ -78,7 +78,6 @@ public class PlayerInput {
             player.setCurrentAction(down);
             player.addAction(down);
 
-            //For animations
             if (player.getDirection() != DirectionEnum.DOWN) {
                 player.setStepCount(0);
             }
@@ -153,11 +152,11 @@ public class PlayerInput {
         player.setX(ConstantValue.GetX(player.getX()));
         player.setY(ConstantValue.GetY(player.getY()));
 
-        System.out.printf("%.5f %.5f\n", player.getX(), player.getY() );
+//        System.out.printf("%.5f %.5f\n", player.getX(), player.getY() );
         for (Items s : arr) {
             float minY = s.getBorderY(), maxY = s.getBorderY() + s.getBorderHeight();
             float minX = s.getBorderX(), maxX = s.getBorderX() + s.getBorderWidth();
-            System.out.printf("MinX: %.5f,MaxX: %.5f,MinY: %.5f, MaxY: %.5f\n",minX,maxX, minY, maxY);
+//            System.out.printf("MinX: %.5f,MaxX: %.5f,MinY: %.5f, MaxY: %.5f\n",minX,maxX, minY, maxY);
             switch (keycode) {
                 case Input.Keys.W:
                     check = inRange(player.getX() + 5, player.getY() + 70, minX, maxX, minY, maxY);

@@ -38,17 +38,15 @@ public class Bomb extends Items {
 
         this.length = player.getBombRange();
         setTouchable(Touchable.enabled);
-//        System.out.printf("%.5f %.5f", player.getX(), player.getY());
         this.x = (int) (ConstantValue.GetX(player.getX()));
         this.y = (int) (ConstantValue.GetY(player.getY()));
 
-        System.out.println(y);
         borderX = this.x;
         borderY = this.y;
         borderWidth = 64;
         borderHeight = 64;
 
-        item.setPosition(player.getX(), player.getY());
+        item.setPosition(this.x, this.y);
 
         currentAni = new Animation<TextureAtlas.AtlasRegion>(1f / 2f,
                 atlas.findRegion("bomb_normal", 2),
@@ -60,7 +58,6 @@ public class Bomb extends Items {
 
         this.gameStage = gameStage;
         player.setRemainBomb(1);
-//        System.out.printf("%3.5f %3.5f", (float) gameStage.getBorderX(), (float) gameStage.getBorderY());
     }
 
     @Override

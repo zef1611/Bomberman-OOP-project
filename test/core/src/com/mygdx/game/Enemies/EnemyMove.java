@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
+import com.mygdx.game.ConstantValue;
 import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.Items;
 
@@ -83,59 +84,58 @@ public class EnemyMove {
 
     private void checkConflict(ArrayList<Items> arr){
         for (Items s: arr){
+            float minY = s.getBorderY(), maxY = s.getBorderY() + s.getBorderHeight();
+            float minX = s.getBorderX(), maxX = s.getBorderX() + s.getBorderWidth();
+
             if(enemy.getDirection() == DirectionEnum.DOWN){
-                if(enemy.getY() - 63 < (s.getBorderY() + s.getBorderHeight())
-                        && enemy.getY() - 63 > s.getBorderY()
-                        && Math.round(enemy.getX()) == s.getBorderX()) {
+                if(inRange(enemy.getX() + 5, enemy.getY() - 30, minX, maxX, minY, maxY)) {
                     enemy.setDirection(DirectionEnum.UP);
                     break;
                 }
             }
             if(enemy.getDirection() == DirectionEnum.UP){
-                if(enemy.getY() + 65 < (s.getBorderY() + s.getBorderHeight())
-                        && enemy.getY() + 65 > s.getBorderY()
-                        && Math.round(enemy.getX()) == s.getBorderX()){
+                if(inRange(enemy.getX() + 5, enemy.getY() + 70, minX, maxX, minY, maxY)){
                     enemy.setDirection(DirectionEnum.DOWN);
                     break;
                 }
             }
             if(enemy.getDirection() == DirectionEnum.LEFT){
-                if(enemy.getX() - 63 < (s.getBorderX() + s.getBorderWidth())
-                        && enemy.getX() - 63 > s.getBorderX()
-                        && Math.round(enemy.getY()) == s.getBorderY()) {
+                if(inRange(enemy.getX() - 30, enemy.getY() + 5 , minX, maxX, minY, maxY)) {
                     enemy.setDirection(DirectionEnum.RIGHT);
                     break;
                 }
             }
             if(enemy.getDirection() == DirectionEnum.RIGHT){
-                if(enemy.getX() + 65 < (s.getBorderX() + s.getBorderWidth())
-                        && enemy.getX() + 65 > s.getBorderX()
-                        && Math.round(enemy.getY()) == s.getBorderY()){
+                if(inRange(enemy.getX() + 70, enemy.getY() + 5, minX, maxX, minY, maxY)){
                     enemy.setDirection(DirectionEnum.LEFT);
                     break;
                 }
             }
         }
     }
+    private boolean inRange(float x, float y, float minX, float maxX, float minY, float maxY) {
+        if (minX < x && x < maxX && minY < y && y < maxY) return true;
+        return false;
+    }
 
     private void checkBorder() {
         if (enemy.getDirection() == DirectionEnum.DOWN) {
-            if (enemy.getY() - 1 < gameStage.getBorderY()) {
+            if (enemy.getY() - 30 < gameStage.getBorderY()) {
                 enemy.setDirection(DirectionEnum.UP);
             }
         }
         if (enemy.getDirection() == DirectionEnum.UP) {
-            if (enemy.getY() + 65 >= gameStage.getBorderY() + gameStage.getBorderHeight()) {
+            if (enemy.getY() + 70 >= gameStage.getBorderY() + gameStage.getBorderHeight()) {
                 enemy.setDirection(DirectionEnum.DOWN);
             }
         }
         if (enemy.getDirection() == DirectionEnum.LEFT) {
-            if (enemy.getX() - 1 < gameStage.getBorderX()) {
+            if (enemy.getX() - 30 < gameStage.getBorderX()) {
                 enemy.setDirection(DirectionEnum.RIGHT);
             }
         }
         if (enemy.getDirection() == DirectionEnum.RIGHT) {
-            if (enemy.getX() + 65 >= gameStage.getBorderX() + gameStage.getBorderWidth()) {
+            if (enemy.getX() + 70 >= gameStage.getBorderX() + gameStage.getBorderWidth()) {
                 enemy.setDirection(DirectionEnum.LEFT);
             }
         }
