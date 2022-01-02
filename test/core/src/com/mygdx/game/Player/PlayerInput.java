@@ -2,6 +2,7 @@ package com.mygdx.game.Player;
 
 import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.Items;
+import com.mygdx.game.PowerUps.PowerUps;
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.StateEnum;
 import com.badlogic.gdx.Input;
@@ -176,5 +177,5 @@ public class PlayerInput {
         }
         return true;
     }
-    
+
 }

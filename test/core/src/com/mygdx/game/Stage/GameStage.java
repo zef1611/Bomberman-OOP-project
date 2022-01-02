@@ -134,7 +134,7 @@ public class GameStage extends Image {
     public ArrayList<Player> getListPlayer() {
         return listPlayer;
     }
-
+    public ArrayList<PowerUps> getListPowerUps(){return listPowerUps;}
     public ArrayList<Enemy> getListEnemy() {
         return this.listEnemy;
     }

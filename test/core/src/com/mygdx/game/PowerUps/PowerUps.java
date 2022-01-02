@@ -39,7 +39,7 @@ public abstract class PowerUps extends Image {
     public void draw(Batch batch, float parentAlpha){
         sprite.draw(batch);
     }
-
+    public abstract void execute(Player player);
     @Override
     public void act(float delta) {
         super.act(delta);

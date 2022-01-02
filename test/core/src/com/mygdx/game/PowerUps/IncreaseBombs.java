@@ -21,7 +21,7 @@ public class IncreaseBombs extends PowerUps {
         sprite = new  TextureAtlas.AtlasSprite(atlas.findRegion("bomb_up"));
 
     }
-    public void setUp(Player player) {
+    public void execute(Player player) {
         this.player = player;
         player.setMaxBomb(+1);
         this.del();

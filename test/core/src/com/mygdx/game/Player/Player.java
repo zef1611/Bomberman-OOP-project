@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
 import com.mygdx.game.DirectionEnum;
+import com.mygdx.game.PowerUps.PowerUps;
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.StateEnum;
 //Player state includes still, walking,
@@ -84,7 +85,8 @@ public class Player extends Image {
     @Override
     protected void positionChanged(){
         player.setPosition(getX(),getY());
-        System.out.printf("%.5f", getX());
+        findPowerUps((int) getX(), (int) getY());
+        System.out.printf("Max bomb is: %d: \n", MaxBomb);
         super.positionChanged();
     }
 
@@ -169,4 +171,15 @@ public class Player extends Image {
         this.MaxBomb += val;
     }
 
+    private void findPowerUps(int x, int y) {
+        for (PowerUps s : gameStage.getListPowerUps()){
+            int minX = s.getBorderX(), maxX = s.getBorderWidth() + s.getBorderX();
+            int minY = s.getBorderY(), maxY =  s.getBorderHeight() + s.getBorderY();
+            if (minX <= x && x <= maxX && minY <= y && y <= maxY) {
+                gameStage.dettacPowerUps(s);
+                s.execute(this);
+                return;
+            }
+        }
+    }
 }
