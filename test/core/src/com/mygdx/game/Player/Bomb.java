@@ -25,7 +25,7 @@ public class Bomb extends Items {
     int stage = 0;
     int x, y, length;
 
-    public Bomb(Player player, GameStage gameStage, int length) {
+    public Bomb(Player player, GameStage gameStage) {
 
         this.player = player;
         atlas = new TextureAtlas(Gdx.files.internal("sprite_sheet/bomb_explosion/bomb_explosion.txt"));
@@ -35,7 +35,7 @@ public class Bomb extends Items {
 
         setBounds(item.getRegionX(), item.getRegionY(), item.getRegionWidth(), item.getRegionHeight());
 
-        this.length = length;
+        this.length = player.getBombRange();
         setTouchable(Touchable.enabled);
 //        System.out.printf("%.5f %.5f", player.getX(), player.getY());
         this.x = (int) player.getX();

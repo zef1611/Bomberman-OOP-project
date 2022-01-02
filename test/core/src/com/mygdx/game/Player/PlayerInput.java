@@ -107,7 +107,7 @@ public class PlayerInput {
         }
         if (keycode == Input.Keys.E) {
             if (player.getRemainBomb() == player.getMaxBomb()) return;
-            Bomb bomb = new Bomb(player, this.gameStage, 1);
+            Bomb bomb = new Bomb(player, this.gameStage);
 //            System.out.printf("ok");
             stage.addActor(bomb);
             gameStage.attachBomb(bomb);
