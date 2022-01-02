@@ -25,6 +25,10 @@ public class MainGameScreen extends AbstractScreen {
         GameStage gameStage = new GameStage(stageNum);
         addActor(gameStage);
 
+//      HUD
+        HUD hud = new HUD();
+        addActor(hud);
+
 //      Spawn soft blocks
         SpawnSoft spawnSoft = new SpawnSoft(this, gameStage, stageNum);
         spawnSoft.execute();
