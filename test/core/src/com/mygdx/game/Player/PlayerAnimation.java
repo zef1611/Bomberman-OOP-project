@@ -13,7 +13,7 @@ public class PlayerAnimation {
         this.atlas = atlas;
     }
 
-    public void updateAni() {
+    public void updateWalkAni() {
         player.setElapsedTime(0);
         String direction = (player.getDirection() == DirectionEnum.LEFT) ?
                 DirectionEnum.RIGHT.toString()
@@ -23,4 +23,12 @@ public class PlayerAnimation {
         String region = String.format("bomberman_" + state + "_" + direction + "_" + step);
         player.setCurrentAni(new Animation<>(1f / 8f, atlas.findRegions(region)));
     }
+
+    public void updateAni() {
+        player.setElapsedTime(0);
+        String state = player.getState().toString();
+        String region = String.format("bomberman_" + state);
+        player.setCurrentAni(new Animation<>(1f / 8f, atlas.findRegions(region)));
+    }
+
 }

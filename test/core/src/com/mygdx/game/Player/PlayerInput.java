@@ -54,7 +54,7 @@ public class PlayerInput {
             player.setStepCount(1 + player.getStepCount());
             player.setDirection(DirectionEnum.RIGHT);
             player.setState(StateEnum.WALK);
-            playerAni.updateAni();
+            playerAni.updateWalkAni();
         }
         if (keycode == Input.Keys.W && player.getCurrentAction().isComplete() && isOk(keycode)) {
             MoveByAction up = new MoveByAction();
@@ -70,7 +70,7 @@ public class PlayerInput {
             player.setStepCount(1 + player.getStepCount());
             player.setDirection(DirectionEnum.UP);
             player.setState(StateEnum.WALK);
-            playerAni.updateAni();
+            playerAni.updateWalkAni();
 
         }
         if (keycode == Input.Keys.S && player.getCurrentAction().isComplete() && isOk(keycode)) {
@@ -86,7 +86,7 @@ public class PlayerInput {
             player.setStepCount(1 + player.getStepCount());
             player.setDirection(DirectionEnum.DOWN);
             player.setState(StateEnum.WALK);
-            playerAni.updateAni();
+            playerAni.updateWalkAni();
 
         }
         if (keycode == Input.Keys.A && player.getCurrentAction().isComplete() && isOk(keycode)) {
@@ -104,7 +104,7 @@ public class PlayerInput {
             player.setStepCount(1 + player.getStepCount());
             player.setDirection(DirectionEnum.LEFT);
             player.setState(StateEnum.WALK);
-            playerAni.updateAni();
+            playerAni.updateWalkAni();
 
         }
         if (keycode == Input.Keys.E) {
@@ -181,5 +181,13 @@ public class PlayerInput {
         }
         return true;
     }
-
+    public void updateDeathAni() {
+        player.setStepCount(0);
+        player.setDirection(DirectionEnum.NONE);
+        player.setState(StateEnum.DEATH);
+        playerAni.updateAni();
+        player.setState(StateEnum.STILL);
+//        playerAni.updateAni();
+//        player.position(96,64);
+    }
 }
