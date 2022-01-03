@@ -3,7 +3,7 @@ package com.mygdx.game.Screen;
 import com.mygdx.game.Enemies.SpawnEnemies;
 import com.mygdx.game.Player.ColorEnum;
 import com.mygdx.game.Player.Player;
-import com.mygdx.game.PowerUps.Spawn;
+import com.mygdx.game.PowerUps.SpawnPowerUps;
 import com.mygdx.game.Screen.AbstractScreen;
 import com.mygdx.game.Stage.*;
 
@@ -45,7 +45,7 @@ public class MainGameScreen extends AbstractScreen {
         emySpawn.execute();
 //      Spawn bombs here (so that it would not overlap the player animation)
 
-        Spawn spawn = new Spawn(this, gameStage);
+        SpawnPowerUps spawn = new SpawnPowerUps(this, gameStage);
         spawn.execute();
 //      Create player
         Player player1 = new Player(color, this, gameStage);

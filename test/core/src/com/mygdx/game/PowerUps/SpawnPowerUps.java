@@ -4,12 +4,12 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.Stage.SpawnSoft;
 
-public class Spawn {
+public class SpawnPowerUps {
     private Stage stage;
     private int stageNum;
     private GameStage gameStage;
 
-    public Spawn(Stage stage, GameStage gameStage) {
+    public SpawnPowerUps(Stage stage, GameStage gameStage) {
         this.gameStage = gameStage;
         this.stage = stage;
     }
@@ -20,3 +20,4 @@ public class Spawn {
         new IncreaseSpeed(3, 2, gameStage, stage);
     }
 }
+

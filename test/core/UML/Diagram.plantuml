@@ -61,6 +61,7 @@ enum StateEnum{
     STILL
     HWALK
     HSTILL
+    DEATH
     stateName: String
     +StateEnum()
     +toString():String
@@ -326,6 +327,30 @@ class SpawnSolid{
     +SpawnSolid()
     +execute(): void
 }
+class PowerUps{
+    -soft: Sprite
+    +gameStage: GameStage
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    +Soft()
+    #switchSprite(): Sprite
+    +draw(): void
+    +act(): void
+    +delSoft(): void
+    +getBorderX(): int
+    +getBorderY(): int
+    +getBorderWidth(): int
+    +getBorderHeight(): int
+}
+class SpawnPowerUps{
+    -stage: Stage
+    -stageNum: int
+    -gameStage: GameStage
+    +SpawnPowerUps()
+    +execute(): void
+}
 enum ScreenEnum{
     STARTING_SCREEN
     CHAR_SELECT_SCREEN
@@ -399,6 +424,7 @@ Image <|- Player
 Image <|-- GameStage
 Image <|-- Soft
 Image <|-- Solid
+Image <|-- PowerUps
 
 Stage <|-- AbstractScreen
 Screen <|.. AbstractScreen
@@ -428,11 +454,13 @@ Skunk "many" --o "1"SpawnEnemies
 
 Soft "many" --o "1" SpawnSoft
 Solid "many" --o "1" SpawnSolid
+PowerUps "many" --o "1" SpawnPowerUps
 
 'Used to build stage in MainGameScreen
 SpawnEnemies -- MainGameScreen: buildStage
 SpawnSoft -- MainGameScreen: buildStage
 SpawnSolid -- MainGameScreen: buildStage
+SpawnPowerUps -- MainGameScreen: buildStage
 GameStage -- MainGameScreen: buildStage
 HUD -- MainGameScreen: buildStage
 

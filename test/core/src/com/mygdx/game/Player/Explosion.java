@@ -111,7 +111,6 @@ public class Explosion extends Image {
             Player s = it.next();
             int x = (int) s.getX(), y = (int) s.getY();
             if (gameStage.getDeath(x/64, y / 64) > 0) s.death();
-
         }
     }
 }
