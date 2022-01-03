@@ -22,14 +22,14 @@ public class EnemyMove {
     private GameStage gameStage;
     private EnemyAnimation enemyAnimation;
 
-    public EnemyMove(Enemy enemy, TextureAtlas enemyAtlas,GameStage gameStage){
+    public EnemyMove(Enemy enemy, TextureAtlas enemyAtlas, GameStage gameStage) {
         this.enemy = enemy;
         this.gameStage = gameStage;
         enemyAnimation = new EnemyAnimation(enemy, enemyAtlas);
     }
 
-    public void movement(){
-        if(enemy.getCurrentAction().isComplete()) {
+    public void movement() {
+        if (enemy.getCurrentAction().isComplete()) {
             switch (enemy.getDirection()) {
                 case LEFT:
                 case RIGHT:
@@ -45,6 +45,7 @@ public class EnemyMove {
 
     private void checkStatus() {
         checkBorder();
+        checkExplosion();
         checkConflict(gameStage.getListSoft());
         checkConflict(gameStage.getListSolid());
         checkConflict(gameStage.getListBomb());
@@ -54,67 +55,67 @@ public class EnemyMove {
 
     }
 
-    public void horizontalMove(){
+    public void horizontalMove() {
         checkStatus();
-        if(enemy.currentAction.isComplete()){
+        if (enemy.currentAction.isComplete()) {
             MoveByAction action = new MoveByAction();
 
-            if(enemy.getDirection() == DirectionEnum.LEFT){
+            if (enemy.getDirection() == DirectionEnum.LEFT) {
                 action.setAmount(-64f, 0f);
             }
-            if(enemy.getDirection() == DirectionEnum.RIGHT){
+            if (enemy.getDirection() == DirectionEnum.RIGHT) {
                 action.setAmount(64f, 0f);
             }
-            action.setDuration(1f/2f);
+            action.setDuration(1f / 2f);
             enemy.setCurrentAction(action);
             enemy.addAction(action);
             enemyAnimation.updateAni();
         }
     }
 
-    public void verticalMove(){
+    public void verticalMove() {
         checkStatus();
-        if(enemy.currentAction.isComplete()){
+        if (enemy.currentAction.isComplete()) {
             MoveByAction action = new MoveByAction();
 
-            if(enemy.getDirection() == DirectionEnum.DOWN){
+            if (enemy.getDirection() == DirectionEnum.DOWN) {
                 action.setAmount(0f, -64f);
             }
-            if(enemy.getDirection() == DirectionEnum.UP){
+            if (enemy.getDirection() == DirectionEnum.UP) {
                 action.setAmount(0f, 64f);
             }
-            action.setDuration(1f/2f);
+            action.setDuration(1f / 2f);
             enemy.setCurrentAction(action);
             enemy.addAction(action);
             enemyAnimation.updateAni();
         }
     }
 
-    private void checkConflict(ArrayList<Items> arr){
-        for (Items s: arr){
+    private void checkConflict(ArrayList<Items> arr) {
+        for (Items s : arr) {
             float minY = s.getBorderY(), maxY = s.getBorderY() + s.getBorderHeight();
             float minX = s.getBorderX(), maxX = s.getBorderX() + s.getBorderWidth();
 
-            if(enemy.getDirection() == DirectionEnum.DOWN){
-                if(inRange(enemy.getX() + 5, enemy.getY() - 30, minX, maxX, minY, maxY)) {
+            if (enemy.getDirection() == DirectionEnum.DOWN) {
+                if (inRange(enemy.getX() + 5, enemy.getY() - 30, minX, maxX, minY, maxY)) {
                     enemy.setDirection(DirectionEnum.UP);
                     break;
                 }
             }
-            if(enemy.getDirection() == DirectionEnum.UP){
-                if(inRange(enemy.getX() + 5, enemy.getY() + 70, minX, maxX, minY, maxY)){
+            if (enemy.getDirection() == DirectionEnum.UP) {
+                if (inRange(enemy.getX() + 5, enemy.getY() + 70, minX, maxX, minY, maxY)) {
                     enemy.setDirection(DirectionEnum.DOWN);
                     break;
                 }
             }
-            if(enemy.getDirection() == DirectionEnum.LEFT){
-                if(inRange(enemy.getX() - 30, enemy.getY() + 5 , minX, maxX, minY, maxY)) {
+            if (enemy.getDirection() == DirectionEnum.LEFT) {
+                if (inRange(enemy.getX() - 30, enemy.getY() + 5, minX, maxX, minY, maxY)) {
                     enemy.setDirection(DirectionEnum.RIGHT);
                     break;
                 }
             }
-            if(enemy.getDirection() == DirectionEnum.RIGHT){
-                if(inRange(enemy.getX() + 70, enemy.getY() + 5, minX, maxX, minY, maxY)){
+            if (enemy.getDirection() == DirectionEnum.RIGHT) {
+                if (inRange(enemy.getX() + 70, enemy.getY() + 5, minX, maxX, minY, maxY)) {
                     enemy.setDirection(DirectionEnum.LEFT);
                     break;
                 }
@@ -122,38 +123,38 @@ public class EnemyMove {
         }
     }
 
-    private void checkEnemy(ArrayList<Enemy> arr){
-        for (Enemy s: arr){
+    private void checkEnemy(ArrayList<Enemy> arr) {
+        for (Enemy s : arr) {
             if (enemy.getID() == s.getID()) continue;
-            float minY = s.getY() -5 , maxY = s.getY() + 64;
-            float minX = s.getX() -5, maxX = s.getX() + 64;
-            System.out.printf("MinX: %f maxX: %f, minY: %f maxY: %f\n",minX,maxX,minY,maxY);
-            System.out.printf("X: %f, Y: %f\n",enemy.getX(),enemy.getY());
+            float minY = s.getY() - 5, maxY = s.getY() + 64;
+            float minX = s.getX() - 5, maxX = s.getX() + 64;
+            System.out.printf("MinX: %f maxX: %f, minY: %f maxY: %f\n", minX, maxX, minY, maxY);
+            System.out.printf("X: %f, Y: %f\n", enemy.getX(), enemy.getY());
 
-            if(enemy.getDirection() == DirectionEnum.DOWN){
-                if(inRange(enemy.getX() + 5 , enemy.getY() - 30 , minX, maxX, minY, maxY)) {
+            if (enemy.getDirection() == DirectionEnum.DOWN) {
+                if (inRange(enemy.getX() + 5, enemy.getY() - 30, minX, maxX, minY, maxY)) {
                     enemy.setDirection(DirectionEnum.UP);
                     System.out.println("yes");
                     break;
                 }
             }
-            if(enemy.getDirection() == DirectionEnum.UP){
-                if(inRange(enemy.getX() + 5, enemy.getY() + 70 , minX, maxX, minY, maxY)){
+            if (enemy.getDirection() == DirectionEnum.UP) {
+                if (inRange(enemy.getX() + 5, enemy.getY() + 70, minX, maxX, minY, maxY)) {
                     enemy.setDirection(DirectionEnum.DOWN);
                     System.out.println("yes");
                     break;
 
                 }
             }
-            if(enemy.getDirection() == DirectionEnum.LEFT){
-                if(inRange(enemy.getX() - 30, enemy.getY() + 5, minX, maxX, minY, maxY)) {
+            if (enemy.getDirection() == DirectionEnum.LEFT) {
+                if (inRange(enemy.getX() - 30, enemy.getY() + 5, minX, maxX, minY, maxY)) {
                     enemy.setDirection(DirectionEnum.RIGHT);
                     System.out.println("yes");
                     break;
                 }
             }
-            if(enemy.getDirection() == DirectionEnum.RIGHT){
-                if(inRange(enemy.getX() + 70 , enemy.getY() +5 , minX, maxX, minY, maxY)){
+            if (enemy.getDirection() == DirectionEnum.RIGHT) {
+                if (inRange(enemy.getX() + 70, enemy.getY() + 5, minX, maxX, minY, maxY)) {
                     enemy.setDirection(DirectionEnum.LEFT);
                     System.out.println("yes");
                     break;
@@ -162,71 +163,71 @@ public class EnemyMove {
         }
     }
 
-    private void checkPlayer(ArrayList<Player> arr){
-        for (Player s: arr){
+    private void checkPlayer(ArrayList<Player> arr) {
+        for (Player s : arr) {
 
-            float minY = s.getY() -5 , maxY = s.getY() + 64;
-            float minX = s.getX() -5, maxX = s.getX() + 64;
+            float minY = s.getY() - 5, maxY = s.getY() + 64;
+            float minX = s.getX() - 5, maxX = s.getX() + 64;
 //            System.out.printf("MinX: %f maxX: %f, minY: %f maxY: %f\n",minX,maxX,minY,maxY);
 //            System.out.printf("X: %f, Y: %f\n",enemy.getX(),enemy.getY());
 
-            if(enemy.getDirection() == DirectionEnum.DOWN){
-                if(inRange(enemy.getX() + 5 , enemy.getY() - 30 , minX, maxX, minY, maxY)) {
+            if (enemy.getDirection() == DirectionEnum.DOWN) {
+                if (inRange(enemy.getX() + 5, enemy.getY() - 30, minX, maxX, minY, maxY)) {
                     System.out.println("Player is death");
-                    s.position(96,64);
+                    s.position(96, 64);
                     break;
                 }
             }
-            if(enemy.getDirection() == DirectionEnum.UP){
-                if(inRange(enemy.getX() + 5, enemy.getY() + 70 , minX, maxX, minY, maxY)){
+            if (enemy.getDirection() == DirectionEnum.UP) {
+                if (inRange(enemy.getX() + 5, enemy.getY() + 70, minX, maxX, minY, maxY)) {
                     System.out.println("Player is death");
-                    s.position(96,64);
+                    s.position(96, 64);
                     break;
 
                 }
             }
-            if(enemy.getDirection() == DirectionEnum.LEFT){
-                if(inRange(enemy.getX() - 30, enemy.getY() + 5, minX, maxX, minY, maxY)) {
+            if (enemy.getDirection() == DirectionEnum.LEFT) {
+                if (inRange(enemy.getX() - 30, enemy.getY() + 5, minX, maxX, minY, maxY)) {
                     System.out.println("Player is death");
-                    s.position(96,64);
+                    s.position(96, 64);
                     break;
                 }
             }
-            if(enemy.getDirection() == DirectionEnum.RIGHT){
-                if(inRange(enemy.getX() + 70 , enemy.getY() +5 , minX, maxX, minY, maxY)){
+            if (enemy.getDirection() == DirectionEnum.RIGHT) {
+                if (inRange(enemy.getX() + 70, enemy.getY() + 5, minX, maxX, minY, maxY)) {
                     System.out.println("Player is death");
-                    s.position(96,64);
+                    s.position(96, 64);
                     break;
                 }
             }
         }
     }
 
-    private void checkPowerUps(ArrayList<PowerUps> arr){
-        for (PowerUps s: arr){
+    private void checkPowerUps(ArrayList<PowerUps> arr) {
+        for (PowerUps s : arr) {
             float minY = s.getBorderY(), maxY = s.getBorderY() + s.getBorderHeight();
             float minX = s.getBorderX(), maxX = s.getBorderX() + s.getBorderWidth();
 
-            if(enemy.getDirection() == DirectionEnum.DOWN){
-                if(inRange(enemy.getX() + 5, enemy.getY() - 30, minX, maxX, minY, maxY)) {
+            if (enemy.getDirection() == DirectionEnum.DOWN) {
+                if (inRange(enemy.getX() + 5, enemy.getY() - 30, minX, maxX, minY, maxY)) {
                     enemy.setDirection(DirectionEnum.UP);
                     break;
                 }
             }
-            if(enemy.getDirection() == DirectionEnum.UP){
-                if(inRange(enemy.getX() + 5, enemy.getY() + 70, minX, maxX, minY, maxY)){
+            if (enemy.getDirection() == DirectionEnum.UP) {
+                if (inRange(enemy.getX() + 5, enemy.getY() + 70, minX, maxX, minY, maxY)) {
                     enemy.setDirection(DirectionEnum.DOWN);
                     break;
                 }
             }
-            if(enemy.getDirection() == DirectionEnum.LEFT){
-                if(inRange(enemy.getX() - 30, enemy.getY() + 5 , minX, maxX, minY, maxY)) {
+            if (enemy.getDirection() == DirectionEnum.LEFT) {
+                if (inRange(enemy.getX() - 30, enemy.getY() + 5, minX, maxX, minY, maxY)) {
                     enemy.setDirection(DirectionEnum.RIGHT);
                     break;
                 }
             }
-            if(enemy.getDirection() == DirectionEnum.RIGHT){
-                if(inRange(enemy.getX() + 70, enemy.getY() + 5, minX, maxX, minY, maxY)){
+            if (enemy.getDirection() == DirectionEnum.RIGHT) {
+                if (inRange(enemy.getX() + 70, enemy.getY() + 5, minX, maxX, minY, maxY)) {
                     enemy.setDirection(DirectionEnum.LEFT);
                     break;
                 }
@@ -257,6 +258,30 @@ public class EnemyMove {
         }
         if (enemy.getDirection() == DirectionEnum.RIGHT) {
             if (enemy.getX() + 70 >= gameStage.getBorderX() + gameStage.getBorderWidth()) {
+                enemy.setDirection(DirectionEnum.LEFT);
+            }
+        }
+    }
+
+    private void checkExplosion() {
+        int x = (int) enemy.getX(), y = (int) enemy.getY();
+        if (enemy.getDirection() == DirectionEnum.DOWN) {
+            if (gameStage.getDeath(x / 64, (y - 30) / 64) > 0) {
+                enemy.setDirection(DirectionEnum.UP);
+            }
+        }
+        if (enemy.getDirection() == DirectionEnum.UP) {
+            if (gameStage.getDeath(x / 64, (y + 70) / 64) > 0) {
+                enemy.setDirection(DirectionEnum.DOWN);
+            }
+        }
+        if (enemy.getDirection() == DirectionEnum.LEFT) {
+            if (gameStage.getDeath((x - 30) / 64, y / 64) > 0) {
+                enemy.setDirection(DirectionEnum.RIGHT);
+            }
+        }
+        if (enemy.getDirection() == DirectionEnum.RIGHT) {
+            if (gameStage.getDeath((x + 70) / 64, y / 64) > 0) {
                 enemy.setDirection(DirectionEnum.LEFT);
             }
         }
