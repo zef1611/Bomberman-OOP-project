@@ -61,13 +61,11 @@ public class Player extends Image {
 //        Receive border
         gameStage.attachPlayer(this);
         this.speed = 0.5F;
-        this.health = 1;
+        this.health = 3;
         this.remainBomb = 0;
         this.MaxBomb = 1;
         this.bombRange = 1;
-        HUD.setRangeVal(1);
-        HUD.setSpeedVal(1);
-        HUD.setBombVal(1);
+        updateHud();
     }
 
     //    This is to render animations
