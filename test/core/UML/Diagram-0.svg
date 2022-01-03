@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="2030px" preserveAspectRatio="none" style="width:1927px;height:2029px;background:#FFFFFF;" version="1.1" viewBox="0 0 1927 2029" width="1927.1px" zoomAndPan="magnify"><defs><filter height="300%" id="fpuknuzc8axt6" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="1.3999999999999997"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="2.7999999999999994" dy="2.7999999999999994" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[412318e809606f5a3699e88fc639810f]
+class DesktopLauncher--><rect codeLine="3" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="43.2852" id="DesktopLauncher" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="91" x="1722.35" y="143.85"/><ellipse cx="1732.85" cy="155.05" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1734.25,152.6 Q1734.3922,152.25 1734.5562,152.075 Q1734.7203,151.9 1734.9062,151.9 Q1735.2344,151.9 1735.4422,152.0969 Q1735.65,152.2937 1735.65,152.7531 L1735.65,153.8469 Q1735.65,154.3062 1735.4531,154.5031 Q1735.2562,154.7 1734.95,154.7 Q1734.6766,154.7 1734.5016,154.5797 Q1734.3266,154.4594 1734.25,154.1422 Q1734.2172,153.9234 1734.0969,153.8031 Q1733.8781,153.5734 1733.4844,153.4422 Q1733.0906,153.3 1732.6969,153.3 Q1732.2047,153.3 1731.7891,153.4969 Q1731.3844,153.6937 1731.0672,154.1312 Q1730.75,154.5687 1730.75,155.1703 L1730.75,155.8156 Q1730.75,156.5375 1731.3406,157.0187 Q1731.9312,157.5 1732.9812,157.5 Q1733.6047,157.5 1734.0422,157.3578 Q1734.2937,157.2812 1734.5781,157.0297 Q1734.7641,156.8875 1734.8625,156.8437 Q1734.9609,156.8 1735.0812,156.8 Q1735.3109,156.8 1735.475,156.9859 Q1735.65,157.1609 1735.65,157.4125 Q1735.65,157.6531 1735.4094,157.9375 Q1735.0594,158.3531 1734.5016,158.5828 Q1733.7687,158.9 1732.8719,158.9 Q1731.8219,158.9 1730.9797,158.4844 Q1730.3016,158.1562 1729.8203,157.4453 Q1729.35,156.7344 1729.35,155.8922 L1729.35,155.1266 Q1729.35,154.2516 1729.7656,153.4859 Q1730.1922,152.7203 1730.925,152.3156 Q1731.6687,151.9 1732.5,151.9 Q1733.0031,151.9 1733.4406,152.075 Q1733.8781,152.25 1734.25,152.6 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="68.6" x="1742.65" y="158.4871">DesktopLauncher</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1723.05" x2="1812.65" y1="166.25" y2="166.25"/><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1723.05" x2="1812.65" y1="171.85" y2="171.85"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="43.4" x="1726.55" y="182.6433">+main(): void</text><!--MD5=[a9ec369fbecb163f2166c16baba0d628]
+class Bomberman--><rect codeLine="7" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="72.3406" id="Bomberman" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="72.8" x="1726.55" y="285.6"/><ellipse cx="1737.995" cy="296.8" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1739.395,294.35 Q1739.5372,294 1739.7012,293.825 Q1739.8653,293.65 1740.0512,293.65 Q1740.3794,293.65 1740.5872,293.8469 Q1740.795,294.0437 1740.795,294.5031 L1740.795,295.5969 Q1740.795,296.0562 1740.5981,296.2531 Q1740.4012,296.45 1740.095,296.45 Q1739.8216,296.45 1739.6466,296.3297 Q1739.4716,296.2094 1739.395,295.8922 Q1739.3622,295.6734 1739.2419,295.5531 Q1739.0231,295.3234 1738.6294,295.1922 Q1738.2356,295.05 1737.8419,295.05 Q1737.3497,295.05 1736.9341,295.2469 Q1736.5294,295.4437 1736.2122,295.8812 Q1735.895,296.3187 1735.895,296.9203 L1735.895,297.5656 Q1735.895,298.2875 1736.4856,298.7687 Q1737.0762,299.25 1738.1262,299.25 Q1738.7497,299.25 1739.1872,299.1078 Q1739.4387,299.0312 1739.7231,298.7797 Q1739.9091,298.6375 1740.0075,298.5937 Q1740.1059,298.55 1740.2262,298.55 Q1740.4559,298.55 1740.62,298.7359 Q1740.795,298.9109 1740.795,299.1625 Q1740.795,299.4031 1740.5544,299.6875 Q1740.2044,300.1031 1739.6466,300.3328 Q1738.9137,300.65 1738.0169,300.65 Q1736.9669,300.65 1736.1247,300.2344 Q1735.4466,299.9062 1734.9653,299.1953 Q1734.495,298.4844 1734.495,297.6422 L1734.495,296.8766 Q1734.495,296.0016 1734.9106,295.2359 Q1735.3372,294.4703 1736.07,294.0656 Q1736.8137,293.65 1737.645,293.65 Q1738.1481,293.65 1738.5856,293.825 Q1739.0231,294 1739.395,294.35 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="48.3" x="1748.005" y="300.2371">Bomberman</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1727.25" x2="1798.65" y1="308" y2="308"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="64.4" x="1730.75" y="318.7933">+SpriteBatch batch</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1727.25" x2="1798.65" y1="323.2852" y2="323.2852"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="49.7" x="1730.75" y="334.0784">+create(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="50.4" x="1730.75" y="343.7636">+render(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="54.6" x="1730.75" y="353.4487">+dispose(): void</text><!--MD5=[60425912d7240ea1fae7734a9d91d8f4]
+class StartingScreen--><rect codeLine="14" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="52.9703" id="StartingScreen" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="79.1" x="1568" y="591.5"/><ellipse cx="1578.5" cy="602.7" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1579.9,600.25 Q1580.0422,599.9 1580.2062,599.725 Q1580.3703,599.55 1580.5562,599.55 Q1580.8844,599.55 1581.0922,599.7469 Q1581.3,599.9437 1581.3,600.4031 L1581.3,601.4969 Q1581.3,601.9562 1581.1031,602.1531 Q1580.9062,602.35 1580.6,602.35 Q1580.3266,602.35 1580.1516,602.2297 Q1579.9766,602.1094 1579.9,601.7922 Q1579.8672,601.5734 1579.7469,601.4531 Q1579.5281,601.2234 1579.1344,601.0922 Q1578.7406,600.95 1578.3469,600.95 Q1577.8547,600.95 1577.4391,601.1469 Q1577.0344,601.3437 1576.7172,601.7812 Q1576.4,602.2187 1576.4,602.8203 L1576.4,603.4656 Q1576.4,604.1875 1576.9906,604.6687 Q1577.5812,605.15 1578.6312,605.15 Q1579.2547,605.15 1579.6922,605.0078 Q1579.9437,604.9312 1580.2281,604.6797 Q1580.4141,604.5375 1580.5125,604.4937 Q1580.6109,604.45 1580.7312,604.45 Q1580.9609,604.45 1581.125,604.6359 Q1581.3,604.8109 1581.3,605.0625 Q1581.3,605.3031 1581.0594,605.5875 Q1580.7094,606.0031 1580.1516,606.2328 Q1579.4187,606.55 1578.5219,606.55 Q1577.4719,606.55 1576.6297,606.1344 Q1575.9516,605.8062 1575.4703,605.0953 Q1575,604.3844 1575,603.5422 L1575,602.7766 Q1575,601.9016 1575.4156,601.1359 Q1575.8422,600.3703 1576.575,599.9656 Q1577.3187,599.55 1578.15,599.55 Q1578.6531,599.55 1579.0906,599.725 Q1579.5281,599.9 1579.9,600.25 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="56.7" x="1588.3" y="606.1371">StartingScreen</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1568.7" x2="1646.4" y1="613.9" y2="613.9"/><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1568.7" x2="1646.4" y1="619.5" y2="619.5"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="63" x="1572.2" y="630.2933">+buildStage(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="54.6" x="1572.2" y="639.9784">+dispose(): void</text><!--MD5=[c50199d230a6f662b2267510be19cee9]
+class CharSelectScreen--><rect codeLine="18" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="72.3406" id="CharSelectScreen" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="92.4" x="1471.75" y="1175.3"/><ellipse cx="1482.25" cy="1186.5" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1483.65,1184.05 Q1483.7922,1183.7 1483.9562,1183.525 Q1484.1203,1183.35 1484.3062,1183.35 Q1484.6344,1183.35 1484.8422,1183.5469 Q1485.05,1183.7437 1485.05,1184.2031 L1485.05,1185.2969 Q1485.05,1185.7562 1484.8531,1185.9531 Q1484.6562,1186.15 1484.35,1186.15 Q1484.0766,1186.15 1483.9016,1186.0297 Q1483.7266,1185.9094 1483.65,1185.5922 Q1483.6172,1185.3734 1483.4969,1185.2531 Q1483.2781,1185.0234 1482.8844,1184.8922 Q1482.4906,1184.75 1482.0969,1184.75 Q1481.6047,1184.75 1481.1891,1184.9469 Q1480.7844,1185.1437 1480.4672,1185.5812 Q1480.15,1186.0187 1480.15,1186.6203 L1480.15,1187.2656 Q1480.15,1187.9875 1480.7406,1188.4687 Q1481.3312,1188.95 1482.3812,1188.95 Q1483.0047,1188.95 1483.4422,1188.8078 Q1483.6937,1188.7312 1483.9781,1188.4797 Q1484.1641,1188.3375 1484.2625,1188.2937 Q1484.3609,1188.25 1484.4812,1188.25 Q1484.7109,1188.25 1484.875,1188.4359 Q1485.05,1188.6109 1485.05,1188.8625 Q1485.05,1189.1031 1484.8094,1189.3875 Q1484.4594,1189.8031 1483.9016,1190.0328 Q1483.1687,1190.35 1482.2719,1190.35 Q1481.2219,1190.35 1480.3797,1189.9344 Q1479.7016,1189.6062 1479.2203,1188.8953 Q1478.75,1188.1844 1478.75,1187.3422 L1478.75,1186.5766 Q1478.75,1185.7016 1479.1656,1184.9359 Q1479.5922,1184.1703 1480.325,1183.7656 Q1481.0687,1183.35 1481.9,1183.35 Q1482.4031,1183.35 1482.8406,1183.525 Q1483.2781,1183.7 1483.65,1184.05 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="70" x="1492.05" y="1189.9371">CharSelectScreen</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1472.45" x2="1563.45" y1="1197.7" y2="1197.7"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" text-decoration="underline" textLength="79.1" x="1475.95" y="1208.4933">+colorEnum: ColorEnum</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1472.45" x2="1563.45" y1="1212.9852" y2="1212.9852"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="63" x="1475.95" y="1223.7784">+buildStage(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="74.2" x="1475.95" y="1233.4636">+setColorEnum(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="54.6" x="1475.95" y="1243.1487">+dispose(): void</text><!--MD5=[6bad5c5e2014a90291b2558d6b24545d]
+class StageSelectScreen--><rect codeLine="24" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="62.6555" id="StageSelectScreen" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="95.9" x="1360.8" y="1622.95"/><ellipse cx="1371.3" cy="1634.15" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1372.7,1631.7 Q1372.8422,1631.35 1373.0062,1631.175 Q1373.1703,1631 1373.3562,1631 Q1373.6844,1631 1373.8922,1631.1969 Q1374.1,1631.3937 1374.1,1631.8531 L1374.1,1632.9469 Q1374.1,1633.4062 1373.9031,1633.6031 Q1373.7062,1633.8 1373.4,1633.8 Q1373.1266,1633.8 1372.9516,1633.6797 Q1372.7766,1633.5594 1372.7,1633.2422 Q1372.6672,1633.0234 1372.5469,1632.9031 Q1372.3281,1632.6734 1371.9344,1632.5422 Q1371.5406,1632.4 1371.1469,1632.4 Q1370.6547,1632.4 1370.2391,1632.5969 Q1369.8344,1632.7937 1369.5172,1633.2312 Q1369.2,1633.6687 1369.2,1634.2703 L1369.2,1634.9156 Q1369.2,1635.6375 1369.7906,1636.1187 Q1370.3812,1636.6 1371.4312,1636.6 Q1372.0547,1636.6 1372.4922,1636.4578 Q1372.7437,1636.3812 1373.0281,1636.1297 Q1373.2141,1635.9875 1373.3125,1635.9437 Q1373.4109,1635.9 1373.5312,1635.9 Q1373.7609,1635.9 1373.925,1636.0859 Q1374.1,1636.2609 1374.1,1636.5125 Q1374.1,1636.7531 1373.8594,1637.0375 Q1373.5094,1637.4531 1372.9516,1637.6828 Q1372.2187,1638 1371.3219,1638 Q1370.2719,1638 1369.4297,1637.5844 Q1368.7516,1637.2562 1368.2703,1636.5453 Q1367.8,1635.8344 1367.8,1634.9922 L1367.8,1634.2266 Q1367.8,1633.3516 1368.2156,1632.5859 Q1368.6422,1631.8203 1369.375,1631.4156 Q1370.1187,1631 1370.95,1631 Q1371.4531,1631 1371.8906,1631.175 Q1372.3281,1631.35 1372.7,1631.7 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="73.5" x="1381.1" y="1637.5871">StageSelectScreen</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1361.5" x2="1456" y1="1645.35" y2="1645.35"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" text-decoration="underline" textLength="49.7" x="1365" y="1656.1433">+stageNum: int</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1361.5" x2="1456" y1="1660.6352" y2="1660.6352"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="63" x="1365" y="1671.4284">+buildStage(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="72.8" x="1365" y="1681.1136">+setStageNum(): void</text><!--MD5=[0202990de17c849164119a1950db7ef3]
+class ScreenManager--><rect codeLine="29" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="91.7109" id="ScreenManager" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="115.5" x="1549.8" y="119.7"/><ellipse cx="1574.475" cy="130.9" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1575.875,128.45 Q1576.0172,128.1 1576.1812,127.925 Q1576.3453,127.75 1576.5312,127.75 Q1576.8594,127.75 1577.0672,127.9469 Q1577.275,128.1437 1577.275,128.6031 L1577.275,129.6969 Q1577.275,130.1562 1577.0781,130.3531 Q1576.8812,130.55 1576.575,130.55 Q1576.3016,130.55 1576.1266,130.4297 Q1575.9516,130.3094 1575.875,129.9922 Q1575.8422,129.7734 1575.7219,129.6531 Q1575.5031,129.4234 1575.1094,129.2922 Q1574.7156,129.15 1574.3219,129.15 Q1573.8297,129.15 1573.4141,129.3469 Q1573.0094,129.5437 1572.6922,129.9812 Q1572.375,130.4187 1572.375,131.0203 L1572.375,131.6656 Q1572.375,132.3875 1572.9656,132.8687 Q1573.5562,133.35 1574.6062,133.35 Q1575.2297,133.35 1575.6672,133.2078 Q1575.9187,133.1312 1576.2031,132.8797 Q1576.3891,132.7375 1576.4875,132.6937 Q1576.5859,132.65 1576.7062,132.65 Q1576.9359,132.65 1577.1,132.8359 Q1577.275,133.0109 1577.275,133.2625 Q1577.275,133.5031 1577.0344,133.7875 Q1576.6844,134.2031 1576.1266,134.4328 Q1575.3937,134.75 1574.4969,134.75 Q1573.4469,134.75 1572.6047,134.3344 Q1571.9266,134.0062 1571.4453,133.2953 Q1570.975,132.5844 1570.975,131.7422 L1570.975,130.9766 Q1570.975,130.1016 1571.3906,129.3359 Q1571.8172,128.5703 1572.55,128.1656 Q1573.2937,127.75 1574.125,127.75 Q1574.6281,127.75 1575.0656,127.925 Q1575.5031,128.1 1575.875,128.45 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="60.9" x="1588.125" y="134.3371">ScreenManager</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1550.5" x2="1664.6" y1="142.1" y2="142.1"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" text-decoration="underline" textLength="89.6" x="1554" y="152.8933">-instance: ScreenManager</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="44.8" x="1554" y="162.5784">-game: Game</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1550.5" x2="1664.6" y1="167.0703" y2="167.0703"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="62.3" x="1554" y="177.8636">-ScreenManager()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" text-decoration="underline" textLength="107.1" x="1554" y="187.5487">+getInstance(): ScreenManager</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="53.9" x="1554" y="197.2339">+initialize(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="72.1" x="1554" y="206.919">+showScreen(): void</text><!--MD5=[b46455779ca23902c75907cf249ac679]
+class AbstractScreen--><rect codeLine="37" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="111.0812" id="AbstractScreen" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="81.2" x="1321.95" y="266"/><ellipse cx="1332.45" cy="277.2" fill="#A9DCDF" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1333.675,278.25 L1331.3672,278.25 L1331.0609,278.95 L1331.0609,278.95 L1331.3891,278.95 L1331.75,279.3875 L1331.75,279.65 L1331.75,279.9125 L1331.3891,280.35 L1331.0609,280.35 L1329.7375,280.35 L1329.3109,280.35 L1328.95,279.9125 L1328.95,279.65 L1328.95,279.3875 L1329.3109,278.95 L1329.7375,278.95 L1331.3562,274.75 L1330.7437,274.75 L1330.0109,274.75 L1329.65,274.3125 L1329.65,274.05 L1329.65,273.7875 L1330.0109,273.35 L1330.7437,273.35 L1333.3141,273.35 L1335.1953,278.95 L1335.5891,278.95 L1335.5891,278.95 L1335.95,279.3875 L1335.95,279.65 L1335.95,279.9125 L1335.5891,280.35 L1335.1953,280.35 L1333.8719,280.35 L1333.5109,280.35 L1333.15,279.9125 L1333.15,279.65 L1333.15,279.3875 L1333.5109,278.95 L1333.8719,278.95 L1333.8719,278.95 L1333.675,278.25 Z M1333.2922,276.85 L1332.45,274.3453 L1331.7281,276.85 L1333.2922,276.85 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" font-style="italic" lengthAdjust="spacing" textLength="58.8" x="1342.25" y="280.6371">AbstractScreen</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1322.65" x2="1402.45" y1="288.4" y2="288.4"/><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1322.65" x2="1402.45" y1="294" y2="294"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="63.7" x="1326.15" y="304.7933">#AbstractScreen()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" font-style="italic" lengthAdjust="spacing" textLength="65.1" x="1326.15" y="314.4784">+buildStage(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="47.6" x="1326.15" y="324.1636">+show(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="50.4" x="1326.15" y="333.8487">+render(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="49" x="1326.15" y="343.5339">+resize(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="49" x="1326.15" y="353.219">+pause(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="53.2" x="1326.15" y="362.9042">+resume(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42" x="1326.15" y="372.5894">+hide(): void</text><!--MD5=[2bab9ee6e02c4a6285db51f0de2ef0ea]
+class DirectionEnum--><rect codeLine="48" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="111.0812" id="DirectionEnum" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="79.8" x="689.15" y="562.45"/><ellipse cx="699.65" cy="573.65" fill="#EB937F" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M698.6,574.35 L698.6,575.75 L701.4,575.75 L701.4,575.05 L701.4,574.7109 L701.8375,574.35 L702.1,574.35 L702.3625,574.35 L702.8,574.7109 L702.8,575.05 L702.8,577.15 L697.2,577.15 L696.8609,577.15 L696.5,576.7125 L696.5,576.45 L696.5,576.1875 L696.8609,575.75 L697.2,575.75 L697.2,575.75 L697.2,571.55 L697.2,571.55 L696.8609,571.55 L696.5,571.1125 L696.5,570.85 L696.5,570.5875 L696.8609,570.15 L697.2,570.15 L702.8,570.15 L702.8,572.25 L702.8,572.5891 L702.3625,572.95 L702.1,572.95 L701.8375,572.95 L701.4,572.5891 L701.4,572.25 L701.4,571.55 L698.6,571.55 L698.6,572.95 L699.3,572.95 L699.3,572.6109 L699.3,572.6109 L699.7375,572.25 L700,572.25 L700.2625,572.25 L700.7,572.6109 L700.7,572.95 L700.7,574.35 L700.7,574.6891 L700.2625,575.05 L700.2625,575.05 L700,575.05 L699.7375,575.05 L699.3,574.6891 L699.3,574.6891 L699.3,574.35 L698.6,574.35 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="57.4" x="709.45" y="577.0871">DirectionEnum</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="689.85" x2="768.25" y1="584.85" y2="584.85"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="16.8" x="693.35" y="595.6433">LEFT</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="21" x="693.35" y="605.3284">RIGHT</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="9.1" x="693.35" y="615.0136">UP</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="22.4" x="693.35" y="624.6987">DOWN</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="19.6" x="693.35" y="634.3839">NONE</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="69.3" x="693.35" y="644.069">String directionName</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="689.85" x2="768.25" y1="648.5609" y2="648.5609"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="45.5" x="693.35" y="659.3542">+StateEnum()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="57.4" x="693.35" y="669.0394">+toString():String</text><!--MD5=[b2083406d040496fd75e2f714fe62d10]
+class StateEnum--><rect codeLine="58" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="111.0812" id="StateEnum" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="67.9" x="596.4" y="562.45"/><ellipse cx="608.16" cy="573.65" fill="#EB937F" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M607.11,574.35 L607.11,575.75 L609.91,575.75 L609.91,575.05 L609.91,574.7109 L610.3475,574.35 L610.61,574.35 L610.8725,574.35 L611.31,574.7109 L611.31,575.05 L611.31,577.15 L605.71,577.15 L605.3709,577.15 L605.01,576.7125 L605.01,576.45 L605.01,576.1875 L605.3709,575.75 L605.71,575.75 L605.71,575.75 L605.71,571.55 L605.71,571.55 L605.3709,571.55 L605.01,571.1125 L605.01,570.85 L605.01,570.5875 L605.3709,570.15 L605.71,570.15 L611.31,570.15 L611.31,572.25 L611.31,572.5891 L610.8725,572.95 L610.61,572.95 L610.3475,572.95 L609.91,572.5891 L609.91,572.25 L609.91,571.55 L607.11,571.55 L607.11,572.95 L607.81,572.95 L607.81,572.6109 L607.81,572.6109 L608.2475,572.25 L608.51,572.25 L608.7725,572.25 L609.21,572.6109 L609.21,572.95 L609.21,574.35 L609.21,574.6891 L608.7725,575.05 L608.7725,575.05 L608.51,575.05 L608.2475,575.05 L607.81,574.6891 L607.81,574.6891 L607.81,574.35 L607.11,574.35 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="42.7" x="618.24" y="577.0871">StateEnum</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="597.1" x2="663.6" y1="584.85" y2="584.85"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="21.7" x="600.6" y="595.6433">WALK</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="18.9" x="600.6" y="605.3284">STILL</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="26.6" x="600.6" y="615.0136">HWALK</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="23.8" x="600.6" y="624.6987">HSTILL</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="23.8" x="600.6" y="634.3839">DEATH</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="59.5" x="600.6" y="644.069">stateName: String</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="597.1" x2="663.6" y1="648.5609" y2="648.5609"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="45.5" x="600.6" y="659.3542">+StateEnum()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="57.4" x="600.6" y="669.0394">+toString():String</text><!--MD5=[7505e286249b15c81eb830586b01f924]
+class Bomb--><rect codeLine="68" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="188.5625" id="Bomb" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="179.9" x="392" y="523.95"/><ellipse cx="467.425" cy="535.15" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M468.825,532.7 Q468.9672,532.35 469.1312,532.175 Q469.2953,532 469.4812,532 Q469.8094,532 470.0172,532.1969 Q470.225,532.3937 470.225,532.8531 L470.225,533.9469 Q470.225,534.4062 470.0281,534.6031 Q469.8312,534.8 469.525,534.8 Q469.2516,534.8 469.0766,534.6797 Q468.9016,534.5594 468.825,534.2422 Q468.7922,534.0234 468.6719,533.9031 Q468.4531,533.6734 468.0594,533.5422 Q467.6656,533.4 467.2719,533.4 Q466.7797,533.4 466.3641,533.5969 Q465.9594,533.7937 465.6422,534.2312 Q465.325,534.6687 465.325,535.2703 L465.325,535.9156 Q465.325,536.6375 465.9156,537.1187 Q466.5062,537.6 467.5562,537.6 Q468.1797,537.6 468.6172,537.4578 Q468.8687,537.3812 469.1531,537.1297 Q469.3391,536.9875 469.4375,536.9437 Q469.5359,536.9 469.6562,536.9 Q469.8859,536.9 470.05,537.0859 Q470.225,537.2609 470.225,537.5125 Q470.225,537.7531 469.9844,538.0375 Q469.6344,538.4531 469.0766,538.6828 Q468.3437,539 467.4469,539 Q466.3969,539 465.5547,538.5844 Q464.8766,538.2562 464.3953,537.5453 Q463.925,536.8344 463.925,535.9922 L463.925,535.2266 Q463.925,534.3516 464.3406,533.5859 Q464.7672,532.8203 465.5,532.4156 Q466.2437,532 467.075,532 Q467.5781,532 468.0156,532.175 Q468.4531,532.35 468.825,532.7 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="23.1" x="481.775" y="538.5871">Bomb</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="392.7" x2="571.2" y1="546.35" y2="546.35"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="85.4" x="396.2" y="557.1433">+gameStage: GameStage</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="50.4" x="396.2" y="566.8284">+player: Player</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="67.9" x="396.2" y="576.5136">+atlas: TextureAtlas</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="171.5" x="396.2" y="586.1987">+currentAni: Animation&lt;TextureAtlas.AtlasRegion&gt;</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="65.1" x="396.2" y="595.8839">+elapsedTime: float</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="46.2" x="396.2" y="605.569">+bomb: Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="35" x="396.2" y="615.2542">+stage: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="20.3" x="396.2" y="624.9394">+x: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="20.3" x="396.2" y="634.6245">+y: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="62.3" x="396.2" y="644.3097">+stillAlive: boolean</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="392.7" x2="571.2" y1="648.8016" y2="648.8016"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="28.7" x="396.2" y="659.5948">+Bomb()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="46.2" x="396.2" y="669.28">+draw(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="38.5" x="396.2" y="678.9651">+act(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="71.4" x="396.2" y="688.6503">-addExplosion(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="76.3" x="396.2" y="698.3354">-checkValid(): boolean</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="75.6" x="396.2" y="708.0206">-checkSolid(): boolean</text><!--MD5=[6563b370e37ee2a788a660d66d08bf83]
+class ColorEnum--><rect codeLine="86" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="111.0812" id="ColorEnum" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="67.9" x="438.2" y="1598.8"/><ellipse cx="449.33" cy="1610" fill="#EB937F" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M448.28,1610.7 L448.28,1612.1 L451.08,1612.1 L451.08,1611.4 L451.08,1611.0609 L451.5175,1610.7 L451.78,1610.7 L452.0425,1610.7 L452.48,1611.0609 L452.48,1611.4 L452.48,1613.5 L446.88,1613.5 L446.5409,1613.5 L446.18,1613.0625 L446.18,1612.8 L446.18,1612.5375 L446.5409,1612.1 L446.88,1612.1 L446.88,1612.1 L446.88,1607.9 L446.88,1607.9 L446.5409,1607.9 L446.18,1607.4625 L446.18,1607.2 L446.18,1606.9375 L446.5409,1606.5 L446.88,1606.5 L452.48,1606.5 L452.48,1608.6 L452.48,1608.9391 L452.0425,1609.3 L451.78,1609.3 L451.5175,1609.3 L451.08,1608.9391 L451.08,1608.6 L451.08,1607.9 L448.28,1607.9 L448.28,1609.3 L448.98,1609.3 L448.98,1608.9609 L448.98,1608.9609 L449.4175,1608.6 L449.68,1608.6 L449.9425,1608.6 L450.38,1608.9609 L450.38,1609.3 L450.38,1610.7 L450.38,1611.0391 L449.9425,1611.4 L449.9425,1611.4 L449.68,1611.4 L449.4175,1611.4 L448.98,1611.0391 L448.98,1611.0391 L448.98,1610.7 L448.28,1610.7 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="44.1" x="459.27" y="1613.4371">ColorEnum</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="438.9" x2="505.4" y1="1621.2" y2="1621.2"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="24.5" x="442.4" y="1631.9933">BLACK</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="18.2" x="442.4" y="1641.6784">BLUE</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="23.8" x="442.4" y="1651.3636">GREEN</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="14" x="442.4" y="1661.0487">RED</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="21.7" x="442.4" y="1670.7339">WHITE</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="59.5" x="442.4" y="1680.419">colorName: String</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="438.9" x2="505.4" y1="1684.9109" y2="1684.9109"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="41.3" x="442.4" y="1695.7042">ColorEnum()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="59.5" x="442.4" y="1705.3894">+toString(): String</text><!--MD5=[2cb47ba637a0d19583e6199456f6ad0b]
+class Player--><rect codeLine="96" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="421.0062" id="Player" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="198.8" x="530.95" y="1444.1"/><ellipse cx="615.475" cy="1455.3" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M616.875,1452.85 Q617.0172,1452.5 617.1812,1452.325 Q617.3453,1452.15 617.5312,1452.15 Q617.8594,1452.15 618.0672,1452.3469 Q618.275,1452.5437 618.275,1453.0031 L618.275,1454.0969 Q618.275,1454.5562 618.0781,1454.7531 Q617.8812,1454.95 617.575,1454.95 Q617.3016,1454.95 617.1266,1454.8297 Q616.9516,1454.7094 616.875,1454.3922 Q616.8422,1454.1734 616.7219,1454.0531 Q616.5031,1453.8234 616.1094,1453.6922 Q615.7156,1453.55 615.3219,1453.55 Q614.8297,1453.55 614.4141,1453.7469 Q614.0094,1453.9437 613.6922,1454.3812 Q613.375,1454.8187 613.375,1455.4203 L613.375,1456.0656 Q613.375,1456.7875 613.9656,1457.2687 Q614.5562,1457.75 615.6062,1457.75 Q616.2297,1457.75 616.6672,1457.6078 Q616.9187,1457.5312 617.2031,1457.2797 Q617.3891,1457.1375 617.4875,1457.0937 Q617.5859,1457.05 617.7062,1457.05 Q617.9359,1457.05 618.1,1457.2359 Q618.275,1457.4109 618.275,1457.6625 Q618.275,1457.9031 618.0344,1458.1875 Q617.6844,1458.6031 617.1266,1458.8328 Q616.3937,1459.15 615.4969,1459.15 Q614.4469,1459.15 613.6047,1458.7344 Q612.9266,1458.4062 612.4453,1457.6953 Q611.975,1456.9844 611.975,1456.1422 L611.975,1455.3766 Q611.975,1454.5016 612.3906,1453.7359 Q612.8172,1452.9703 613.55,1452.5656 Q614.2937,1452.15 615.125,1452.15 Q615.6281,1452.15 616.0656,1452.325 Q616.5031,1452.5 616.875,1452.85 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="23.8" x="629.825" y="1458.7371">Player</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="531.65" x2="729.05" y1="1466.5" y2="1466.5"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="81.2" x="535.15" y="1477.2933">-playerInput: PlayerInput</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="66.5" x="535.15" y="1486.9784">-atlas: TextureAtlas</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="47.6" x="535.15" y="1496.6636">-player: Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="172.2" x="535.15" y="1506.3487">-currentAni: Animation &lt;TextureAtlas.AtlasRegion&gt;</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="63.7" x="535.15" y="1516.0339">-elapsedTime: float</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="102.2" x="535.15" y="1525.719">-currentAction: MoveByAction</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="45.5" x="535.15" y="1535.4042">-stage: Stage</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="84" x="535.15" y="1545.0894">-gameStage: GameStage</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="49" x="535.15" y="1554.7745">-stepCount: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42" x="535.15" y="1564.4597">-borderX: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42.7" x="535.15" y="1574.1448">-borderY: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="51.8" x="535.15" y="1583.83">-borerWidth: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="58.1" x="535.15" y="1593.5151">-borderHeight: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="83.3" x="535.15" y="1603.2003">-direction: DirectionEnum</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="59.5" x="535.15" y="1612.8854">-state: StateEnum</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="531.65" x2="729.05" y1="1617.3773" y2="1617.3773"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="30.8" x="535.15" y="1628.1706">+Player()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="44.1" x="535.15" y="1637.8558">+draw():void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="38.5" x="535.15" y="1647.5409">+act(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="84" x="535.15" y="1657.2261">#positionChanged(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="53.9" x="535.15" y="1666.9112">+position(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="44.1" x="535.15" y="1676.5964">+input(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="114.1" x="535.15" y="1686.2815">#switchCharacter(): TextureAtlas</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="77.7" x="535.15" y="1695.9667">+getState(): StateEnum</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="53.9" x="535.15" y="1705.6519">#setState():void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="101.5" x="535.15" y="1715.337">+getDirection(): DirectionEnum</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="67.9" x="535.15" y="1725.0222">#setDirection(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="67.2" x="535.15" y="1734.7073">+getStepCount(): int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="73.5" x="535.15" y="1744.3925">#setStepCount(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="190.4" x="535.15" y="1754.0776">+getCurrentAni(): Animation &lt;TextureAtlas.AtlasRegion&gt;</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="74.9" x="535.15" y="1763.7628">#setCurrentAni(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="81.2" x="535.15" y="1773.4479">+getElapsedTime(): float</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="80.5" x="535.15" y="1783.1331">#setElapsedTime(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="120.4" x="535.15" y="1792.8183">+getCurrentAction(): MoveByAction</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="85.4" x="535.15" y="1802.5034">+setCurrentAction(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="85.4" x="535.15" y="1812.1886">+getAtlas(): TextureAtlas</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="63.7" x="535.15" y="1821.8737">+getStage(): Stage</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="67.2" x="535.15" y="1831.5589">+getBorderX(): float</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="67.9" x="535.15" y="1841.244">+getBorderY(): float</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="81.2" x="535.15" y="1850.9292">+getBorderWidth(): float</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="83.3" x="535.15" y="1860.6144">+getBorderHeight(): float</text><!--MD5=[3879e2c7f7d94ffd6396f596e9772f24]
+class PlayerAnimation--><rect codeLine="138" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="72.3406" id="PlayerAnimation" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="84.7" x="282.8" y="582.05"/><ellipse cx="293.3" cy="593.25" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M294.7,590.8 Q294.8422,590.45 295.0062,590.275 Q295.1703,590.1 295.3562,590.1 Q295.6844,590.1 295.8922,590.2969 Q296.1,590.4937 296.1,590.9531 L296.1,592.0469 Q296.1,592.5062 295.9031,592.7031 Q295.7062,592.9 295.4,592.9 Q295.1266,592.9 294.9516,592.7797 Q294.7766,592.6594 294.7,592.3422 Q294.6672,592.1234 294.5469,592.0031 Q294.3281,591.7734 293.9344,591.6422 Q293.5406,591.5 293.1469,591.5 Q292.6547,591.5 292.2391,591.6969 Q291.8344,591.8937 291.5172,592.3312 Q291.2,592.7687 291.2,593.3703 L291.2,594.0156 Q291.2,594.7375 291.7906,595.2187 Q292.3812,595.7 293.4312,595.7 Q294.0547,595.7 294.4922,595.5578 Q294.7437,595.4812 295.0281,595.2297 Q295.2141,595.0875 295.3125,595.0437 Q295.4109,595 295.5312,595 Q295.7609,595 295.925,595.1859 Q296.1,595.3609 296.1,595.6125 Q296.1,595.8531 295.8594,596.1375 Q295.5094,596.5531 294.9516,596.7828 Q294.2187,597.1 293.3219,597.1 Q292.2719,597.1 291.4297,596.6844 Q290.7516,596.3562 290.2703,595.6453 Q289.8,594.9344 289.8,594.0922 L289.8,593.3266 Q289.8,592.4516 290.2156,591.6859 Q290.6422,590.9203 291.375,590.5156 Q292.1187,590.1 292.95,590.1 Q293.4531,590.1 293.8906,590.275 Q294.3281,590.45 294.7,590.8 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="62.3" x="303.1" y="596.6871">PlayerAnimation</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="283.5" x2="366.8" y1="604.45" y2="604.45"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="49" x="287" y="615.2433">-player: Player</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="66.5" x="287" y="624.9284">-atlas: TextureAtlas</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="283.5" x2="366.8" y1="629.4203" y2="629.4203"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="63.7" x="287" y="640.2136">+PlayerAnimation()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="62.3" x="287" y="649.8987">+updateAni(): void</text><!--MD5=[00c7e5a93811ba1a99775a7fa69f062d]
+class PlayerInput--><rect codeLine="144" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="120.7664" id="PlayerInput" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="101.5" x="431.2" y="1150.8"/><ellipse cx="458.08" cy="1162" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M459.48,1159.55 Q459.6222,1159.2 459.7862,1159.025 Q459.9503,1158.85 460.1362,1158.85 Q460.4644,1158.85 460.6722,1159.0469 Q460.88,1159.2437 460.88,1159.7031 L460.88,1160.7969 Q460.88,1161.2562 460.6831,1161.4531 Q460.4862,1161.65 460.18,1161.65 Q459.9066,1161.65 459.7316,1161.5297 Q459.5566,1161.4094 459.48,1161.0922 Q459.4472,1160.8734 459.3269,1160.7531 Q459.1081,1160.5234 458.7144,1160.3922 Q458.3206,1160.25 457.9269,1160.25 Q457.4347,1160.25 457.0191,1160.4469 Q456.6144,1160.6437 456.2972,1161.0812 Q455.98,1161.5187 455.98,1162.1203 L455.98,1162.7656 Q455.98,1163.4875 456.5706,1163.9687 Q457.1612,1164.45 458.2112,1164.45 Q458.8347,1164.45 459.2722,1164.3078 Q459.5237,1164.2312 459.8081,1163.9797 Q459.9941,1163.8375 460.0925,1163.7937 Q460.1909,1163.75 460.3112,1163.75 Q460.5409,1163.75 460.705,1163.9359 Q460.88,1164.1109 460.88,1164.3625 Q460.88,1164.6031 460.6394,1164.8875 Q460.2894,1165.3031 459.7316,1165.5328 Q458.9987,1165.85 458.1019,1165.85 Q457.0519,1165.85 456.2097,1165.4344 Q455.5316,1165.1062 455.0503,1164.3953 Q454.58,1163.6844 454.58,1162.8422 L454.58,1162.0766 Q454.58,1161.2016 454.9956,1160.4359 Q455.4222,1159.6703 456.155,1159.2656 Q456.8987,1158.85 457.73,1158.85 Q458.2331,1158.85 458.6706,1159.025 Q459.1081,1159.2 459.48,1159.55 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="42.7" x="471.52" y="1165.4371">PlayerInput</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="431.9" x2="532" y1="1173.2" y2="1173.2"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="49" x="435.4" y="1183.9933">-player: Player</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="84" x="435.4" y="1193.6784">-gameStage: GameStage</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="45.5" x="435.4" y="1203.3636">-stage: Stage</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="93.1" x="435.4" y="1213.0487">-playerAni: PlayerAnimation</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="431.9" x2="532" y1="1217.5406" y2="1217.5406"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="49" x="435.4" y="1228.3339">#PlayerInput():</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="70" x="435.4" y="1238.019">#inputContent(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="84" x="435.4" y="1247.7042">#checkBorder(): boolean</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="74.9" x="435.4" y="1257.3894">#checkSoft(): boolean</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="77" x="435.4" y="1267.0745">#checkSolid(): boolean</text><!--MD5=[8c1a28f7ba327cd7aaca03a950b7ec49]
+class Alien--><rect codeLine="155" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="62.6555" id="Alien" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="54.6" x="1037.75" y="1179.85"/><ellipse cx="1054.235" cy="1191.05" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1055.635,1188.6 Q1055.7772,1188.25 1055.9412,1188.075 Q1056.1053,1187.9 1056.2912,1187.9 Q1056.6194,1187.9 1056.8272,1188.0969 Q1057.035,1188.2937 1057.035,1188.7531 L1057.035,1189.8469 Q1057.035,1190.3062 1056.8381,1190.5031 Q1056.6412,1190.7 1056.335,1190.7 Q1056.0616,1190.7 1055.8866,1190.5797 Q1055.7116,1190.4594 1055.635,1190.1422 Q1055.6022,1189.9234 1055.4819,1189.8031 Q1055.2631,1189.5734 1054.8694,1189.4422 Q1054.4756,1189.3 1054.0819,1189.3 Q1053.5897,1189.3 1053.1741,1189.4969 Q1052.7694,1189.6937 1052.4522,1190.1312 Q1052.135,1190.5687 1052.135,1191.1703 L1052.135,1191.8156 Q1052.135,1192.5375 1052.7256,1193.0187 Q1053.3162,1193.5 1054.3662,1193.5 Q1054.9897,1193.5 1055.4272,1193.3578 Q1055.6787,1193.2812 1055.9631,1193.0297 Q1056.1491,1192.8875 1056.2475,1192.8437 Q1056.3459,1192.8 1056.4662,1192.8 Q1056.6959,1192.8 1056.86,1192.9859 Q1057.035,1193.1609 1057.035,1193.4125 Q1057.035,1193.6531 1056.7944,1193.9375 Q1056.4444,1194.3531 1055.8866,1194.5828 Q1055.1537,1194.9 1054.2569,1194.9 Q1053.2069,1194.9 1052.3647,1194.4844 Q1051.6866,1194.1562 1051.2053,1193.4453 Q1050.735,1192.7344 1050.735,1191.8922 L1050.735,1191.1266 Q1050.735,1190.2516 1051.1506,1189.4859 Q1051.5772,1188.7203 1052.31,1188.3156 Q1053.0537,1187.9 1053.885,1187.9 Q1054.3881,1187.9 1054.8256,1188.075 Q1055.2631,1188.25 1055.635,1188.6 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="18.9" x="1065.365" y="1194.4871">Alien</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1038.45" x2="1091.65" y1="1202.25" y2="1202.25"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42" x="1041.95" y="1213.0433">-alien: Sprite</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1038.45" x2="1091.65" y1="1217.5352" y2="1217.5352"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="26.6" x="1041.95" y="1228.3284">+Alien()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="46.2" x="1041.95" y="1238.0136">+draw(): void</text><!--MD5=[3a66a73684d720147100a2caa9336bc0]
+class Caveman--><rect codeLine="160" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="62.6555" id="Caveman" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="65.8" x="1116.85" y="1179.85"/><ellipse cx="1130.185" cy="1191.05" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1131.585,1188.6 Q1131.7272,1188.25 1131.8912,1188.075 Q1132.0553,1187.9 1132.2412,1187.9 Q1132.5694,1187.9 1132.7772,1188.0969 Q1132.985,1188.2937 1132.985,1188.7531 L1132.985,1189.8469 Q1132.985,1190.3062 1132.7881,1190.5031 Q1132.5912,1190.7 1132.285,1190.7 Q1132.0116,1190.7 1131.8366,1190.5797 Q1131.6616,1190.4594 1131.585,1190.1422 Q1131.5522,1189.9234 1131.4319,1189.8031 Q1131.2131,1189.5734 1130.8194,1189.4422 Q1130.4256,1189.3 1130.0319,1189.3 Q1129.5397,1189.3 1129.1241,1189.4969 Q1128.7194,1189.6937 1128.4022,1190.1312 Q1128.085,1190.5687 1128.085,1191.1703 L1128.085,1191.8156 Q1128.085,1192.5375 1128.6756,1193.0187 Q1129.2662,1193.5 1130.3162,1193.5 Q1130.9397,1193.5 1131.3772,1193.3578 Q1131.6287,1193.2812 1131.9131,1193.0297 Q1132.0991,1192.8875 1132.1975,1192.8437 Q1132.2959,1192.8 1132.4162,1192.8 Q1132.6459,1192.8 1132.81,1192.9859 Q1132.985,1193.1609 1132.985,1193.4125 Q1132.985,1193.6531 1132.7444,1193.9375 Q1132.3944,1194.3531 1131.8366,1194.5828 Q1131.1037,1194.9 1130.2069,1194.9 Q1129.1569,1194.9 1128.3147,1194.4844 Q1127.6366,1194.1562 1127.1553,1193.4453 Q1126.685,1192.7344 1126.685,1191.8922 L1126.685,1191.1266 Q1126.685,1190.2516 1127.1006,1189.4859 Q1127.5272,1188.7203 1128.26,1188.3156 Q1129.0037,1187.9 1129.835,1187.9 Q1130.3381,1187.9 1130.7756,1188.075 Q1131.2131,1188.25 1131.585,1188.6 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="37.1" x="1140.615" y="1194.4871">Caveman</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1117.55" x2="1181.95" y1="1202.25" y2="1202.25"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="57.4" x="1121.05" y="1213.0433">-caveman: Sprite</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1117.55" x2="1181.95" y1="1217.5352" y2="1217.5352"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="41.3" x="1121.05" y="1228.3284">+Caveman()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="46.2" x="1121.05" y="1238.0136">+draw(): void</text><!--MD5=[3959bfbac88f59f6111bf4a263b9b8bc]
+class NinjaBlue--><rect codeLine="165" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="62.6555" id="NinjaBlue" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="65.1" x="1207.5" y="1179.85"/><ellipse cx="1220.205" cy="1191.05" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1221.605,1188.6 Q1221.7472,1188.25 1221.9112,1188.075 Q1222.0753,1187.9 1222.2612,1187.9 Q1222.5894,1187.9 1222.7972,1188.0969 Q1223.005,1188.2937 1223.005,1188.7531 L1223.005,1189.8469 Q1223.005,1190.3062 1222.8081,1190.5031 Q1222.6112,1190.7 1222.305,1190.7 Q1222.0316,1190.7 1221.8566,1190.5797 Q1221.6816,1190.4594 1221.605,1190.1422 Q1221.5722,1189.9234 1221.4519,1189.8031 Q1221.2331,1189.5734 1220.8394,1189.4422 Q1220.4456,1189.3 1220.0519,1189.3 Q1219.5597,1189.3 1219.1441,1189.4969 Q1218.7394,1189.6937 1218.4222,1190.1312 Q1218.105,1190.5687 1218.105,1191.1703 L1218.105,1191.8156 Q1218.105,1192.5375 1218.6956,1193.0187 Q1219.2862,1193.5 1220.3362,1193.5 Q1220.9597,1193.5 1221.3972,1193.3578 Q1221.6487,1193.2812 1221.9331,1193.0297 Q1222.1191,1192.8875 1222.2175,1192.8437 Q1222.3159,1192.8 1222.4362,1192.8 Q1222.6659,1192.8 1222.83,1192.9859 Q1223.005,1193.1609 1223.005,1193.4125 Q1223.005,1193.6531 1222.7644,1193.9375 Q1222.4144,1194.3531 1221.8566,1194.5828 Q1221.1237,1194.9 1220.2269,1194.9 Q1219.1769,1194.9 1218.3347,1194.4844 Q1217.6566,1194.1562 1217.1753,1193.4453 Q1216.705,1192.7344 1216.705,1191.8922 L1216.705,1191.1266 Q1216.705,1190.2516 1217.1206,1189.4859 Q1217.5472,1188.7203 1218.28,1188.3156 Q1219.0237,1187.9 1219.855,1187.9 Q1220.3581,1187.9 1220.7956,1188.075 Q1221.2331,1188.25 1221.605,1188.6 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="37.8" x="1230.495" y="1194.4871">NinjaBlue</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1208.2" x2="1271.9" y1="1202.25" y2="1202.25"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="56.7" x="1211.7" y="1213.0433">-ninjaBlue: Sprite</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1208.2" x2="1271.9" y1="1217.5352" y2="1217.5352"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="40.6" x="1211.7" y="1228.3284">+NinjaBlue()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="46.2" x="1211.7" y="1238.0136">+draw(): void</text><!--MD5=[512570ba6fd35bbd5510bbbac2c4a448]
+class Skunk--><rect codeLine="170" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="62.6555" id="Skunk" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="54.6" x="958.65" y="1179.85"/><ellipse cx="972.93" cy="1191.05" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M974.33,1188.6 Q974.4722,1188.25 974.6362,1188.075 Q974.8003,1187.9 974.9862,1187.9 Q975.3144,1187.9 975.5222,1188.0969 Q975.73,1188.2937 975.73,1188.7531 L975.73,1189.8469 Q975.73,1190.3062 975.5331,1190.5031 Q975.3362,1190.7 975.03,1190.7 Q974.7566,1190.7 974.5816,1190.5797 Q974.4066,1190.4594 974.33,1190.1422 Q974.2972,1189.9234 974.1769,1189.8031 Q973.9581,1189.5734 973.5644,1189.4422 Q973.1706,1189.3 972.7769,1189.3 Q972.2847,1189.3 971.8691,1189.4969 Q971.4644,1189.6937 971.1472,1190.1312 Q970.83,1190.5687 970.83,1191.1703 L970.83,1191.8156 Q970.83,1192.5375 971.4206,1193.0187 Q972.0112,1193.5 973.0612,1193.5 Q973.6847,1193.5 974.1222,1193.3578 Q974.3737,1193.2812 974.6581,1193.0297 Q974.8441,1192.8875 974.9425,1192.8437 Q975.0409,1192.8 975.1612,1192.8 Q975.3909,1192.8 975.555,1192.9859 Q975.73,1193.1609 975.73,1193.4125 Q975.73,1193.6531 975.4894,1193.9375 Q975.1394,1194.3531 974.5816,1194.5828 Q973.8487,1194.9 972.9519,1194.9 Q971.9019,1194.9 971.0597,1194.4844 Q970.3816,1194.1562 969.9003,1193.4453 Q969.43,1192.7344 969.43,1191.8922 L969.43,1191.1266 Q969.43,1190.2516 969.8456,1189.4859 Q970.2722,1188.7203 971.005,1188.3156 Q971.7487,1187.9 972.58,1187.9 Q973.0831,1187.9 973.5206,1188.075 Q973.9581,1188.25 974.33,1188.6 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="23.8" x="983.57" y="1194.4871">Skunk</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="959.35" x2="1012.55" y1="1202.25" y2="1202.25"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="46.2" x="962.85" y="1213.0433">-skunk: Sprite</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="959.35" x2="1012.55" y1="1217.5352" y2="1217.5352"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="30.1" x="962.85" y="1228.3284">+Skunk()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="46.2" x="962.85" y="1238.0136">+draw(): void</text><!--MD5=[05fa913b2ee505a0121fcb705a75a5da]
+class SpawnEnemies--><rect codeLine="175" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="120.7664" id="SpawnEnemies" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="92.4" x="1018.85" y="1593.9"/><ellipse cx="1033.13" cy="1605.1" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1034.53,1602.65 Q1034.6722,1602.3 1034.8362,1602.125 Q1035.0003,1601.95 1035.1862,1601.95 Q1035.5144,1601.95 1035.7222,1602.1469 Q1035.93,1602.3437 1035.93,1602.8031 L1035.93,1603.8969 Q1035.93,1604.3562 1035.7331,1604.5531 Q1035.5362,1604.75 1035.23,1604.75 Q1034.9566,1604.75 1034.7816,1604.6297 Q1034.6066,1604.5094 1034.53,1604.1922 Q1034.4972,1603.9734 1034.3769,1603.8531 Q1034.1581,1603.6234 1033.7644,1603.4922 Q1033.3706,1603.35 1032.9769,1603.35 Q1032.4847,1603.35 1032.0691,1603.5469 Q1031.6644,1603.7437 1031.3472,1604.1812 Q1031.03,1604.6187 1031.03,1605.2203 L1031.03,1605.8656 Q1031.03,1606.5875 1031.6206,1607.0687 Q1032.2112,1607.55 1033.2612,1607.55 Q1033.8847,1607.55 1034.3222,1607.4078 Q1034.5737,1607.3312 1034.8581,1607.0797 Q1035.0441,1606.9375 1035.1425,1606.8937 Q1035.2409,1606.85 1035.3613,1606.85 Q1035.5909,1606.85 1035.755,1607.0359 Q1035.93,1607.2109 1035.93,1607.4625 Q1035.93,1607.7031 1035.6894,1607.9875 Q1035.3394,1608.4031 1034.7816,1608.6328 Q1034.0488,1608.95 1033.1519,1608.95 Q1032.1019,1608.95 1031.2597,1608.5344 Q1030.5816,1608.2062 1030.1003,1607.4953 Q1029.63,1606.7844 1029.63,1605.9422 L1029.63,1605.1766 Q1029.63,1604.3016 1030.0456,1603.5359 Q1030.4722,1602.7703 1031.205,1602.3656 Q1031.9487,1601.95 1032.78,1601.95 Q1033.2831,1601.95 1033.7206,1602.125 Q1034.1581,1602.3 1034.53,1602.65 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="61.6" x="1043.77" y="1608.5371">SpawnEnemies</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1019.55" x2="1110.55" y1="1616.3" y2="1616.3"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="45.5" x="1023.05" y="1627.0933">-stage: Stage</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="48.3" x="1023.05" y="1636.7784">-stageNum: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="84" x="1023.05" y="1646.4636">-gameStage: GameStage</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1019.55" x2="1110.55" y1="1650.9555" y2="1650.9555"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="62.3" x="1023.05" y="1661.7487">+SpawnEnemies()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="55.3" x="1023.05" y="1671.4339">+execute(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="72.1" x="1023.05" y="1681.119">+spawnSkunk(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="83.3" x="1023.05" y="1690.8042">+spawnCaveman(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="82.6" x="1023.05" y="1700.4894">+spawnNinjaBlue(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="68.6" x="1023.05" y="1710.1745">+spawnAlien(): void</text><!--MD5=[1640912e03397100f063c8d343bb7966]
+class EnemyAnimation--><rect codeLine="186" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="72.3406" id="EnemyAnimation" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="98.7" x="1107.4" y="129.5"/><ellipse cx="1122.94" cy="140.7" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1124.34,138.25 Q1124.4822,137.9 1124.6462,137.725 Q1124.8103,137.55 1124.9962,137.55 Q1125.3244,137.55 1125.5322,137.7469 Q1125.74,137.9437 1125.74,138.4031 L1125.74,139.4969 Q1125.74,139.9562 1125.5431,140.1531 Q1125.3462,140.35 1125.04,140.35 Q1124.7666,140.35 1124.5916,140.2297 Q1124.4166,140.1094 1124.34,139.7922 Q1124.3072,139.5734 1124.1869,139.4531 Q1123.9681,139.2234 1123.5744,139.0922 Q1123.1806,138.95 1122.7869,138.95 Q1122.2947,138.95 1121.8791,139.1469 Q1121.4744,139.3437 1121.1572,139.7812 Q1120.84,140.2187 1120.84,140.8203 L1120.84,141.4656 Q1120.84,142.1875 1121.4306,142.6687 Q1122.0212,143.15 1123.0712,143.15 Q1123.6947,143.15 1124.1322,143.0078 Q1124.3837,142.9312 1124.6681,142.6797 Q1124.8541,142.5375 1124.9525,142.4937 Q1125.0509,142.45 1125.1712,142.45 Q1125.4009,142.45 1125.565,142.6359 Q1125.74,142.8109 1125.74,143.0625 Q1125.74,143.3031 1125.4994,143.5875 Q1125.1494,144.0031 1124.5916,144.2328 Q1123.8587,144.55 1122.9619,144.55 Q1121.9119,144.55 1121.0697,144.1344 Q1120.3916,143.8062 1119.9103,143.0953 Q1119.44,142.3844 1119.44,141.5422 L1119.44,140.7766 Q1119.44,139.9016 1119.8556,139.1359 Q1120.2822,138.3703 1121.015,137.9656 Q1121.7587,137.55 1122.59,137.55 Q1123.0931,137.55 1123.5306,137.725 Q1123.9681,137.9 1124.34,138.25 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="65.1" x="1133.86" y="144.1371">EnemyAnimation</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1108.1" x2="1205.4" y1="151.9" y2="151.9"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="51.8" x="1111.6" y="162.6933">-enemy: Enemy</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="90.3" x="1111.6" y="172.3784">-enemyAtlas: TextureAtlas</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1108.1" x2="1205.4" y1="176.8703" y2="176.8703"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="65.1" x="1111.6" y="187.6636">+EnemyAnimation()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="62.3" x="1111.6" y="197.3487">+updateAni(): void</text><!--MD5=[80c532e980642ebbe770e7ed91e479d0]
+class Enemy--><rect codeLine="192" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="372.5805" id="Enemy" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="196.7" x="1058.4" y="431.9"/><ellipse cx="1140.475" cy="443.1" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1141.875,440.65 Q1142.0172,440.3 1142.1812,440.125 Q1142.3453,439.95 1142.5312,439.95 Q1142.8594,439.95 1143.0672,440.1469 Q1143.275,440.3437 1143.275,440.8031 L1143.275,441.8969 Q1143.275,442.3562 1143.0781,442.5531 Q1142.8812,442.75 1142.575,442.75 Q1142.3016,442.75 1142.1266,442.6297 Q1141.9516,442.5094 1141.875,442.1922 Q1141.8422,441.9734 1141.7219,441.8531 Q1141.5031,441.6234 1141.1094,441.4922 Q1140.7156,441.35 1140.3219,441.35 Q1139.8297,441.35 1139.4141,441.5469 Q1139.0094,441.7437 1138.6922,442.1812 Q1138.375,442.6187 1138.375,443.2203 L1138.375,443.8656 Q1138.375,444.5875 1138.9656,445.0687 Q1139.5562,445.55 1140.6062,445.55 Q1141.2297,445.55 1141.6672,445.4078 Q1141.9187,445.3312 1142.2031,445.0797 Q1142.3891,444.9375 1142.4875,444.8937 Q1142.5859,444.85 1142.7062,444.85 Q1142.9359,444.85 1143.1,445.0359 Q1143.275,445.2109 1143.275,445.4625 Q1143.275,445.7031 1143.0344,445.9875 Q1142.6844,446.4031 1142.1266,446.6328 Q1141.3937,446.95 1140.4969,446.95 Q1139.4469,446.95 1138.6047,446.5344 Q1137.9266,446.2062 1137.4453,445.4953 Q1136.975,444.7844 1136.975,443.9422 L1136.975,443.1766 Q1136.975,442.3016 1137.3906,441.5359 Q1137.8172,440.7703 1138.55,440.3656 Q1139.2937,439.95 1140.125,439.95 Q1140.6281,439.95 1141.0656,440.125 Q1141.5031,440.3 1141.875,440.65 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="26.6" x="1154.825" y="446.5371">Enemy</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1059.1" x2="1254.4" y1="454.3" y2="454.3"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="70" x="1062.6" y="465.0933">-enemy: EnemyEnum</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="91.7" x="1062.6" y="474.7784">#enemyAtlas: TextureAtlas</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="171.5" x="1062.6" y="484.4636">#currentAni: Animation&lt;TextureAtlas.AtlasRegion&gt;</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="103.6" x="1062.6" y="494.1487">#currentAction: MoveByAction</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="63.7" x="1062.6" y="503.8339">-elapsedTime: float</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="83.3" x="1062.6" y="513.519">-direction: DirectionEnum</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="59.5" x="1062.6" y="523.2042">-state: StateEnum</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="56" x="1062.6" y="532.8894">-isAlive: boolean</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="89.6" x="1062.6" y="542.5745">#enemyMove: EnemyMove</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42" x="1062.6" y="552.2597">-borderX: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42.7" x="1062.6" y="561.9448">-borderY: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="56" x="1062.6" y="571.63">-borderWidth: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="58.1" x="1062.6" y="581.3151">-borderHeight: int</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1059.1" x2="1254.4" y1="585.807" y2="585.807"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="32.2" x="1062.6" y="596.6003">#Enemy()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="68.6" x="1062.6" y="606.2854">#switchAtlas(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="61.6" x="1062.6" y="615.9706">#setBorder(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="46.2" x="1062.6" y="625.6558">+draw(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="38.5" x="1062.6" y="635.3409">+act(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="84" x="1062.6" y="645.0261">#positionChanged(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="57.4" x="1062.6" y="654.7112">+setName(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="107.8" x="1062.6" y="664.3964">+getEnemyAtlas(): TextureAtlas</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="188.3" x="1062.6" y="674.0815">+getCurrentAni(): Animation&lt;TextureAtlas.AtlasRegion&gt;</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="74.9" x="1062.6" y="683.7667">+setCurrentAni(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="66.5" x="1062.6" y="693.4519">+setBorderX(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="67.2" x="1062.6" y="703.137">+setBorderY(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="58.1" x="1062.6" y="712.8222">+getBorderX():int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="58.8" x="1062.6" y="722.5073">+getBorderY():int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="72.1" x="1062.6" y="732.1925">+getBorderWidth():int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="74.2" x="1062.6" y="741.8776">+getBorderHeight():int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="77.7" x="1062.6" y="751.5628">+getState(): StateEnum</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="56" x="1062.6" y="761.2479">+setState(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="85.4" x="1062.6" y="770.9331">+setCurrentAction(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="120.4" x="1062.6" y="780.6183">+getCurrentAction(): MoveByAction</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="81.2" x="1062.6" y="790.3034">+getElapsedTime(): float</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="80.5" x="1062.6" y="799.9886">+setElapsedTime(): void</text><!--MD5=[d8c6a38f28dd3e2d398a1597135bc87a]
+class EnemyMove--><rect codeLine="229" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="111.0812" id="EnemyMove" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="126" x="1093.75" y="266"/><ellipse cx="1130.675" cy="277.2" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1132.075,274.75 Q1132.2172,274.4 1132.3812,274.225 Q1132.5453,274.05 1132.7312,274.05 Q1133.0594,274.05 1133.2672,274.2469 Q1133.475,274.4437 1133.475,274.9031 L1133.475,275.9969 Q1133.475,276.4562 1133.2781,276.6531 Q1133.0812,276.85 1132.775,276.85 Q1132.5016,276.85 1132.3266,276.7297 Q1132.1516,276.6094 1132.075,276.2922 Q1132.0422,276.0734 1131.9219,275.9531 Q1131.7031,275.7234 1131.3094,275.5922 Q1130.9156,275.45 1130.5219,275.45 Q1130.0297,275.45 1129.6141,275.6469 Q1129.2094,275.8437 1128.8922,276.2812 Q1128.575,276.7187 1128.575,277.3203 L1128.575,277.9656 Q1128.575,278.6875 1129.1656,279.1687 Q1129.7562,279.65 1130.8062,279.65 Q1131.4297,279.65 1131.8672,279.5078 Q1132.1187,279.4312 1132.4031,279.1797 Q1132.5891,279.0375 1132.6875,278.9937 Q1132.7859,278.95 1132.9062,278.95 Q1133.1359,278.95 1133.3,279.1359 Q1133.475,279.3109 1133.475,279.5625 Q1133.475,279.8031 1133.2344,280.0875 Q1132.8844,280.5031 1132.3266,280.7328 Q1131.5937,281.05 1130.6969,281.05 Q1129.6469,281.05 1128.8047,280.6344 Q1128.1266,280.3062 1127.6453,279.5953 Q1127.175,278.8844 1127.175,278.0422 L1127.175,277.2766 Q1127.175,276.4016 1127.5906,275.6359 Q1128.0172,274.8703 1128.75,274.4656 Q1129.4937,274.05 1130.325,274.05 Q1130.8281,274.05 1131.2656,274.225 Q1131.7031,274.4 1132.075,274.75 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="46.2" x="1145.025" y="280.6371">EnemyMove</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1094.45" x2="1219.05" y1="288.4" y2="288.4"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="51.8" x="1097.95" y="299.1933">-enemy: Enemy</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="84" x="1097.95" y="308.8784">-gameStage: GameStage</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="117.6" x="1097.95" y="318.5636">-enemyAnimation: EnemyAnimation</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1094.45" x2="1219.05" y1="323.0555" y2="323.0555"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="50.4" x="1097.95" y="333.8487">+EnemyMove()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="77.7" x="1097.95" y="343.5339">-horizontalMove(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="69.3" x="1097.95" y="353.219">-verticalMove(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="60.9" x="1097.95" y="362.9042">-checkSoft(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="70" x="1097.95" y="372.5894">-checkBorder(): void</text><!--MD5=[35ab2bd7c12bd313bc6b60d96384f2f3]
+class EnemyEnum--><rect codeLine="239" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="101.3961" id="EnemyEnum" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="72.1" x="961.8" y="567.35"/><ellipse cx="972.3" cy="578.55" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M973.7,576.1 Q973.8422,575.75 974.0062,575.575 Q974.1703,575.4 974.3562,575.4 Q974.6844,575.4 974.8922,575.5969 Q975.1,575.7937 975.1,576.2531 L975.1,577.3469 Q975.1,577.8062 974.9031,578.0031 Q974.7062,578.2 974.4,578.2 Q974.1266,578.2 973.9516,578.0797 Q973.7766,577.9594 973.7,577.6422 Q973.6672,577.4234 973.5469,577.3031 Q973.3281,577.0734 972.9344,576.9422 Q972.5406,576.8 972.1469,576.8 Q971.6547,576.8 971.2391,576.9969 Q970.8344,577.1937 970.5172,577.6312 Q970.2,578.0687 970.2,578.6703 L970.2,579.3156 Q970.2,580.0375 970.7906,580.5187 Q971.3812,581 972.4312,581 Q973.0547,581 973.4922,580.8578 Q973.7437,580.7812 974.0281,580.5297 Q974.2141,580.3875 974.3125,580.3437 Q974.4109,580.3 974.5312,580.3 Q974.7609,580.3 974.925,580.4859 Q975.1,580.6609 975.1,580.9125 Q975.1,581.1531 974.8594,581.4375 Q974.5094,581.8531 973.9516,582.0828 Q973.2187,582.4 972.3219,582.4 Q971.2719,582.4 970.4297,581.9844 Q969.7516,581.6562 969.2703,580.9453 Q968.8,580.2344 968.8,579.3922 L968.8,578.6266 Q968.8,577.7516 969.2156,576.9859 Q969.6422,576.2203 970.375,575.8156 Q971.1187,575.4 971.95,575.4 Q972.4531,575.4 972.8906,575.575 Q973.3281,575.75 973.7,576.1 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="49.7" x="982.1" y="581.9871">EnemyEnum</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="962.5" x2="1033.2" y1="589.75" y2="589.75"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42.7" x="966" y="600.5433">NINJA_BLUE</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="20.3" x="966" y="610.2284">ALIEN</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="24.5" x="966" y="619.9136">SKUNK</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="36.4" x="966" y="629.5987">CAVEMAN</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="46.2" x="966" y="639.2839">+name: String</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="53.9" x="966" y="648.969">+toString: String</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="962.5" x2="1033.2" y1="653.4609" y2="653.4609"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="50.4" x="966" y="664.2542">+EnemyEnum()</text><!--MD5=[73c518c27bc3c55846639f68beeef5c6]
+class GameStage--><rect codeLine="248" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="304.7844" id="GameStage" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="126.7" x="859.6" y="825.3"/><ellipse cx="896.875" cy="836.5" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M898.275,834.05 Q898.4172,833.7 898.5812,833.525 Q898.7453,833.35 898.9312,833.35 Q899.2594,833.35 899.4672,833.5469 Q899.675,833.7437 899.675,834.2031 L899.675,835.2969 Q899.675,835.7562 899.4781,835.9531 Q899.2812,836.15 898.975,836.15 Q898.7016,836.15 898.5266,836.0297 Q898.3516,835.9094 898.275,835.5922 Q898.2422,835.3734 898.1219,835.2531 Q897.9031,835.0234 897.5094,834.8922 Q897.1156,834.75 896.7219,834.75 Q896.2297,834.75 895.8141,834.9469 Q895.4094,835.1437 895.0922,835.5812 Q894.775,836.0187 894.775,836.6203 L894.775,837.2656 Q894.775,837.9875 895.3656,838.4687 Q895.9562,838.95 897.0062,838.95 Q897.6297,838.95 898.0672,838.8078 Q898.3187,838.7312 898.6031,838.4797 Q898.7891,838.3375 898.8875,838.2937 Q898.9859,838.25 899.1062,838.25 Q899.3359,838.25 899.5,838.4359 Q899.675,838.6109 899.675,838.8625 Q899.675,839.1031 899.4344,839.3875 Q899.0844,839.8031 898.5266,840.0328 Q897.7937,840.35 896.8969,840.35 Q895.8469,840.35 895.0047,839.9344 Q894.3266,839.6062 893.8453,838.8953 Q893.375,838.1844 893.375,837.3422 L893.375,836.5766 Q893.375,835.7016 893.7906,834.9359 Q894.2172,834.1703 894.95,833.7656 Q895.6937,833.35 896.525,833.35 Q897.0281,833.35 897.4656,833.525 Q897.9031,833.7 898.275,834.05 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="46.2" x="911.225" y="839.9371">GameStage</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="860.3" x2="985.6" y1="847.7" y2="847.7"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="98" x="863.8" y="858.4933">-listPlayer: ArrayList&lt;Player&gt;</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="84" x="863.8" y="868.1784">-listSoft: ArrayList&lt;Soft&gt;</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="88.2" x="863.8" y="877.8636">-listSolid: ArrayList&lt;Solid&gt;</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="100.8" x="863.8" y="887.5487">-listEnemy: ArrayList&lt;Enemy&gt;</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42" x="863.8" y="897.2339">-borderX: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42.7" x="863.8" y="906.919">-borderY: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="56" x="863.8" y="916.6042">-borderWidth: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="58.1" x="863.8" y="926.2894">-borderHeight: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="66.5" x="863.8" y="935.9745">-txStatusBar: Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="73.5" x="863.8" y="945.6597">-txBackground: Sprite</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="860.3" x2="985.6" y1="950.1516" y2="950.1516"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="49" x="863.8" y="960.9448">+GameStage()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="95.9" x="863.8" y="970.63">-switchBackground(): Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="46.2" x="863.8" y="980.3151">+draw(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="38.5" x="863.8" y="990.0003">+act(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="70" x="863.8" y="999.6854">+attachPlayer(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="72.1" x="863.8" y="1009.3706">+detachPlayer(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="63" x="863.8" y="1019.0558">+attachSoft(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="65.1" x="863.8" y="1028.7409">+detachSoft(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="65.1" x="863.8" y="1038.4261">+attachSolid(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="71.4" x="863.8" y="1048.1112">+attachEnemy(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="66.5" x="863.8" y="1057.7964">+detachVoid(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="60.2" x="863.8" y="1067.4815">+getBorderX(): int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="60.9" x="863.8" y="1077.1667">+getBorderY(): int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="74.2" x="863.8" y="1086.8519">+getBorderWidth(): int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="76.3" x="863.8" y="1096.537">+getBorderHeight(): int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="104.3" x="863.8" y="1106.2222">+getListSoft(): ArrayList&lt;Soft&gt;</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="108.5" x="863.8" y="1115.9073">+getListSolid(): ArrayList&lt;Solid&gt;</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="118.3" x="863.8" y="1125.5925">+getListPlayer(): ArrayList&lt;Player&gt;</text><!--MD5=[8cfdf1fa4e0b75630c1b8f5585bf9d65]
+class Soft--><rect codeLine="278" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="178.8773" id="Soft" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="93.8" x="793.45" y="528.5"/><ellipse cx="830.025" cy="539.7" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M831.425,537.25 Q831.5672,536.9 831.7312,536.725 Q831.8953,536.55 832.0812,536.55 Q832.4094,536.55 832.6172,536.7469 Q832.825,536.9437 832.825,537.4031 L832.825,538.4969 Q832.825,538.9562 832.6281,539.1531 Q832.4312,539.35 832.125,539.35 Q831.8516,539.35 831.6766,539.2297 Q831.5016,539.1094 831.425,538.7922 Q831.3922,538.5734 831.2719,538.4531 Q831.0531,538.2234 830.6594,538.0922 Q830.2656,537.95 829.8719,537.95 Q829.3797,537.95 828.9641,538.1469 Q828.5594,538.3437 828.2422,538.7812 Q827.925,539.2187 827.925,539.8203 L827.925,540.4656 Q827.925,541.1875 828.5156,541.6687 Q829.1062,542.15 830.1562,542.15 Q830.7797,542.15 831.2172,542.0078 Q831.4687,541.9312 831.7531,541.6797 Q831.9391,541.5375 832.0375,541.4937 Q832.1359,541.45 832.2562,541.45 Q832.4859,541.45 832.65,541.6359 Q832.825,541.8109 832.825,542.0625 Q832.825,542.3031 832.5844,542.5875 Q832.2344,543.0031 831.6766,543.2328 Q830.9437,543.55 830.0469,543.55 Q828.9969,543.55 828.1547,543.1344 Q827.4766,542.8062 826.9953,542.0953 Q826.525,541.3844 826.525,540.5422 L826.525,539.7766 Q826.525,538.9016 826.9406,538.1359 Q827.3672,537.3703 828.1,536.9656 Q828.8437,536.55 829.675,536.55 Q830.1781,536.55 830.6156,536.725 Q831.0531,536.9 831.425,537.25 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="14.7" x="844.375" y="543.1371">Soft</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="794.15" x2="886.55" y1="550.9" y2="550.9"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="39.9" x="797.65" y="561.6933">-soft: Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="85.4" x="797.65" y="571.3784">+gameStage: GameStage</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42" x="797.65" y="581.0636">-borderX: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42.7" x="797.65" y="590.7487">-borderY: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="56" x="797.65" y="600.4339">-borderWidth: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="58.1" x="797.65" y="610.119">-borderHeight: int</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="794.15" x2="886.55" y1="614.6109" y2="614.6109"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="23.8" x="797.65" y="625.4042">+Soft()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="76.3" x="797.65" y="635.0894">#switchSprite(): Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="46.2" x="797.65" y="644.7745">+draw(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="38.5" x="797.65" y="654.4597">+act(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="51.8" x="797.65" y="664.1448">+delSoft(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="60.2" x="797.65" y="673.83">+getBorderX(): int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="60.9" x="797.65" y="683.5151">+getBorderY(): int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="74.2" x="797.65" y="693.2003">+getBorderWidth(): int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="76.3" x="797.65" y="702.8854">+getBorderHeight(): int</text><!--MD5=[9875a7fb4ff870b6e2e25c61edc2e8e0]
+class Solid--><rect codeLine="295" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="159.507" id="Solid" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="84.7" x="4.9" y="538.3"/><ellipse cx="34.615" cy="549.5" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M36.015,547.05 Q36.1572,546.7 36.3212,546.525 Q36.4853,546.35 36.6712,546.35 Q36.9994,546.35 37.2072,546.5469 Q37.415,546.7437 37.415,547.2031 L37.415,548.2969 Q37.415,548.7562 37.2181,548.9531 Q37.0212,549.15 36.715,549.15 Q36.4416,549.15 36.2666,549.0297 Q36.0916,548.9094 36.015,548.5922 Q35.9822,548.3734 35.8619,548.2531 Q35.6431,548.0234 35.2494,547.8922 Q34.8556,547.75 34.4619,547.75 Q33.9697,547.75 33.5541,547.9469 Q33.1494,548.1437 32.8322,548.5812 Q32.515,549.0187 32.515,549.6203 L32.515,550.2656 Q32.515,550.9875 33.1056,551.4687 Q33.6962,551.95 34.7462,551.95 Q35.3697,551.95 35.8072,551.8078 Q36.0587,551.7312 36.3431,551.4797 Q36.5291,551.3375 36.6275,551.2937 Q36.7259,551.25 36.8462,551.25 Q37.0759,551.25 37.24,551.4359 Q37.415,551.6109 37.415,551.8625 Q37.415,552.1031 37.1744,552.3875 Q36.8244,552.8031 36.2666,553.0328 Q35.5337,553.35 34.6369,553.35 Q33.5869,553.35 32.7447,552.9344 Q32.0666,552.6062 31.5853,551.8953 Q31.115,551.1844 31.115,550.3422 L31.115,549.5766 Q31.115,548.7016 31.5306,547.9359 Q31.9572,547.1703 32.69,546.7656 Q33.4337,546.35 34.265,546.35 Q34.7681,546.35 35.2056,546.525 Q35.6431,546.7 36.015,547.05 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="19.6" x="48.685" y="552.9371">Solid</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="5.6" x2="88.9" y1="560.7" y2="560.7"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42" x="9.1" y="571.4933">-solid: Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42" x="9.1" y="581.1784">-borderX: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42.7" x="9.1" y="590.8636">-borderY: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="56" x="9.1" y="600.5487">-borderWidth: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="58.1" x="9.1" y="610.2339">-borderHeight: int</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="5.6" x2="88.9" y1="614.7258" y2="614.7258"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="23.8" x="9.1" y="625.519">+Soft()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="74.9" x="9.1" y="635.2042">-switchSprite(): Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="46.2" x="9.1" y="644.8894">+draw(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="38.5" x="9.1" y="654.5745">+act(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="60.2" x="9.1" y="664.2597">+getBorderX(): int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="60.9" x="9.1" y="673.9448">+getBorderY(): int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="74.2" x="9.1" y="683.63">+getBorderWidth(): int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="76.3" x="9.1" y="693.3151">+getBorderHeight(): int</text><!--MD5=[18334a472979de59a3fd8e89cd8aa34b]
+class SpawnSoft--><rect codeLine="310" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="130.4516" id="SpawnSoft" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="92.4" x="794.15" y="1292.9"/><ellipse cx="817.565" cy="1304.1" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M818.965,1301.65 Q819.1072,1301.3 819.2712,1301.125 Q819.4353,1300.95 819.6212,1300.95 Q819.9494,1300.95 820.1572,1301.1469 Q820.365,1301.3437 820.365,1301.8031 L820.365,1302.8969 Q820.365,1303.3562 820.1681,1303.5531 Q819.9712,1303.75 819.665,1303.75 Q819.3916,1303.75 819.2166,1303.6297 Q819.0416,1303.5094 818.965,1303.1922 Q818.9322,1302.9734 818.8119,1302.8531 Q818.5931,1302.6234 818.1994,1302.4922 Q817.8056,1302.35 817.4119,1302.35 Q816.9197,1302.35 816.5041,1302.5469 Q816.0994,1302.7437 815.7822,1303.1812 Q815.465,1303.6187 815.465,1304.2203 L815.465,1304.8656 Q815.465,1305.5875 816.0556,1306.0687 Q816.6462,1306.55 817.6962,1306.55 Q818.3197,1306.55 818.7572,1306.4078 Q819.0087,1306.3312 819.2931,1306.0797 Q819.4791,1305.9375 819.5775,1305.8937 Q819.6759,1305.85 819.7962,1305.85 Q820.0259,1305.85 820.19,1306.0359 Q820.365,1306.2109 820.365,1306.4625 Q820.365,1306.7031 820.1244,1306.9875 Q819.7744,1307.4031 819.2166,1307.6328 Q818.4837,1307.95 817.5869,1307.95 Q816.5369,1307.95 815.6947,1307.5344 Q815.0166,1307.2062 814.5353,1306.4953 Q814.065,1305.7844 814.065,1304.9422 L814.065,1304.1766 Q814.065,1303.3016 814.4806,1302.5359 Q814.9072,1301.7703 815.64,1301.3656 Q816.3837,1300.95 817.215,1300.95 Q817.7181,1300.95 818.1556,1301.125 Q818.5931,1301.3 818.965,1301.65 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="41.3" x="830.235" y="1307.5371">SpawnSoft</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="794.85" x2="885.85" y1="1315.3" y2="1315.3"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="45.5" x="798.35" y="1326.0933">-stage: Stage</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="48.3" x="798.35" y="1335.7784">-stageNum: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="84" x="798.35" y="1345.4636">-gameStage: GameStage</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="794.85" x2="885.85" y1="1349.9555" y2="1349.9555"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="48.3" x="798.35" y="1360.7487">+SpawnSoft()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="55.3" x="798.35" y="1370.4339">+execute(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="49.7" x="798.35" y="1380.119">-stage1(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="49.7" x="798.35" y="1389.8042">-stage2(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="49.7" x="798.35" y="1399.4894">-stage3(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="49.7" x="798.35" y="1409.1745">-stage4(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="49.7" x="798.35" y="1418.8597">-stage5(): void</text><!--MD5=[0e9acec0a493661df02fa0e7f33ef884]
+class SpawnSolid--><rect codeLine="322" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="82.0258" id="SpawnSolid" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="92.4" x="30.45" y="1317.05"/><ellipse cx="51.66" cy="1328.25" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M53.06,1325.8 Q53.2022,1325.45 53.3662,1325.275 Q53.5303,1325.1 53.7162,1325.1 Q54.0444,1325.1 54.2522,1325.2969 Q54.46,1325.4937 54.46,1325.9531 L54.46,1327.0469 Q54.46,1327.5062 54.2631,1327.7031 Q54.0662,1327.9 53.76,1327.9 Q53.4866,1327.9 53.3116,1327.7797 Q53.1366,1327.6594 53.06,1327.3422 Q53.0272,1327.1234 52.9069,1327.0031 Q52.6881,1326.7734 52.2944,1326.6422 Q51.9006,1326.5 51.5069,1326.5 Q51.0147,1326.5 50.5991,1326.6969 Q50.1944,1326.8937 49.8772,1327.3312 Q49.56,1327.7687 49.56,1328.3703 L49.56,1329.0156 Q49.56,1329.7375 50.1506,1330.2187 Q50.7412,1330.7 51.7912,1330.7 Q52.4147,1330.7 52.8522,1330.5578 Q53.1037,1330.4812 53.3881,1330.2297 Q53.5741,1330.0875 53.6725,1330.0437 Q53.7709,1330 53.8912,1330 Q54.1209,1330 54.285,1330.1859 Q54.46,1330.3609 54.46,1330.6125 Q54.46,1330.8531 54.2194,1331.1375 Q53.8694,1331.5531 53.3116,1331.7828 Q52.5787,1332.1 51.6819,1332.1 Q50.6319,1332.1 49.7897,1331.6844 Q49.1116,1331.3562 48.6303,1330.6453 Q48.16,1329.9344 48.16,1329.0922 L48.16,1328.3266 Q48.16,1327.4516 48.5756,1326.6859 Q49.0022,1325.9203 49.735,1325.5156 Q50.4787,1325.1 51.31,1325.1 Q51.8131,1325.1 52.2506,1325.275 Q52.6881,1325.45 53.06,1325.8 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="46.2" x="63.84" y="1331.6871">SpawnSolid</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="31.15" x2="122.15" y1="1339.45" y2="1339.45"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="45.5" x="34.65" y="1350.2433">-stage: Stage</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="48.3" x="34.65" y="1359.9284">-stageNum: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="84" x="34.65" y="1369.6136">-gameStage: GameStage</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="31.15" x2="122.15" y1="1374.1055" y2="1374.1055"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="50.4" x="34.65" y="1384.8987">+SpawnSolid()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="55.3" x="34.65" y="1394.5839">+execute(): void</text><!--MD5=[08225de700a70cb6c9d16d2080d8bd9a]
+class PowerUps--><rect codeLine="329" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="178.8773" id="PowerUps" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="93.8" x="114.45" y="528.5"/><ellipse cx="138.81" cy="539.7" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M140.21,537.25 Q140.3522,536.9 140.5162,536.725 Q140.6803,536.55 140.8662,536.55 Q141.1944,536.55 141.4022,536.7469 Q141.61,536.9437 141.61,537.4031 L141.61,538.4969 Q141.61,538.9562 141.4131,539.1531 Q141.2162,539.35 140.91,539.35 Q140.6366,539.35 140.4616,539.2297 Q140.2866,539.1094 140.21,538.7922 Q140.1772,538.5734 140.0569,538.4531 Q139.8381,538.2234 139.4444,538.0922 Q139.0506,537.95 138.6569,537.95 Q138.1647,537.95 137.7491,538.1469 Q137.3444,538.3437 137.0272,538.7812 Q136.71,539.2187 136.71,539.8203 L136.71,540.4656 Q136.71,541.1875 137.3006,541.6687 Q137.8912,542.15 138.9412,542.15 Q139.5647,542.15 140.0022,542.0078 Q140.2537,541.9312 140.5381,541.6797 Q140.7241,541.5375 140.8225,541.4937 Q140.9209,541.45 141.0412,541.45 Q141.2709,541.45 141.435,541.6359 Q141.61,541.8109 141.61,542.0625 Q141.61,542.3031 141.3694,542.5875 Q141.0194,543.0031 140.4616,543.2328 Q139.7288,543.55 138.8319,543.55 Q137.7819,543.55 136.9397,543.1344 Q136.2616,542.8062 135.7803,542.0953 Q135.31,541.3844 135.31,540.5422 L135.31,539.7766 Q135.31,538.9016 135.7256,538.1359 Q136.1522,537.3703 136.885,536.9656 Q137.6287,536.55 138.46,536.55 Q138.9631,536.55 139.4006,536.725 Q139.8381,536.9 140.21,537.25 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="40.6" x="151.69" y="543.1371">PowerUps</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="115.15" x2="207.55" y1="550.9" y2="550.9"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="39.9" x="118.65" y="561.6933">-soft: Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="85.4" x="118.65" y="571.3784">+gameStage: GameStage</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42" x="118.65" y="581.0636">-borderX: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42.7" x="118.65" y="590.7487">-borderY: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="56" x="118.65" y="600.4339">-borderWidth: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="58.1" x="118.65" y="610.119">-borderHeight: int</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="115.15" x2="207.55" y1="614.6109" y2="614.6109"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="23.8" x="118.65" y="625.4042">+Soft()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="76.3" x="118.65" y="635.0894">#switchSprite(): Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="46.2" x="118.65" y="644.7745">+draw(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="38.5" x="118.65" y="654.4597">+act(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="51.8" x="118.65" y="664.1448">+delSoft(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="60.2" x="118.65" y="673.83">+getBorderX(): int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="60.9" x="118.65" y="683.5151">+getBorderY(): int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="74.2" x="118.65" y="693.2003">+getBorderWidth(): int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="76.3" x="118.65" y="702.8854">+getBorderHeight(): int</text><!--MD5=[7df5255a7c29adc165f1d78447acd25f]
+class SpawnPowerUps--><rect codeLine="346" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="82.0258" id="SpawnPowerUps" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="92.4" x="131.95" y="1317.05"/><ellipse cx="143.71" cy="1328.25" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M145.11,1325.8 Q145.2522,1325.45 145.4162,1325.275 Q145.5803,1325.1 145.7662,1325.1 Q146.0944,1325.1 146.3022,1325.2969 Q146.51,1325.4937 146.51,1325.9531 L146.51,1327.0469 Q146.51,1327.5062 146.3131,1327.7031 Q146.1162,1327.9 145.81,1327.9 Q145.5366,1327.9 145.3616,1327.7797 Q145.1866,1327.6594 145.11,1327.3422 Q145.0772,1327.1234 144.9569,1327.0031 Q144.7381,1326.7734 144.3444,1326.6422 Q143.9506,1326.5 143.5569,1326.5 Q143.0647,1326.5 142.6491,1326.6969 Q142.2444,1326.8937 141.9272,1327.3312 Q141.61,1327.7687 141.61,1328.3703 L141.61,1329.0156 Q141.61,1329.7375 142.2006,1330.2187 Q142.7912,1330.7 143.8412,1330.7 Q144.4647,1330.7 144.9022,1330.5578 Q145.1537,1330.4812 145.4381,1330.2297 Q145.6241,1330.0875 145.7225,1330.0437 Q145.8209,1330 145.9412,1330 Q146.1709,1330 146.335,1330.1859 Q146.51,1330.3609 146.51,1330.6125 Q146.51,1330.8531 146.2694,1331.1375 Q145.9194,1331.5531 145.3616,1331.7828 Q144.6287,1332.1 143.7319,1332.1 Q142.6819,1332.1 141.8397,1331.6844 Q141.1616,1331.3562 140.6803,1330.6453 Q140.21,1329.9344 140.21,1329.0922 L140.21,1328.3266 Q140.21,1327.4516 140.6256,1326.6859 Q141.0522,1325.9203 141.785,1325.5156 Q142.5287,1325.1 143.36,1325.1 Q143.8631,1325.1 144.3006,1325.275 Q144.7381,1325.45 145.11,1325.8 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="67.2" x="153.79" y="1331.6871">SpawnPowerUps</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="132.65" x2="223.65" y1="1339.45" y2="1339.45"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="45.5" x="136.15" y="1350.2433">-stage: Stage</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="48.3" x="136.15" y="1359.9284">-stageNum: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="84" x="136.15" y="1369.6136">-gameStage: GameStage</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="132.65" x2="223.65" y1="1374.1055" y2="1374.1055"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="70" x="136.15" y="1384.8987">+SpawnPowerUps()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="55.3" x="136.15" y="1394.5839">+execute(): void</text><!--MD5=[1d6b9b691c041441912b62172f40838d]
+class ScreenEnum--><rect codeLine="353" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="72.3406" id="ScreenEnum" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="95.9" x="1559.6" y="4.9"/><ellipse cx="1580.495" cy="16.1" fill="#EB937F" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1579.445,16.8 L1579.445,18.2 L1582.245,18.2 L1582.245,17.5 L1582.245,17.1609 L1582.6825,16.8 L1582.945,16.8 L1583.2075,16.8 L1583.645,17.1609 L1583.645,17.5 L1583.645,19.6 L1578.045,19.6 L1577.7059,19.6 L1577.345,19.1625 L1577.345,18.9 L1577.345,18.6375 L1577.7059,18.2 L1578.045,18.2 L1578.045,18.2 L1578.045,14 L1578.045,14 L1577.7059,14 L1577.345,13.5625 L1577.345,13.3 L1577.345,13.0375 L1577.7059,12.6 L1578.045,12.6 L1583.645,12.6 L1583.645,14.7 L1583.645,15.0391 L1583.2075,15.4 L1582.945,15.4 L1582.6825,15.4 L1582.245,15.0391 L1582.245,14.7 L1582.245,14 L1579.445,14 L1579.445,15.4 L1580.145,15.4 L1580.145,15.0609 L1580.145,15.0609 L1580.5825,14.7 L1580.845,14.7 L1581.1075,14.7 L1581.545,15.0609 L1581.545,15.4 L1581.545,16.8 L1581.545,17.1391 L1581.1075,17.5 L1581.1075,17.5 L1580.845,17.5 L1580.5825,17.5 L1580.145,17.1391 L1580.145,17.1391 L1580.145,16.8 L1579.445,16.8 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="50.4" x="1592.605" y="19.5371">ScreenEnum</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1560.3" x2="1654.8" y1="27.3" y2="27.3"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="67.9" x="1563.8" y="38.0933">STARTING_SCREEN</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="83.3" x="1563.8" y="47.7784">CHAR_SELECT_SCREEN</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="87.5" x="1563.8" y="57.4636">STAGE_SELECT_SCREEN</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="42.7" x="1563.8" y="67.1487">MAIN_GAME</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1560.3" x2="1654.8" y1="71.6406" y2="71.6406"/><!--MD5=[26f603c8a1cde7cf67a8b7b04b9f60b2]
+class MainGameScreen--><rect codeLine="360" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="101.3961" id="MainGameScreen" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="91.7" x="947.1" y="1919.4"/><ellipse cx="957.6" cy="1930.6" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M959,1928.15 Q959.1422,1927.8 959.3062,1927.625 Q959.4703,1927.45 959.6562,1927.45 Q959.9844,1927.45 960.1922,1927.6469 Q960.4,1927.8437 960.4,1928.3031 L960.4,1929.3969 Q960.4,1929.8562 960.2031,1930.0531 Q960.0062,1930.25 959.7,1930.25 Q959.4266,1930.25 959.2516,1930.1297 Q959.0766,1930.0094 959,1929.6922 Q958.9672,1929.4734 958.8469,1929.3531 Q958.6281,1929.1234 958.2344,1928.9922 Q957.8406,1928.85 957.4469,1928.85 Q956.9547,1928.85 956.5391,1929.0469 Q956.1344,1929.2437 955.8172,1929.6812 Q955.5,1930.1187 955.5,1930.7203 L955.5,1931.3656 Q955.5,1932.0875 956.0906,1932.5687 Q956.6812,1933.05 957.7312,1933.05 Q958.3547,1933.05 958.7922,1932.9078 Q959.0437,1932.8312 959.3281,1932.5797 Q959.5141,1932.4375 959.6125,1932.3937 Q959.7109,1932.35 959.8312,1932.35 Q960.0609,1932.35 960.225,1932.5359 Q960.4,1932.7109 960.4,1932.9625 Q960.4,1933.2031 960.1594,1933.4875 Q959.8094,1933.9031 959.2516,1934.1328 Q958.5187,1934.45 957.6219,1934.45 Q956.5719,1934.45 955.7297,1934.0344 Q955.0516,1933.7062 954.5703,1932.9953 Q954.1,1932.2844 954.1,1931.4422 L954.1,1930.6766 Q954.1,1929.8016 954.5156,1929.0359 Q954.9422,1928.2703 955.675,1927.8656 Q956.4187,1927.45 957.25,1927.45 Q957.7531,1927.45 958.1906,1927.625 Q958.6281,1927.8 959,1928.15 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="69.3" x="967.4" y="1934.0371">MainGameScreen</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="947.8" x2="1038.1" y1="1941.8" y2="1941.8"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="48.3" x="951.3" y="1952.5933">-stageNum: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="59.5" x="951.3" y="1962.2784">-color: ColorEnum</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" text-decoration="underline" textLength="42" x="951.3" y="1971.9636">+playerX: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" text-decoration="underline" textLength="42.7" x="951.3" y="1981.6487">+playerY: int</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="947.8" x2="1038.1" y1="1986.1406" y2="1986.1406"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="69.3" x="951.3" y="1996.9339">+MainGameScreen()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="63" x="951.3" y="2006.619">+buildStage(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="54.6" x="951.3" y="2016.3042">+dispose(): void</text><!--MD5=[0b6c521203faf30e4a9617be22e46dc4]
+class HUD--><rect codeLine="369" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="295.0992" id="HUD" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="94.5" x="1722" y="1506.75"/><ellipse cx="1756.825" cy="1517.95" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1758.225,1515.5 Q1758.3672,1515.15 1758.5312,1514.975 Q1758.6953,1514.8 1758.8812,1514.8 Q1759.2094,1514.8 1759.4172,1514.9969 Q1759.625,1515.1937 1759.625,1515.6531 L1759.625,1516.7469 Q1759.625,1517.2062 1759.4281,1517.4031 Q1759.2312,1517.6 1758.925,1517.6 Q1758.6516,1517.6 1758.4766,1517.4797 Q1758.3016,1517.3594 1758.225,1517.0422 Q1758.1922,1516.8234 1758.0719,1516.7031 Q1757.8531,1516.4734 1757.4594,1516.3422 Q1757.0656,1516.2 1756.6719,1516.2 Q1756.1797,1516.2 1755.7641,1516.3969 Q1755.3594,1516.5937 1755.0422,1517.0312 Q1754.725,1517.4687 1754.725,1518.0703 L1754.725,1518.7156 Q1754.725,1519.4375 1755.3156,1519.9187 Q1755.9062,1520.4 1756.9562,1520.4 Q1757.5797,1520.4 1758.0172,1520.2578 Q1758.2687,1520.1812 1758.5531,1519.9297 Q1758.7391,1519.7875 1758.8375,1519.7437 Q1758.9359,1519.7 1759.0562,1519.7 Q1759.2859,1519.7 1759.45,1519.8859 Q1759.625,1520.0609 1759.625,1520.3125 Q1759.625,1520.5531 1759.3844,1520.8375 Q1759.0344,1521.2531 1758.4766,1521.4828 Q1757.7437,1521.8 1756.8469,1521.8 Q1755.7969,1521.8 1754.9547,1521.3844 Q1754.2766,1521.0562 1753.7953,1520.3453 Q1753.325,1519.6344 1753.325,1518.7922 L1753.325,1518.0266 Q1753.325,1517.1516 1753.7406,1516.3859 Q1754.1672,1515.6203 1754.9,1515.2156 Q1755.6437,1514.8 1756.475,1514.8 Q1756.9781,1514.8 1757.4156,1514.975 Q1757.8531,1515.15 1758.225,1515.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="18.9" x="1771.175" y="1521.3871">HUD</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1722.7" x2="1815.8" y1="1529.15" y2="1529.15"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="32.2" x="1726.2" y="1539.9433">-hudX: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="32.9" x="1726.2" y="1549.6284">-hudY: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="44.8" x="1726.2" y="1559.3136">-bomb: Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="70" x="1726.2" y="1568.9987">-currentBomb: Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" text-decoration="underline" textLength="44.1" x="1726.2" y="1578.6839">-bombVal: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="36.4" x="1726.2" y="1588.369">-life: Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="63.7" x="1726.2" y="1598.0542">-currentLife: Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" text-decoration="underline" textLength="35.7" x="1726.2" y="1607.7394">-lifeVal: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="46.2" x="1726.2" y="1617.4245">-range: Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="72.8" x="1726.2" y="1627.1097">-currentRange: Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" text-decoration="underline" textLength="45.5" x="1726.2" y="1636.7948">-rangeVal: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="47.6" x="1726.2" y="1646.48">-speed: Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="72.8" x="1726.2" y="1656.1651">-currentSpeed: Sprite</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" text-decoration="underline" textLength="46.9" x="1726.2" y="1665.8503">-speedVal: int</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="80.5" x="1726.2" y="1675.5354">-hudAtlas: TextureAtlas</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" text-decoration="underline" textLength="67.2" x="1726.2" y="1685.2206">-isUpdated: boolean</text><line style="stroke:#A80036;stroke-width:1.0499999999999998;" x1="1722.7" x2="1815.8" y1="1689.7125" y2="1689.7125"/><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="24.5" x="1726.2" y="1700.5058">+HUD()</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="82.6" x="1726.2" y="1710.1909">-setPositionSprite(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="70" x="1726.2" y="1719.8761">-initializeSprite():void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="75.6" x="1726.2" y="1729.5612">-setScaleSprite(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="86.1" x="1726.2" y="1739.2464">-updateCurrentVal(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="46.2" x="1726.2" y="1748.9315">+draw(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" textLength="38.5" x="1726.2" y="1758.6167">+act(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" text-decoration="underline" textLength="68.6" x="1726.2" y="1768.3019">+setBombVal(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" text-decoration="underline" textLength="62.3" x="1726.2" y="1777.987">+setLifeVal(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" text-decoration="underline" textLength="71.4" x="1726.2" y="1787.6722">+setRangeVal(): void</text><text fill="#000000" font-family="sans-serif" font-size="7.7" lengthAdjust="spacing" text-decoration="underline" textLength="71.4" x="1726.2" y="1797.3573">+setSpeedVal(): void</text><!--MD5=[b6dcce5e5ef3c84b0b048d11301373dd]
+class Game--><rect codeLine="400" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="22.4" id="Game" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="79.8" x="1837.85" y="154.35"/><ellipse cx="1848.35" cy="165.55" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1849.75,163.1 Q1849.8922,162.75 1850.0562,162.575 Q1850.2203,162.4 1850.4062,162.4 Q1850.7344,162.4 1850.9422,162.5969 Q1851.15,162.7937 1851.15,163.2531 L1851.15,164.3469 Q1851.15,164.8062 1850.9531,165.0031 Q1850.7562,165.2 1850.45,165.2 Q1850.1766,165.2 1850.0016,165.0797 Q1849.8266,164.9594 1849.75,164.6422 Q1849.7172,164.4234 1849.5969,164.3031 Q1849.3781,164.0734 1848.9844,163.9422 Q1848.5906,163.8 1848.1969,163.8 Q1847.7047,163.8 1847.2891,163.9969 Q1846.8844,164.1937 1846.5672,164.6312 Q1846.25,165.0687 1846.25,165.6703 L1846.25,166.3156 Q1846.25,167.0375 1846.8406,167.5187 Q1847.4312,168 1848.4812,168 Q1849.1047,168 1849.5422,167.8578 Q1849.7937,167.7812 1850.0781,167.5297 Q1850.2641,167.3875 1850.3625,167.3437 Q1850.4609,167.3 1850.5812,167.3 Q1850.8109,167.3 1850.975,167.4859 Q1851.15,167.6609 1851.15,167.9125 Q1851.15,168.1531 1850.9094,168.4375 Q1850.5594,168.8531 1850.0016,169.0828 Q1849.2687,169.4 1848.3719,169.4 Q1847.3219,169.4 1846.4797,168.9844 Q1845.8016,168.6562 1845.3203,167.9453 Q1844.85,167.2344 1844.85,166.3922 L1844.85,165.6266 Q1844.85,164.7516 1845.2656,163.9859 Q1845.6922,163.2203 1846.425,162.8156 Q1847.1687,162.4 1848,162.4 Q1848.5031,162.4 1848.9406,162.575 Q1849.3781,162.75 1849.75,163.1 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="23.8" x="1858.15" y="168.9871">Game</text><rect fill="#FFFFFF" height="11.9656" style="stroke:#000000;stroke-width:0.6999999999999998;stroke-dasharray:2.0,2.0;" width="32.2" x="1887.55" y="152.25"/><text fill="#000000" font-family="sans-serif" font-size="8.4" font-style="italic" lengthAdjust="spacing" textLength="30.8" x="1888.25" y="161.6699">LibGDX</text><!--MD5=[964f074a2dd77d134c21b891bb53e381]
+class Image--><rect codeLine="403" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="22.4" id="Image" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="80.5" x="441.7" y="310.45"/><ellipse cx="452.2" cy="321.65" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M453.6,319.2 Q453.7422,318.85 453.9062,318.675 Q454.0703,318.5 454.2562,318.5 Q454.5844,318.5 454.7922,318.6969 Q455,318.8937 455,319.3531 L455,320.4469 Q455,320.9062 454.8031,321.1031 Q454.6062,321.3 454.3,321.3 Q454.0266,321.3 453.8516,321.1797 Q453.6766,321.0594 453.6,320.7422 Q453.5672,320.5234 453.4469,320.4031 Q453.2281,320.1734 452.8344,320.0422 Q452.4406,319.9 452.0469,319.9 Q451.5547,319.9 451.1391,320.0969 Q450.7344,320.2937 450.4172,320.7312 Q450.1,321.1687 450.1,321.7703 L450.1,322.4156 Q450.1,323.1375 450.6906,323.6187 Q451.2812,324.1 452.3312,324.1 Q452.9547,324.1 453.3922,323.9578 Q453.6437,323.8812 453.9281,323.6297 Q454.1141,323.4875 454.2125,323.4437 Q454.3109,323.4 454.4312,323.4 Q454.6609,323.4 454.825,323.5859 Q455,323.7609 455,324.0125 Q455,324.2531 454.7594,324.5375 Q454.4094,324.9531 453.8516,325.1828 Q453.1187,325.5 452.2219,325.5 Q451.1719,325.5 450.3297,325.0844 Q449.6516,324.7562 449.1703,324.0453 Q448.7,323.3344 448.7,322.4922 L448.7,321.7266 Q448.7,320.8516 449.1156,320.0859 Q449.5422,319.3203 450.275,318.9156 Q451.0187,318.5 451.85,318.5 Q452.3531,318.5 452.7906,318.675 Q453.2281,318.85 453.6,319.2 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="24.5" x="462" y="325.0871">Image</text><rect fill="#FFFFFF" height="11.9656" style="stroke:#000000;stroke-width:0.6999999999999998;stroke-dasharray:2.0,2.0;" width="32.2" x="492.1" y="308.35"/><text fill="#000000" font-family="sans-serif" font-size="8.4" font-style="italic" lengthAdjust="spacing" textLength="30.8" x="492.8" y="317.7699">LibGDX</text><!--MD5=[cbfc57bef1c415c3126d20e2f7e364c7]
+class Stage--><rect codeLine="406" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="22.4" id="Stage" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="78.4" x="1242.15" y="154.35"/><ellipse cx="1252.65" cy="165.55" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1254.05,163.1 Q1254.1922,162.75 1254.3562,162.575 Q1254.5203,162.4 1254.7062,162.4 Q1255.0344,162.4 1255.2422,162.5969 Q1255.45,162.7937 1255.45,163.2531 L1255.45,164.3469 Q1255.45,164.8062 1255.2531,165.0031 Q1255.0562,165.2 1254.75,165.2 Q1254.4766,165.2 1254.3016,165.0797 Q1254.1266,164.9594 1254.05,164.6422 Q1254.0172,164.4234 1253.8969,164.3031 Q1253.6781,164.0734 1253.2844,163.9422 Q1252.8906,163.8 1252.4969,163.8 Q1252.0047,163.8 1251.5891,163.9969 Q1251.1844,164.1937 1250.8672,164.6312 Q1250.55,165.0687 1250.55,165.6703 L1250.55,166.3156 Q1250.55,167.0375 1251.1406,167.5187 Q1251.7312,168 1252.7812,168 Q1253.4047,168 1253.8422,167.8578 Q1254.0937,167.7812 1254.3781,167.5297 Q1254.5641,167.3875 1254.6625,167.3437 Q1254.7609,167.3 1254.8812,167.3 Q1255.1109,167.3 1255.275,167.4859 Q1255.45,167.6609 1255.45,167.9125 Q1255.45,168.1531 1255.2094,168.4375 Q1254.8594,168.8531 1254.3016,169.0828 Q1253.5687,169.4 1252.6719,169.4 Q1251.6219,169.4 1250.7797,168.9844 Q1250.1016,168.6562 1249.6203,167.9453 Q1249.15,167.2344 1249.15,166.3922 L1249.15,165.6266 Q1249.15,164.7516 1249.5656,163.9859 Q1249.9922,163.2203 1250.725,162.8156 Q1251.4687,162.4 1252.3,162.4 Q1252.8031,162.4 1253.2406,162.575 Q1253.6781,162.75 1254.05,163.1 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="22.4" x="1262.45" y="168.9871">Stage</text><rect fill="#FFFFFF" height="11.9656" style="stroke:#000000;stroke-width:0.6999999999999998;stroke-dasharray:2.0,2.0;" width="32.2" x="1290.45" y="152.25"/><text fill="#000000" font-family="sans-serif" font-size="8.4" font-style="italic" lengthAdjust="spacing" textLength="30.8" x="1291.15" y="161.6699">LibGDX</text><!--MD5=[463c45b1df3dbfe1c2134e01e0a41cde]
+class Screen--><rect codeLine="409" fill="#FEFECE" filter="url(#fpuknuzc8axt6)" height="22.4" id="Screen" style="stroke:#A80036;stroke-width:1.0499999999999998;" width="83.3" x="1345.4" y="154.35"/><ellipse cx="1355.9" cy="165.55" fill="#ADD1B2" rx="7.7" ry="7.7" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><path d="M1357.3,163.1 Q1357.4422,162.75 1357.6062,162.575 Q1357.7703,162.4 1357.9562,162.4 Q1358.2844,162.4 1358.4922,162.5969 Q1358.7,162.7937 1358.7,163.2531 L1358.7,164.3469 Q1358.7,164.8062 1358.5031,165.0031 Q1358.3062,165.2 1358,165.2 Q1357.7266,165.2 1357.5516,165.0797 Q1357.3766,164.9594 1357.3,164.6422 Q1357.2672,164.4234 1357.1469,164.3031 Q1356.9281,164.0734 1356.5344,163.9422 Q1356.1406,163.8 1355.7469,163.8 Q1355.2547,163.8 1354.8391,163.9969 Q1354.4344,164.1937 1354.1172,164.6312 Q1353.8,165.0687 1353.8,165.6703 L1353.8,166.3156 Q1353.8,167.0375 1354.3906,167.5187 Q1354.9812,168 1356.0312,168 Q1356.6547,168 1357.0922,167.8578 Q1357.3437,167.7812 1357.6281,167.5297 Q1357.8141,167.3875 1357.9125,167.3437 Q1358.0109,167.3 1358.1312,167.3 Q1358.3609,167.3 1358.525,167.4859 Q1358.7,167.6609 1358.7,167.9125 Q1358.7,168.1531 1358.4594,168.4375 Q1358.1094,168.8531 1357.5516,169.0828 Q1356.8187,169.4 1355.9219,169.4 Q1354.8719,169.4 1354.0297,168.9844 Q1353.3516,168.6562 1352.8703,167.9453 Q1352.4,167.2344 1352.4,166.3922 L1352.4,165.6266 Q1352.4,164.7516 1352.8156,163.9859 Q1353.2422,163.2203 1353.975,162.8156 Q1354.7187,162.4 1355.55,162.4 Q1356.0531,162.4 1356.4906,162.575 Q1356.9281,162.75 1357.3,163.1 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="27.3" x="1365.7" y="168.9871">Screen</text><rect fill="#FFFFFF" height="11.9656" style="stroke:#000000;stroke-width:0.6999999999999998;stroke-dasharray:2.0,2.0;" width="32.2" x="1398.6" y="152.25"/><text fill="#000000" font-family="sans-serif" font-size="8.4" font-style="italic" lengthAdjust="spacing" textLength="30.8" x="1399.3" y="161.6699">LibGDX</text><!--MD5=[c06f8ac69bc3700411f731a7bbfd8ce1]
+reverse link Enemy to Alien--><path codeLine="415" d="M1125.817,818.433 C1105.237,951.286 1080.149,1113.196 1069.831,1179.794 " fill="none" id="Enemy-backto-Alien" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="1121.001,817.523,1127.987,804.44,1130.689,819.028,1121.001,817.523" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[366fdb5e422625ab55a302c53b9f8c7f]
+reverse link Enemy to Skunk--><path codeLine="416" d="M1075.83,817.81 C1075.025,820.316 1074.227,822.815 1073.45,825.3 C1032.976,954.604 1002.876,1113.756 991.228,1179.738 " fill="none" id="Enemy-backto-Skunk" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="1071.252,816.067,1080.303,804.314,1080.555,819.147,1071.252,816.067" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[b15b09b2577f03a749401fe6da3683ab]
+reverse link Enemy to Caveman--><path codeLine="417" d="M1154.384,818.636 C1152.816,951.447 1150.905,1113.231 1150.114,1179.794 " fill="none" id="Enemy-backto-Caveman" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="1149.491,818.384,1154.552,804.44,1159.291,818.496,1149.491,818.384" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[5ddc164332c656c1d56481fc8c6f7bb2]
+reverse link Enemy to NinjaBlue--><path codeLine="418" d="M1184.848,818.433 C1203.545,951.286 1226.337,1113.196 1235.71,1179.794 " fill="none" id="Enemy-backto-NinjaBlue" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="1179.976,818.986,1182.881,804.44,1189.685,817.621,1179.976,818.986" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[2ea5ff13542d237cc3e887a6b4e1eee9]
+reverse link Image to Enemy--><path codeLine="420" d="M536.375,326.543 C661.99,337.218 967.414,369.089 1046.15,431.9 C1050.329,435.232 1054.382,438.767 1058.316,442.477 " fill="none" id="Image-backto-Enemy" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="535.871,331.422,522.326,325.381,536.683,321.657,535.871,331.422" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[06dd943518fa571c12244b99704b2931]
+reverse link Image to Bomb--><path codeLine="421" d="M481.95,346.857 C481.95,385.357 481.95,461.979 481.95,523.887 " fill="none" id="Image-backto-Bomb" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="477.05,346.85,481.95,332.85,486.85,346.85,477.05,346.85" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[103a89e3465e16f2d7f1faa22c848144]
+reverse link Image to Player--><path codeLine="422" d="M427.994,333.592 C377.391,347.312 304.563,375.97 270.55,431.9 C184.555,573.321 245.217,640.738 270.55,804.3 C303.919,1019.767 331.541,1072.148 418.95,1271.9 C449.953,1342.747 465.22,1356.817 505.05,1423.1 C510.741,1432.571 512.785,1434.552 518.35,1444.1 C522.508,1451.233 526.694,1458.527 530.887,1465.919 " fill="none" id="Image-backto-Player" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="426.853,328.825,441.63,330.106,429.275,338.324,426.853,328.825" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[33cb3842a25a2e9914bb26849428d1bc]
+reverse link Image to GameStage--><path codeLine="423" d="M536.172,328.657 C638.442,341.754 853.643,375.494 899.15,431.9 C946.232,490.266 944.167,684.985 935.746,825.006 " fill="none" id="Image-backto-GameStage" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="535.514,333.508,522.228,326.907,536.732,323.785,535.514,333.508" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[19e02413a74da4896b4e51dacd249876]
+reverse link Image to Soft--><path codeLine="424" d="M536.242,327.859 C602.868,337.477 715.064,363.363 780.85,431.9 C805.854,457.947 820.351,494.529 828.751,528.325 " fill="none" id="Image-backto-Soft" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="535.577,332.717,522.347,325.997,536.879,323.001,535.577,332.717" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[54a8b12d1876c4d0ac5043127b4ac4f5]
+reverse link Image to Solid--><path codeLine="425" d="M427.287,322.301 C345.121,325.276 190.057,343.231 101.85,431.9 C73.913,459.984 60.13,501.592 53.389,538.286 " fill="none" id="Image-backto-Solid" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="427.378,317.394,441.504,321.909,427.644,327.194,427.378,317.394" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[df4c5c4c65107ee5a70712a4a9264e7d]
+reverse link Image to PowerUps--><path codeLine="426" d="M427.56,324.016 C370.146,328.713 280.707,344.855 227.15,398.3 C192.85,432.53 176.302,483.889 168.371,528.283 " fill="none" id="Image-backto-PowerUps" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="427.294,319.123,441.602,323.043,427.973,328.895,427.294,319.123" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[e1d260672d2c185e66efea3aab192c21]
+reverse link Stage to AbstractScreen--><path codeLine="428" d="M1293.481,189.357 C1304.065,209.524 1319.843,239.589 1333.654,265.895 " fill="none" id="Stage-backto-AbstractScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="1289.099,191.555,1286.929,176.883,1297.779,187.005,1289.099,191.555" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[e0d149e0e5cf1b01deae8472facec287]
+reverse link Screen to AbstractScreen--><path codeLine="429" d="M1383.158,190.834 C1379.966,210.973 1375.332,240.226 1371.272,265.895 " fill="none" id="Screen-backto-AbstractScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1378.335,189.945,1385.363,176.883,1388.016,191.478,1378.335,189.945" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[0241a2e4649d743fa5b0ec058beb0998]
+reverse link AbstractScreen to CharSelectScreen--><path codeLine="432" d="M1412.53,372.771 C1426.859,390.145 1440.88,410.627 1449.35,431.9 C1463.294,466.914 1504.685,1027.453 1515.395,1175.188 " fill="none" id="AbstractScreen-backto-CharSelectScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="1408.771,375.914,1403.367,362.103,1416.205,369.53,1408.771,375.914" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[f8271743d300c6adb32d3891b88731aa]
+reverse link AbstractScreen to StageSelectScreen--><path codeLine="433" d="M1364.951,391.524 C1373.428,635.936 1401.792,1453.242 1407.679,1622.796 " fill="none" id="AbstractScreen-backto-StageSelectScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="1360.051,391.608,1364.461,377.44,1369.844,391.265,1360.051,391.608" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[0b160ea8b8d9468d0a243d1dd357d546]
+reverse link AbstractScreen to StartingScreen--><path codeLine="434" d="M1414.672,357.161 C1441.888,376.978 1474.529,403.48 1499.05,431.9 C1542.8,482.608 1578.542,553.406 1595.993,591.192 " fill="none" id="AbstractScreen-backto-StartingScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="1411.732,361.081,1403.185,348.957,1417.423,353.108,1411.732,361.081" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[2ebb7cb007fe2779be3ce27e2bd2b099]
+reverse link AbstractScreen to MainGameScreen--><path codeLine="435" d="M1343.202,391.279 C1328.236,450.688 1310.05,539.007 1310.05,617.4 C1310.05,617.4 1310.05,617.4 1310.05,1655.15 C1310.05,1805.909 1127.007,1909.012 1039.059,1949.85 " fill="none" id="AbstractScreen-backto-MainGameScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="1338.491,389.907,1346.73,377.566,1347.983,392.35,1338.491,389.907" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[189d7d4aef14e9787fe4e6b07fab7f03]
+reverse link Game to Bomberman--><path codeLine="437" d="M1861.496,188.153 C1842.694,213.493 1811.467,255.563 1789.207,285.565 " fill="none" id="Game-backto-Bomberman" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="none" points="1857.583,185.206,1869.861,176.883,1865.451,191.044,1857.583,185.206" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[2bf8c01b43bf2cf03bb49acd0d53d2b3]
+link DesktopLauncher to Bomberman--><path codeLine="439" d="M1767.178,187.439 C1766.408,211.687 1765.134,251.923 1764.189,281.897 " fill="none" id="DesktopLauncher-to-Bomberman" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#A80036" points="1764.07,285.502,1767.0665,279.2931,1764.1799,282.0037,1761.4693,279.1172,1764.07,285.502" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[47cec0abc33f7bdf1c13f3511044644d]
+link Bomberman to StartingScreen--><path codeLine="441" d="M1744.204,357.938 C1713.138,416.92 1651.573,533.82 1622.901,588.252 " fill="none" id="Bomberman-to-StartingScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#A80036" points="1621.228,591.43,1626.6383,587.1569,1622.8569,588.3321,1621.6817,584.5507,1621.228,591.43" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[fe3cf420e24c1e9c814cb416250b3b0b]
+link StartingScreen to CharSelectScreen--><path codeLine="443" d="M1606.843,644.721 C1604.288,720.468 1593.193,947.611 1548.75,1129.8 C1545.32,1143.856 1540.112,1158.787 1534.946,1171.933 " fill="none" id="StartingScreen-to-CharSelectScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#A80036" points="1533.637,1175.237,1538.5586,1170.4092,1534.9248,1171.9825,1533.3515,1168.3487,1533.637,1175.237" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[76daebdeca1b115a459b50be6ede0913]
+link CharSelectScreen to StageSelectScreen--><path codeLine="445" d="M1509.2,1247.449 C1488.676,1330.455 1437.66,1536.808 1417.318,1619.086 " fill="none" id="CharSelectScreen-to-StageSelectScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#A80036" points="1416.436,1622.67,1420.6653,1617.2255,1417.2755,1619.2722,1415.2288,1615.8823,1416.436,1622.67" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[20486c80db8c2d4bfe054a2f01b1a234]
+link StageSelectScreen to MainGameScreen--><path codeLine="447" d="M1407.896,1686.132 C1404.697,1738.142 1390.403,1842.778 1328.25,1898.4 C1286.579,1935.689 1125.355,1956.521 1042.594,1964.963 " fill="none" id="StageSelectScreen-to-MainGameScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#A80036" points="1038.954,1965.334,1045.5026,1967.4895,1042.4364,1964.9838,1044.9422,1961.9176,1038.954,1965.334" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[ac5900f122700291d9e24ac30326aa92]
+link Alien to SpawnEnemies--><path codeLine="449" d="M1065.05,1242.934 C1065.05,1313.333 1065.05,1487.122 1065.05,1584.604 " fill="none" id="Alien-to-SpawnEnemies" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#FFFFFF" points="1065.05,1593.795,1067.85,1589.595,1065.05,1585.395,1062.25,1589.595,1065.05,1593.795" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="22.4" x="1041.075" y="1257.6511">many</text><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="4.9" x="1059.9395" y="1586.3727">1</text><!--MD5=[0633ef6ca4fb8b758c8b2aa831f41efd]
+link Caveman to SpawnEnemies--><path codeLine="450" d="M1143.828,1242.934 C1130.325,1313.333 1097.005,1487.122 1078.308,1584.604 " fill="none" id="Caveman-to-SpawnEnemies" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#FFFFFF" points="1076.544,1593.795,1080.0871,1590.1996,1078.131,1585.5463,1074.5879,1589.1416,1076.544,1593.795" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="22.4" x="1119.0202" y="1257.6511">many</text><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="4.9" x="1072.4212" y="1586.3727">1</text><!--MD5=[aabaa8b66131162c917c4f070f88257c]
+link NinjaBlue to SpawnEnemies--><path codeLine="451" d="M1227.814,1242.934 C1199.863,1313.473 1130.787,1487.822 1092.21,1585.192 " fill="none" id="NinjaBlue-to-SpawnEnemies" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#FFFFFF" points="1088.808,1593.795,1092.9576,1590.9209,1091.9006,1585.985,1087.751,1588.8591,1088.808,1593.795" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="22.4" x="1202.1183" y="1257.6511">many</text><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="4.9" x="1085.7392" y="1586.3727">1</text><!--MD5=[1d46a59c4dd99bb28ab91d0added3b23]
+link Skunk to SpawnEnemies--><path codeLine="452" d="M991.48,1242.934 C1004.087,1313.333 1035.209,1487.122 1052.667,1584.604 " fill="none" id="Skunk-to-SpawnEnemies" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#FFFFFF" points="1054.312,1593.795,1056.3301,1589.1682,1052.8354,1585.5258,1050.8173,1590.1526,1054.312,1593.795" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="22.4" x="968.2827" y="1257.6511">many</text><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="4.9" x="1048.2787" y="1586.3727">1</text><!--MD5=[20a14f7e0fc4123d68601b5a07db182e]
+link Soft to SpawnSoft--><path codeLine="454" d="M840.35,707.882 C840.35,855.26 840.35,1147.097 840.35,1283.632 " fill="none" id="Soft-to-SpawnSoft" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#FFFFFF" points="840.35,1292.795,843.15,1288.595,840.35,1284.395,837.55,1288.595,840.35,1292.795" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="22.4" x="817.3375" y="722.5603">many</text><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="4.9" x="835.2548" y="1285.3991">1</text><!--MD5=[def793804c749857d6612c202c0cfb3e]
+link Solid to SpawnSolid--><path codeLine="455" d="M50.4,698.005 C56.483,850.759 69.671,1182.041 74.676,1307.656 " fill="none" id="Solid-to-SpawnSolid" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#FFFFFF" points="75.04,1316.868,77.6716,1312.5605,74.7076,1308.4746,72.076,1312.7821,75.04,1316.868" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="22.4" x="27.4843" y="712.9401">many</text><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="4.9" x="69.6452" y="1309.4265">1</text><!--MD5=[987163bda176657d00b897fd4efd5755]
+link PowerUps to SpawnPowerUps--><path codeLine="456" d="M163.373,707.882 C166.943,864.633 174.223,1184.806 177.023,1307.719 " fill="none" id="PowerUps-to-SpawnPowerUps" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#FFFFFF" points="177.233,1316.924,179.94,1312.6635,177.0484,1308.526,174.3414,1312.7865,177.233,1316.924" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="22.4" x="140.4711" y="722.5603">many</text><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="4.9" x="171.9226" y="1309.4893">1</text><!--MD5=[ac64f8a861473ff6448992825d305299]
+link SpawnEnemies to MainGameScreen--><path codeLine="459" d="M1051.316,1715.007 C1037.736,1774.227 1017.177,1863.841 1004.43,1919.393 " fill="none" id="SpawnEnemies-MainGameScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="42.7" x="1011.15" y="1895.9466">buildStage</text><!--MD5=[8378f04762297b06c73ece0ef142dcee]
+link SpawnSoft to MainGameScreen--><path codeLine="460" d="M826.35,1423.114 C807.961,1523.641 785.939,1721.195 859.25,1864.8 C878.01,1901.557 916.237,1929.41 947.03,1947.099 " fill="none" id="SpawnSoft-MainGameScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="42.7" x="859.95" y="1658.2966">buildStage</text><!--MD5=[f383ab24ba6ae47cda1c84711339662d]
+link SpawnSolid to MainGameScreen--><path codeLine="461" d="M67.032,1398.985 C46.795,1494.836 11.473,1737.932 138.25,1864.8 C195.972,1922.564 777.798,1957.956 947.016,1967.091 " fill="none" id="SpawnSolid-MainGameScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="42.7" x="138.95" y="1658.2966">buildStage</text><!--MD5=[ae91566742fb1fb7bca25e89f925a3c0]
+link SpawnPowerUps to MainGameScreen--><path codeLine="462" d="M181.468,1399.09 C191.751,1496.271 232.12,1743.994 381.85,1864.8 C469.238,1935.304 820.043,1960.392 946.89,1967.266 " fill="none" id="SpawnPowerUps-MainGameScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="42.7" x="382.55" y="1658.2966">buildStage</text><!--MD5=[a1fb491c7de20a3257ce64c678c0ea47]
+link GameStage to MainGameScreen--><path codeLine="463" d="M932.316,1129.87 C937.734,1215.893 944.818,1325.534 951.65,1423.1 C964.46,1606.003 981.393,1823.206 988.981,1919.372 " fill="none" id="GameStage-MainGameScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="42.7" x="952.35" y="1361.8466">buildStage</text><!--MD5=[39013d1385f3a70d383d43e678535a02]
+link HUD to MainGameScreen--><path codeLine="464" d="M1758.26,1802.332 C1748.439,1838.662 1731.499,1874.089 1702.75,1898.4 C1652.035,1941.275 1187.984,1962.184 1038.863,1967.833 " fill="none" id="HUD-MainGameScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="42.7" x="1712.55" y="1895.9466">buildStage</text><!--MD5=[df165a51689b3c31d738e4b61cf251df]
+link Player to MainGameScreen--><path codeLine="466" d="M729.799,1849.386 C744.282,1867.509 760.361,1884.323 778.05,1898.4 C827.708,1937.915 900.235,1955.849 947.016,1963.71 " fill="none" id="Player-MainGameScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="42.7" x="778.75" y="1895.9466">buildStage</text><!--MD5=[d1a464d242dda4ae57f91c501e3712c0]
+link PlayerInput to Player--><path codeLine="467" d="M502.117,1272.082 C516.481,1314.838 536.753,1375.164 556.941,1435.259 " fill="none" id="PlayerInput-to-Player" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#A80036" points="559.853,1443.925,561.1693,1439.0519,557.1773,1435.9625,555.861,1440.8357,559.853,1443.925" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[95ee9419f6a0b54ba312407310b46446]
+link PlayerAnimation to PlayerInput--><path codeLine="468" d="M334.544,654.269 C359.919,750.043 430.157,1015.161 463.687,1141.707 " fill="none" id="PlayerAnimation-to-PlayerInput" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#A80036" points="466.032,1150.569,467.6637,1145.7922,463.882,1142.4488,462.2503,1147.2256,466.032,1150.569" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[e3bd65e400da1d1eda62d5edc3aac8e2]
+link Bomb to PlayerInput--><path codeLine="469" d="M481.95,712.257 C481.95,833.7 481.95,1042.552 481.95,1147.118 " fill="none" id="Bomb-to-PlayerInput" style="stroke:#A80036;stroke-width:0.6999999999999998;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="481.95,1150.793,484.75,1144.493,481.95,1147.293,479.15,1144.493,481.95,1150.793" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[9e139278058f6df634b118709d89f439]
+link DirectionEnum to Player--><path codeLine="470" d="M723.793,673.897 C710.409,814.275 674.436,1191.449 651.231,1434.79 " fill="none" id="DirectionEnum-to-Player" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#FFFFFF" points="650.363,1443.932,653.5516,1440.0189,651.1659,1435.5705,647.9773,1439.4836,650.363,1443.932" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[46683df3838acd3666c116b190a60a21]
+link StateEnum to Player--><path codeLine="471" d="M630.35,673.897 C630.35,814.275 630.35,1191.449 630.35,1434.79 " fill="none" id="StateEnum-to-Player" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#FFFFFF" points="630.35,1443.932,633.15,1439.732,630.35,1435.532,627.55,1439.732,630.35,1443.932" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[aa7e874a6dd2a30f3aa3866d82b9ed5d]
+link ColorEnum to Player--><path codeLine="472" d="M506.135,1654.45 C511.294,1654.45 516.446,1654.45 521.605,1654.45 " fill="none" id="ColorEnum-to-Player" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#FFFFFF" points="530.887,1654.45,526.687,1651.65,522.487,1654.45,526.687,1657.25,530.887,1654.45" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[7e3e2c185787e28afa93f30f87a94a80]
+link EnemyMove to Enemy--><path codeLine="474" d="M1156.75,377.503 C1156.75,391.02 1156.75,406.266 1156.75,422.359 " fill="none" id="EnemyMove-to-Enemy" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#A80036" points="1156.75,431.655,1159.55,427.455,1156.75,423.255,1153.95,427.455,1156.75,431.655" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[019dbedb3be102c29ad817d9a2cce454]
+link EnemyAnimation to EnemyMove--><path codeLine="475" d="M1156.75,201.74 C1156.75,218.071 1156.75,237.958 1156.75,256.781 " fill="none" id="EnemyAnimation-to-EnemyMove" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#A80036" points="1156.75,265.909,1159.55,261.709,1156.75,257.509,1153.95,261.709,1156.75,265.909" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[ccdae3ae1dc5a00d050d83f6ea12f7f6]
+link DirectionEnum to Enemy--><path codeLine="476" d="M727.475,562.31 C729.484,510.902 741.937,437.724 793.1,404.6 C838.019,375.522 987.581,377.811 1033.9,404.6 C1043.98,410.431 1053.304,417.431 1061.914,425.292 " fill="none" id="DirectionEnum-to-Enemy" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#FFFFFF" points="1068.676,431.774,1067.5825,426.8461,1062.613,425.9602,1063.7066,430.8881,1068.676,431.774" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[0f8001ca833c4ac35261516d2a38f59b]
+link StateEnum to Enemy--><path codeLine="477" d="M627.081,562.212 C627.578,510.727 637.987,437.493 688.8,404.6 C720.986,383.761 1000.706,385.406 1033.9,404.6 C1043.98,410.431 1053.304,417.431 1061.914,425.292 " fill="none" id="StateEnum-to-Enemy" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#FFFFFF" points="1068.676,431.774,1067.5825,426.8461,1062.613,425.9602,1063.7066,430.8881,1068.676,431.774" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[0a1d6f570de6742fd1fc878d40bd0ce1]
+link EnemyEnum to Enemy--><path codeLine="478" d="M1034.159,618.1 C1039.136,618.1 1044.113,618.1 1049.083,618.1 " fill="none" id="EnemyEnum-to-Enemy" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#FFFFFF" points="1058.344,618.1,1054.144,615.3,1049.944,618.1,1054.144,620.9,1058.344,618.1" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[f1c3538d004e0f14e9e86afb6c606c90]
+reverse link ScreenEnum to ScreenManager--><path codeLine="480" d="M1607.55,86.534 C1607.55,97.314 1607.55,108.836 1607.55,119.63 " fill="none" id="ScreenEnum-backto-ScreenManager" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#A80036" points="1607.55,77.287,1604.75,81.487,1607.55,85.687,1610.35,81.487,1607.55,77.287" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><!--MD5=[8d11f952d9692e230610964b86f9f09e]
+reverse link ScreenManager to Bomberman--><path codeLine="481" d="M1672.741,210.266 C1681.54,217.259 1690.171,224.728 1697.85,232.4 C1713.852,248.374 1728.986,268.534 1740.634,285.579 " fill="none" id="ScreenManager-backto-Bomberman" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><polygon fill="#A80036" points="1665.328,204.505,1666.9293,209.292,1671.964,209.6551,1670.3627,204.868,1665.328,204.505" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="25.2" x="1708.35" y="242.5466">create</text><!--MD5=[0f1fdc768008da241faf281bed516649]
+link ScreenManager to StartingScreen--><path codeLine="482" d="M1607.55,211.575 C1607.55,305.2 1607.55,517.37 1607.55,591.36 " fill="none" id="ScreenManager-StartingScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="21" x="1608.25" y="325.4966">show</text><!--MD5=[c6aae438f71771a3c902df59a165ed90]
+link ScreenManager to CharSelectScreen--><path codeLine="483" d="M1596.651,211.533 C1584.471,264.152 1565.214,353.766 1555.75,431.9 C1521.205,717.115 1517.957,1064.707 1517.859,1175.181 " fill="none" id="ScreenManager-CharSelectScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="21" x="1559.95" y="408.4466">show</text><!--MD5=[ea17bb9367e875b3b07926725e238daf]
+link ScreenManager to StageSelectScreen--><path codeLine="484" d="M1583.029,211.407 C1556.45,263.004 1515.535,350.798 1498.35,431.9 C1399.657,897.736 1405.054,1483.251 1407.966,1622.866 " fill="none" id="ScreenManager-StageSelectScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="21" x="1499.05" y="621.9466">show</text><!--MD5=[bbc23d19d6d353d5d8dd2085ef94859b]
+link ScreenManager to MainGameScreen--><path codeLine="485" d="M1643.796,211.435 C1663.767,240.849 1684.55,281.05 1684.55,320.95 C1684.55,320.95 1684.55,320.95 1684.55,1655.15 C1684.55,1939.693 1193.332,1967.861 1038.863,1969.688 " fill="none" id="ScreenManager-MainGameScreen" style="stroke:#A80036;stroke-width:0.6999999999999998;"/><text fill="#000000" font-family="sans-serif" font-size="9.1" lengthAdjust="spacing" textLength="21" x="1685.25" y="981.3966">show</text><!--MD5=[b39703e7d456b59138d96fccfe338e24]
+@startuml
+skinparam classAttributeIconSize 0
+
+class DesktopLauncher{
+    +main(): void
+}
+
+class Bomberman{
+    +SpriteBatch batch
+    +create(): void
+    +render(): void
+    +dispose(): void
+}
+
+class StartingScreen{
+    +buildStage(): void
+    +dispose(): void
+}
+class CharSelectScreen{
+    +{static}colorEnum: ColorEnum
+    +buildStage(): void
+    +setColorEnum(): void
+    +dispose(): void
+}
+class StageSelectScreen{
+    +{static}stageNum: int
+    +buildStage(): void
+    +setStageNum(): void
+}
+-class ScreenManager{
+    -{static}instance: ScreenManager
+    -game: Game
+    -ScreenManager()
+    +{static} getInstance(): ScreenManager
+    + initialize(): void
+    + showScreen(): void
+}
+abstract class AbstractScreen{
+    #AbstractScreen()
+    +{abstract} buildStage(): void
+    + show(): void
+    + render(): void
+    + resize(): void
+    + pause(): void
+    + resume(): void
+    + hide(): void
+}
+
+enum DirectionEnum{
+    LEFT
+    RIGHT
+    UP
+    DOWN
+    NONE
+    String directionName
+    +StateEnum()
+    +toString():String
+}
+enum StateEnum{
+    WALK
+    STILL
+    HWALK
+    HSTILL
+    DEATH
+    stateName: String
+    +StateEnum()
+    +toString():String
+}
+class Bomb{
+    +gameStage: GameStage
+    +player: Player
+    +atlas: TextureAtlas
+    + currentAni: Animation<TextureAtlas.AtlasRegion>
+    +elapsedTime: float
+    + bomb: Sprite
+    +stage: int
+    +x: int
+    +y: int
+    +stillAlive: boolean
+    +Bomb()
+    +draw(): void
+    +act(): void
+    -addExplosion(): void
+    -checkValid(): boolean
+    -checkSolid(): boolean
+}
+enum ColorEnum{
+    BLACK
+    BLUE
+    GREEN
+    RED
+    WHITE
+    colorName: String
+    ColorEnum()
+    +toString(): String
+}
+class Player{
+    -playerInput: PlayerInput
+    -atlas: TextureAtlas
+    -player: Sprite
+    -currentAni: Animation <TextureAtlas.AtlasRegion>
+    -elapsedTime: float
+    -currentAction: MoveByAction
+    -stage: Stage
+    -gameStage: GameStage
+    -stepCount: int
+    -borderX: int
+    -borderY: int
+    -borerWidth: int
+    -borderHeight: int
+    -direction: DirectionEnum
+    -state: StateEnum
+    +Player()
+    +draw():void
+    +act(): void
+    #positionChanged(): void
+    +position(): void
+    +input(): void
+    #switchCharacter(): TextureAtlas
+    +getState(): StateEnum
+    #setState():void
+    +getDirection(): DirectionEnum
+    #setDirection(): void
+    + getStepCount(): int
+    #setStepCount(): void
+    +getCurrentAni(): Animation <TextureAtlas.AtlasRegion>
+    #setCurrentAni(): void
+    +getElapsedTime(): float
+    #setElapsedTime(): void
+    +getCurrentAction(): MoveByAction
+    +setCurrentAction(): void
+    +getAtlas(): TextureAtlas
+    +getStage(): Stage
+    +getBorderX(): float
+    +getBorderY(): float
+    +getBorderWidth(): float
+    +getBorderHeight(): float
+}
+class PlayerAnimation{
+    -player: Player
+    -atlas: TextureAtlas
+    +PlayerAnimation()
+    +updateAni(): void
+}
+class PlayerInput{
+    -player: Player
+    -gameStage: GameStage
+    -stage: Stage
+    -playerAni: PlayerAnimation
+    #PlayerInput():
+    #inputContent(): void
+    #checkBorder(): boolean
+    #checkSoft(): boolean
+    #checkSolid(): boolean
+}
+class Alien{
+    -alien: Sprite
+    +Alien()
+    +draw(): void
+}
+class Caveman{
+    -caveman: Sprite
+    +Caveman()
+    +draw(): void
+}
+class NinjaBlue{
+    -ninjaBlue: Sprite
+    +NinjaBlue()
+    +draw(): void
+}
+class Skunk{
+    -skunk: Sprite
+    +Skunk()
+    +draw(): void
+}
+class SpawnEnemies{
+    -stage: Stage
+    -stageNum: int
+    -gameStage: GameStage
+    +SpawnEnemies()
+    +execute(): void
+    +spawnSkunk(): void 
+    +spawnCaveman(): void 
+    +spawnNinjaBlue(): void 
+    +spawnAlien(): void 
+}
+class EnemyAnimation{
+    -enemy: Enemy
+    -enemyAtlas: TextureAtlas
+    +EnemyAnimation()
+    +updateAni(): void
+}
+class Enemy{
+    -enemy: EnemyEnum
+    #enemyAtlas: TextureAtlas
+    #currentAni: Animation<TextureAtlas.AtlasRegion>
+    #currentAction: MoveByAction
+    -elapsedTime: float
+    -direction: DirectionEnum
+    -state: StateEnum
+    -isAlive: boolean
+    #enemyMove: EnemyMove
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    #Enemy()
+    #switchAtlas(): void
+    #setBorder(): void
+    +draw(): void
+    +act(): void
+    #positionChanged(): void
+    +setName(): void
+    +getEnemyAtlas(): TextureAtlas
+    +getCurrentAni(): Animation<TextureAtlas.AtlasRegion>
+    +setCurrentAni(): void
+    +setBorderX(): void
+    +setBorderY(): void
+    +getBorderX():int
+    +getBorderY():int
+    +getBorderWidth():int
+    +getBorderHeight():int
+    +getState(): StateEnum
+    +setState(): void
+    +setCurrentAction(): void
+    +getCurrentAction(): MoveByAction
+    +getElapsedTime(): float
+    +setElapsedTime(): void
+}
+class EnemyMove{
+    -enemy: Enemy
+    -gameStage: GameStage
+    -enemyAnimation: EnemyAnimation
+    +EnemyMove()
+    -horizontalMove(): void
+    -verticalMove(): void
+    -checkSoft(): void
+    -checkBorder(): void
+}
+class EnemyEnum{
+    NINJA_BLUE
+    ALIEN
+    SKUNK
+    CAVEMAN
+    +name: String
+    +EnemyEnum()
+    +toString: String
+}
+class GameStage{
+    -listPlayer: ArrayList<Player>
+    -listSoft: ArrayList<Soft>
+    -listSolid: ArrayList<Solid>
+    -listEnemy: ArrayList<Enemy>
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    -txStatusBar: Sprite
+    -txBackground: Sprite
+    +GameStage()
+    -switchBackground(): Sprite
+    +draw(): void
+    +act(): void
+    +attachPlayer(): void
+    +detachPlayer(): void
+    +attachSoft(): void
+    +detachSoft(): void
+    +attachSolid(): void
+    +attachEnemy(): void
+    +detachVoid(): void
+    +getBorderX(): int
+    +getBorderY(): int
+    +getBorderWidth(): int
+    +getBorderHeight(): int
+    +getListSoft(): ArrayList<Soft>
+    +getListSolid(): ArrayList<Solid>
+    +getListPlayer(): ArrayList<Player>
+}
+class Soft{
+    -soft: Sprite
+    +gameStage: GameStage
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    +Soft()
+    #switchSprite(): Sprite
+    +draw(): void
+    +act(): void
+    +delSoft(): void
+    +getBorderX(): int
+    +getBorderY(): int
+    +getBorderWidth(): int
+    +getBorderHeight(): int
+}
+class Solid{
+    -solid: Sprite
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    +Soft()
+    -switchSprite(): Sprite
+    +draw(): void
+    +act(): void
+    +getBorderX(): int
+    +getBorderY(): int
+    +getBorderWidth(): int
+    +getBorderHeight(): int
+}
+class SpawnSoft{
+    -stage: Stage
+    -stageNum: int
+    -gameStage: GameStage
+    +SpawnSoft()
+    +execute(): void
+    -stage1(): void
+    -stage2(): void
+    -stage3(): void
+    -stage4(): void
+    -stage5(): void
+}
+class SpawnSolid{
+    -stage: Stage
+    -stageNum: int
+    -gameStage: GameStage
+    +SpawnSolid()
+    +execute(): void
+}
+class PowerUps{
+    -soft: Sprite
+    +gameStage: GameStage
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    +Soft()
+    #switchSprite(): Sprite
+    +draw(): void
+    +act(): void
+    +delSoft(): void
+    +getBorderX(): int
+    +getBorderY(): int
+    +getBorderWidth(): int
+    +getBorderHeight(): int
+}
+class SpawnPowerUps{
+    -stage: Stage
+    -stageNum: int
+    -gameStage: GameStage
+    +SpawnPowerUps()
+    +execute(): void
+}
+enum ScreenEnum{
+    STARTING_SCREEN
+    CHAR_SELECT_SCREEN
+    STAGE_SELECT_SCREEN
+    MAIN_GAME
+}
+
+class MainGameScreen{
+    -stageNum: int
+    -color: ColorEnum
+    +{static} playerX: int
+    +{static} playerY: int
+    +MainGameScreen()
+    +buildStage(): void
+    +dispose(): void
+}
+class HUD{
+    -hudX: int
+    -hudY: int
+    -bomb: Sprite
+    -currentBomb: Sprite
+    -{static} bombVal: int
+    -life: Sprite
+    -currentLife: Sprite
+    -{static} lifeVal: int
+    -range: Sprite
+    -currentRange: Sprite
+    -{static} rangeVal: int
+    -speed: Sprite
+    -currentSpeed: Sprite
+    -{static} speedVal: int
+    -hudAtlas: TextureAtlas
+    -{static}isUpdated: boolean
+    +HUD()
+    -setPositionSprite(): void
+    -initializeSprite():void
+    -setScaleSprite(): void
+    -updateCurrentVal(): void
+    +draw(): void
+    +act(): void
+    +{static}setBombVal(): void
+    +{static}setLifeVal(): void
+    +{static}setRangeVal(): void
+    +{static}setSpeedVal(): void
+
+}
+'LibGDX class
+class Game<LibGDX>{}
+hide Game methods
+hide Game members
+class Image<LibGDX>{}
+hide Image methods
+hide Image members
+class Stage<LibGDX>{}
+hide Stage methods
+hide Stage members
+class Screen<LibGDX>{}
+hide Screen methods
+hide Screen members
+
+'Relationships
+
+Enemy <|- - Alien
+Enemy <|- - Skunk
+Enemy <|- - Caveman
+Enemy <|- - NinjaBlue
+
+Image <|- Enemy
+Image <|- - Bomb
+Image <|- Player
+Image <|- - GameStage
+Image <|- - Soft
+Image <|- - Solid
+Image <|- - PowerUps
+
+Stage <|- - AbstractScreen
+Screen <|.. AbstractScreen
+
+
+AbstractScreen <|- - CharSelectScreen
+AbstractScreen <|- - StageSelectScreen
+AbstractScreen <|- - StartingScreen
+AbstractScreen <|- - MainGameScreen
+
+Game <|- - Bomberman
+
+DesktopLauncher - -> Bomberman
+
+Bomberman - -> StartingScreen
+
+StartingScreen - -> CharSelectScreen
+
+CharSelectScreen - -> StageSelectScreen
+
+StageSelectScreen - -> MainGameScreen
+
+Alien "many" - -o "1"SpawnEnemies
+Caveman "many" - -o "1"SpawnEnemies
+NinjaBlue "many" - -o "1"SpawnEnemies
+Skunk "many" - -o "1"SpawnEnemies
+
+Soft "many" - -o "1" SpawnSoft
+Solid "many" - -o "1" SpawnSolid
+PowerUps "many" - -o "1" SpawnPowerUps
+
+'Used to build stage in MainGameScreen
+SpawnEnemies - - MainGameScreen: buildStage
+SpawnSoft - - MainGameScreen: buildStage
+SpawnSolid - - MainGameScreen: buildStage
+SpawnPowerUps - - MainGameScreen: buildStage
+GameStage - - MainGameScreen: buildStage
+HUD - - MainGameScreen: buildStage
+
+Player - - MainGameScreen: buildStage
+PlayerInput - -* Player
+PlayerAnimation - -* PlayerInput
+Bomb ..> PlayerInput
+DirectionEnum -o Player
+StateEnum -o Player
+ColorEnum -o Player
+
+EnemyMove - -* Enemy
+EnemyAnimation - -* EnemyMove
+DirectionEnum -o Enemy
+StateEnum -o Enemy
+EnemyEnum -o Enemy
+
+ScreenEnum *- -ScreenManager
+ScreenManager *- - Bomberman: create
+ScreenManager - - StartingScreen: show
+ScreenManager - - CharSelectScreen: show
+ScreenManager - - StageSelectScreen: show
+ScreenManager - - MainGameScreen: show
+@enduml
+
+@startuml
+skinparam classAttributeIconSize 0
+
+class DesktopLauncher{
+    +main(): void
+}
+
+class Bomberman{
+    +SpriteBatch batch
+    +create(): void
+    +render(): void
+    +dispose(): void
+}
+
+class StartingScreen{
+    +buildStage(): void
+    +dispose(): void
+}
+class CharSelectScreen{
+    +{static}colorEnum: ColorEnum
+    +buildStage(): void
+    +setColorEnum(): void
+    +dispose(): void
+}
+class StageSelectScreen{
+    +{static}stageNum: int
+    +buildStage(): void
+    +setStageNum(): void
+}
+-class ScreenManager{
+    -{static}instance: ScreenManager
+    -game: Game
+    -ScreenManager()
+    +{static} getInstance(): ScreenManager
+    + initialize(): void
+    + showScreen(): void
+}
+abstract class AbstractScreen{
+    #AbstractScreen()
+    +{abstract} buildStage(): void
+    + show(): void
+    + render(): void
+    + resize(): void
+    + pause(): void
+    + resume(): void
+    + hide(): void
+}
+
+enum DirectionEnum{
+    LEFT
+    RIGHT
+    UP
+    DOWN
+    NONE
+    String directionName
+    +StateEnum()
+    +toString():String
+}
+enum StateEnum{
+    WALK
+    STILL
+    HWALK
+    HSTILL
+    DEATH
+    stateName: String
+    +StateEnum()
+    +toString():String
+}
+class Bomb{
+    +gameStage: GameStage
+    +player: Player
+    +atlas: TextureAtlas
+    + currentAni: Animation<TextureAtlas.AtlasRegion>
+    +elapsedTime: float
+    + bomb: Sprite
+    +stage: int
+    +x: int
+    +y: int
+    +stillAlive: boolean
+    +Bomb()
+    +draw(): void
+    +act(): void
+    -addExplosion(): void
+    -checkValid(): boolean
+    -checkSolid(): boolean
+}
+enum ColorEnum{
+    BLACK
+    BLUE
+    GREEN
+    RED
+    WHITE
+    colorName: String
+    ColorEnum()
+    +toString(): String
+}
+class Player{
+    -playerInput: PlayerInput
+    -atlas: TextureAtlas
+    -player: Sprite
+    -currentAni: Animation <TextureAtlas.AtlasRegion>
+    -elapsedTime: float
+    -currentAction: MoveByAction
+    -stage: Stage
+    -gameStage: GameStage
+    -stepCount: int
+    -borderX: int
+    -borderY: int
+    -borerWidth: int
+    -borderHeight: int
+    -direction: DirectionEnum
+    -state: StateEnum
+    +Player()
+    +draw():void
+    +act(): void
+    #positionChanged(): void
+    +position(): void
+    +input(): void
+    #switchCharacter(): TextureAtlas
+    +getState(): StateEnum
+    #setState():void
+    +getDirection(): DirectionEnum
+    #setDirection(): void
+    + getStepCount(): int
+    #setStepCount(): void
+    +getCurrentAni(): Animation <TextureAtlas.AtlasRegion>
+    #setCurrentAni(): void
+    +getElapsedTime(): float
+    #setElapsedTime(): void
+    +getCurrentAction(): MoveByAction
+    +setCurrentAction(): void
+    +getAtlas(): TextureAtlas
+    +getStage(): Stage
+    +getBorderX(): float
+    +getBorderY(): float
+    +getBorderWidth(): float
+    +getBorderHeight(): float
+}
+class PlayerAnimation{
+    -player: Player
+    -atlas: TextureAtlas
+    +PlayerAnimation()
+    +updateAni(): void
+}
+class PlayerInput{
+    -player: Player
+    -gameStage: GameStage
+    -stage: Stage
+    -playerAni: PlayerAnimation
+    #PlayerInput():
+    #inputContent(): void
+    #checkBorder(): boolean
+    #checkSoft(): boolean
+    #checkSolid(): boolean
+}
+class Alien{
+    -alien: Sprite
+    +Alien()
+    +draw(): void
+}
+class Caveman{
+    -caveman: Sprite
+    +Caveman()
+    +draw(): void
+}
+class NinjaBlue{
+    -ninjaBlue: Sprite
+    +NinjaBlue()
+    +draw(): void
+}
+class Skunk{
+    -skunk: Sprite
+    +Skunk()
+    +draw(): void
+}
+class SpawnEnemies{
+    -stage: Stage
+    -stageNum: int
+    -gameStage: GameStage
+    +SpawnEnemies()
+    +execute(): void
+    +spawnSkunk(): void 
+    +spawnCaveman(): void 
+    +spawnNinjaBlue(): void 
+    +spawnAlien(): void 
+}
+class EnemyAnimation{
+    -enemy: Enemy
+    -enemyAtlas: TextureAtlas
+    +EnemyAnimation()
+    +updateAni(): void
+}
+class Enemy{
+    -enemy: EnemyEnum
+    #enemyAtlas: TextureAtlas
+    #currentAni: Animation<TextureAtlas.AtlasRegion>
+    #currentAction: MoveByAction
+    -elapsedTime: float
+    -direction: DirectionEnum
+    -state: StateEnum
+    -isAlive: boolean
+    #enemyMove: EnemyMove
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    #Enemy()
+    #switchAtlas(): void
+    #setBorder(): void
+    +draw(): void
+    +act(): void
+    #positionChanged(): void
+    +setName(): void
+    +getEnemyAtlas(): TextureAtlas
+    +getCurrentAni(): Animation<TextureAtlas.AtlasRegion>
+    +setCurrentAni(): void
+    +setBorderX(): void
+    +setBorderY(): void
+    +getBorderX():int
+    +getBorderY():int
+    +getBorderWidth():int
+    +getBorderHeight():int
+    +getState(): StateEnum
+    +setState(): void
+    +setCurrentAction(): void
+    +getCurrentAction(): MoveByAction
+    +getElapsedTime(): float
+    +setElapsedTime(): void
+}
+class EnemyMove{
+    -enemy: Enemy
+    -gameStage: GameStage
+    -enemyAnimation: EnemyAnimation
+    +EnemyMove()
+    -horizontalMove(): void
+    -verticalMove(): void
+    -checkSoft(): void
+    -checkBorder(): void
+}
+class EnemyEnum{
+    NINJA_BLUE
+    ALIEN
+    SKUNK
+    CAVEMAN
+    +name: String
+    +EnemyEnum()
+    +toString: String
+}
+class GameStage{
+    -listPlayer: ArrayList<Player>
+    -listSoft: ArrayList<Soft>
+    -listSolid: ArrayList<Solid>
+    -listEnemy: ArrayList<Enemy>
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    -txStatusBar: Sprite
+    -txBackground: Sprite
+    +GameStage()
+    -switchBackground(): Sprite
+    +draw(): void
+    +act(): void
+    +attachPlayer(): void
+    +detachPlayer(): void
+    +attachSoft(): void
+    +detachSoft(): void
+    +attachSolid(): void
+    +attachEnemy(): void
+    +detachVoid(): void
+    +getBorderX(): int
+    +getBorderY(): int
+    +getBorderWidth(): int
+    +getBorderHeight(): int
+    +getListSoft(): ArrayList<Soft>
+    +getListSolid(): ArrayList<Solid>
+    +getListPlayer(): ArrayList<Player>
+}
+class Soft{
+    -soft: Sprite
+    +gameStage: GameStage
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    +Soft()
+    #switchSprite(): Sprite
+    +draw(): void
+    +act(): void
+    +delSoft(): void
+    +getBorderX(): int
+    +getBorderY(): int
+    +getBorderWidth(): int
+    +getBorderHeight(): int
+}
+class Solid{
+    -solid: Sprite
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    +Soft()
+    -switchSprite(): Sprite
+    +draw(): void
+    +act(): void
+    +getBorderX(): int
+    +getBorderY(): int
+    +getBorderWidth(): int
+    +getBorderHeight(): int
+}
+class SpawnSoft{
+    -stage: Stage
+    -stageNum: int
+    -gameStage: GameStage
+    +SpawnSoft()
+    +execute(): void
+    -stage1(): void
+    -stage2(): void
+    -stage3(): void
+    -stage4(): void
+    -stage5(): void
+}
+class SpawnSolid{
+    -stage: Stage
+    -stageNum: int
+    -gameStage: GameStage
+    +SpawnSolid()
+    +execute(): void
+}
+class PowerUps{
+    -soft: Sprite
+    +gameStage: GameStage
+    -borderX: int
+    -borderY: int
+    -borderWidth: int
+    -borderHeight: int
+    +Soft()
+    #switchSprite(): Sprite
+    +draw(): void
+    +act(): void
+    +delSoft(): void
+    +getBorderX(): int
+    +getBorderY(): int
+    +getBorderWidth(): int
+    +getBorderHeight(): int
+}
+class SpawnPowerUps{
+    -stage: Stage
+    -stageNum: int
+    -gameStage: GameStage
+    +SpawnPowerUps()
+    +execute(): void
+}
+enum ScreenEnum{
+    STARTING_SCREEN
+    CHAR_SELECT_SCREEN
+    STAGE_SELECT_SCREEN
+    MAIN_GAME
+}
+
+class MainGameScreen{
+    -stageNum: int
+    -color: ColorEnum
+    +{static} playerX: int
+    +{static} playerY: int
+    +MainGameScreen()
+    +buildStage(): void
+    +dispose(): void
+}
+class HUD{
+    -hudX: int
+    -hudY: int
+    -bomb: Sprite
+    -currentBomb: Sprite
+    -{static} bombVal: int
+    -life: Sprite
+    -currentLife: Sprite
+    -{static} lifeVal: int
+    -range: Sprite
+    -currentRange: Sprite
+    -{static} rangeVal: int
+    -speed: Sprite
+    -currentSpeed: Sprite
+    -{static} speedVal: int
+    -hudAtlas: TextureAtlas
+    -{static}isUpdated: boolean
+    +HUD()
+    -setPositionSprite(): void
+    -initializeSprite():void
+    -setScaleSprite(): void
+    -updateCurrentVal(): void
+    +draw(): void
+    +act(): void
+    +{static}setBombVal(): void
+    +{static}setLifeVal(): void
+    +{static}setRangeVal(): void
+    +{static}setSpeedVal(): void
+
+}
+class Game<LibGDX>{}
+hide Game methods
+hide Game members
+class Image<LibGDX>{}
+hide Image methods
+hide Image members
+class Stage<LibGDX>{}
+hide Stage methods
+hide Stage members
+class Screen<LibGDX>{}
+hide Screen methods
+hide Screen members
+
+
+Enemy <|- - Alien
+Enemy <|- - Skunk
+Enemy <|- - Caveman
+Enemy <|- - NinjaBlue
+
+Image <|- Enemy
+Image <|- - Bomb
+Image <|- Player
+Image <|- - GameStage
+Image <|- - Soft
+Image <|- - Solid
+Image <|- - PowerUps
+
+Stage <|- - AbstractScreen
+Screen <|.. AbstractScreen
+
+
+AbstractScreen <|- - CharSelectScreen
+AbstractScreen <|- - StageSelectScreen
+AbstractScreen <|- - StartingScreen
+AbstractScreen <|- - MainGameScreen
+
+Game <|- - Bomberman
+
+DesktopLauncher - -> Bomberman
+
+Bomberman - -> StartingScreen
+
+StartingScreen - -> CharSelectScreen
+
+CharSelectScreen - -> StageSelectScreen
+
+StageSelectScreen - -> MainGameScreen
+
+Alien "many" - -o "1"SpawnEnemies
+Caveman "many" - -o "1"SpawnEnemies
+NinjaBlue "many" - -o "1"SpawnEnemies
+Skunk "many" - -o "1"SpawnEnemies
+
+Soft "many" - -o "1" SpawnSoft
+Solid "many" - -o "1" SpawnSolid
+PowerUps "many" - -o "1" SpawnPowerUps
+
+SpawnEnemies - - MainGameScreen: buildStage
+SpawnSoft - - MainGameScreen: buildStage
+SpawnSolid - - MainGameScreen: buildStage
+SpawnPowerUps - - MainGameScreen: buildStage
+GameStage - - MainGameScreen: buildStage
+HUD - - MainGameScreen: buildStage
+
+Player - - MainGameScreen: buildStage
+PlayerInput - -* Player
+PlayerAnimation - -* PlayerInput
+Bomb ..> PlayerInput
+DirectionEnum -o Player
+StateEnum -o Player
+ColorEnum -o Player
+
+EnemyMove - -* Enemy
+EnemyAnimation - -* EnemyMove
+DirectionEnum -o Enemy
+StateEnum -o Enemy
+EnemyEnum -o Enemy
+
+ScreenEnum *- -ScreenManager
+ScreenManager *- - Bomberman: create
+ScreenManager - - StartingScreen: show
+ScreenManager - - CharSelectScreen: show
+ScreenManager - - StageSelectScreen: show
+ScreenManager - - MainGameScreen: show
+@enduml
+
+PlantUML version 1.2021.16(Thu Dec 09 00:25:22 ICT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>
