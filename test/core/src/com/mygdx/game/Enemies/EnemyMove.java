@@ -30,6 +30,7 @@ public class EnemyMove {
     }
 
     public void movement(){
+        if (enemy.isAlive() == false) return;
         if(enemy.getCurrentAction().isComplete()) {
             switch (enemy.getDirection()) {
                 case LEFT:
@@ -56,7 +57,7 @@ public class EnemyMove {
 
     public void death() {
         enemy.setState(StateEnum.DEATH);
-        enemyAnimation.updateAni();
+        enemyAnimation.updateDeathAni();
     }
 
     public void horizontalMove(){

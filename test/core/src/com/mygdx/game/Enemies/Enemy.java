@@ -58,17 +58,21 @@ public abstract class Enemy extends Image {
     }
     @Override
     public void draw(Batch batch,float parentAlpha){
+
         int x = (int) getX(), y = (int) getY();
         elapsedTime += Gdx.graphics.getDeltaTime();
+        if (isAlive == false) {
+            System.out.println(elapsedTime);
+            if (elapsedTime > 4)
+                this.del();
+        }
         if (this.gameStage.getDeath(x / 64, y/64) > 0) {
             enemyMove.death();
             return;
-//            this.gameStage.detachEnemy(this);
-//            this.del();
         } else {
             enemyMove.movement();
             boolean flip = (direction == DirectionEnum.RIGHT);
-            elapsedTime += Gdx.graphics.getDeltaTime();
+//            elapsedTime += Gdx.graphics.getDeltaTime();
             if (flip) {
                 batch.draw(currentAni.getKeyFrame(elapsedTime), getX() + getWidth(), getY(), -getWidth(), getHeight());
             } else {
@@ -104,7 +108,12 @@ public abstract class Enemy extends Image {
     public void setCurrentAni(Animation<TextureAtlas.AtlasRegion> currentAni) {this.currentAni = currentAni;}
 
     public boolean isAlive(){return isAlive;}
-
+    public void setDeadth(){
+        System.out.println("ok");
+        this.isAlive = false;
+        this.elapsedTime =  0;
+        gameStage.detachEnemy(this);
+    }
     public void setBorderX(int borderX){this.borderX = borderX;}
     public void setBorderY(int borderY){this.borderY = borderY;}
     public int getBorderX(){return borderX;}
