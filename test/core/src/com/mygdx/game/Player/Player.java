@@ -6,7 +6,6 @@ import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
-import com.mygdx.game.ConstantValue;
 import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.PowerUps.PowerUps;
 import com.mygdx.game.Stage.GameStage;
@@ -215,16 +214,33 @@ public class Player extends Image {
 
     public void setBombRange(int val) {
         this.bombRange += val;
+        updateHud();
     }
 
     public void setRemainBomb(int val) {
         remainBomb += val;
+        updateHud();
     }
 
     public void setMaxBomb(int val) {
         this.MaxBomb += val;
+        updateHud();
     }
+    public void updateHud() {
+        HUD.updateHUD(convertSpeedToVis(speed), health, bombRange,  MaxBomb);
+    }
+    public void death() {
+        this.setPosition(96, 64);
+        this.health -= 1;
+        health = health < 0 ? 0 : health;
+        updateHud();
 
+    }
+    private int convertSpeedToVis(float speed) {
+        if (speed == 0) return 3;
+        if (speed == 0.25) return 2;
+        return 1;
+    }
     public void setSpeed(float val) {
         this.speed += val;
         if (speed > 0.5) speed = 1;

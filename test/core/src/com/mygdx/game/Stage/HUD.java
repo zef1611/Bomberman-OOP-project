@@ -140,4 +140,10 @@ public class HUD extends Image {
         HUD.speedVal = speedVal;
         isUpdated = true;
     }
+    public static void updateHUD(int speedVal, int lifeVal, int rangeVal, int bombVal) {
+        setRangeVal(rangeVal);
+        setSpeedVal(speedVal);
+        setBombVal(bombVal);
+        setLifeVal(lifeVal);
+    }
 }
