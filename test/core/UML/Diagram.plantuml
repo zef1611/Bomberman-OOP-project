@@ -360,8 +360,9 @@ class HUD{
     -hudAtlas: TextureAtlas
     -{static}isUpdated: boolean
     +HUD()
-    -setPosition(): void
+    -setPositionSprite(): void
     -initializeSprite():void
+    -setScaleSprite(): void
     -updateCurrentVal(): void
     +draw(): void
     +act(): void
