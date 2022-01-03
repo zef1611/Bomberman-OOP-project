@@ -174,14 +174,14 @@ public class EnemyMove {
             if (enemy.getDirection() == DirectionEnum.DOWN) {
                 if (inRange(enemy.getX() + 5, enemy.getY() - 30, minX, maxX, minY, maxY)) {
                     System.out.println("Player is death");
-                    s.position(96, 64);
+                    s.death();
                     break;
                 }
             }
             if (enemy.getDirection() == DirectionEnum.UP) {
                 if (inRange(enemy.getX() + 5, enemy.getY() + 70, minX, maxX, minY, maxY)) {
                     System.out.println("Player is death");
-                    s.position(96, 64);
+                    s.death();
                     break;
 
                 }
@@ -189,14 +189,14 @@ public class EnemyMove {
             if (enemy.getDirection() == DirectionEnum.LEFT) {
                 if (inRange(enemy.getX() - 30, enemy.getY() + 5, minX, maxX, minY, maxY)) {
                     System.out.println("Player is death");
-                    s.position(96, 64);
+                    s.death();
                     break;
                 }
             }
             if (enemy.getDirection() == DirectionEnum.RIGHT) {
                 if (inRange(enemy.getX() + 70, enemy.getY() + 5, minX, maxX, minY, maxY)) {
                     System.out.println("Player is death");
-                    s.position(96, 64);
+                    s.death();
                     break;
                 }
             }
