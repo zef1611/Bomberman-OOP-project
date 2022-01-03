@@ -22,14 +22,10 @@ public class IncreaseSpeed extends PowerUps {
     public void execute(Player player) {
         this.player = player;
         player.setSpeed(-0.25F);
-        HUD.setSpeedVal(convertSpeedtoVis(player.getSpeed()));
+        player.updateHud();
         this.del();
 
     }
 
-    private int convertSpeedtoVis(float speed) {
-        if (speed == 0) return 3;
-        if (speed == 0.25) return 2;
-        return 1;
-    }
+
 }
