@@ -32,6 +32,7 @@ public class Player extends Image {
     private StateEnum state = StateEnum.STILL;
     private int remainBomb, health, MaxBomb, bombRange;
     private float speed;
+    private boolean death;
 
     public Player(ColorEnum color, Stage stage, GameStage gameStage) {
 //        The player needs to be able to modify the stage add bombs, break blocks...
@@ -65,6 +66,7 @@ public class Player extends Image {
         this.remainBomb = 0;
         this.MaxBomb = 1;
         this.bombRange = 1;
+        this.death = false;
         updateHud();
     }
 
@@ -210,6 +212,9 @@ public class Player extends Image {
         return bombRange;
     }
 
+    public boolean getDeath() {
+        return this.death;
+    }
     public void setBombRange(int val) {
         this.bombRange += val;
         updateHud();
@@ -228,9 +233,11 @@ public class Player extends Image {
         HUD.updateHUD(convertSpeedToVis(speed), health, bombRange,  MaxBomb);
     }
     public void death() {
-        this.setPosition(96, 64);
+        this.death = true;
+        playerInput.updateDeathAni();
         this.health -= 1;
         health = health < 0 ? 0 : health;
+        if (health == 0) GameOver();
         updateHud();
 
     }
@@ -255,5 +262,9 @@ public class Player extends Image {
                 return;
             }
         }
+    }
+
+    private void GameOver() {
+
     }
 }

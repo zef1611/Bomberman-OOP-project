@@ -31,4 +31,8 @@ public class PlayerAnimation {
         player.setCurrentAni(new Animation<>(1f / 8f, atlas.findRegions(region)));
     }
 
+    public void test(){
+
+    }
+
 }

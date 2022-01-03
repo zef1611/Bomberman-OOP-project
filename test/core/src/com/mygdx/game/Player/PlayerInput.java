@@ -190,4 +190,8 @@ public class PlayerInput {
 //        playerAni.updateAni();
 //        player.position(96,64);
     }
+
+    public void test() {
+
+    }
 }

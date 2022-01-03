@@ -49,7 +49,6 @@ public class EnemyMove {
         checkConflict(gameStage.getListSolid());
         checkConflict(gameStage.getListBomb());
         checkEnemy(gameStage.getListEnemy());
-        checkPowerUps(gameStage.getListPowerUps());
         checkPlayer(gameStage.getListPlayer());
 
     }
@@ -165,22 +164,22 @@ public class EnemyMove {
     private void checkPlayer(ArrayList<Player> arr){
         for (Player s: arr){
             if (s.getDeath()) continue;
-            float minY = s.getY() -5 , maxY = s.getY() + 64;
-            float minX = s.getX() -5, maxX = s.getX() + 64;
+            float minY = s.getY() -70 , maxY = s.getY() + 64;
+            float minX = s.getX() -70, maxX = s.getX() + 64;
 //            System.out.printf("MinX: %f maxX: %f, minY: %f maxY: %f\n",minX,maxX,minY,maxY);
 //            System.out.printf("X: %f, Y: %f\n",enemy.getX(),enemy.getY());
 
             if(enemy.getDirection() == DirectionEnum.DOWN){
                 if(inRange(enemy.getX() + 5 , enemy.getY() - 30 , minX, maxX, minY, maxY)) {
                     System.out.println("Player is death");
-                    s.isDeath();
+                    s.death();
                     break;
                 }
             }
             if(enemy.getDirection() == DirectionEnum.UP){
                 if(inRange(enemy.getX() + 5, enemy.getY() + 70 , minX, maxX, minY, maxY)){
                     System.out.println("Player is death");
-                    s.isDeath();
+                    s.death();
                     break;
 
                 }
@@ -188,14 +187,14 @@ public class EnemyMove {
             if(enemy.getDirection() == DirectionEnum.LEFT){
                 if(inRange(enemy.getX() - 30, enemy.getY() + 5, minX, maxX, minY, maxY)) {
                     System.out.println("Player is death");
-                    s.isDeath();
+                    s.death();
                     break;
                 }
             }
             if(enemy.getDirection() == DirectionEnum.RIGHT){
                 if(inRange(enemy.getX() + 70 , enemy.getY() +5 , minX, maxX, minY, maxY)){
                     System.out.println("Player is death");
-                    s.isDeath();
+                    s.death();
                     break;
                 }
             }
