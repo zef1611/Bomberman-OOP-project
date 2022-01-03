@@ -36,5 +36,6 @@ public class EnemyAnimation {
         String region = state+"_"+direction;
         enemy.setCurrentAni(new Animation<>(1f/3f,
                 enemyAtlas.findRegions(region)));
+        enemy.del();
     }
 }
