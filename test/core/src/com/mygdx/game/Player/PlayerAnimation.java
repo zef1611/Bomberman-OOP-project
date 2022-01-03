@@ -25,14 +25,9 @@ public class PlayerAnimation {
     }
 
     public void updateAni() {
-        player.setElapsedTime(0);
-        String state = player.getState().toString();
-        String region = String.format("bomberman_" + state);
-        player.setCurrentAni(new Animation<>(1f / 8f, atlas.findRegions(region)));
+        player.setElapsedTime(0.5F);
+        player.setCurrentAni(new Animation<>(0.8f, atlas.findRegions("bomberman_defeat")));
     }
 
-    public void test(){
-
-    }
 
 }

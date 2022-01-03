@@ -15,6 +15,7 @@ public class EnemyAnimation {
     }
 
     public void updateAni(){
+
         enemy.setElapsedTime(0);
         DirectionEnum directionEnum = enemy.getDirection();
         StateEnum stateEnum  = enemy.getState();
@@ -22,7 +23,6 @@ public class EnemyAnimation {
                 ? DirectionEnum.LEFT.toString() : directionEnum.toString();
         String state = stateEnum.toString();
         String region = state+"_"+direction;
-        System.out.println(region);
         enemy.setCurrentAni(new Animation<>(1f/3f,
                 enemyAtlas.findRegions(region)));
     }
@@ -35,6 +35,7 @@ public class EnemyAnimation {
         String state = stateEnum.toString();
         String region = state+"_"+direction;
         System.out.println(region);
+
         enemy.setCurrentAni( new Animation<>(1f,
                 enemyAtlas.findRegion("defeat_down"),
                 enemyAtlas.findRegion("defeat_up"),

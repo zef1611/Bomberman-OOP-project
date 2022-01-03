@@ -34,8 +34,8 @@ public class Player extends Image {
     private StateEnum state = StateEnum.STILL;
     private int remainBomb, health, MaxBomb, bombRange;
     private float speed;
-    private boolean death;
-
+    private boolean isAlive = true;
+    public boolean death;
     public Player(ColorEnum color, Stage stage, GameStage gameStage) {
 //        The player needs to be able to modify the stage add bombs, break blocks...
         this.stage = stage;
@@ -77,6 +77,14 @@ public class Player extends Image {
     public void draw(Batch batch, float parentAlpha) {
         boolean flip = (direction == DirectionEnum.LEFT);
         elapsedTime += Gdx.graphics.getDeltaTime();
+        if (elapsedTime > 3 && isAlive == false){
+            isAlive = true;
+            System.out.println(elapsedTime);
+            setPosition(96, 64);
+            Array<TextureAtlas.AtlasRegion> stillFrames = atlas.findRegions("bomberman_still");
+            currentAni = new Animation<>(1f / 15f, stillFrames.get(0));
+            death = false;
+        }
         if (flip) {
             batch.draw(currentAni.getKeyFrame(elapsedTime), getX() + getWidth(), getY(), -getWidth(), getHeight());
         } else {
@@ -239,12 +247,10 @@ public class Player extends Image {
     public void death() {
         if (death == true) return;
         this.death = true;
-//        playerInput.updateDeathAni();
         playerInput.updateReviveAni();
-        this.death = false;
         this.health -= 1;
+        isAlive = false;
         health = health < 0 ? 0 : health;
-        System.out.println(health);
 
         if (health == 0) GameOver();
         updateHud();

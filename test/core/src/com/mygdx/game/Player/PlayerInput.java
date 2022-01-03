@@ -15,7 +15,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 //This class is in charge of the logic of the player input (including the border)
-public class PlayerInput {
+public class    PlayerInput {
     private final Player player;
     private final GameStage gameStage;
     private final Stage stage;
@@ -196,9 +196,6 @@ public class PlayerInput {
     public void updateReviveAni() {
         MoveByAction revive = new MoveByAction();
         revive.setDuration(0f);
-        player.setCurrentAction(revive);
-        player.addAction(revive);
-        player.position(96,64);
         player.setState(StateEnum.STILL);
         playerAni.updateAni();
 

@@ -109,7 +109,6 @@ public abstract class Enemy extends Image {
 
     public boolean isAlive(){return isAlive;}
     public void setDeadth(){
-        System.out.println("ok");
         this.isAlive = false;
         this.elapsedTime =  0;
         gameStage.detachEnemy(this);
