@@ -233,10 +233,13 @@ public class Player extends Image {
         HUD.updateHUD(convertSpeedToVis(speed), health, bombRange,  MaxBomb);
     }
     public void death() {
+        if (death==true) return;
         this.death = true;
         playerInput.updateDeathAni();
         this.health -= 1;
         health = health < 0 ? 0 : health;
+        System.out.println(health);
+
         if (health == 0) GameOver();
         updateHud();
 
