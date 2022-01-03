@@ -87,11 +87,11 @@ public class Player extends Image {
 
     @Override
     protected void positionChanged() {
-
-
+        System.out.printf("Q so cute\n");
         player.setPosition(getX(), getY());
         findPowerUps((int) getX(), (int) getY());
         super.positionChanged();
+
     }
 
     public void position(int x, int y) {

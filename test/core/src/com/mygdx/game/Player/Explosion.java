@@ -72,7 +72,7 @@ public class Explosion extends Image {
 
     public void draw(Batch batch, float parentAlpha) {
         elapsedTime += Gdx.graphics.getDeltaTime();
-
+        delPlayer();
         batch.draw(currentAni.getKeyFrame(elapsedTime),
                 explo.getX(), explo.getY(), explo.getWidth(), explo.getHeight());
 
@@ -104,18 +104,13 @@ public class Explosion extends Image {
         }
     }
 
-    private void delEnemies() {
-        ListIterator<Enemy> it = gameStage.getListEnemy().listIterator();
+    private void delPlayer() {
+        ListIterator<Player> it = gameStage.getListPlayer().listIterator();
 
         while (it.hasNext()) {
-            Enemy s = it.next();
-            int minX = s.getBorderX(), maxX = s.getBorderWidth() + s.getBorderX();
-            int minY = s.getBorderY(), maxY = s.getBorderHeight() + s.getBorderY();
-
-            if (minX <= this.x && this.x < maxX && minY <= this.y && this.y < maxY) {
-                s.del();
-                it.remove();
-            }
+            Player s = it.next();
+            int x = (int) s.getX(), y = (int) s.getY();
+            if (gameStage.getDeath(x/64, y / 64) > 0) s.death();
 
         }
     }
