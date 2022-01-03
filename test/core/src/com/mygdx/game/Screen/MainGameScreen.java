@@ -48,13 +48,12 @@ public class MainGameScreen extends AbstractScreen {
         Spawn spawn = new Spawn(this, gameStage);
         spawn.execute();
 //      Create player
-        Player black = new Player(color, this, gameStage);
-        black.position(playerX,playerY);
-        setKeyboardFocus(black);
-        addActor(black);
+        Player player1 = new Player(color, this, gameStage);
+        player1.position(playerX,playerY);
+        setKeyboardFocus(player1);
+        addActor(player1);
 //        ArrayList<Actor>
-        gameStage.attachPlayer(black);
-
+        gameStage.attachPlayer(player1);
     }
 
 

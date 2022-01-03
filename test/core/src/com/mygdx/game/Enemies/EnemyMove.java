@@ -163,7 +163,6 @@ public class EnemyMove {
 
     private void checkPlayer(ArrayList<Player> arr){
         for (Player s: arr){
-            if (s.getDeath()) continue;
             float minY = s.getY() -70 , maxY = s.getY() + 64;
             float minX = s.getX() -70, maxX = s.getX() + 64;
 //            System.out.printf("MinX: %f maxX: %f, minY: %f maxY: %f\n",minX,maxX,minY,maxY);

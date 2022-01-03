@@ -8,6 +8,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
 import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.PowerUps.PowerUps;
+import com.mygdx.game.Screen.ScreenEnum;
+import com.mygdx.game.Screen.ScreenManager;
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.Stage.HUD;
 import com.mygdx.game.StateEnum;
@@ -273,6 +275,6 @@ public class Player extends Image {
     }
 
     private void GameOver() {
-
+        ScreenManager.getInstance().showScreen(ScreenEnum.GAME_OVER);
     }
 }
