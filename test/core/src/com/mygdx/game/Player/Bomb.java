@@ -48,13 +48,7 @@ public class Bomb extends Items {
 
         item.setPosition(this.x, this.y);
 
-        currentAni = new Animation<TextureAtlas.AtlasRegion>(1f / 2f,
-                atlas.findRegion("bomb_normal", 2),
-                atlas.findRegion("bomb_normal", 3),
-                atlas.findRegion("bomb_normal", 2),
-                atlas.findRegion("bomb_normal", 1),
-                atlas.findRegion("bomb_normal", 2),
-                atlas.findRegion("bomb_normal", 3));
+        currentAni = new Animation<TextureAtlas.AtlasRegion>(1f / 2f, atlas.findRegions("bomb_normal"));
 
         this.gameStage = gameStage;
         player.setRemainBomb(1);
@@ -71,15 +65,21 @@ public class Bomb extends Items {
 
         if (elapsedTime > 3) { // 3: after 3 second the bomb will explore
 
-            addExplosion(x, y, 1);
-            addExplosion(x, y, 0);
+            addExplosion(x, y, 4, false);
             boolean checkL = true, checkD = true, checkU = true, checkR = true;
             for (int i = 1; i <= length; i++) {
-                if (checkU) checkU &= addExplosion(this.x + 64 * i, this.y, 1);
-                if (checkD) checkD &= addExplosion(this.x - 64 * i, this.y, 1);
-                if (checkL) checkL &= addExplosion(this.x, this.y - 64 * i, 0);
-                if (checkR) checkR &= addExplosion(this.x, this.y + 64 * i, 0);
-
+                if (i != length) {
+                    if (checkR) checkR &= addExplosion(this.x + 64 * i, this.y, 1, true);
+                    if (checkL) checkL &= addExplosion(this.x - 64 * i, this.y, 1, false);
+                    if (checkD) checkD &= addExplosion(this.x, this.y - 64 * i, 0, false);
+                    if (checkU) checkU &= addExplosion(this.x, this.y + 64 * i, 0, true);
+                }
+                else {
+                    if (checkR) checkR &= addExplosion(this.x + 64 * i, this.y, 3, true);
+                    if (checkL) checkL &= addExplosion(this.x - 64 * i, this.y, 3, false);
+                    if (checkD) checkD &= addExplosion(this.x, this.y - 64 * i, 2, false);
+                    if (checkU) checkU &= addExplosion(this.x, this.y + 64 * i, 2, true);
+                }
             }
 
             // remove a bomb
@@ -96,10 +96,10 @@ public class Bomb extends Items {
         super.act(delta);
     }
 
-    private boolean addExplosion(int x, int y, int direction) {
+    private boolean addExplosion(int x, int y, int direction, boolean flip) {
         if (!checkValid(x, y)) return false;
 
-        player.getStage().addActor(new Explosion(x, y, direction, gameStage));
+        player.getStage().addActor(new Explosion(x, y, direction, gameStage, flip));
         if (!checkConflict(x, y, gameStage.getListSoft())) return false;
         return true;
     }

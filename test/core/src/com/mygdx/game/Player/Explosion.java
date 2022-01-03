@@ -9,6 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
+import com.mygdx.game.DirectionEnum;
 import com.mygdx.game.Enemies.Enemy;
 import com.mygdx.game.Items;
 import com.mygdx.game.Stage.GameStage;
@@ -25,11 +26,12 @@ public class Explosion extends Image {
     Boolean stillAlive;
     GameStage gameStage;
     boolean deActive;
-
-    public Explosion(int x, int y, int direction, GameStage gameStage) {
+    boolean flip;
+    int direction;
+    public Explosion(int x, int y, int direction, GameStage gameStage, boolean flip) {
         /*
             x,y: the position to set up bomb explosion
-            direction: 0: col, 1: row
+            direction: 0: col, 1: row, 2: col_edge, 3: row_edge, 4: center
          */
 
         atlas = new TextureAtlas(Gdx.files.internal
@@ -42,27 +44,17 @@ public class Explosion extends Image {
         explo.setPosition(x, y);
         this.x = x;
         this.y = y;
+        this.flip = flip;
         if (direction == 0)
-            currentAni = new Animation<TextureAtlas.AtlasRegion>(1f / 5,
-                    atlas.findRegion("explosion_body_col", 1),
-                    atlas.findRegion("explosion_body_col", 2),
-                    atlas.findRegion("explosion_body_col", 3),
-                    atlas.findRegion("explosion_body_col", 4),
-                    atlas.findRegion("explosion_body_col", 3),
-                    atlas.findRegion("explosion_body_col", 2),
-                    atlas.findRegion("explosion_body_col", 1)
-            );
-        if (direction == 1)
-            currentAni = new Animation<TextureAtlas.AtlasRegion>(1f / 5f,
-                    atlas.findRegion("explosion_body_row", 1),
-                    atlas.findRegion("explosion_body_row", 2),
-                    atlas.findRegion("explosion_body_row", 3),
-                    atlas.findRegion("explosion_body_row", 4),
-                    atlas.findRegion("explosion_body_row", 3),
-                    atlas.findRegion("explosion_body_row", 2),
-                    atlas.findRegion("explosion_body_row", 1)
-
-            );
+            currentAni = new Animation<TextureAtlas.AtlasRegion>(1f / 5, atlas.findRegions("explosion_body_col"));
+        else if (direction == 1)
+            currentAni = new Animation<TextureAtlas.AtlasRegion>(1f / 5f, atlas.findRegions("explosion_body_row"));
+        else if (direction == 2)
+            currentAni = new Animation<TextureAtlas.AtlasRegion>(1f / 5f, atlas.findRegions("explosion_edge_col"));
+        else if (direction == 3)
+            currentAni = new Animation<TextureAtlas.AtlasRegion>(1f / 5f, atlas.findRegions("explosion_edge_row"));
+        else if(direction == 4)
+            currentAni = new Animation<TextureAtlas.AtlasRegion>(1f / 5f, atlas.findRegions("explosion_core"));
 //        System.out.printf("%d %d\n", this.x / 64, y / 64);
         gameStage.setDeath(this.x / 64, this.y / 64, 1);
         this.stillAlive = true;
@@ -73,9 +65,18 @@ public class Explosion extends Image {
     public void draw(Batch batch, float parentAlpha) {
         elapsedTime += Gdx.graphics.getDeltaTime();
         delPlayer();
-        batch.draw(currentAni.getKeyFrame(elapsedTime),
-                explo.getX(), explo.getY(), explo.getWidth(), explo.getHeight());
-
+        if (flip) {
+                if (direction == 3 || direction == 1) {
+                    batch.draw(currentAni.getKeyFrame(elapsedTime),
+                            explo.getX() , explo.getY() + explo.getHeight(), explo.getWidth(), -explo.getHeight());
+                } else if (direction == 2 || direction == 0){
+                    batch.draw(currentAni.getKeyFrame(elapsedTime),
+                            explo.getX() + explo.getWidth(), explo.getY(), -explo.getWidth(), explo.getHeight());
+                }
+        } else {
+            batch.draw(currentAni.getKeyFrame(elapsedTime),
+                    explo.getX(), explo.getY(), explo.getWidth(), explo.getHeight());
+        }
         if (elapsedTime > 1) {
             delSoft();
 //            delEnemies();

@@ -91,7 +91,6 @@ public class Player extends Image {
 
     @Override
     protected void positionChanged() {
-        System.out.printf("Q so cute\n");
         player.setPosition(getX(), getY());
         findPowerUps((int) getX(), (int) getY());
         super.positionChanged();
@@ -240,7 +239,9 @@ public class Player extends Image {
     public void death() {
         if (death == true) return;
         this.death = true;
-        playerInput.updateDeathAni();
+//        playerInput.updateDeathAni();
+        playerInput.updateReviveAni();
+        this.death = false;
         this.health -= 1;
         health = health < 0 ? 0 : health;
         System.out.println(health);

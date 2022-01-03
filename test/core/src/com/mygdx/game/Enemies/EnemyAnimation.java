@@ -14,7 +14,19 @@ public class EnemyAnimation {
         this.enemyAtlas = enemyAtlas;
     }
 
-    public void updateAni(){
+    public void updateWalkAni(){
+        enemy.setElapsedTime(0);
+        DirectionEnum directionEnum = enemy.getDirection();
+        StateEnum stateEnum  = enemy.getState();
+        String direction = (enemy.getDirection() == DirectionEnum.RIGHT)
+                ? DirectionEnum.LEFT.toString() : directionEnum.toString();
+        String state = stateEnum.toString();
+        String region = state+"_"+direction;
+        enemy.setCurrentAni(new Animation<>(1f/3f,
+                enemyAtlas.findRegions(region)));
+    }
+
+    public void updateAni() {
         enemy.setElapsedTime(0);
         DirectionEnum directionEnum = enemy.getDirection();
         StateEnum stateEnum  = enemy.getState();

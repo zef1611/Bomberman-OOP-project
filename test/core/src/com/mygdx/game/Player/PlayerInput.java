@@ -182,13 +182,26 @@ public class PlayerInput {
         return true;
     }
     public void updateDeathAni() {
+        MoveByAction death = new MoveByAction();
+        death.setDuration(0f);
+        player.setCurrentAction(death);
+        player.addAction(death);
         player.setStepCount(0);
         player.setDirection(DirectionEnum.NONE);
         player.setState(StateEnum.DEATH);
         playerAni.updateAni();
+        player.position(96,64);
+    }
+
+    public void updateReviveAni() {
+        MoveByAction revive = new MoveByAction();
+        revive.setDuration(0f);
+        player.setCurrentAction(revive);
+        player.addAction(revive);
+        player.position(96,64);
         player.setState(StateEnum.STILL);
-//        playerAni.updateAni();
-//        player.position(96,64);
+        playerAni.updateAni();
+
     }
 
     public void test() {

@@ -14,6 +14,7 @@ import com.mygdx.game.Player.Player;
 import com.mygdx.game.PowerUps.PowerUps;
 import com.mygdx.game.Stage.GameStage;
 import com.mygdx.game.Stage.Soft;
+import com.mygdx.game.StateEnum;
 
 import java.util.ArrayList;
 
@@ -53,6 +54,11 @@ public class EnemyMove {
 
     }
 
+    public void death() {
+        enemy.setState(StateEnum.DEATH);
+        enemyAnimation.updateAni();
+    }
+
     public void horizontalMove(){
         checkStatus();
         if(enemy.currentAction.isComplete()){
@@ -67,7 +73,7 @@ public class EnemyMove {
             action.setDuration(1f/2f);
             enemy.setCurrentAction(action);
             enemy.addAction(action);
-            enemyAnimation.updateAni();
+            enemyAnimation.updateWalkAni();
         }
     }
 
@@ -85,7 +91,7 @@ public class EnemyMove {
             action.setDuration(1f/2f);
             enemy.setCurrentAction(action);
             enemy.addAction(action);
-            enemyAnimation.updateAni();
+            enemyAnimation.updateWalkAni();
         }
     }
 
@@ -124,10 +130,10 @@ public class EnemyMove {
     private void checkEnemy(ArrayList<Enemy> arr){
         for (Enemy s: arr){
             if (enemy.getID() == s.getID()) continue;
-            float minY = s.getY() - 64 , maxY = s.getY() + 64;
-            float minX = s.getX() - 64, maxX = s.getX() + 64;
-            System.out.printf("MinX: %f maxX: %f, minY: %f maxY: %f\n",minX,maxX,minY,maxY);
-            System.out.printf("X: %f, Y: %f\n",enemy.getX(),enemy.getY());
+            float minY = s.getY() - 54 , maxY = s.getY() + 54;
+            float minX = s.getX() - 80, maxX = s.getX() + 80;
+//            System.out.printf("MinX: %f maxX: %f, minY: %f maxY: %f\n",minX,maxX,minY,maxY);
+//            System.out.printf("X: %f, Y: %f\n",enemy.getX(),enemy.getY());
 
             if(enemy.getDirection() == DirectionEnum.DOWN){
                 if(inRange(enemy.getX() + 5 , enemy.getY() - 30 , minX, maxX, minY, maxY)) {
@@ -163,69 +169,37 @@ public class EnemyMove {
 
     private void checkPlayer(ArrayList<Player> arr){
         for (Player s: arr){
-            float minY = s.getY() -70 , maxY = s.getY() + 64;
-            float minX = s.getX() -70, maxX = s.getX() + 64;
+            float minY = s.getY() - 35 , maxY = s.getY() + 35;
+            float minX = s.getX() - 35, maxX = s.getX() + 35;
 //            System.out.printf("MinX: %f maxX: %f, minY: %f maxY: %f\n",minX,maxX,minY,maxY);
 //            System.out.printf("X: %f, Y: %f\n",enemy.getX(),enemy.getY());
 
             if(enemy.getDirection() == DirectionEnum.DOWN){
                 if(inRange(enemy.getX() + 5 , enemy.getY() - 30 , minX, maxX, minY, maxY)) {
-                    System.out.println("Player is death");
-                    s.death();
+                    enemy.setDirection(DirectionEnum.UP);
+                    System.out.println("yes");
                     break;
                 }
             }
             if(enemy.getDirection() == DirectionEnum.UP){
                 if(inRange(enemy.getX() + 5, enemy.getY() + 70 , minX, maxX, minY, maxY)){
-                    System.out.println("Player is death");
-                    s.death();
+                    enemy.setDirection(DirectionEnum.DOWN);
+                    System.out.println("yes");
                     break;
 
                 }
             }
             if(enemy.getDirection() == DirectionEnum.LEFT){
                 if(inRange(enemy.getX() - 30, enemy.getY() + 5, minX, maxX, minY, maxY)) {
-                    System.out.println("Player is death");
-                    s.death();
+                    enemy.setDirection(DirectionEnum.RIGHT);
+                    System.out.println("yes");
                     break;
                 }
             }
             if(enemy.getDirection() == DirectionEnum.RIGHT){
                 if(inRange(enemy.getX() + 70 , enemy.getY() +5 , minX, maxX, minY, maxY)){
-                    System.out.println("Player is death");
-                    s.death();
-                    break;
-                }
-            }
-        }
-    }
-
-    private void checkPowerUps(ArrayList<PowerUps> arr){
-        for (PowerUps s: arr){
-            float minY = s.getBorderY(), maxY = s.getBorderY() + s.getBorderHeight();
-            float minX = s.getBorderX(), maxX = s.getBorderX() + s.getBorderWidth();
-
-            if(enemy.getDirection() == DirectionEnum.DOWN){
-                if(inRange(enemy.getX() + 5, enemy.getY() - 30, minX, maxX, minY, maxY)) {
-                    enemy.setDirection(DirectionEnum.UP);
-                    break;
-                }
-            }
-            if(enemy.getDirection() == DirectionEnum.UP){
-                if(inRange(enemy.getX() + 5, enemy.getY() + 70, minX, maxX, minY, maxY)){
-                    enemy.setDirection(DirectionEnum.DOWN);
-                    break;
-                }
-            }
-            if(enemy.getDirection() == DirectionEnum.LEFT){
-                if(inRange(enemy.getX() - 30, enemy.getY() + 5 , minX, maxX, minY, maxY)) {
-                    enemy.setDirection(DirectionEnum.RIGHT);
-                    break;
-                }
-            }
-            if(enemy.getDirection() == DirectionEnum.RIGHT){
-                if(inRange(enemy.getX() + 70, enemy.getY() + 5, minX, maxX, minY, maxY)){
                     enemy.setDirection(DirectionEnum.LEFT);
+                    System.out.println("yes");
                     break;
                 }
             }

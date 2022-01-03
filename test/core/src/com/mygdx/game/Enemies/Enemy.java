@@ -58,23 +58,24 @@ public abstract class Enemy extends Image {
     }
     @Override
     public void draw(Batch batch,float parentAlpha){
-
-        elapsedTime += Gdx.graphics.getDeltaTime();
-        enemyMove.movement();
-        boolean flip = (direction == DirectionEnum.RIGHT);
-        elapsedTime += Gdx.graphics.getDeltaTime();
         int x = (int) getX(), y = (int) getY();
-//        Sys
+        elapsedTime += Gdx.graphics.getDeltaTime();
         if (this.gameStage.getDeath(x / 64, y/64) > 0) {
-            this.gameStage.detachEnemy(this);
-            this.del();
+            enemyMove.death();
+            return;
+//            this.gameStage.detachEnemy(this);
+//            this.del();
+        } else {
+            enemyMove.movement();
+            boolean flip = (direction == DirectionEnum.RIGHT);
+            elapsedTime += Gdx.graphics.getDeltaTime();
+            if (flip) {
+                batch.draw(currentAni.getKeyFrame(elapsedTime), getX() + getWidth(), getY(), -getWidth(), getHeight());
+            } else {
+                batch.draw(currentAni.getKeyFrame(elapsedTime), getX(), getY(), getWidth(), getHeight());
+            }
         }
-        if(flip){
-            batch.draw(currentAni.getKeyFrame(elapsedTime), getX()+getWidth(), getY(),-getWidth(),getHeight());
-        }
-        else{
-            batch.draw(currentAni.getKeyFrame(elapsedTime), getX(), getY(),getWidth(),getHeight());
-        }
+
     }
     @Override
     public void act(float delta) {
