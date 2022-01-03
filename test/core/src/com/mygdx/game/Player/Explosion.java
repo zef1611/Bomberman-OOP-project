@@ -24,6 +24,7 @@ public class Explosion extends Image {
     int x, y;
     Boolean stillAlive;
     GameStage gameStage;
+    boolean deActive;
 
     public Explosion(int x, int y, int direction, GameStage gameStage) {
         /*
@@ -66,6 +67,7 @@ public class Explosion extends Image {
         gameStage.setDeath(this.x / 64, this.y / 64, 1);
         this.stillAlive = true;
         this.gameStage = gameStage;
+        deActive = false;
     }
 
     public void draw(Batch batch, float parentAlpha) {
@@ -77,7 +79,8 @@ public class Explosion extends Image {
         if (elapsedTime > 1) {
             delSoft();
 //            delEnemies();
-            gameStage.setDeath(this.x / 64, this.y / 64, -1);
+            if (deActive == false)
+                gameStage.setDeath(this.x / 64, this.y / 64, -1);
             this.addAction(Actions.removeActor());
         }
 
@@ -91,8 +94,11 @@ public class Explosion extends Image {
             int minX = s.getBorderX(), maxX = s.getBorderWidth() + s.getBorderX();
             int minY = s.getBorderY(), maxY = s.getBorderHeight() + s.getBorderY();
             if (minX <= this.x && this.x < maxX && minY <= this.y && this.y < maxY) {
+                deActive = true;
                 s.del();
                 it.remove();
+                gameStage.setDeath(this.x / 64, this.y / 64, -1);
+                return;
             }
 
         }
