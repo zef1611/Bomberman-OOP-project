@@ -177,30 +177,26 @@ public class EnemyMove {
 
             if(enemy.getDirection() == DirectionEnum.DOWN){
                 if(inRange(enemy.getX() + 5 , enemy.getY() - 30 , minX, maxX, minY, maxY)) {
-                    enemy.setDirection(DirectionEnum.UP);
-                    System.out.println("yes");
+                    s.death();
                     break;
                 }
             }
             if(enemy.getDirection() == DirectionEnum.UP){
                 if(inRange(enemy.getX() + 5, enemy.getY() + 70 , minX, maxX, minY, maxY)){
-                    enemy.setDirection(DirectionEnum.DOWN);
-                    System.out.println("yes");
+                    s.death();
                     break;
 
                 }
             }
             if(enemy.getDirection() == DirectionEnum.LEFT){
                 if(inRange(enemy.getX() - 30, enemy.getY() + 5, minX, maxX, minY, maxY)) {
-                    enemy.setDirection(DirectionEnum.RIGHT);
-                    System.out.println("yes");
+                    s.death();
                     break;
                 }
             }
             if(enemy.getDirection() == DirectionEnum.RIGHT){
                 if(inRange(enemy.getX() + 70 , enemy.getY() +5 , minX, maxX, minY, maxY)){
-                    enemy.setDirection(DirectionEnum.LEFT);
-                    System.out.println("yes");
+                    s.death();
                     break;
                 }
             }
