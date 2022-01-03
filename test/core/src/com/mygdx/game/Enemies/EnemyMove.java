@@ -73,7 +73,7 @@ public class EnemyMove {
             action.setDuration(1f/2f);
             enemy.setCurrentAction(action);
             enemy.addAction(action);
-            enemyAnimation.updateWalkAni();
+            enemyAnimation.updateAni();
         }
     }
 
@@ -91,7 +91,7 @@ public class EnemyMove {
             action.setDuration(1f/2f);
             enemy.setCurrentAction(action);
             enemy.addAction(action);
-            enemyAnimation.updateWalkAni();
+            enemyAnimation.updateAni();
         }
     }
 
