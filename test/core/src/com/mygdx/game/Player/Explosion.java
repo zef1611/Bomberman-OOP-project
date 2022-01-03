@@ -45,6 +45,7 @@ public class Explosion extends Image {
         this.x = x;
         this.y = y;
         this.flip = flip;
+        this.direction = direction;
         if (direction == 0)
             currentAni = new Animation<TextureAtlas.AtlasRegion>(1f / 5, atlas.findRegions("explosion_body_col"));
         else if (direction == 1)
@@ -66,12 +67,10 @@ public class Explosion extends Image {
         elapsedTime += Gdx.graphics.getDeltaTime();
         delPlayer();
         if (flip) {
-                if (direction == 3 || direction == 1) {
-                    batch.draw(currentAni.getKeyFrame(elapsedTime),
-                            explo.getX() , explo.getY() + explo.getHeight(), explo.getWidth(), -explo.getHeight());
-                } else if (direction == 2 || direction == 0){
-                    batch.draw(currentAni.getKeyFrame(elapsedTime),
-                            explo.getX() + explo.getWidth(), explo.getY(), -explo.getWidth(), explo.getHeight());
+                if (direction == 2 || direction == 0) {
+                    batch.draw(currentAni.getKeyFrame(elapsedTime),explo.getX() , explo.getY() + explo.getHeight(), explo.getWidth(), -explo.getHeight());
+                } else {
+                    batch.draw(currentAni.getKeyFrame(elapsedTime),explo.getX() + explo.getWidth(), explo.getY(), -explo.getWidth(), explo.getHeight());
                 }
         } else {
             batch.draw(currentAni.getKeyFrame(elapsedTime),
