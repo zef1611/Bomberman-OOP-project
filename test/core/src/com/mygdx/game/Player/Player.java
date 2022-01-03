@@ -215,6 +215,7 @@ public class Player extends Image {
     public boolean getDeath() {
         return this.death;
     }
+
     public void setBombRange(int val) {
         this.bombRange += val;
         updateHud();
@@ -229,11 +230,13 @@ public class Player extends Image {
         this.MaxBomb += val;
         updateHud();
     }
+
     public void updateHud() {
-        HUD.updateHUD(convertSpeedToVis(speed), health, bombRange,  MaxBomb);
+        HUD.updateHUD(convertSpeedToVis(speed), health, bombRange, MaxBomb);
     }
+
     public void death() {
-        if (death==true) return;
+        if (death == true) return;
         this.death = true;
         playerInput.updateDeathAni();
         this.health -= 1;
@@ -244,11 +247,13 @@ public class Player extends Image {
         updateHud();
 
     }
+
     private int convertSpeedToVis(float speed) {
         if (speed == 0) return 3;
         if (speed == 0.25) return 2;
         return 1;
     }
+
     public void setSpeed(float val) {
         this.speed += val;
         if (speed > 0.5) speed = 1;
